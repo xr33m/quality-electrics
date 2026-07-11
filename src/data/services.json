@@ -1,0 +1,93 @@
+[
+  {
+    "slug": "ev-charger-installation",
+    "name": "EV Charger Installation",
+    "shortDesc": "OZEV-compliant home and workplace EV charge point installation.",
+    "intro": "As electric vehicles become the norm across Scotland, we design and install home and workplace charging points that are safe, fast, and built to last. Every installation includes a full circuit assessment so your charger runs on a supply that can actually handle it.",
+    "highlights": [
+      "Home and workplace charge points",
+      "Load-balancing and smart charger options",
+      "Consumer unit assessment included",
+      "Clean, tidy cable routing and mounting"
+    ],
+    "image": "assets/img/outdoor-supply.jpg"
+  },
+  {
+    "slug": "domestic-commercial-rewiring",
+    "name": "Home & Business Rewiring",
+    "shortDesc": "Full and partial rewires for homes, flats, offices and shops.",
+    "intro": "Old, unsafe, or undersized wiring is one of the most common issues we find on inspection. Whether it's a full rewire of a tenement flat or a partial upgrade in a working office, we plan around your schedule and leave every wall making good.",
+    "highlights": [
+      "Full and partial rewires",
+      "Tenement, period, and new-build experience",
+      "Minimal disruption scheduling for businesses",
+      "Certified on completion"
+    ],
+    "image": "assets/img/tenement.jpg"
+  },
+  {
+    "slug": "electrical-inspection-testing",
+    "name": "Electrical Inspection & Testing",
+    "shortDesc": "EICR reports for landlords, homeowners, and commercial properties.",
+    "intro": "An Electrical Installation Condition Report (EICR) is a legal requirement for rental properties and good practice for every home or business. We test the full installation and give you a clear, honest report \u2014 not a sales pitch.",
+    "highlights": [
+      "EICR for landlords and homeowners",
+      "Clear pass/fail reporting, no jargon",
+      "Fast turnaround for lets and sales",
+      "Remedial work quoted on the spot"
+    ],
+    "image": "assets/img/under-unit-lighting.jpg"
+  },
+  {
+    "slug": "consumer-unit-upgrades",
+    "name": "Consumer Unit Upgrades",
+    "shortDesc": "Modern, RCD-protected consumer units to replace old fuse boards.",
+    "intro": "Many homes and small businesses across Glasgow are still running on outdated fuse boards with no RCD protection. We replace these with modern, correctly rated consumer units that meet current regulations and give you real protection.",
+    "highlights": [
+      "Replacement of old fuse boards",
+      "RCD and surge protection options",
+      "Sized correctly for your property",
+      "Same-day upgrades in most cases"
+    ],
+    "image": "assets/img/office-lighting.jpg"
+  },
+  {
+    "slug": "commercial-installations-lighting",
+    "name": "Commercial Installations & Lighting",
+    "shortDesc": "Electrical fit-outs and lighting for offices, shops, and units.",
+    "intro": "From new office fit-outs to shop and unit lighting upgrades, we work with property developers and commercial clients to deliver installations that are on spec, on time, and built to withstand daily commercial use.",
+    "highlights": [
+      "Office, retail, and unit fit-outs",
+      "Energy-efficient LED lighting design",
+      "Work scheduled around trading hours",
+      "Ongoing maintenance contracts available"
+    ],
+    "image": "assets/img/outhouse.jpg"
+  },
+  {
+    "slug": "domestic-extensions-conversions",
+    "name": "Domestic Extensions & Conversions",
+    "shortDesc": "Electrical works for extensions, conversions, and renovations.",
+    "intro": "Extending or converting your home means your electrics need to extend with it. We work alongside your builder or architect from first fix to final certification, covering everything from extra sockets to new circuits and lighting design.",
+    "highlights": [
+      "First and second fix wiring",
+      "Loft, garage, and outbuilding conversions",
+      "Coordinated with your build timeline",
+      "Building Standards certification"
+    ],
+    "image": "assets/img/outhouse-1.jpg"
+  },
+  {
+    "slug": "kitchen-electrical-installations",
+    "name": "Kitchen Electrical Installations",
+    "shortDesc": "Sockets, lighting, and appliance circuits for new and renovated kitchens.",
+    "intro": "Kitchens carry more electrical load than any other room in the house. We plan sockets, under-unit lighting, and dedicated appliance circuits properly the first time, so your new kitchen works exactly as designed.",
+    "highlights": [
+      "Dedicated circuits for ovens, hobs, and appliances",
+      "Under-unit and feature lighting",
+      "Socket layout planned with your kitchen fitter",
+      "Safe isolation for wet zones"
+    ],
+    "image": "assets/img/under-unit-lighting.jpg"
+  }
+]

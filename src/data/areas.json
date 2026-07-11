@@ -1,0 +1,51 @@
+[
+  {
+    "slug": "bearsden",
+    "name": "Bearsden",
+    "region": "East Dunbartonshire",
+    "character": "Victorian sandstone villas along Milngavie Road through to newer executive homes near Bearsden Cross",
+    "propertyNote": "larger detached and semi-detached homes"
+  },
+  {
+    "slug": "giffnock",
+    "name": "Giffnock",
+    "region": "East Renfrewshire",
+    "character": "period semis around Fenwick Road through to family homes near Rouken Glen Park",
+    "propertyNote": "period semis and family homes"
+  },
+  {
+    "slug": "east-kilbride",
+    "name": "East Kilbride",
+    "region": "South Lanarkshire",
+    "character": "new-town housing estates through to the commercial and industrial units around the town's business parks",
+    "propertyNote": "new-town housing and commercial units"
+  },
+  {
+    "slug": "newton-mearns",
+    "name": "Newton Mearns",
+    "region": "East Renfrewshire",
+    "character": "large detached homes off Ayr Road through to newer developments around Malletsheugh",
+    "propertyNote": "large detached and new-build homes"
+  },
+  {
+    "slug": "glasgow-east-end",
+    "name": "Glasgow East End",
+    "region": "Glasgow",
+    "character": "traditional tenements around Dennistoun and Parkhead through to regenerated developments near Celtic Park",
+    "propertyNote": "tenement flats and regenerated developments"
+  },
+  {
+    "slug": "milngavie",
+    "name": "Milngavie",
+    "region": "East Dunbartonshire",
+    "character": "traditional homes around Milngavie town centre through to properties along the West Highland Way",
+    "propertyNote": "traditional homes and cottages"
+  },
+  {
+    "slug": "glasgow",
+    "name": "Glasgow City Centre",
+    "region": "Glasgow",
+    "character": "city centre flats and tenement conversions through to commercial and retail units across the city",
+    "propertyNote": "city flats and commercial units"
+  }
+]

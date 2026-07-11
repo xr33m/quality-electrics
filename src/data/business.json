@@ -1,0 +1,43 @@
+{
+  "name": "Quality Electrics",
+  "shortName": "QE",
+  "tagline": "Powering Glasgow's Homes & Businesses",
+  "domain": "qualityelectrics.co.uk",
+  "phoneDisplay": "07411 180954",
+  "phoneHref": "tel:+447411180954",
+  "email": "qualityelectricsglasgow@gmail.com",
+  "hoursLine": "Mon–Fri, 8:00am–6:00pm · Emergency call-outs available",
+  "baseLine": "Serving Glasgow & the surrounding areas",
+  "guarantees": [
+    "Same-day response",
+    "Free, no-obligation quotes",
+    "NICEIC registered",
+    "Fully insured"
+  ],
+  "heroStats": [
+    { "label": "Response", "value": "Same-Day" },
+    { "label": "Licensed & Insured", "value": "100%" },
+    { "label": "Quotes", "value": "Free" },
+    { "label": "Areas Covered", "value": "7" }
+  ],
+  "targetCustomers": [
+    "Commercial properties",
+    "Property developers",
+    "Homeowners",
+    "Landlords"
+  ],
+  "jobTypes": [
+    "Quick call-outs",
+    "Maintenance contracts",
+    "Long-term projects (2–4 weeks)"
+  ],
+  "pricing": [
+    { "item": "Call-out charge", "price": "£100", "note": "fixed, excl. VAT" },
+    { "item": "Electrical Inspection & Testing (EICR)", "price": "From £200", "note": "excl. VAT" },
+    { "item": "Consumer Unit Upgrade", "price": "Custom quote", "note": "free survey, excl. VAT" }
+  ],
+  "certifications": [
+    "NICEIC Registered",
+    "Fully Insured"
+  ]
+}
