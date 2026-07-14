@@ -39,5 +39,27 @@
   "certifications": [
     "NICEIC Registered",
     "Fully Insured"
+  ],
+  "process": [
+    {
+      "title": "Get In Touch",
+      "detail": "Call, email, or send an enquiry online and tell us what you need done."
+    },
+    {
+      "title": "Free Quote",
+      "detail": "We give you a clear, no-obligation quote — with a site visit first if the job needs it."
+    },
+    {
+      "title": "Scheduled Work",
+      "detail": "We agree a date that suits you and carry out the work to BS7671 standards."
+    },
+    {
+      "title": "Test & Certify",
+      "detail": "Every job is tested and certified on completion, so you've got the paperwork you need."
+    },
+    {
+      "title": "Aftercare",
+      "detail": "Questions after the job's done? We're a phone call away."
+    }
   ]
 }

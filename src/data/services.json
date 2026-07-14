@@ -10,7 +10,26 @@
       "Consumer unit assessment included",
       "Clean, tidy cable routing and mounting"
     ],
-    "image": "assets/img/outdoor-supply.jpg"
+    "whyUs": [
+      "Every install starts with a proper load calculation, not a guess",
+      "Smart, app-connected chargers fitted to current regulations",
+      "Cable routing planned to look tidy, not just to work",
+      "Same electrician from quote through to sign-off"
+    ],
+    "signs": [
+      "You've bought or leased an EV and need a home charge point fitted",
+      "Your workplace wants to offer staff or fleet EV charging",
+      "Your existing charger is outdated or isn't smart-enabled",
+      "You're a landlord or developer adding charging to a property or development"
+    ],
+    "faqs": [
+      { "q": "Do I need planning permission for a home charge point?", "a": "Almost never for a standard domestic installation. We'll flag it if your property is an exception, such as a listed building." },
+      { "q": "How long does installation take?", "a": "Most home installs are done within half a day, depending on cable run length and whether any consumer unit work is needed." },
+      { "q": "What if my consumer unit can't handle a charger?", "a": "We check this during the free survey. If an upgrade is needed, we'll quote for it alongside the charger install." },
+      { "q": "Are smart chargers a legal requirement?", "a": "Yes — since 2022, new home and workplace chargers in Great Britain must have smart charging capability by law. All our installs meet this." },
+      { "q": "Can you install chargers for businesses and fleets?", "a": "Yes, including multi-charger workplace setups with load balancing so you're not paying to upgrade your whole supply unnecessarily." }
+    ],
+    "image": "assets/img/outdoor-supply.webp"
   },
   {
     "slug": "domestic-commercial-rewiring",
@@ -23,20 +42,60 @@
       "Minimal disruption scheduling for businesses",
       "Certified on completion"
     ],
-    "image": "assets/img/tenement.jpg"
+    "whyUs": [
+      "Experience with Glasgow's tenement and period wiring quirks",
+      "Chasing, channelling, and making good handled by the same team",
+      "Businesses kept running with phased, out-of-hours scheduling",
+      "Every rewire tested and certified before we leave"
+    ],
+    "signs": [
+      "Lights flicker or dim when other appliances switch on",
+      "Sockets or switches feel warm, or you smell burning",
+      "Fuses trip often, or you still have a fusebox with rewireable fuses",
+      "The property hasn't been rewired in 25–30 years",
+      "An EICR or a mortgage/insurance survey has flagged the wiring"
+    ],
+    "faqs": [
+      { "q": "How long does a full rewire take?", "a": "A typical two or three-bedroom tenement flat takes around a week. We'll give you an exact timeline once we've surveyed the property." },
+      { "q": "Do I need to move out during a rewire?", "a": "Not always for a partial rewire, but for a full rewire it's usually easier to have the property empty. We'll talk through the options for your specific job." },
+      { "q": "Will you make good after chasing walls?", "a": "We fill and make good all channels we cut. If you need a full plaster skim afterwards, we can recommend a plasterer we work with regularly." },
+      { "q": "Can a business rewire be done without closing?", "a": "Often yes, by phasing the work area by area or working out of hours — we'll scope this properly at quote stage." },
+      { "q": "Is the work certified?", "a": "Yes, every rewire is tested to BS7671 and certified on completion." }
+    ],
+    "image": "assets/img/tenement.webp"
   },
   {
     "slug": "electrical-inspection-testing",
     "name": "Electrical Inspection & Testing",
     "shortDesc": "EICR reports for landlords, homeowners, and commercial properties.",
-    "intro": "An Electrical Installation Condition Report (EICR) is a legal requirement for rental properties and good practice for every home or business. We test the full installation and give you a clear, honest report \u2014 not a sales pitch.",
+    "intro": "An Electrical Installation Condition Report (EICR) is a legal requirement for rental properties and good practice for every home or business. We test the full installation and give you a clear, honest report — not a sales pitch.",
     "highlights": [
       "EICR for landlords and homeowners",
       "Clear pass/fail reporting, no jargon",
       "Fast turnaround for lets and sales",
       "Remedial work quoted on the spot"
     ],
-    "image": "assets/img/under-unit-lighting.jpg"
+    "whyUs": [
+      "Reports written in plain English, not just code references",
+      "Fast turnaround for time-sensitive lets and sales",
+      "Remedial work quoted on-site, no waiting for a second visit",
+      "Landlord compliance experience across Glasgow lets"
+    ],
+    "signs": [
+      "You're renewing a tenancy or letting a property for the first time",
+      "You're buying or selling and need proof of electrical condition",
+      "There's no EICR on record for the property",
+      "Your insurer has asked for an up-to-date report",
+      "You've just had work done and want it independently checked"
+    ],
+    "faqs": [
+      { "q": "How often does a rented property need an EICR in Scotland?", "a": "At least every 5 years, or at change of tenancy if the previous report is due to expire — it's a legal requirement under the Repairing Standard." },
+      { "q": "How long does testing take?", "a": "A typical flat or house takes 2–4 hours on site. Larger commercial properties take longer, which we'll scope in advance." },
+      { "q": "What happens if the property fails?", "a": "We list every issue found, rated by severity, and can quote for the remedial work on the spot so you're not left chasing a second contractor." },
+      { "q": "Do I get the certificate the same day?", "a": "You'll get a verbal summary on site, with the full written EICR following shortly after." },
+      { "q": "Is an EICR a legal requirement for landlords?", "a": "Yes, under the Scottish Repairing Standard, private landlords must hold a satisfactory EICR." }
+    ],
+    "image": "assets/img/under-unit-lighting.webp"
   },
   {
     "slug": "consumer-unit-upgrades",
@@ -49,7 +108,27 @@
       "Sized correctly for your property",
       "Same-day upgrades in most cases"
     ],
-    "image": "assets/img/office-lighting.jpg"
+    "whyUs": [
+      "Boards sized properly for your actual circuits, not off-the-shelf guesses",
+      "RCD and surge protection fitted as standard on new boards",
+      "Same-day upgrades in most homes, minimal power-down time",
+      "Certified to BS7671 on completion"
+    ],
+    "signs": [
+      "You still have an old fuse box with rewireable wire fuses",
+      "Your board has no RCD (residual current device) protection",
+      "The board trips repeatedly or feels warm to the touch",
+      "An EICR or mortgage survey has flagged the consumer unit",
+      "You're adding an EV charger, extension, or extra circuits and need more capacity"
+    ],
+    "faqs": [
+      { "q": "How long does an upgrade take?", "a": "Most homes are done in half a day to a full day, depending on how many circuits need re-terminating." },
+      { "q": "Will the power be off during the work?", "a": "Yes, temporarily — we'll agree a time that works for you and keep the power-down window as short as possible." },
+      { "q": "Do I need a new consumer unit if mine fails an EICR?", "a": "If the EICR marks it as a serious risk (C1/C2), yes — we can quote for the upgrade at the same visit." },
+      { "q": "What size consumer unit do I need?", "a": "It depends on your existing circuits and any future additions like an EV charger — we work this out during the free survey." },
+      { "q": "Is the upgrade certified?", "a": "Yes, every consumer unit upgrade is tested and certified on completion." }
+    ],
+    "image": "assets/img/office-lighting.webp"
   },
   {
     "slug": "commercial-installations-lighting",
@@ -62,7 +141,27 @@
       "Work scheduled around trading hours",
       "Ongoing maintenance contracts available"
     ],
-    "image": "assets/img/outhouse.jpg"
+    "whyUs": [
+      "Work scheduled around your trading hours, not the other way round",
+      "LED lighting design that cuts running costs, not just bulbs",
+      "Comfortable working directly with architects, shopfitters, and developers",
+      "Maintenance contracts available once the fit-out is done"
+    ],
+    "signs": [
+      "You're opening a new unit, office, or shop",
+      "Your current lighting is outdated fluorescent tube and costly to run",
+      "You're planning a fit-out or refurbishment and need electrical scoped in",
+      "You need emergency lighting or exit signage brought up to compliance",
+      "You want an ongoing maintenance contract instead of one-off call-outs"
+    ],
+    "faqs": [
+      { "q": "Can work be done outside trading hours?", "a": "Yes — evenings, overnight, or phased around opening hours is common for retail and office fit-outs." },
+      { "q": "Do you handle emergency lighting and exit signage?", "a": "Yes, including testing and certification to keep you compliant." },
+      { "q": "Can you work directly with our architect or shopfitter?", "a": "Yes, we regularly work from architect drawings and coordinate directly with the wider fit-out team." },
+      { "q": "Do you offer ongoing maintenance contracts?", "a": "Yes, for commercial clients who'd rather have a fixed point of contact than call around for every issue." },
+      { "q": "How long does a typical office fit-out take?", "a": "It depends on scale — we'll give you a firm timeline once we've seen the drawings or site." }
+    ],
+    "image": "assets/img/outhouse.webp"
   },
   {
     "slug": "domestic-extensions-conversions",
@@ -75,7 +174,27 @@
       "Coordinated with your build timeline",
       "Building Standards certification"
     ],
-    "image": "assets/img/outhouse-1.jpg"
+    "whyUs": [
+      "First and second fix scheduled around your builder's timeline",
+      "Loft, garage, and outbuilding conversion experience",
+      "Direct coordination with your builder or architect",
+      "Building Standards certification provided on completion"
+    ],
+    "signs": [
+      "You're planning an extension or loft conversion",
+      "You're converting a garage or outbuilding into living or office space",
+      "Your builder has asked for an electrician to quote first and second fix",
+      "You need extra circuits for a new kitchen, bathroom, or utility room",
+      "You want outdoor sockets or lighting added as part of the build"
+    ],
+    "faqs": [
+      { "q": "When should I bring you in on the project?", "a": "As early as possible — ideally once first-fix stage is being planned, so sockets, lighting, and circuits are positioned correctly first time." },
+      { "q": "Do you liaise directly with my builder or architect?", "a": "Yes, we're used to working from drawings and coordinating on-site directly with the rest of the build team." },
+      { "q": "Is Building Standards certification included?", "a": "Yes, we certify the electrical work to the standard your local authority requires." },
+      { "q": "How long does first fix take on a typical extension?", "a": "It depends on size and circuit count — we'll confirm a timeline once we've seen the plans." },
+      { "q": "Can you wire outbuildings and garden rooms too?", "a": "Yes, including outdoor supplies, garden offices, and outhouse conversions." }
+    ],
+    "image": "assets/img/outhouse-1.webp"
   },
   {
     "slug": "kitchen-electrical-installations",
@@ -88,6 +207,26 @@
       "Socket layout planned with your kitchen fitter",
       "Safe isolation for wet zones"
     ],
-    "image": "assets/img/under-unit-lighting.jpg"
+    "whyUs": [
+      "Dedicated circuits planned for ovens, hobs, and heavy appliances",
+      "Socket and lighting layout agreed with your kitchen fitter before first fix",
+      "Under-unit and feature lighting wired in cleanly, no visible cabling",
+      "Safe isolation and zoning handled correctly around sinks and wet areas"
+    ],
+    "signs": [
+      "You're planning a new kitchen or full renovation",
+      "You're adding an island that needs new sockets or power",
+      "You're upgrading to an induction hob or double oven needing a dedicated circuit",
+      "You want under-cabinet or feature lighting",
+      "Your current sockets don't suit the new layout"
+    ],
+    "faqs": [
+      { "q": "When should I book you in relative to my kitchen fitter?", "a": "Before the units go in, ideally at first-fix stage, so sockets and circuits land in the right places once cabinets are fitted." },
+      { "q": "Can you work directly with my kitchen designer or fitter?", "a": "Yes, we regularly work from kitchen design plans and coordinate directly with the fitter." },
+      { "q": "Do induction hobs need a dedicated circuit?", "a": "Yes, almost always — we size the circuit to the specific hob you're installing." },
+      { "q": "Do you supply the sockets and lighting, or do I?", "a": "Either — we can supply everything, or fit fixtures and fittings you've already chosen." },
+      { "q": "How long does a kitchen electrical fit take?", "a": "First and second fix combined is typically 1–2 days, depending on the size of the kitchen and how much lighting is involved." }
+    ],
+    "image": "assets/img/under-unit-lighting.webp"
   }
 ]
