@@ -334,7 +334,18 @@ export function homeTemplate({ business, services, areas, reviews }) {
   return `
   <section class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/assets/img/van.webp" alt="Quality Electrics branded van parked in Glasgow city centre" class="w-full h-full object-cover" />
+      <video
+        class="w-full h-full object-cover"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/assets/img/van.webp"
+        aria-hidden="true"
+      >
+        <source src="/assets/video/hero-quality-electrics.webm" type="video/webm" />
+        <source src="/assets/video/hero-quality-electrics.mp4" type="video/mp4" />
+      </video>
       <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/50"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent"></div>
     </div>
