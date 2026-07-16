@@ -44,7 +44,6 @@ export function head({ title, description, path, business, extraHead = "" }) {
   <meta property="og:title" content="${title}" />
   <meta property="og:description" content="${description}" />
   <meta property="og:type" content="website" />
-  <script src="https://quality-electrics-chat-widget.adam-mcgowan.workers.dev/widget.js" defer></script>
   ${extraHead}`;
 }
 
@@ -173,6 +172,14 @@ export function footer({ business, services, areas, reviews = [] }) {
     reviews.map((r) => ({ author: r.author, rating: r.rating, dateLabel: r.dateLabel }))
   )};</script>
   <script src="/assets/js/review-popup.js" defer></script>
+  <script src="/assets/js/contact-form.js" defer></script>
+  <script>window.QE_CHAT_DATA = ${JSON.stringify({
+    services: services.map((s) => s.name),
+    areas: areas.map((a) => a.name),
+    phoneDisplay: business.phoneDisplay,
+    phoneHref: business.phoneHref,
+  })};</script>
+  <script src="/assets/js/chat-widget.js" defer></script>
   <script src="/assets/js/scroll-animations.js"></script>`;
 }
 

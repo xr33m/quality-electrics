@@ -1,4 +1,17 @@
 import { svgIcon, ctaBand, googleLogo } from "./partials.mjs";
+import {
+  serviceAreaFaqs,
+  propertyConsiderations,
+  regulationsNote,
+  areaHubFaqs,
+  mapEmbedUrl,
+} from "./local-seo.mjs";
+
+function midSentence(str) {
+  const firstWord = str.split(" ")[0].replace(/[^A-Za-z]/g, "");
+  const isAcronym = firstWord.length > 1 && firstWord === firstWord.toUpperCase();
+  return isAcronym ? str : str.charAt(0).toLowerCase() + str.slice(1);
+}
 
 function starString(rating) {
   const full = Math.round(rating);
@@ -334,8 +347,8 @@ export function homeTemplate({ business, services, areas, reviews }) {
         </div>
         <span class="eyebrow">NICEIC Registered &middot; Glasgow &amp; Surrounding Areas</span>
         <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-display font-semibold leading-[1.05] text-cream">
-          Powering Glasgow's<br/>
-          <span class="text-brand-gold">Homes &amp; Businesses</span>
+          Electrician in Glasgow<br/>
+          <span class="text-brand-gold">Powering Homes &amp; Businesses</span>
         </h1>
         <p class="mt-6 text-cream/70 text-base sm:text-lg leading-relaxed max-w-xl">
           Rewiring, EV chargers, inspection &amp; testing, and consumer unit upgrades for homeowners, landlords, and commercial properties across Glasgow &mdash; done right, first time.
@@ -492,7 +505,8 @@ export function servicesHubTemplate({ business, services }) {
   `;
 }
 
-export function serviceTemplate({ business, service, areas, post }) {
+export function serviceTemplate({ business, service, services, areas, post }) {
+  const pairService = services.find((s) => s.slug === service.pairSlug);
   return `
   <section class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
@@ -501,7 +515,7 @@ export function serviceTemplate({ business, service, areas, post }) {
     </div>
     <div class="relative section py-16 sm:py-24 max-w-2xl">
       <a href="/services/" class="text-xs uppercase tracking-wide text-cream/50 hover:text-brand-gold transition-colors">&larr; All Services</a>
-      <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">${service.name}</h1>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">${service.name} in Glasgow <span class="text-brand-gold">&mdash; ${service.benefit}</span></h1>
       <p class="mt-5 text-cream/70 leading-relaxed">${service.intro}</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a href="/contact/" class="btn-gold">Get a Free Quote</a>
@@ -525,6 +539,12 @@ export function serviceTemplate({ business, service, areas, post }) {
             )
             .join("\n")}
         </ul>
+        ${
+          pairService
+            ? `
+        <p class="mt-6 text-sm text-cream/55 leading-relaxed">Often booked alongside our ${service.name}: <a href="/services/${pairService.slug}/" class="font-semibold text-brand-gold hover:underline">${pairService.name}</a> &mdash; ${midSentence(pairService.shortDesc)}</p>`
+            : ""
+        }
       </div>
       <div class="rounded-sm overflow-hidden">
         <img src="/${service.image}" alt="${service.name}" class="w-full h-full object-cover" />
@@ -647,8 +667,13 @@ export function serviceTemplate({ business, service, areas, post }) {
   `;
 }
 
-export function serviceAreaTemplate({ business, service, area, services }) {
-  const otherServices = services.filter((s) => s.slug !== service.slug).slice(0, 3);
+export function serviceAreaTemplate({ business, service, area, services, reviews = [] }) {
+  const otherServices = services.filter((s) => s.slug !== service.slug);
+  const faqs = serviceAreaFaqs(service, area);
+  const regNote = regulationsNote(service);
+  const relevantReviews = reviews.filter((r) => r.service === service.slug).slice(0, 3);
+  const featuredReviews = relevantReviews.length >= 2 ? relevantReviews : reviews.filter((r) => r.rating === 5).slice(0, 3);
+
   return `
   <section class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
@@ -678,7 +703,7 @@ export function serviceAreaTemplate({ business, service, area, services }) {
       <div>
         <h2 class="text-2xl font-display font-semibold text-cream mb-5">${service.name} for ${area.propertyNote}</h2>
         <p class="text-cream/70 leading-relaxed">${service.intro}</p>
-        <p class="mt-4 text-cream/70 leading-relaxed">In ${area.name} that means working across ${area.character}, so every quote accounts for the property type before we arrive on site.</p>
+        <p class="mt-4 text-cream/70 leading-relaxed">${propertyConsiderations(service, area)}</p>
         <ul class="mt-8 space-y-4">
           ${service.highlights
             .map(
@@ -690,6 +715,20 @@ export function serviceAreaTemplate({ business, service, area, services }) {
             )
             .join("\n")}
         </ul>
+        ${
+          regNote
+            ? `
+        <div class="mt-8 rounded-sm border border-brand-gold/20 bg-brand-gold/5 p-5">
+          <div class="flex items-start gap-3">
+            ${svgIcon("shield", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
+            <div>
+              <h3 class="text-sm font-semibold text-cream mb-1">Compliance &amp; Regulations</h3>
+              <p class="text-sm text-cream/65 leading-relaxed">${regNote}</p>
+            </div>
+          </div>
+        </div>`
+            : ""
+        }
       </div>
       <div class="rounded-sm overflow-hidden">
         <img src="/${service.image}" alt="${service.name} in ${area.name}" class="w-full h-full object-cover" />
@@ -697,24 +736,62 @@ export function serviceAreaTemplate({ business, service, area, services }) {
     </div>
   </section>
 
-  <section class="py-16 sm:py-20 bg-surface border-y border-white/10">
+  ${
+    featuredReviews.length
+      ? `
+  <section class="reveal relative py-16 sm:py-20 bg-surface border-y border-white/10">
+    <div class="section">
+      <span class="eyebrow">${relevantReviews.length >= 2 ? "Customer Reviews" : "Reviews"}</span>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">${
+        relevantReviews.length >= 2 ? `What ${area.name} Customers Say About Our ${service.name}` : `What Our Customers Say`
+      }</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+        ${featuredReviews.map((r) => reviewCard(r, services)).join("\n")}
+      </div>
+    </div>
+  </section>`
+      : ""
+  }
+
+  <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream mb-8">${service.name} in ${area.name} &mdash; Common Questions</h2>
+      <div class="space-y-3">
+        ${faqs
+          .map(
+            (f) => `
+        <details class="group rounded-sm border border-white/10 bg-white/5 open:bg-white/10 transition-colors">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-cream list-none">
+            <span>${f.q}</span>
+            <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">${f.a}</div>
+        </details>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20">
     <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
       <div>
-        <h3 class="font-semibold text-cream mb-2">Also Serving ${area.name}</h3>
+        <h3 class="font-semibold text-cream mb-3">Also Serving ${area.name}</h3>
         <ul class="space-y-2">
-          ${otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-brand-gold hover:underline">${s.name} in ${area.name}</a></li>`).join("\n")}
+          ${otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-cream/70 hover:text-brand-gold transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")}
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold text-cream mb-2">${service.name} Elsewhere</h3>
+        <h3 class="font-semibold text-cream mb-3">${service.name} Elsewhere</h3>
         <ul class="space-y-2">
-          <li><a href="/services/${service.slug}/" class="text-sm text-brand-gold hover:underline">All ${service.name} areas</a></li>
+          <li><a href="/services/${service.slug}/" class="text-sm text-cream/70 hover:text-brand-gold transition-colors font-medium">All ${service.name} areas</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold text-cream mb-2">More on ${area.name}</h3>
+        <h3 class="font-semibold text-cream mb-3">More on ${area.name}</h3>
         <ul class="space-y-2">
-          <li><a href="/areas/${area.slug}/" class="text-sm text-brand-gold hover:underline">All services in ${area.name}</a></li>
+          <li><a href="/areas/${area.slug}/" class="text-sm text-cream/70 hover:text-brand-gold transition-colors font-medium">All services in ${area.name}</a></li>
         </ul>
       </div>
     </div>
@@ -724,7 +801,9 @@ export function serviceAreaTemplate({ business, service, area, services }) {
   `;
 }
 
-export function areaHubTemplate({ business, area, services }) {
+export function areaHubTemplate({ business, area, services, reviews = [] }) {
+  const faqs = areaHubFaqs(area);
+  const featuredReviews = reviews.filter((r) => r.rating === 5).slice(0, 3);
   return `
   <section class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
@@ -733,7 +812,7 @@ export function areaHubTemplate({ business, area, services }) {
     </div>
     <div class="relative section py-16 sm:py-24 max-w-2xl">
       <span class="eyebrow">Areas Covered</span>
-      <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">Electrician in <span class="text-brand-gold">${area.name}</span></h1>
+      <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">Electrician in <span class="text-brand-gold">${area.name}</span> &mdash; ${business.areaBenefit}</h1>
       <p class="mt-5 text-cream/70 leading-relaxed">NICEIC registered electrical work across ${area.name}, ${area.region} &mdash; from ${area.character}.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a href="/contact/" class="btn-gold">Get a Free Quote</a>
@@ -741,6 +820,7 @@ export function areaHubTemplate({ business, area, services }) {
       </div>
     </div>
   </section>
+
   <section class="py-16 sm:py-24">
     <div class="section">
       <h2 class="text-2xl font-display font-semibold text-cream mb-8">Services Available in ${area.name}</h2>
@@ -762,6 +842,69 @@ export function areaHubTemplate({ business, area, services }) {
       </div>
     </div>
   </section>
+
+  <section class="reveal relative py-16 sm:py-24 bg-surface border-y border-white/10">
+    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
+    <div class="section grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div class="slide-left rounded-sm overflow-hidden h-72 sm:h-96">
+        <iframe
+          src="${mapEmbedUrl(area)}"
+          class="w-full h-full grayscale contrast-125 opacity-80"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map of ${area.name}, ${area.region}"
+        ></iframe>
+      </div>
+      <div class="slide-right">
+        <span class="eyebrow">Why ${area.name} Trusts Us</span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Local, Registered, and Accountable</h2>
+        <p class="mt-4 text-cream/65 leading-relaxed">Whether it's a quick repair or a full rewire, ${area.name} customers get the same NICEIC registered, fully insured service &mdash; quoted clearly before any work starts, and certified properly once it's done.</p>
+        <ul class="mt-6 space-y-3">
+          <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("shield", "w-4 h-4")}</span>NICEIC registered for all work in ${area.region}</li>
+          <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("check", "w-4 h-4")}</span>Fully insured, every job, every time</li>
+          <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("bolt", "w-4 h-4")}</span>Same-day response for most ${area.name} enquiries</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  ${
+    featuredReviews.length
+      ? `
+  <section class="reveal relative py-16 sm:py-20">
+    <div class="section">
+      <span class="eyebrow">Reviews</span>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">What Our Customers Say</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+        ${featuredReviews.map((r) => reviewCard(r, services)).join("\n")}
+      </div>
+    </div>
+  </section>`
+      : ""
+  }
+
+  <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">FAQs</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream mb-8">Electrician in ${area.name} &mdash; Common Questions</h2>
+      <div class="space-y-3">
+        ${faqs
+          .map(
+            (f) => `
+        <details class="group rounded-sm border border-white/10 bg-white/5 open:bg-white/10 transition-colors">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-cream list-none">
+            <span>${f.q}</span>
+            <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
+          </summary>
+          <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">${f.a}</div>
+        </details>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
   ${ctaBand({ business, heading: `Need an Electrician in ${area.name}?` })}
   `;
 }
@@ -872,8 +1015,8 @@ export function contactTemplate({ business, areas }) {
   <section class="py-16 sm:py-24">
     <div class="section grid grid-cols-1 lg:grid-cols-5 gap-12">
       <div class="lg:col-span-3 rounded-sm border border-white/10 bg-surface p-6 sm:p-10">
-        <form name="quote-request" method="POST" data-netlify="true" class="space-y-5">
-          <input type="hidden" name="form-name" value="quote-request" />
+        <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" class="space-y-5">
+          <div id="form-status" class="hidden text-sm font-medium" role="status"></div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label for="name" class="block text-sm font-medium text-cream mb-1.5">Full Name</label>

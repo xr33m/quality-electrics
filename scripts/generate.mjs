@@ -16,6 +16,7 @@ import {
   blogArticleSchema,
   reviewsPageTemplate,
 } from "./lib/templates.mjs";
+import { serviceAreaSchema, areaHubSchema, localBusinessSchema } from "./lib/local-seo.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -26,10 +27,20 @@ const areas = JSON.parse(readFileSync(join(root, "src/data/areas.json")));
 const posts = JSON.parse(readFileSync(join(root, "src/data/blog.json")));
 const reviews = JSON.parse(readFileSync(join(root, "src/data/reviews.json")));
 
-function write(relPath, html) {
+const sitemapEntries = [];
+
+function write(relPath, html, sitemap = {}) {
   const outPath = join(root, relPath, "index.html");
   mkdirSync(dirname(outPath), { recursive: true });
   writeFileSync(outPath, html);
+
+  if (sitemap.skip) return;
+  const urlPath = relPath ? `${relPath}/` : "";
+  sitemapEntries.push({
+    loc: `https://${business.domain}/${urlPath}`,
+    changefreq: sitemap.changefreq || "monthly",
+    priority: sitemap.priority ?? 0.6,
+  });
 }
 
 let pageCount = 0;
@@ -42,7 +53,8 @@ write("", page({
   business, services, areas, reviews,
   active: "home",
   bodyContent: homeTemplate({ business, services, areas, reviews }),
-}));
+  extraHead: localBusinessSchema({ business, areas, reviews }),
+}), { changefreq: "weekly", priority: 1.0 });
 pageCount++;
 
 // Services hub
@@ -53,7 +65,7 @@ write("services", page({
   business, services, areas, reviews,
   active: "services",
   bodyContent: servicesHubTemplate({ business, services }),
-}));
+}), { changefreq: "monthly", priority: 0.9 });
 pageCount++;
 
 // Individual service pages
@@ -65,20 +77,21 @@ for (const service of services) {
     path: `services/${service.slug}/`,
     business, services, areas, reviews,
     active: "services",
-    bodyContent: serviceTemplate({ business, service, areas, post: relatedPost }),
-  }));
+    bodyContent: serviceTemplate({ business, service, services, areas, post: relatedPost }),
+  }), { changefreq: "monthly", priority: 0.8 });
   pageCount++;
 
   // Service x Area pages
   for (const area of areas) {
     write(`services/${service.slug}/${area.slug}`, page({
-      title: `${service.name} in ${area.name} | Quality Electrics`,
+      title: `${service.shortName} in ${area.name} | Quality Electrics`,
       description: `${service.name} for ${area.propertyNote} in ${area.name}, ${area.region}. NICEIC registered, fully insured, free quotes.`,
       path: `services/${service.slug}/${area.slug}/`,
       business, services, areas, reviews,
       active: "services",
-      bodyContent: serviceAreaTemplate({ business, service, area, services }),
-    }));
+      bodyContent: serviceAreaTemplate({ business, service, area, services, reviews }),
+      extraHead: serviceAreaSchema({ business, service, area }),
+    }), { changefreq: "monthly", priority: 0.6 });
     pageCount++;
   }
 }
@@ -91,8 +104,9 @@ for (const area of areas) {
     path: `areas/${area.slug}/`,
     business, services, areas, reviews,
     active: "areas",
-    bodyContent: areaHubTemplate({ business, area, services }),
-  }));
+    bodyContent: areaHubTemplate({ business, area, services, reviews }),
+    extraHead: areaHubSchema({ business, area }),
+  }), { changefreq: "monthly", priority: 0.7 });
   pageCount++;
 }
 
@@ -104,7 +118,7 @@ write("about", page({
   business, services, areas, reviews,
   active: "about",
   bodyContent: aboutTemplate({ business }),
-}));
+}), { changefreq: "monthly", priority: 0.5 });
 pageCount++;
 
 // Projects
@@ -115,7 +129,7 @@ write("projects", page({
   business, services, areas, reviews,
   active: "projects",
   bodyContent: projectsTemplate({ business, services }),
-}));
+}), { changefreq: "monthly", priority: 0.5 });
 pageCount++;
 
 // Contact
@@ -126,7 +140,7 @@ write("contact", page({
   business, services, areas, reviews,
   active: "contact",
   bodyContent: contactTemplate({ business, areas }),
-}));
+}), { changefreq: "yearly", priority: 0.7 });
 pageCount++;
 
 // Reviews
@@ -137,7 +151,7 @@ write("reviews", page({
   business, services, areas, reviews,
   active: "reviews",
   bodyContent: reviewsPageTemplate({ business, reviews, services }),
-}));
+}), { changefreq: "weekly", priority: 0.6 });
 pageCount++;
 
 // Blog hub
@@ -148,7 +162,7 @@ write("blog", page({
   business, services, areas, reviews,
   active: "blog",
   bodyContent: blogHubTemplate({ business, posts, services }),
-}));
+}), { changefreq: "weekly", priority: 0.7 });
 pageCount++;
 
 // Individual blog posts
@@ -165,11 +179,11 @@ for (const post of posts) {
     active: "blog",
     extraHead: blogArticleSchema({ business, post }),
     bodyContent: blogPostTemplate({ business, post, service, relatedPosts, services }),
-  }));
+  }), { changefreq: "monthly", priority: 0.6 });
   pageCount++;
 }
 
-// 404 page
+// 404 page (excluded from sitemap — not a real indexable page)
 write("404", page({
   title: "Page Not Found | Quality Electrics",
   description: "The page you're looking for doesn't exist.",
@@ -179,11 +193,37 @@ write("404", page({
   bodyContent: `
   <section class="section py-32 text-center">
     <p class="eyebrow">404</p>
-    <h1 class="mt-3 text-4xl font-display font-semibold text-ink">Page Not Found</h1>
-    <p class="mt-4 text-ink/60">The page you're looking for doesn't exist or has moved.</p>
+    <h1 class="mt-3 text-4xl font-display font-semibold text-cream">Page Not Found</h1>
+    <p class="mt-4 text-cream/60">The page you're looking for doesn't exist or has moved.</p>
     <a href="/" class="btn-green mt-8 inline-flex">Back to Home</a>
   </section>`,
-}));
+}), { skip: true });
 pageCount++;
 
 console.log(`Generated ${pageCount} pages.`);
+
+// Sitemap
+const sitemapXml = `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${sitemapEntries
+  .map(
+    (e) => `  <url>
+    <loc>${e.loc}</loc>
+    <changefreq>${e.changefreq}</changefreq>
+    <priority>${e.priority.toFixed(1)}</priority>
+  </url>`
+  )
+  .join("\n")}
+</urlset>
+`;
+writeFileSync(join(root, "sitemap.xml"), sitemapXml);
+console.log(`Generated sitemap.xml with ${sitemapEntries.length} URLs.`);
+
+// robots.txt
+const robotsTxt = `User-agent: *
+Allow: /
+
+Sitemap: https://${business.domain}/sitemap.xml
+`;
+writeFileSync(join(root, "robots.txt"), robotsTxt);
+console.log("Generated robots.txt.");
