@@ -124,7 +124,7 @@ function processTimelineSection(business) {
               <img src="/${images[i % images.length]}" alt="${step.title}" class="w-full h-full object-cover" />
             </div>`;
               return `
-          <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 items-center">
+          <div class="relative grid grid-cols-1 lg:grid-cols-2 gap-4 lg:gap-16 items-center reveal">
             <span class="hidden lg:flex absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 z-10 items-center justify-center w-11 h-11 rounded-full bg-white border-2 border-brand-green text-brand-green font-display font-semibold text-sm">0${i + 1}</span>
             <div class="${reversed ? "slide-right" : "slide-left"}">${reversed ? imageCell : textCard}</div>
             <div class="${reversed ? "slide-left" : "slide-right"}">${reversed ? textCard : imageCell}</div>
@@ -348,23 +348,22 @@ export function homeTemplate({ business, services, areas, reviews }) {
       </video>
     </div>
     <div class="relative section pt-16 pb-14 sm:pt-24 sm:pb-16">
-      <div class="max-w-2xl">
-        <div class="flex items-center gap-2 mb-5">
+      <div class="max-w-2xl mx-auto text-center">
+        <div class="flex items-center justify-center gap-2 mb-5">
           ${googleLogo(22)}
           <span class="text-brand-gold text-sm leading-none">${starString(Number(avgRating))}</span>
-          <span class="text-cream/50 text-xs">${avgRating} on Google</span>
+          <span class="text-cream/70 text-xs">${avgRating} on Google</span>
         </div>
         <span class="eyebrow">NICEIC Registered &middot; Glasgow &amp; Surrounding Areas</span>
-        <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-display font-semibold leading-[1.05] text-cream">
+        <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-display font-semibold leading-[1.05] text-cream [text-shadow:_0_2px_24px_rgba(0,0,0,1),_0_4px_40px_rgba(0,0,0,0.9)]">
           Electrician in Glasgow<br/>
           <span class="text-brand-gold">Powering Homes &amp; Businesses</span>
         </h1>
-        <p class="mt-6 text-cream/70 text-base sm:text-lg leading-relaxed max-w-xl">
+        <p class="mt-6 text-cream text-base sm:text-lg leading-relaxed max-w-xl mx-auto [text-shadow:_0_1px_12px_rgba(0,0,0,1),_0_2px_20px_rgba(0,0,0,0.9)]">
           Rewiring, EV chargers, inspection &amp; testing, and consumer unit upgrades for homeowners, landlords, and commercial properties across Glasgow &mdash; done right, first time.
         </p>
-        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <div class="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
           <a href="/contact/" class="btn-gold">${svgIcon("bolt", "w-4 h-4")} Get a Free Quote</a>
-          <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
         </div>
       </div>
     </div>
