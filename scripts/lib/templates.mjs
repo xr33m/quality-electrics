@@ -346,8 +346,6 @@ export function homeTemplate({ business, services, areas, reviews }) {
         <source src="/assets/video/hero-quality-electrics.webm" type="video/webm" />
         <source src="/assets/video/hero-quality-electrics.mp4" type="video/mp4" />
       </video>
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/85 to-ink/50"></div>
-      <div class="absolute inset-0 bg-gradient-to-r from-ink/90 via-ink/40 to-transparent"></div>
     </div>
     <div class="relative section pt-16 pb-14 sm:pt-24 sm:pb-16">
       <div class="max-w-2xl">
