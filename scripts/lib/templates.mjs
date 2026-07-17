@@ -357,7 +357,7 @@ export function homeTemplate({ business, services, areas, reviews }) {
         <span class="eyebrow">NICEIC Registered &middot; Glasgow &amp; Surrounding Areas</span>
         <h1 class="mt-5 text-4xl sm:text-5xl lg:text-6xl font-display font-semibold leading-[1.05] text-cream [text-shadow:_0_2px_24px_rgba(0,0,0,1),_0_4px_40px_rgba(0,0,0,0.9)]">
           Electrician in Glasgow<br/>
-          <span class="text-brand-gold">Powering Homes &amp; Businesses</span>
+          <span class="text-brand-gold [text-shadow:_0_2px_16px_rgba(0,0,0,0.85),_0_0_40px_rgba(0,0,0,0.6)]">Powering Homes &amp; Businesses</span>
         </h1>
         <p class="mt-6 text-cream text-base sm:text-lg leading-relaxed max-w-xl mx-auto [text-shadow:_0_1px_12px_rgba(0,0,0,1),_0_2px_20px_rgba(0,0,0,0.9)]">
           Rewiring, EV chargers, inspection &amp; testing, and consumer unit upgrades for homeowners, landlords, and commercial properties across Glasgow &mdash; done right, first time.
@@ -1023,7 +1023,7 @@ export function contactTemplate({ business, areas }) {
   <section class="py-16 sm:py-24">
     <div class="section grid grid-cols-1 lg:grid-cols-5 gap-12">
       <div class="lg:col-span-3 rounded-sm border border-white/10 bg-surface p-6 sm:p-10">
-        <form id="contact-form" action="https://formspree.io/f/REPLACE_WITH_YOUR_FORM_ID" method="POST" class="space-y-5">
+        <form id="contact-form" action="https://formspree.io/f/xdaqavrp" method="POST" class="space-y-5">
           <div id="form-status" class="hidden text-sm font-medium" role="status"></div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
