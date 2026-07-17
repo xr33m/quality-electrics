@@ -69,7 +69,7 @@ write("services", page({
 pageCount++;
 
 // Individual service pages
-for (const service of services) {
+for (const [serviceIndex, service] of services.entries()) {
   const relatedPost = posts.find((p) => p.service === service.slug);
   write(`services/${service.slug}`, page({
     title: `${service.name} in Glasgow | Quality Electrics`,
@@ -77,7 +77,7 @@ for (const service of services) {
     path: `services/${service.slug}/`,
     business, services, areas, reviews,
     active: "services",
-    bodyContent: serviceTemplate({ business, service, services, areas, post: relatedPost }),
+    bodyContent: serviceTemplate({ business, service, services, areas, post: relatedPost, index: serviceIndex }),
   }), { changefreq: "monthly", priority: 0.8 });
   pageCount++;
 
@@ -166,8 +166,9 @@ write("blog", page({
 pageCount++;
 
 // Individual blog posts
-for (const post of posts) {
+posts.forEach((post, i) => {
   const service = services.find((s) => s.slug === post.service);
+  const featuredArea = areas[i % areas.length];
   const relatedPosts = (post.relatedSlugs || [])
     .map((slug) => posts.find((p) => p.slug === slug))
     .filter(Boolean);
@@ -178,10 +179,10 @@ for (const post of posts) {
     business, services, areas, reviews,
     active: "blog",
     extraHead: blogArticleSchema({ business, post }),
-    bodyContent: blogPostTemplate({ business, post, service, relatedPosts, services }),
+    bodyContent: blogPostTemplate({ business, post, service, featuredArea, relatedPosts, services }),
   }), { changefreq: "monthly", priority: 0.6 });
   pageCount++;
-}
+});
 
 // 404 page (excluded from sitemap — not a real indexable page)
 write("404", page({

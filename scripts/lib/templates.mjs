@@ -327,6 +327,64 @@ function guaranteesStrip(business) {
   </div>`;
 }
 
+function beforeHiringFaqSection(business) {
+  return `
+  <section class="reveal py-16 sm:py-20 bg-surface border-y border-white/10">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">Before You Hire Us</span>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">Questions Customers Ask Before Booking</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 stagger-group">
+        ${business.beforeHiringFaqs
+          .map(
+            (f) => `
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">${f.q}</p>
+          <p class="mt-2 text-cream/65 text-sm leading-relaxed">${f.a}</p>
+        </div>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>`;
+}
+
+const recentWorkPool = [
+  { image: "assets/img/van.webp", caption: "Quality Electrics on site in Glasgow" },
+  { image: "assets/img/office-lighting.webp", caption: "Office lighting installation" },
+  { image: "assets/img/outdoor-supply.webp", caption: "Outdoor electrical supply" },
+  { image: "assets/img/outhouse.webp", caption: "Outbuilding electrical fit-out" },
+  { image: "assets/img/outhouse-1.webp", caption: "Garden room first-fix wiring" },
+  { image: "assets/img/tenement.webp", caption: "Feature ceiling lighting installation" },
+  { image: "assets/img/under-unit-lighting.webp", caption: "LED strip lighting installation" },
+  { image: "assets/img/garden-room-lighting.webp", caption: "Garden room exterior lighting" },
+  { image: "assets/img/home-office-lighting.webp", caption: "Home office LED strip lighting" },
+];
+
+function recentWorkSection(service, index) {
+  const pool = recentWorkPool.filter((p) => p.image !== service.image);
+  const picks = [0, 1, 2].map((offset) => pool[(index + offset) % pool.length]);
+  return `
+  <section class="reveal py-16 sm:py-20">
+    <div class="section">
+      <span class="eyebrow">Real Jobs</span>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">Recent Work</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 stagger-group">
+        ${picks
+          .map(
+            (p) => `
+        <figure class="stagger-item rounded-sm overflow-hidden border border-white/10 bg-surface">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/${p.image}" alt="${p.caption}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-cream/60">${p.caption} &middot; Glasgow</figcaption>
+        </figure>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>`;
+}
+
 export function homeTemplate({ business, services, areas, reviews }) {
   const featured = services.slice(0, 6);
   const featuredReviews = reviews.slice(0, 6);
@@ -513,24 +571,52 @@ export function servicesHubTemplate({ business, services }) {
   `;
 }
 
-export function serviceTemplate({ business, service, services, areas, post }) {
+export function serviceTemplate({ business, service, services, areas, post, index = 0 }) {
   const pairService = services.find((s) => s.slug === service.pairSlug);
-  return `
-  <section class="relative bg-ink overflow-hidden">
-    <div class="absolute inset-0">
-      <img src="/${service.image}" alt="${service.name}" class="w-full h-full object-cover opacity-30" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-ink/70"></div>
-    </div>
-    <div class="relative section py-16 sm:py-24 max-w-2xl">
+  const heroContent = `
       <a href="/services/" class="text-xs uppercase tracking-wide text-cream/50 hover:text-brand-gold transition-colors">&larr; All Services</a>
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">${service.name} in Glasgow <span class="text-brand-gold">&mdash; ${service.benefit}</span></h1>
       <p class="mt-5 text-cream/70 leading-relaxed">${service.intro}</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a href="/contact/" class="btn-gold">Get a Free Quote</a>
         <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
+      </div>`;
+
+  const hero = service.heroVideo
+    ? `
+  <section id="hero-video-wrapper" class="relative bg-ink" style="height: 220vh;">
+    <div class="sticky top-0 h-screen overflow-hidden">
+      <video
+        id="hero-scrub-video"
+        class="absolute inset-0 w-full h-full object-cover"
+        muted playsinline preload="auto"
+        poster="/${service.heroVideo.poster}"
+        data-desktop-mp4="/${service.heroVideo.desktopMp4}"
+        data-desktop-webm="/${service.heroVideo.desktopWebm}"
+        data-mobile-mp4="/${service.heroVideo.mobileMp4}"
+        data-mobile-webm="/${service.heroVideo.mobileWebm}"
+      ></video>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
+      <div class="relative section h-full flex flex-col justify-end pb-16 sm:pb-24 max-w-2xl">
+        ${heroContent}
       </div>
     </div>
-  </section>
+  </section>`
+    : `
+  <section class="relative bg-ink overflow-hidden">
+    <div class="absolute inset-0">
+      <img src="/${service.image}" alt="${service.name}" class="w-full h-full object-cover opacity-30" />
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-ink/70"></div>
+    </div>
+    <div class="relative section py-16 sm:py-24 max-w-2xl">
+      ${heroContent}
+    </div>
+  </section>`;
+
+  return `
+  ${hero}
+
+  ${guaranteesStrip(business)}
 
   <section class="py-16 sm:py-24">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
@@ -560,6 +646,18 @@ export function serviceTemplate({ business, service, services, areas, post }) {
     </div>
   </section>
 
+  <section class="reveal py-16 sm:py-24 bg-surface border-y border-white/10">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">In Depth</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">${service.deepDive.heading}</h2>
+      <div class="mt-6 space-y-4">
+        ${service.deepDive.paragraphs.map((p) => `<p class="text-cream/70 leading-relaxed">${p}</p>`).join("\n")}
+      </div>
+    </div>
+  </section>
+
+  ${recentWorkSection(service, index)}
+
   <section class="py-16 sm:py-24 bg-ink">
     <div class="section">
       <div class="max-w-2xl">
@@ -579,6 +677,29 @@ export function serviceTemplate({ business, service, services, areas, post }) {
       </div>
     </div>
   </section>
+
+  ${
+    service.commonProblems
+      ? `
+  <section class="reveal py-16 sm:py-20 bg-brand-green">
+    <div class="section">
+      <span class="eyebrow !text-brand-gold">We See This Every Week</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Common Problems We Fix</h2>
+      <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-5 stagger-group">
+        ${service.commonProblems
+          .map(
+            (p) => `
+        <div class="stagger-item flex items-start gap-3 rounded-sm bg-white/10 px-5 py-4">
+          ${svgIcon("bolt", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
+          <span class="text-cream/90 text-sm leading-relaxed">${p}</span>
+        </div>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>`
+      : ""
+  }
 
   <section class="py-16 sm:py-24">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14">
@@ -618,6 +739,24 @@ export function serviceTemplate({ business, service, services, areas, post }) {
     </div>
   </section>
 
+  <section class="reveal py-16 sm:py-24 bg-ink">
+    <div class="section">
+      <span class="eyebrow">Common Concerns</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream max-w-2xl">What Customers Are Usually Wondering</h2>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 stagger-group">
+        ${service.concerns
+          .map(
+            (c) => `
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">${c.q}</p>
+          <p class="mt-2 text-cream/70 text-sm leading-relaxed">${c.a}</p>
+        </div>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">FAQs</span>
@@ -638,6 +777,8 @@ export function serviceTemplate({ business, service, services, areas, post }) {
       </div>
     </div>
   </section>
+
+  ${beforeHiringFaqSection(business)}
 
   <section class="py-16 sm:py-20">
     <div class="section">
@@ -1140,7 +1281,7 @@ export function blogArticleSchema({ business, post }) {
   <script type="application/ld+json">${JSON.stringify(faqSchema)}</script>`;
 }
 
-export function blogPostTemplate({ business, post, service, relatedPosts, services }) {
+export function blogPostTemplate({ business, post, service, featuredArea, relatedPosts, services }) {
   return `
   <article>
     <section class="relative bg-ink overflow-hidden">
@@ -1210,6 +1351,7 @@ export function blogPostTemplate({ business, post, service, relatedPosts, servic
             <span class="eyebrow">Related Service</span>
             <h3 class="mt-2 text-xl font-display font-semibold text-cream">${service.name}</h3>
             <p class="mt-2 text-sm text-cream/60 leading-relaxed max-w-md">${service.shortDesc}</p>
+            ${featuredArea ? `<a href="/services/${service.slug}/${featuredArea.slug}/" class="mt-3 inline-block text-sm font-semibold text-brand-gold hover:underline">${service.name} in ${featuredArea.name} &rarr;</a>` : ""}
           </div>
           <a href="/services/${service.slug}/" class="btn-gold shrink-0">View Service ${svgIcon("arrow", "w-4 h-4")}</a>
         </div>` : ""}

@@ -47,7 +47,29 @@
     "image": "assets/img/outdoor-supply.webp",
     "shortName": "EV Charger Installation",
     "pairSlug": "consumer-unit-upgrades",
-    "benefit": "Charge Your EV at Home, Safely & Fast"
+    "benefit": "Charge Your EV at Home, Safely & Fast",
+    "deepDive": {
+      "heading": "What Actually Happens During an EV Charger Install",
+      "paragraphs": [
+        "It starts with the free survey, not the fitting \u2014 we check your incoming supply, existing consumer unit, and the cable route between the board and where the charger's going, because that's what decides the real cost and timeline, not the charger itself.",
+        "On install day, we run the cable, mount the unit, and connect it into your consumer unit \u2014 upgrading the board first if the survey flagged it as necessary. Every charger is then load-tested, commissioned, and certified before we hand it over.",
+        "Since 2022, every new home and workplace charger in Great Britain is legally required to have smart charging capability, meaning it can be scheduled and monitored remotely \u2014 that's standard on everything we fit, not an optional extra."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Will my existing electrics actually cope with a charger?",
+        "a": "That's exactly what the free survey is for \u2014 we check your supply and consumer unit before quoting, so there are no surprises once work starts."
+      },
+      {
+        "q": "How long will the power be off for?",
+        "a": "Usually a short isolation while we connect into the consumer unit, not an all-day outage \u2014 we'll tell you the expected window before we start."
+      },
+      {
+        "q": "How long does the whole job take?",
+        "a": "Most home installs are done within half a day, start to finish."
+      }
+    ]
   },
   {
     "slug": "domestic-commercial-rewiring",
@@ -98,7 +120,38 @@
     "image": "assets/img/tenement.webp",
     "shortName": "Rewiring",
     "pairSlug": "electrical-inspection-testing",
-    "benefit": "Safe, Modern Wiring You Can Trust"
+    "benefit": "Safe, Modern Wiring You Can Trust",
+    "deepDive": {
+      "heading": "What Does a Full Rewire Actually Involve?",
+      "paragraphs": [
+        "A rewire happens in two stages: first fix, where we run new cabling through walls, floors, and ceilings to every socket, switch, and light position; and second fix, where we connect and terminate everything \u2014 sockets, switches, the consumer unit \u2014 once walls are closed up again. Between the two, everything is tested to BS7671 before we sign it off.",
+        "Glasgow's tenement and period flats bring their own quirks that a generic rewire quote won't account for \u2014 lath-and-plaster walls behave differently to modern stud walls when it comes to chasing cable routes, and shared stairwells or factor-managed common areas sometimes need a quick word with the factor before we touch anything communal. We've worked enough of these properties across the city to know which questions to ask before we start, not halfway through."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Do I need a full rewire, or would a partial one do?",
+        "a": "It depends on the property \u2014 sometimes a targeted partial rewire of the affected circuits is genuinely enough. We'll tell you honestly which one your property needs after a proper look, not just upsell the bigger job."
+      },
+      {
+        "q": "Is my current wiring actually safe to keep using?",
+        "a": "That's what an EICR is for \u2014 if you're not sure, we'd rather test it properly than guess. It tells you exactly what's safe, what's borderline, and what needs attention now."
+      },
+      {
+        "q": "Will the power be off during the work?",
+        "a": "Yes, while we connect the new wiring in \u2014 we agree the timing with you in advance and keep it to the minimum needed."
+      },
+      {
+        "q": "How long will it actually take?",
+        "a": "A typical two or three-bedroom flat takes around a week. Larger or occupied properties take longer, which we'll scope honestly at survey stage."
+      }
+    ],
+    "commonProblems": [
+      "Old or outdated wiring that's never been upgraded",
+      "Damaged, cracked, or discoloured sockets and switches",
+      "Lights tripping when other appliances switch on",
+      "Sockets tripping repeatedly, especially in older properties"
+    ]
   },
   {
     "slug": "electrical-inspection-testing",
@@ -149,7 +202,32 @@
     "image": "assets/img/under-unit-lighting.webp",
     "shortName": "EICR Testing",
     "pairSlug": "consumer-unit-upgrades",
-    "benefit": "Certified Peace of Mind, Fast"
+    "benefit": "Certified Peace of Mind, Fast",
+    "deepDive": {
+      "heading": "What We Actually Test During an EICR",
+      "paragraphs": [
+        "An EICR isn't a quick visual once-over \u2014 it's a full inspection combining a visual check of accessible wiring and fittings with 'dead testing' (checked with the power off, covering continuity, insulation resistance, and earthing) and 'live testing' (checked with the power on, covering RCD trip times and polarity).",
+        "Every issue we find gets a code, not just a pass/fail: C1 means danger present, needing action immediately; C2 means potentially dangerous, needing to be addressed urgently; C3 is an improvement recommended but not a compliance failure; and FI means further investigation is needed. We explain what each one actually means for your property in plain English on the day, not just in a report you get later."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Is my current installation actually safe to keep using?",
+        "a": "That's precisely what the test tells you \u2014 a clear pass, or a specific list of what needs attention, rated by how urgent it is. No guessing."
+      },
+      {
+        "q": "How long will the test take?",
+        "a": "A typical flat or house takes 2\u20134 hours on site. Larger commercial properties take longer, which we'll scope in advance."
+      },
+      {
+        "q": "What if it doesn't pass?",
+        "a": "We list every issue found, rated by severity, and can quote for the remedial work on the spot \u2014 you're not left chasing a second contractor to fix what we found."
+      }
+    ],
+    "commonProblems": [
+      "Out of date or missing electrical certificates",
+      "No record of when the property was last tested"
+    ]
   },
   {
     "slug": "consumer-unit-upgrades",
@@ -200,7 +278,37 @@
     "image": "assets/img/office-lighting.webp",
     "shortName": "Consumer Unit Upgrades",
     "pairSlug": "domestic-commercial-rewiring",
-    "benefit": "A Safer Fuse Board, Sorted Same Day"
+    "benefit": "A Safer Fuse Board, Sorted Same Day",
+    "deepDive": {
+      "heading": "RCDs, RCBOs, and Why Your Board Actually Matters",
+      "paragraphs": [
+        "An old rewireable fuse box protects your wiring from overheating \u2014 that's it. It does nothing to protect a person from electric shock, because it has no RCD (residual current device) protection, which is why boards like these are one of the most common issues we flag on an EICR.",
+        "A modern consumer unit fits RCDs or RCBOs (a combined breaker and RCD per circuit) as standard, which cut the power in milliseconds if they detect current leaking somewhere it shouldn't \u2014 like through a person. We size and split circuits properly across the board so one nuisance trip doesn't take out your whole house, which is the other common complaint we hear about old or badly-specified boards."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Do I need a whole new board, or can mine be repaired?",
+        "a": "If it's an old rewireable fuse box with no RCD protection, repairing it isn't really an option \u2014 it needs replacing to meet current safety standards. If it's a modern board with one faulty part, sometimes a repair genuinely is enough, and we'll tell you honestly which applies."
+      },
+      {
+        "q": "Is my current board safe to keep using in the meantime?",
+        "a": "We'll tell you straight during the survey \u2014 if it's a serious risk we won't let you sit on it, but plenty of ageing boards are fine to use short-term while you plan the upgrade."
+      },
+      {
+        "q": "Will the power be off during the work?",
+        "a": "Yes, temporarily \u2014 we agree a time that works for you and keep the power-down window as short as possible."
+      },
+      {
+        "q": "How long does it actually take?",
+        "a": "Most homes are done in half a day to a full day, depending on how many circuits need re-terminating."
+      }
+    ],
+    "commonProblems": [
+      "Lights tripping when other appliances switch on",
+      "Sockets or circuits tripping repeatedly",
+      "Power outages traced back to an old or overloaded board"
+    ]
   },
   {
     "slug": "commercial-installations-lighting",
@@ -251,7 +359,35 @@
     "image": "assets/img/outhouse.webp",
     "shortName": "Commercial Electrical",
     "pairSlug": "electrical-inspection-testing",
-    "benefit": "Fit-Outs That Open On Time"
+    "benefit": "Fit-Outs That Open On Time",
+    "deepDive": {
+      "heading": "Planning Electrical Work Around a Live Business",
+      "paragraphs": [
+        "The biggest cost in a commercial job is rarely the materials \u2014 it's downtime. We scope every fit-out around your actual trading hours from the start, whether that means working evenings, overnight, or phasing the job area by area so the rest of the unit stays open.",
+        "LED retrofits are usually the quickest win we do for existing commercial spaces \u2014 swapping outdated fluorescent tube fittings for LED cuts running costs and reduces how often you're replacing failed tubes, and it's often done in phases without shutting anything down."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Will this disrupt trading?",
+        "a": "Not if we plan it properly \u2014 evenings, overnight, or phasing area by area is common, and we'll build the schedule around your hours, not the other way round."
+      },
+      {
+        "q": "Does the power need to be isolated during the work?",
+        "a": "For parts of it, yes \u2014 we plan isolations for the smallest area and shortest time possible, and agree the timing with you in advance."
+      },
+      {
+        "q": "How long will it take?",
+        "a": "It depends on scale \u2014 we'll give you a firm timeline once we've seen the drawings or site, not a vague estimate."
+      }
+    ],
+    "heroVideo": {
+      "poster": "assets/img/hero-commercial-lighting-poster.webp",
+      "desktopMp4": "assets/video/hero-commercial-lighting.mp4",
+      "desktopWebm": "assets/video/hero-commercial-lighting.webm",
+      "mobileMp4": "assets/video/hero-commercial-lighting-mobile.mp4",
+      "mobileWebm": "assets/video/hero-commercial-lighting-mobile.webm"
+    }
   },
   {
     "slug": "domestic-extensions-conversions",
@@ -302,7 +438,24 @@
     "image": "assets/img/outhouse-1.webp",
     "shortName": "Extensions & Conversions",
     "pairSlug": "kitchen-electrical-installations",
-    "benefit": "Electrics Ready Before the Plasterer Arrives"
+    "benefit": "Electrics Ready Before the Plasterer Arrives",
+    "deepDive": {
+      "heading": "First Fix vs Second Fix, Explained",
+      "paragraphs": [
+        "If you've not been through a build before, 'first fix' and 'second fix' get thrown around a lot without much explanation. First fix happens once the structure's up but before walls are closed \u2014 we run all the cabling to every socket, switch, and light position, coordinated with the builder so nothing gets boarded over before it's in place.",
+        "Second fix comes after plastering and decoration \u2014 we come back to actually terminate everything: fitting sockets, switches, light fittings, and connecting into the consumer unit. Getting the timing of both right with your builder is what keeps an extension on schedule, which is why we'd rather be brought in at the planning stage than after first fix should have already happened."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Will the power need to be isolated while you work?",
+        "a": "Only for the specific circuits we're connecting into, and usually briefly \u2014 the rest of your home stays powered as normal."
+      },
+      {
+        "q": "How long does first fix take?",
+        "a": "It depends on size and circuit count \u2014 we'll confirm a timeline once we've seen the plans, in step with your builder's schedule."
+      }
+    ]
   },
   {
     "slug": "kitchen-electrical-installations",
@@ -353,6 +506,27 @@
     "image": "assets/img/under-unit-lighting.webp",
     "shortName": "Kitchen Electrics",
     "pairSlug": "domestic-extensions-conversions",
-    "benefit": "A Kitchen Wired Right, First Time"
+    "benefit": "A Kitchen Wired Right, First Time",
+    "deepDive": {
+      "heading": "Planning Your Kitchen's Electrics Before the Units Go In",
+      "paragraphs": [
+        "Kitchens carry more electrical load than any other room in the house, so getting the plan right before first fix matters more here than almost anywhere else. Ovens, hobs, and induction hobs in particular need their own dedicated circuit sized to that specific appliance \u2014 not shared with your general sockets \u2014 which is something we agree with you and your kitchen fitter before any cabinets go in.",
+        "Socket and lighting positions need to be locked in at first fix too, ideally before the units are ordered, since moving a socket after the cabinets are fitted means undoing tiling and worktops. Under-cabinet and feature lighting is easiest to wire in cleanly at this stage as well, so there's no visible cabling once everything's installed."
+      ]
+    },
+    "concerns": [
+      {
+        "q": "Do I need a full re-wire of the kitchen, or just new circuits for the appliances?",
+        "a": "Usually just dedicated circuits for the new appliances and any layout changes \u2014 a full kitchen rewire is only needed if the existing wiring itself is old or undersized. We'll tell you honestly which applies once we've seen it."
+      },
+      {
+        "q": "Will the power be off while you work?",
+        "a": "Only for the circuits we're connecting into, agreed around your kitchen fitter's schedule so it doesn't hold up the wider job."
+      },
+      {
+        "q": "How long will it take?",
+        "a": "First and second fix combined is typically 1\u20132 days, depending on the size of the kitchen and how much lighting is involved."
+      }
+    ]
   }
 ]

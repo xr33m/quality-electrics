@@ -4,12 +4,16 @@
   "tagline": "Powering Glasgow's Homes & Businesses",
   "homeBenefit": "Powering Homes & Businesses, Done Right First Time",
   "areaBenefit": "Certified Electrical Work, Done Right First Time",
-  "topServiceSlugs": ["domestic-commercial-rewiring", "ev-charger-installation", "electrical-inspection-testing"],
+  "topServiceSlugs": [
+    "domestic-commercial-rewiring",
+    "ev-charger-installation",
+    "electrical-inspection-testing"
+  ],
   "domain": "qualityelectrics.co.uk",
   "phoneDisplay": "07411 180954",
   "phoneHref": "tel:+447411180954",
   "email": "qualityelectricsglasgow@gmail.com",
-  "hoursLine": "Mon–Fri, 8:00am–6:00pm · Emergency call-outs available",
+  "hoursLine": "Mon\u2013Fri, 8:00am\u20136:00pm \u00b7 Emergency call-outs available",
   "baseLine": "Serving Glasgow & the surrounding areas",
   "guarantees": [
     "Same-day response",
@@ -18,10 +22,22 @@
     "Fully insured"
   ],
   "heroStats": [
-    { "label": "Response", "value": "Same-Day" },
-    { "label": "Licensed & Insured", "value": "100%" },
-    { "label": "Quotes", "value": "Free" },
-    { "label": "Areas Covered", "value": "7" }
+    {
+      "label": "Response",
+      "value": "Same-Day"
+    },
+    {
+      "label": "Licensed & Insured",
+      "value": "100%"
+    },
+    {
+      "label": "Quotes",
+      "value": "Free"
+    },
+    {
+      "label": "Areas Covered",
+      "value": "7"
+    }
   ],
   "targetCustomers": [
     "Commercial properties",
@@ -32,12 +48,24 @@
   "jobTypes": [
     "Quick call-outs",
     "Maintenance contracts",
-    "Long-term projects (2–4 weeks)"
+    "Long-term projects (2\u20134 weeks)"
   ],
   "pricing": [
-    { "item": "Call-out charge", "price": "£100", "note": "fixed, excl. VAT" },
-    { "item": "Electrical Inspection & Testing (EICR)", "price": "From £200", "note": "excl. VAT" },
-    { "item": "Consumer Unit Upgrade", "price": "Custom quote", "note": "free survey, excl. VAT" }
+    {
+      "item": "Call-out charge",
+      "price": "\u00a3100",
+      "note": "fixed, excl. VAT"
+    },
+    {
+      "item": "Electrical Inspection & Testing (EICR)",
+      "price": "From \u00a3200",
+      "note": "excl. VAT"
+    },
+    {
+      "item": "Consumer Unit Upgrade",
+      "price": "Custom quote",
+      "note": "free survey, excl. VAT"
+    }
   ],
   "certifications": [
     "NICEIC Registered",
@@ -50,7 +78,7 @@
     },
     {
       "title": "Free Quote",
-      "detail": "We give you a clear, no-obligation quote — with a site visit first if the job needs it."
+      "detail": "We give you a clear, no-obligation quote \u2014 with a site visit first if the job needs it."
     },
     {
       "title": "Scheduled Work",
@@ -63,6 +91,26 @@
     {
       "title": "Aftercare",
       "detail": "Questions after the job's done? We're a phone call away."
+    }
+  ],
+  "basedIn": "Southside of Glasgow",
+  "vatRegistered": true,
+  "beforeHiringFaqs": [
+    {
+      "q": "Do you supply the materials?",
+      "a": "Yes \u2014 we supply everything needed for the job, and it's accounted for clearly in your quote."
+    },
+    {
+      "q": "Are you based locally?",
+      "a": "Yes, we're proud to be based in the Southside of Glasgow, covering the city and surrounding areas."
+    },
+    {
+      "q": "Do you charge VAT?",
+      "a": "Yes, we're a VAT registered business \u2014 all quotes and invoices are itemised clearly."
+    },
+    {
+      "q": "Do you work with emergency lighting?",
+      "a": "Yes, including installation, testing, and certification to keep you compliant."
     }
   ]
 }

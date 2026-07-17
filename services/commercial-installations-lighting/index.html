@@ -91,12 +91,22 @@
   </header>
 <main>
 
-  <section class="relative bg-ink overflow-hidden">
-    <div class="absolute inset-0">
-      <img src="/assets/img/outhouse.webp" alt="Commercial Installations & Lighting" class="w-full h-full object-cover opacity-30" />
-      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-ink/70"></div>
-    </div>
-    <div class="relative section py-16 sm:py-24 max-w-2xl">
+  
+  <section id="hero-video-wrapper" class="relative bg-ink" style="height: 220vh;">
+    <div class="sticky top-0 h-screen overflow-hidden">
+      <video
+        id="hero-scrub-video"
+        class="absolute inset-0 w-full h-full object-cover"
+        muted playsinline preload="auto"
+        poster="/assets/img/hero-commercial-lighting-poster.webp"
+        data-desktop-mp4="/assets/video/hero-commercial-lighting.mp4"
+        data-desktop-webm="/assets/video/hero-commercial-lighting.webm"
+        data-mobile-mp4="/assets/video/hero-commercial-lighting-mobile.mp4"
+        data-mobile-webm="/assets/video/hero-commercial-lighting-mobile.webm"
+      ></video>
+      <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/70 to-ink/30"></div>
+      <div class="relative section h-full flex flex-col justify-end pb-16 sm:pb-24 max-w-2xl">
+        
       <a href="/services/" class="text-xs uppercase tracking-wide text-cream/50 hover:text-brand-gold transition-colors">&larr; All Services</a>
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">Commercial Installations & Lighting in Glasgow <span class="text-brand-gold">&mdash; Fit-Outs That Open On Time</span></h1>
       <p class="mt-5 text-cream/70 leading-relaxed">From new office fit-outs to shop and unit lighting upgrades, we work with property developers and commercial clients to deliver installations that are on spec, on time, and built to withstand daily commercial use.</p>
@@ -104,8 +114,19 @@
         <a href="/contact/" class="btn-gold">Get a Free Quote</a>
         <a href="tel:+447411180954" class="btn-outline"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.223-1.474l-4.117-.823a1.5 1.5 0 00-1.478.44l-.97 1.028a11.25 11.25 0 01-5.976-5.976l1.028-.97a1.5 1.5 0 00.44-1.478l-.823-4.117A1.5 1.5 0 007.622 3H6.25A2.25 2.25 0 004 5.25v1.5z"/></svg> 07411 180954</a>
       </div>
+      </div>
     </div>
   </section>
+
+  
+  <div class="bg-brand-green-dark border-y border-white/10">
+    <div class="section py-4 flex flex-wrap items-center justify-center gap-x-8 gap-y-2">
+      <div class="flex items-center gap-2 text-cream/90 text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Same-day response</div>
+<div class="flex items-center gap-2 text-cream/90 text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Free, no-obligation quotes</div>
+<div class="flex items-center gap-2 text-cream/90 text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> NICEIC registered</div>
+<div class="flex items-center gap-2 text-cream/90 text-sm"><svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4 text-brand-gold" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg> Fully insured</div>
+    </div>
+  </div>
 
   <section class="py-16 sm:py-24">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
@@ -142,6 +163,48 @@
     </div>
   </section>
 
+  <section class="reveal py-16 sm:py-24 bg-surface border-y border-white/10">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">In Depth</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Planning Electrical Work Around a Live Business</h2>
+      <div class="mt-6 space-y-4">
+        <p class="text-cream/70 leading-relaxed">The biggest cost in a commercial job is rarely the materials — it's downtime. We scope every fit-out around your actual trading hours from the start, whether that means working evenings, overnight, or phasing the job area by area so the rest of the unit stays open.</p>
+<p class="text-cream/70 leading-relaxed">LED retrofits are usually the quickest win we do for existing commercial spaces — swapping outdated fluorescent tube fittings for LED cuts running costs and reduces how often you're replacing failed tubes, and it's often done in phases without shutting anything down.</p>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="reveal py-16 sm:py-20">
+    <div class="section">
+      <span class="eyebrow">Real Jobs</span>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">Recent Work</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-5 stagger-group">
+        
+        <figure class="stagger-item rounded-sm overflow-hidden border border-white/10 bg-surface">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/assets/img/tenement.webp" alt="Feature ceiling lighting installation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-cream/60">Feature ceiling lighting installation &middot; Glasgow</figcaption>
+        </figure>
+
+        <figure class="stagger-item rounded-sm overflow-hidden border border-white/10 bg-surface">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/assets/img/under-unit-lighting.webp" alt="LED strip lighting installation" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-cream/60">LED strip lighting installation &middot; Glasgow</figcaption>
+        </figure>
+
+        <figure class="stagger-item rounded-sm overflow-hidden border border-white/10 bg-surface">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/assets/img/garden-room-lighting.webp" alt="Garden room exterior lighting" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
+          </div>
+          <figcaption class="px-4 py-3 text-xs text-cream/60">Garden room exterior lighting &middot; Glasgow</figcaption>
+        </figure>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 sm:py-24 bg-ink">
     <div class="section">
       <div class="max-w-2xl">
@@ -172,6 +235,8 @@
       </div>
     </div>
   </section>
+
+  
 
   <section class="py-16 sm:py-24">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14">
@@ -255,6 +320,30 @@
     </div>
   </section>
 
+  <section class="reveal py-16 sm:py-24 bg-ink">
+    <div class="section">
+      <span class="eyebrow">Common Concerns</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream max-w-2xl">What Customers Are Usually Wondering</h2>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 stagger-group">
+        
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">Will this disrupt trading?</p>
+          <p class="mt-2 text-cream/70 text-sm leading-relaxed">Not if we plan it properly — evenings, overnight, or phasing area by area is common, and we'll build the schedule around your hours, not the other way round.</p>
+        </div>
+
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">Does the power need to be isolated during the work?</p>
+          <p class="mt-2 text-cream/70 text-sm leading-relaxed">For parts of it, yes — we plan isolations for the smallest area and shortest time possible, and agree the timing with you in advance.</p>
+        </div>
+
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">How long will it take?</p>
+          <p class="mt-2 text-cream/70 text-sm leading-relaxed">It depends on scale — we'll give you a firm timeline once we've seen the drawings or site, not a vague estimate.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">FAQs</span>
@@ -300,6 +389,36 @@
           </summary>
           <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">It depends on scale — we'll give you a firm timeline once we've seen the drawings or site.</div>
         </details>
+      </div>
+    </div>
+  </section>
+
+  
+  <section class="reveal py-16 sm:py-20 bg-surface border-y border-white/10">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">Before You Hire Us</span>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">Questions Customers Ask Before Booking</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 stagger-group">
+        
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">Do you supply the materials?</p>
+          <p class="mt-2 text-cream/65 text-sm leading-relaxed">Yes — we supply everything needed for the job, and it's accounted for clearly in your quote.</p>
+        </div>
+
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">Are you based locally?</p>
+          <p class="mt-2 text-cream/65 text-sm leading-relaxed">Yes, we're proud to be based in the Southside of Glasgow, covering the city and surrounding areas.</p>
+        </div>
+
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">Do you charge VAT?</p>
+          <p class="mt-2 text-cream/65 text-sm leading-relaxed">Yes, we're a VAT registered business — all quotes and invoices are itemised clearly.</p>
+        </div>
+
+        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
+          <p class="font-semibold text-cream text-sm">Do you work with emergency lighting?</p>
+          <p class="mt-2 text-cream/65 text-sm leading-relaxed">Yes, including installation, testing, and certification to keep you compliant.</p>
+        </div>
       </div>
     </div>
   </section>

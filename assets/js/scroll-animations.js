@@ -52,4 +52,58 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!el.classList.contains("is-visible")) reveal(el);
     });
   }, 4000);
+
+  // Scroll-scrubbed hero video (e.g. Commercial Installations & Lighting):
+  // the clip is pre-rendered (pan + lighting reveal), and scroll position
+  // drives currentTime directly — no autoplay/looping, so it's cheap on
+  // mobile too. Plain scroll-listener + rAF throttling rather than a
+  // scroll-linked animation library, consistent with the rest of this
+  // file. Reduced-motion just leaves the poster frame showing (video src
+  // is never set, so nothing downloads). Only present on pages with a
+  // heroVideo (e.g. Commercial Installations), so this is a no-op
+  // everywhere else.
+  const heroVideo = document.getElementById("hero-scrub-video");
+  const heroWrapper = document.getElementById("hero-video-wrapper");
+  if (heroVideo && heroWrapper && !reduceMotion) {
+    const isDesktop = window.matchMedia("(min-width: 768px)").matches;
+    const webm = isDesktop ? heroVideo.dataset.desktopWebm : heroVideo.dataset.mobileWebm;
+    const mp4 = isDesktop ? heroVideo.dataset.desktopMp4 : heroVideo.dataset.mobileMp4;
+    heroVideo.innerHTML = `<source src="${webm}" type="video/webm"><source src="${mp4}" type="video/mp4">`;
+
+    let ticking = false;
+    const scrub = () => {
+      ticking = false;
+      if (!heroVideo.duration) return;
+      const rect = heroWrapper.getBoundingClientRect();
+      const scrollable = rect.height - window.innerHeight;
+      if (scrollable <= 0) return;
+      const progress = Math.min(1, Math.max(0, -rect.top / scrollable));
+      heroVideo.currentTime = progress * heroVideo.duration;
+    };
+
+    const armScrub = () => {
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!ticking) {
+            ticking = true;
+            requestAnimationFrame(scrub);
+          }
+        },
+        { passive: true }
+      );
+      scrub();
+    };
+
+    // readyState >= 1 (HAVE_METADATA) means loadedmetadata may already have
+    // fired before this code ran (e.g. a cached/fast local load racing
+    // ahead of this listener registration) — check directly rather than
+    // relying solely on the event, or scrubbing would silently never start.
+    if (heroVideo.readyState >= 1) {
+      armScrub();
+    } else {
+      heroVideo.addEventListener("loadedmetadata", armScrub, { once: true });
+    }
+    heroVideo.load();
+  }
 });
