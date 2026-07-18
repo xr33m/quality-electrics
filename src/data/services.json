@@ -44,7 +44,7 @@
         "a": "Yes, including multi-charger workplace setups with load balancing so you're not paying to upgrade your whole supply unnecessarily."
       }
     ],
-    "image": "assets/img/outdoor-supply.webp",
+    "image": "assets/img/ev-charger.webp",
     "shortName": "EV Charger Installation",
     "pairSlug": "consumer-unit-upgrades",
     "benefit": "Charge Your EV at Home, Safely & Fast",
@@ -117,7 +117,7 @@
         "a": "Yes, every rewire is tested to BS7671 and certified on completion."
       }
     ],
-    "image": "assets/img/tenement.webp",
+    "image": "assets/img/business-wiring-fitout.webp",
     "shortName": "Rewiring",
     "pairSlug": "electrical-inspection-testing",
     "benefit": "Safe, Modern Wiring You Can Trust",
@@ -275,7 +275,7 @@
         "a": "Yes, every consumer unit upgrade is tested and certified on completion."
       }
     ],
-    "image": "assets/img/office-lighting.webp",
+    "image": "assets/img/distribution-board.webp",
     "shortName": "Consumer Unit Upgrades",
     "pairSlug": "domestic-commercial-rewiring",
     "benefit": "A Safer Fuse Board, Sorted Same Day",
@@ -356,7 +356,7 @@
         "a": "It depends on scale \u2014 we'll give you a firm timeline once we've seen the drawings or site."
       }
     ],
-    "image": "assets/img/outhouse.webp",
+    "image": "assets/img/commercial-lighting-install.webp",
     "shortName": "Commercial Electrical",
     "pairSlug": "electrical-inspection-testing",
     "benefit": "Fit-Outs That Open On Time",
@@ -435,7 +435,7 @@
         "a": "Yes, including outdoor supplies, garden offices, and outhouse conversions."
       }
     ],
-    "image": "assets/img/outhouse-1.webp",
+    "image": "assets/img/garden-room-lighting.webp",
     "shortName": "Extensions & Conversions",
     "pairSlug": "kitchen-electrical-installations",
     "benefit": "Electrics Ready Before the Plasterer Arrives",

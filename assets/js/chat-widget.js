@@ -29,6 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
     area: null,
     urgency: null,
     description: "",
+    preferredContact: null,
     name: "",
     phone: "",
     email: "",
@@ -107,7 +108,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const btn = document.createElement("button");
       btn.type = "button";
       btn.className =
-        "text-xs sm:text-sm font-medium border border-brand-green text-brand-green rounded-full px-3.5 py-2 hover:bg-brand-green hover:text-cream transition-colors cursor-pointer";
+        "text-xs sm:text-sm font-semibold bg-brand-gold text-ink rounded-full px-3.5 py-2 shadow-sm hover:bg-brand-gold-light transition-colors cursor-pointer";
       btn.textContent = opt;
       btn.addEventListener("click", () => onPick(opt));
       wrap.appendChild(btn);
@@ -227,13 +228,28 @@ document.addEventListener("DOMContentLoaded", () => {
         state.description = text;
         if (text) userBubble(escapeHtml(text));
         scrollToBottom();
-        askContact();
+        askPreferredContact();
       },
     });
   }
 
+  function askPreferredContact() {
+    botBubble("How would you rather we got back to you?");
+    scrollToBottom();
+    renderButtons(["Call me", "Text me", "Email me"], (choice) => {
+      state.preferredContact = choice;
+      userBubble(choice);
+      scrollToBottom();
+      askContact();
+    });
+  }
+
   function askContact() {
-    botBubble("Last step — how should we get back to you?");
+    const methodHint =
+      state.preferredContact === "Email me"
+        ? "mainly your email, but a phone number as backup"
+        : "your name and a number we can reach you on, plus an email for the paperwork";
+    botBubble(`Almost done &mdash; just need ${methodHint}.`);
     scrollToBottom();
     renderContactForm((contact) => {
       state.name = contact.name;
@@ -241,7 +257,35 @@ document.addEventListener("DOMContentLoaded", () => {
       state.email = contact.email;
       userBubble(`${escapeHtml(contact.name)} &middot; ${escapeHtml(contact.phone)} &middot; ${escapeHtml(contact.email)}`);
       scrollToBottom();
-      submit();
+      confirmDetails();
+    });
+  }
+
+  function confirmDetails() {
+    const summary = [
+      `Service: ${escapeHtml(state.service)}`,
+      `Area: ${escapeHtml(state.area)}`,
+      `Urgency: ${escapeHtml(state.urgency)}`,
+      state.description ? `Details: ${escapeHtml(state.description)}` : null,
+      `Preferred contact: ${escapeHtml(state.preferredContact)}`,
+      `Name: ${escapeHtml(state.name)}`,
+      `Phone: ${escapeHtml(state.phone)}`,
+      `Email: ${escapeHtml(state.email)}`,
+    ]
+      .filter(Boolean)
+      .join("<br/>");
+    botBubble(`Here's what I've got &mdash; does this all look right?<br/><br/>${summary}`);
+    scrollToBottom();
+    renderButtons(["Yes, send it", "Let me fix something"], (choice) => {
+      userBubble(choice);
+      scrollToBottom();
+      if (choice === "Yes, send it") {
+        submit();
+      } else {
+        botBubble("No problem &mdash; let's redo your contact details.");
+        scrollToBottom();
+        askContact();
+      }
     });
   }
 
@@ -261,6 +305,7 @@ document.addEventListener("DOMContentLoaded", () => {
           area: state.area,
           urgency: state.urgency,
           description: state.description || "(not provided)",
+          preferredContact: state.preferredContact,
           name: state.name,
           phone: state.phone,
           email: state.email,

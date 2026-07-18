@@ -108,7 +108,29 @@ function processTimelineSection(business) {
         <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Our Collaborative Workflow</h2>
         <p class="mt-4 text-cream/60 leading-relaxed">From first call to final certificate &mdash; here's exactly what to expect.</p>
       </div>
-      <div class="relative max-w-4xl mx-auto">
+      <div class="lg:hidden max-w-md mx-auto stagger-group">
+        ${business.process
+          .map((step, i) => {
+            const isLast = i === business.process.length - 1;
+            return `
+        <div class="flex gap-4 stagger-item">
+          <div class="flex flex-col items-center shrink-0">
+            <span class="flex items-center justify-center w-9 h-9 rounded-full bg-brand-green text-cream font-display font-semibold text-sm">${i + 1}</span>
+            ${isLast ? "" : `<span class="w-px flex-1 bg-white/15 my-1"></span>`}
+          </div>
+          <div class="flex gap-3 items-start ${isLast ? "pb-0" : "pb-6"}">
+            <img src="/${images[i % images.length]}" alt="${step.title}" class="w-14 h-14 rounded-sm object-cover shrink-0 mt-0.5" />
+            <div>
+              <h3 class="font-display font-semibold text-cream">${step.title}</h3>
+              <p class="mt-1 text-sm text-cream/60 leading-relaxed">${step.detail}</p>
+            </div>
+          </div>
+        </div>`;
+          })
+          .join("\n")}
+      </div>
+
+      <div class="hidden lg:block relative max-w-4xl mx-auto">
         <div class="hidden lg:block absolute left-1/2 top-2 bottom-2 border-l-2 border-dashed border-brand-green/30 -translate-x-1/2" aria-hidden="true"></div>
         <div class="space-y-6 lg:space-y-10">
           ${business.process
@@ -350,6 +372,10 @@ function beforeHiringFaqSection(business) {
 
 const recentWorkPool = [
   { image: "assets/img/van.webp", caption: "Quality Electrics on site in Glasgow" },
+  { image: "assets/img/ev-charger.webp", caption: "EV charger installation" },
+  { image: "assets/img/business-wiring-fitout.webp", caption: "Isle of Skye Candle Co. rewiring project" },
+  { image: "assets/img/distribution-board.webp", caption: "Consumer unit / distribution board upgrade" },
+  { image: "assets/img/commercial-lighting-install.webp", caption: "Jump In trampoline park lighting rig" },
   { image: "assets/img/office-lighting.webp", caption: "Office lighting installation" },
   { image: "assets/img/outdoor-supply.webp", caption: "Outdoor electrical supply" },
   { image: "assets/img/outhouse.webp", caption: "Outbuilding electrical fit-out" },
