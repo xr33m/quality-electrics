@@ -42,7 +42,7 @@ document.addEventListener("DOMContentLoaded", () => {
   launcher.type = "button";
   launcher.setAttribute("aria-label", "Open quote booking assistant");
   launcher.className =
-    "fixed bottom-5 right-5 z-[70] flex items-center gap-2 bg-brand-green text-cream rounded-full pl-4 pr-5 py-3.5 shadow-xl hover:bg-brand-green-light transition-colors cursor-pointer";
+    "fixed bottom-20 right-5 lg:bottom-5 z-[70] flex items-center gap-2 bg-brand-green text-cream rounded-full pl-4 pr-5 py-3.5 shadow-xl hover:bg-brand-green-light transition-colors cursor-pointer";
   launcher.innerHTML = `
     <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 10.5h7.5m-7.5 3h4.5m4.875 4.875L21 21l-2.625-2.625M3 12c0-4.556 3.858-8.25 9-8.25s9 3.694 9 8.25-3.858 8.25-9 8.25a9.764 9.764 0 01-2.555-.337A5.972 5.972 0 015.41 20.97a5.969 5.969 0 01-.474-.065 4.48 4.48 0 00.978-2.025c.09-.457-.133-.901-.467-1.226C4.148 16.351 3 14.315 3 12z"/></svg>
     <span class="text-sm font-semibold">Get a Quick Quote</span>
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", () => {
   panel.setAttribute("aria-modal", "true");
   panel.setAttribute("aria-label", "Quality Electrics quote booking assistant");
   panel.className =
-    "fixed z-[70] bottom-5 right-5 w-[calc(100vw-2.5rem)] max-w-sm h-[36rem] max-h-[80vh] bg-surface border border-white/10 rounded-sm shadow-2xl flex-col overflow-hidden hidden";
+    "fixed z-[70] bottom-20 right-5 lg:bottom-5 w-[calc(100vw-2.5rem)] max-w-sm h-[36rem] max-h-[80vh] bg-surface border border-white/10 rounded-sm shadow-2xl flex-col overflow-hidden hidden";
   panel.innerHTML = `
     <div class="bg-brand-green text-cream px-5 py-4 flex items-start justify-between shrink-0">
       <div>

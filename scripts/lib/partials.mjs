@@ -167,6 +167,10 @@ export function footer({ business, services, areas, reviews = [] }) {
       </div>
     </div>
   </footer>
+  <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-ink border-t border-white/10 grid grid-cols-2 shadow-[0_-4px_16px_rgba(0,0,0,0.25)]">
+    <a href="${business.phoneHref}" class="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-cream border-r border-white/10">${svgIcon("phone", "w-4 h-4 text-brand-gold")} Call Now</a>
+    <a href="/contact/" class="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-ink bg-brand-gold">${svgIcon("bolt", "w-4 h-4")} Get a Free Quote</a>
+  </div>
   <script src="/assets/js/main.js"></script>
   <script>window.QE_REVIEWS = ${JSON.stringify(
     reviews.map((r) => ({ author: r.author, rating: r.rating, dateLabel: r.dateLabel }))
@@ -205,7 +209,7 @@ export function page({ title, description, path, business, services, areas, acti
 <head>
 ${head({ title, description, path, business, extraHead })}
 </head>
-<body class="bg-ink">
+<body class="bg-ink pb-16 lg:pb-0">
 ${nav({ business, services, active })}
 <main>
 ${bodyContent}

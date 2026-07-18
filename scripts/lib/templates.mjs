@@ -21,18 +21,18 @@ function starString(rating) {
 function reviewCard(review, services) {
   const service = review.service ? services.find((s) => s.slug === review.service) : null;
   return `
-  <div class="rounded-sm border border-white/10 bg-surface p-6 flex flex-col stagger-item">
+  <div class="rounded-sm border border-ink/10 bg-white p-6 flex flex-col stagger-item">
     <div class="flex items-center justify-between gap-3 mb-3">
       <div>
-        <div class="text-sm font-medium text-cream">${review.author}</div>
+        <div class="text-sm font-medium text-ink">${review.author}</div>
         <div class="text-brand-gold text-xs leading-none mt-1">${starString(review.rating)}</div>
       </div>
-      <span class="text-xs text-cream/40">${review.dateLabel}</span>
+      <span class="text-xs text-ink/40">${review.dateLabel}</span>
     </div>
-    <p class="text-sm text-cream/70 leading-relaxed flex-1">${review.text}</p>
-    <div class="flex items-center justify-between mt-4 pt-3 border-t border-white/5">
-      <span class="text-xs text-cream/40">Google review</span>
-      ${service ? `<a href="/services/${service.slug}/" class="text-xs font-semibold text-brand-gold hover:underline">${service.name}</a>` : ""}
+    <p class="text-sm text-ink/70 leading-relaxed flex-1">${review.text}</p>
+    <div class="flex items-center justify-between mt-4 pt-3 border-t border-ink/10">
+      <span class="text-xs text-ink/40">Google review</span>
+      ${service ? `<a href="/services/${service.slug}/" class="text-xs font-semibold text-brand-green hover:underline">${service.name}</a>` : ""}
     </div>
   </div>`;
 }
@@ -56,13 +56,13 @@ function whyChooseUsSection() {
     },
   ];
   return `
-  <section class="reveal relative py-20 sm:py-28">
+  <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
     <div class="section">
       <div class="max-w-2xl mb-12">
         <span class="eyebrow">Why Choose Us</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Why Glasgow Chooses Quality Electrics</h2>
-        <p class="mt-4 text-cream/60 leading-relaxed">NICEIC registered, fully insured, and built on repeat business from homeowners and landlords across the city.</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Why Glasgow Chooses Quality Electrics</h2>
+        <p class="mt-4 text-ink/60 leading-relaxed">NICEIC registered, fully insured, and built on repeat business from homeowners and landlords across the city.</p>
       </div>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="relative slide-left">
@@ -76,10 +76,10 @@ function whyChooseUsSection() {
           <div class="py-6 first:pt-0 stagger-item">
             <span class="inline-block text-xs font-semibold uppercase tracking-wide bg-brand-green text-cream px-3 py-1 rounded-sm mb-4">${p.label}</span>
             <div class="flex items-start gap-3">
-              ${svgIcon("check", "w-6 h-6 text-brand-gold shrink-0 mt-0.5")}
+              ${svgIcon("check", "w-6 h-6 text-brand-green shrink-0 mt-0.5")}
               <div>
-                <h3 class="font-display font-semibold text-lg text-cream">${p.title}</h3>
-                <p class="mt-1.5 text-sm text-cream/60 leading-relaxed">${p.body}</p>
+                <h3 class="font-display font-semibold text-lg text-ink">${p.title}</h3>
+                <p class="mt-1.5 text-sm text-ink/60 leading-relaxed">${p.body}</p>
               </div>
             </div>
           </div>`
@@ -100,13 +100,13 @@ function processTimelineSection(business) {
     "assets/img/under-unit-lighting.webp",
   ];
   return `
-  <section class="reveal relative py-20 sm:py-28 bg-surface border-y border-white/10">
+  <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
     <div class="section">
       <div class="max-w-2xl mx-auto text-center mb-16">
         <span class="eyebrow">Our Work Process</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Our Collaborative Workflow</h2>
-        <p class="mt-4 text-cream/60 leading-relaxed">From first call to final certificate &mdash; here's exactly what to expect.</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Our Collaborative Workflow</h2>
+        <p class="mt-4 text-ink/60 leading-relaxed">From first call to final certificate &mdash; here's exactly what to expect.</p>
       </div>
       <div class="lg:hidden max-w-md mx-auto stagger-group">
         ${business.process
@@ -116,13 +116,13 @@ function processTimelineSection(business) {
         <div class="flex gap-4 stagger-item">
           <div class="flex flex-col items-center shrink-0">
             <span class="flex items-center justify-center w-9 h-9 rounded-full bg-brand-green text-cream font-display font-semibold text-sm">${i + 1}</span>
-            ${isLast ? "" : `<span class="w-px flex-1 bg-white/15 my-1"></span>`}
+            ${isLast ? "" : `<span class="w-px flex-1 bg-ink/15 my-1"></span>`}
           </div>
           <div class="flex gap-3 items-start ${isLast ? "pb-0" : "pb-6"}">
             <img src="/${images[i % images.length]}" alt="${step.title}" class="w-14 h-14 rounded-sm object-cover shrink-0 mt-0.5" />
             <div>
-              <h3 class="font-display font-semibold text-cream">${step.title}</h3>
-              <p class="mt-1 text-sm text-cream/60 leading-relaxed">${step.detail}</p>
+              <h3 class="font-display font-semibold text-ink">${step.title}</h3>
+              <p class="mt-1 text-sm text-ink/60 leading-relaxed">${step.detail}</p>
             </div>
           </div>
         </div>`;
@@ -137,9 +137,9 @@ function processTimelineSection(business) {
             .map((step, i) => {
               const reversed = i % 2 === 1;
               const textCard = `
-            <div class="rounded-sm border border-white/10 bg-white/5 p-6 sm:p-7">
-              <h3 class="text-lg sm:text-xl font-display font-semibold text-cream">${step.title}</h3>
-              <p class="mt-2 text-sm text-cream/60 leading-relaxed">${step.detail}</p>
+            <div class="rounded-sm border border-ink/10 bg-white p-6 sm:p-7">
+              <h3 class="text-lg sm:text-xl font-display font-semibold text-ink">${step.title}</h3>
+              <p class="mt-2 text-sm text-ink/60 leading-relaxed">${step.detail}</p>
             </div>`;
               const imageCell = `
             <div class="rounded-sm overflow-hidden h-48 sm:h-56">
@@ -163,36 +163,36 @@ function reviewsCarouselSection(reviews, services, avgRating) {
   const cards = reviews
     .map(
       (r, i) => `
-    <div class="snap-start shrink-0 w-[85%] sm:w-[360px] rounded-sm p-6 flex flex-col ${i % 2 === 0 ? "bg-brand-green text-cream" : "bg-surface text-cream border border-white/10"}">
+    <div class="snap-start shrink-0 w-[85%] sm:w-[360px] rounded-sm p-6 flex flex-col ${i % 2 === 0 ? "bg-brand-green text-cream" : "bg-white text-ink border border-ink/10"}">
       <div class="flex items-center gap-3 mb-4">
-        <span class="flex items-center justify-center w-10 h-10 rounded-full ${i % 2 === 0 ? "bg-cream/15 text-cream" : "bg-brand-green/20 text-brand-gold"} font-display font-semibold">${r.author.charAt(0)}</span>
+        <span class="flex items-center justify-center w-10 h-10 rounded-full ${i % 2 === 0 ? "bg-cream/15 text-cream" : "bg-brand-green/10 text-brand-green"} font-display font-semibold">${r.author.charAt(0)}</span>
         <div>
           <div class="font-medium">${r.author}</div>
           <div class="text-xs opacity-60">${r.dateLabel}</div>
         </div>
       </div>
-      <p class="text-sm leading-relaxed flex-1 ${i % 2 === 0 ? "text-cream/85" : "text-cream/70"}">${r.text}</p>
+      <p class="text-sm leading-relaxed flex-1 ${i % 2 === 0 ? "text-cream/85" : "text-ink/70"}">${r.text}</p>
       <div class="mt-4 ${i % 2 === 0 ? "text-brand-gold" : "text-brand-gold"} text-sm">${starString(r.rating)}</div>
     </div>`
     )
     .join("\n");
 
   return `
-  <section class="reveal relative py-20 sm:py-28">
+  <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
     <div class="section">
       <div class="grid grid-cols-1 lg:grid-cols-4 gap-10 items-end mb-10">
         <div class="lg:col-span-2">
           <span class="eyebrow">Trusted Clients</span>
-          <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Trusted Across Glasgow</h2>
-          <p class="mt-4 text-cream/60 leading-relaxed">Real reviews from real jobs &mdash; not curated by us.</p>
+          <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Trusted Across Glasgow</h2>
+          <p class="mt-4 text-ink/60 leading-relaxed">Real reviews from real jobs &mdash; not curated by us.</p>
         </div>
         <div class="flex items-center gap-3">
           ${googleLogo(28)}
           <div>
-            <div class="text-xs uppercase tracking-wide text-cream/40">Google Rating</div>
+            <div class="text-xs uppercase tracking-wide text-ink/40">Google Rating</div>
             <div class="flex items-center gap-2">
-              <span class="font-display font-semibold text-cream">${avgRating}</span>
+              <span class="font-display font-semibold text-ink">${avgRating}</span>
               <span class="text-brand-gold text-sm leading-none">${starString(Number(avgRating))}</span>
             </div>
           </div>
@@ -206,8 +206,8 @@ function reviewsCarouselSection(reviews, services, avgRating) {
           ${cards}
         </div>
         <div class="hidden sm:flex justify-end gap-3 mt-4">
-          <button type="button" data-carousel-prev="review-carousel" aria-label="Previous reviews" class="flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-cream/50 hover:text-brand-gold hover:border-brand-green transition-colors cursor-pointer">${svgIcon("chevronLeft", "w-5 h-5")}</button>
-          <button type="button" data-carousel-next="review-carousel" aria-label="Next reviews" class="flex items-center justify-center w-11 h-11 rounded-full border border-white/15 text-cream/50 hover:text-brand-gold hover:border-brand-green transition-colors cursor-pointer">${svgIcon("chevronRight", "w-5 h-5")}</button>
+          <button type="button" data-carousel-prev="review-carousel" aria-label="Previous reviews" class="flex items-center justify-center w-11 h-11 rounded-full border border-ink/15 text-ink/50 hover:text-brand-green hover:border-brand-green transition-colors cursor-pointer">${svgIcon("chevronLeft", "w-5 h-5")}</button>
+          <button type="button" data-carousel-next="review-carousel" aria-label="Next reviews" class="flex items-center justify-center w-11 h-11 rounded-full border border-ink/15 text-ink/50 hover:text-brand-green hover:border-brand-green transition-colors cursor-pointer">${svgIcon("chevronRight", "w-5 h-5")}</button>
         </div>
       </div>
     </div>
@@ -351,17 +351,17 @@ function guaranteesStrip(business) {
 
 function beforeHiringFaqSection(business) {
   return `
-  <section class="reveal py-16 sm:py-20 bg-surface border-y border-white/10">
+  <section class="reveal py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">Before You Hire Us</span>
-      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">Questions Customers Ask Before Booking</h2>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-ink mb-8">Questions Customers Ask Before Booking</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5 stagger-group">
         ${business.beforeHiringFaqs
           .map(
             (f) => `
-        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
-          <p class="font-semibold text-cream text-sm">${f.q}</p>
-          <p class="mt-2 text-cream/65 text-sm leading-relaxed">${f.a}</p>
+        <div class="stagger-item rounded-sm border border-ink/10 bg-white p-5">
+          <p class="font-semibold text-ink text-sm">${f.q}</p>
+          <p class="mt-2 text-ink/65 text-sm leading-relaxed">${f.a}</p>
         </div>`
           )
           .join("\n")}
@@ -458,26 +458,26 @@ export function homeTemplate({ business, services, areas, reviews }) {
 
   ${guaranteesStrip(business)}
 
-  <section class="reveal relative py-20 sm:py-28">
+  <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
     <div class="section">
       <div class="max-w-2xl">
         <span class="eyebrow">What We Do</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Electrical Services Built Around Your Property</h2>
-        <p class="mt-4 text-cream/60 leading-relaxed">From a single rewired socket to a full commercial fit-out, every job is quoted clearly and certified on completion.</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Electrical Services Built Around Your Property</h2>
+        <p class="mt-4 text-ink/60 leading-relaxed">From a single rewired socket to a full commercial fit-out, every job is quoted clearly and certified on completion.</p>
       </div>
       <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${featured
           .map(
             (s) => `
-        <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+        <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           </div>
           <div class="p-6">
-            <h3 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${s.name}</h3>
-            <p class="mt-2 text-sm text-cream/60 leading-relaxed">${s.shortDesc}</p>
-            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
+            <h3 class="font-display font-semibold text-lg text-ink group-hover:text-brand-green transition-colors">${s.name}</h3>
+            <p class="mt-2 text-sm text-ink/60 leading-relaxed">${s.shortDesc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-green">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
           </div>
         </a>`
           )
@@ -539,21 +539,21 @@ export function homeTemplate({ business, services, areas, reviews }) {
 
   ${instagramSection()}
 
-    <section class="reveal relative py-20 sm:py-28">
+    <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
     <div class="section">
       <div class="max-w-2xl">
         <span class="eyebrow">Where We Work</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Covering Glasgow &amp; the Surrounding Areas</h2>
-        <p class="mt-4 text-cream/60 leading-relaxed">Based in Glasgow and on the road across the following areas &mdash; click yours for local call-out details.</p>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Covering Glasgow &amp; the Surrounding Areas</h2>
+        <p class="mt-4 text-ink/60 leading-relaxed">Based in Glasgow and on the road across the following areas &mdash; click yours for local call-out details.</p>
       </div>
       <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         ${areas
           .map(
             (a) => `
-        <a href="/areas/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-white/10 bg-surface px-5 py-4 hover:border-brand-green transition-colors">
-          <span class="font-medium text-cream group-hover:text-brand-gold transition-colors">${a.name}</span>
-          ${svgIcon("arrow", "w-4 h-4 text-cream/30 group-hover:text-brand-gold transition-colors")}
+        <a href="/areas/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
+          <span class="font-medium text-ink group-hover:text-brand-green transition-colors">${a.name}</span>
+          ${svgIcon("arrow", "w-4 h-4 text-ink/30 group-hover:text-brand-green transition-colors")}
         </a>`
           )
           .join("\n")}
@@ -644,17 +644,17 @@ export function serviceTemplate({ business, service, services, areas, post, inde
 
   ${guaranteesStrip(business)}
 
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14 items-start">
       <div>
-        <h2 class="text-2xl font-display font-semibold text-cream mb-6">What's Included</h2>
+        <h2 class="text-2xl font-display font-semibold text-ink mb-6">What's Included</h2>
         <ul class="space-y-4">
           ${service.highlights
             .map(
               (h) => `
           <li class="flex items-start gap-3">
-            ${svgIcon("check", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
-            <span class="text-cream/70">${h}</span>
+            ${svgIcon("check", "w-5 h-5 text-brand-green shrink-0 mt-0.5")}
+            <span class="text-ink/70">${h}</span>
           </li>`
             )
             .join("\n")}
@@ -662,7 +662,7 @@ export function serviceTemplate({ business, service, services, areas, post, inde
         ${
           pairService
             ? `
-        <p class="mt-6 text-sm text-cream/55 leading-relaxed">Often booked alongside our ${service.name}: <a href="/services/${pairService.slug}/" class="font-semibold text-brand-gold hover:underline">${pairService.name}</a> &mdash; ${midSentence(pairService.shortDesc)}</p>`
+        <p class="mt-6 text-sm text-ink/55 leading-relaxed">Often booked alongside our ${service.name}: <a href="/services/${pairService.slug}/" class="font-semibold text-brand-green hover:underline">${pairService.name}</a> &mdash; ${midSentence(pairService.shortDesc)}</p>`
             : ""
         }
       </div>
@@ -672,12 +672,12 @@ export function serviceTemplate({ business, service, services, areas, post, inde
     </div>
   </section>
 
-  <section class="reveal py-16 sm:py-24 bg-surface border-y border-white/10">
+  <section class="reveal py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">In Depth</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">${service.deepDive.heading}</h2>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink">${service.deepDive.heading}</h2>
       <div class="mt-6 space-y-4">
-        ${service.deepDive.paragraphs.map((p) => `<p class="text-cream/70 leading-relaxed">${p}</p>`).join("\n")}
+        ${service.deepDive.paragraphs.map((p) => `<p class="text-ink/70 leading-relaxed">${p}</p>`).join("\n")}
       </div>
     </div>
   </section>
@@ -727,18 +727,18 @@ export function serviceTemplate({ business, service, services, areas, post, inde
       : ""
   }
 
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14">
       <div>
         <span class="eyebrow">When You'd Need This</span>
-        <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-6">Signs You Might Need ${service.name}</h2>
+        <h2 class="mt-3 text-2xl font-display font-semibold text-ink mb-6">Signs You Might Need ${service.name}</h2>
         <ul class="space-y-4">
           ${service.signs
             .map(
               (s) => `
           <li class="flex items-start gap-3">
-            ${svgIcon("check", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
-            <span class="text-cream/70">${s}</span>
+            ${svgIcon("check", "w-5 h-5 text-brand-green shrink-0 mt-0.5")}
+            <span class="text-ink/70">${s}</span>
           </li>`
             )
             .join("\n")}
@@ -746,7 +746,7 @@ export function serviceTemplate({ business, service, services, areas, post, inde
       </div>
       <div>
         <span class="eyebrow">How It Works</span>
-        <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-6">Our Process</h2>
+        <h2 class="mt-3 text-2xl font-display font-semibold text-ink mb-6">Our Process</h2>
         <ol class="space-y-6">
           ${business.process
             .map(
@@ -754,8 +754,8 @@ export function serviceTemplate({ business, service, services, areas, post, inde
           <li class="flex gap-4">
             <span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green text-cream text-sm font-semibold shrink-0">${i + 1}</span>
             <div>
-              <h3 class="font-semibold text-cream">${p.title}</h3>
-              <p class="text-sm text-cream/60 mt-0.5 leading-relaxed">${p.detail}</p>
+              <h3 class="font-semibold text-ink">${p.title}</h3>
+              <p class="text-sm text-ink/60 mt-0.5 leading-relaxed">${p.detail}</p>
             </div>
           </li>`
             )
@@ -783,20 +783,20 @@ export function serviceTemplate({ business, service, services, areas, post, inde
     </div>
   </section>
 
-  <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">FAQs</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream mb-8">Common Questions About ${service.name}</h2>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink mb-8">Common Questions About ${service.name}</h2>
       <div class="space-y-3">
         ${service.faqs
           .map(
             (f) => `
-        <details class="group rounded-sm border border-white/10 bg-white/5 open:bg-white/10 transition-colors">
-          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-cream list-none">
+        <details class="group rounded-sm border border-ink/10 bg-white open:bg-cream/70 transition-colors">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-ink list-none">
             <span>${f.q}</span>
             <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
           </summary>
-          <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">${f.a}</div>
+          <div class="px-5 pb-4 text-sm text-ink/65 leading-relaxed">${f.a}</div>
         </details>`
           )
           .join("\n")}
@@ -806,17 +806,17 @@ export function serviceTemplate({ business, service, services, areas, post, inde
 
   ${beforeHiringFaqSection(business)}
 
-  <section class="py-16 sm:py-20">
+  <section class="py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section">
-      <h2 class="text-2xl font-display font-semibold text-cream mb-2">${service.name} &mdash; By Area</h2>
-      <p class="text-cream/60 mb-8">We carry out ${service.name.toLowerCase()} across Glasgow and the surrounding areas.</p>
+      <h2 class="text-2xl font-display font-semibold text-ink mb-2">${service.name} &mdash; By Area</h2>
+      <p class="text-ink/60 mb-8">We carry out ${service.name.toLowerCase()} across Glasgow and the surrounding areas.</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         ${areas
           .map(
             (a) => `
-        <a href="/services/${service.slug}/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-white/10 px-5 py-4 hover:border-brand-green transition-colors">
-          <span class="font-medium text-cream group-hover:text-brand-gold transition-colors">${a.name}</span>
-          ${svgIcon("arrow", "w-4 h-4 text-cream/30 group-hover:text-brand-gold transition-colors")}
+        <a href="/services/${service.slug}/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
+          <span class="font-medium text-ink group-hover:text-brand-green transition-colors">${a.name}</span>
+          ${svgIcon("arrow", "w-4 h-4 text-ink/30 group-hover:text-brand-green transition-colors")}
         </a>`
           )
           .join("\n")}
@@ -825,13 +825,13 @@ export function serviceTemplate({ business, service, services, areas, post, inde
   </section>
 
   ${post ? `
-  <section class="py-16 sm:py-20 bg-surface border-y border-white/10">
+  <section class="py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section">
-      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-sm border border-white/10 p-6 sm:p-8">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-6 rounded-sm border border-ink/10 bg-white p-6 sm:p-8">
         <div>
           <span class="eyebrow">Free Guide</span>
-          <h2 class="mt-2 text-xl font-display font-semibold text-cream">${post.title}</h2>
-          <p class="mt-2 text-sm text-cream/60 leading-relaxed max-w-xl">${post.excerpt}</p>
+          <h2 class="mt-2 text-xl font-display font-semibold text-ink">${post.title}</h2>
+          <p class="mt-2 text-sm text-ink/60 leading-relaxed max-w-xl">${post.excerpt}</p>
         </div>
         <a href="/blog/${post.slug}/" class="btn-green shrink-0">Read the Guide ${svgIcon("arrow", "w-4 h-4")}</a>
       </div>
@@ -914,10 +914,10 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
   ${
     featuredReviews.length
       ? `
-  <section class="reveal relative py-16 sm:py-20 bg-surface border-y border-white/10">
+  <section class="reveal relative py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section">
       <span class="eyebrow">${relevantReviews.length >= 2 ? "Customer Reviews" : "Reviews"}</span>
-      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">${
+      <h2 class="mt-3 text-2xl font-display font-semibold text-ink mb-8">${
         relevantReviews.length >= 2 ? `What ${area.name} Customers Say About Our ${service.name}` : `What Our Customers Say`
       }</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
@@ -928,20 +928,20 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       : ""
   }
 
-  <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">FAQs</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream mb-8">${service.name} in ${area.name} &mdash; Common Questions</h2>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink mb-8">${service.name} in ${area.name} &mdash; Common Questions</h2>
       <div class="space-y-3">
         ${faqs
           .map(
             (f) => `
-        <details class="group rounded-sm border border-white/10 bg-white/5 open:bg-white/10 transition-colors">
-          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-cream list-none">
+        <details class="group rounded-sm border border-ink/10 bg-white open:bg-cream/70 transition-colors">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-ink list-none">
             <span>${f.q}</span>
             <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
           </summary>
-          <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">${f.a}</div>
+          <div class="px-5 pb-4 text-sm text-ink/65 leading-relaxed">${f.a}</div>
         </details>`
           )
           .join("\n")}
@@ -949,24 +949,24 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
     </div>
   </section>
 
-  <section class="py-16 sm:py-20">
+  <section class="py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 stagger-group">
       <div>
-        <h3 class="font-semibold text-cream mb-3">Also Serving ${area.name}</h3>
+        <h3 class="font-semibold text-ink mb-3">Also Serving ${area.name}</h3>
         <ul class="space-y-2">
-          ${otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-cream/70 hover:text-brand-gold transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")}
+          ${otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")}
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold text-cream mb-3">${service.name} Elsewhere</h3>
+        <h3 class="font-semibold text-ink mb-3">${service.name} Elsewhere</h3>
         <ul class="space-y-2">
-          <li><a href="/services/${service.slug}/" class="text-sm text-cream/70 hover:text-brand-gold transition-colors font-medium">All ${service.name} areas</a></li>
+          <li><a href="/services/${service.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors font-medium">All ${service.name} areas</a></li>
         </ul>
       </div>
       <div>
-        <h3 class="font-semibold text-cream mb-3">More on ${area.name}</h3>
+        <h3 class="font-semibold text-ink mb-3">More on ${area.name}</h3>
         <ul class="space-y-2">
-          <li><a href="/areas/${area.slug}/" class="text-sm text-cream/70 hover:text-brand-gold transition-colors font-medium">All services in ${area.name}</a></li>
+          <li><a href="/areas/${area.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors font-medium">All services in ${area.name}</a></li>
         </ul>
       </div>
     </div>
@@ -996,20 +996,20 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
     </div>
   </section>
 
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section">
-      <h2 class="text-2xl font-display font-semibold text-cream mb-8">Services Available in ${area.name}</h2>
+      <h2 class="text-2xl font-display font-semibold text-ink mb-8">Services Available in ${area.name}</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${services
           .map(
             (s) => `
-        <a href="/services/${s.slug}/${area.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+        <a href="/services/${s.slug}/${area.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/${s.image}" alt="${s.name} in ${area.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           </div>
           <div class="p-6">
-            <h3 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${s.name}</h3>
-            <p class="mt-2 text-sm text-cream/60 leading-relaxed">${s.shortDesc}</p>
+            <h3 class="font-display font-semibold text-lg text-ink group-hover:text-brand-green transition-colors">${s.name}</h3>
+            <p class="mt-2 text-sm text-ink/60 leading-relaxed">${s.shortDesc}</p>
           </div>
         </a>`
           )
@@ -1047,10 +1047,10 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
   ${
     featuredReviews.length
       ? `
-  <section class="reveal relative py-16 sm:py-20">
+  <section class="reveal relative py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section">
       <span class="eyebrow">Reviews</span>
-      <h2 class="mt-3 text-2xl font-display font-semibold text-cream mb-8">What Our Customers Say</h2>
+      <h2 class="mt-3 text-2xl font-display font-semibold text-ink mb-8">What Our Customers Say</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${featuredReviews.map((r) => reviewCard(r, services)).join("\n")}
       </div>
@@ -1059,20 +1059,20 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
       : ""
   }
 
-  <section class="py-16 sm:py-24 bg-surface border-y border-white/10">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">FAQs</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream mb-8">Electrician in ${area.name} &mdash; Common Questions</h2>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink mb-8">Electrician in ${area.name} &mdash; Common Questions</h2>
       <div class="space-y-3">
         ${faqs
           .map(
             (f) => `
-        <details class="group rounded-sm border border-white/10 bg-white/5 open:bg-white/10 transition-colors">
-          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-cream list-none">
+        <details class="group rounded-sm border border-ink/10 bg-white open:bg-cream/70 transition-colors">
+          <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-ink list-none">
             <span>${f.q}</span>
             <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
           </summary>
-          <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">${f.a}</div>
+          <div class="px-5 pb-4 text-sm text-ink/65 leading-relaxed">${f.a}</div>
         </details>`
           )
           .join("\n")}
@@ -1098,17 +1098,17 @@ export function aboutTemplate({ business }) {
     </div>
   </section>
 
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
       <div>
         <span class="eyebrow">Our Approach</span>
-        <h2 class="mt-3 text-3xl font-display font-semibold text-cream">Clear Quotes. Certified Work. No Surprises.</h2>
-        <p class="mt-5 text-cream/70 leading-relaxed">We work with homeowners, landlords, property developers, and commercial clients who need electrical work they don't have to think twice about &mdash; from a same-day call-out to a multi-week commercial fit-out.</p>
-        <p class="mt-4 text-cream/70 leading-relaxed">Every job is scoped properly before we start, priced clearly excl. VAT, and certified on completion so you've got the paperwork when you need it &mdash; for a sale, a let, or your own records.</p>
+        <h2 class="mt-3 text-3xl font-display font-semibold text-ink">Clear Quotes. Certified Work. No Surprises.</h2>
+        <p class="mt-5 text-ink/70 leading-relaxed">We work with homeowners, landlords, property developers, and commercial clients who need electrical work they don't have to think twice about &mdash; from a same-day call-out to a multi-week commercial fit-out.</p>
+        <p class="mt-4 text-ink/70 leading-relaxed">Every job is scoped properly before we start, priced clearly excl. VAT, and certified on completion so you've got the paperwork when you need it &mdash; for a sale, a let, or your own records.</p>
         <ul class="mt-8 space-y-3">
           ${business.certifications
             .map(
-              (c) => `<li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("shield", "w-4 h-4")}</span>${c}</li>`
+              (c) => `<li class="flex items-center gap-3 text-ink/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/10 text-brand-green">${svgIcon("shield", "w-4 h-4")}</span>${c}</li>`
             )
             .join("\n")}
         </ul>
@@ -1151,19 +1151,19 @@ export function projectsTemplate({ business, services }) {
     <div class="relative section py-16 sm:py-24 max-w-2xl">
       <span class="eyebrow">Our Work</span>
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">Recent Projects</h1>
-      <p class="mt-5 text-cream/70 leading-relaxed">A selection of recent jobs across Glasgow &amp; the surrounding areas. More photos added as projects complete &mdash; placeholder images shown below.</p>
+      <p class="mt-5 text-cream/70 leading-relaxed">A selection of recent jobs across Glasgow &amp; the surrounding areas.</p>
     </div>
   </section>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
       ${gallery
         .map(
           (g) => `
-      <figure class="rounded-sm overflow-hidden border border-white/10 bg-surface">
+      <figure class="rounded-sm overflow-hidden border border-ink/10 bg-white stagger-item">
         <div class="aspect-[4/3] overflow-hidden">
           <img src="/${g.image}" alt="${g.caption}" class="w-full h-full object-cover hover:scale-105 transition-transform duration-300" />
         </div>
-        <figcaption class="p-4 text-sm font-medium text-cream/70">${g.caption}</figcaption>
+        <figcaption class="p-4 text-sm font-medium text-ink/70">${g.caption}</figcaption>
       </figure>`
         )
         .join("\n")}
@@ -1187,35 +1187,35 @@ export function contactTemplate({ business, areas }) {
     </div>
   </section>
 
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 lg:grid-cols-5 gap-12">
-      <div class="lg:col-span-3 rounded-sm border border-white/10 bg-surface p-6 sm:p-10">
+      <div class="lg:col-span-3 rounded-sm border border-ink/10 bg-white p-6 sm:p-10">
         <form id="contact-form" action="https://formspree.io/f/xdaqavrp" method="POST" class="space-y-5">
           <div id="form-status" class="hidden text-sm font-medium" role="status"></div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
-              <label for="name" class="block text-sm font-medium text-cream mb-1.5">Full Name</label>
-              <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-sm border border-white/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
+              <label for="name" class="block text-sm font-medium text-ink mb-1.5">Full Name</label>
+              <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
             </div>
             <div>
-              <label for="phone" class="block text-sm font-medium text-cream mb-1.5">Phone Number</label>
-              <input id="phone" name="phone" type="tel" required autocomplete="tel" class="w-full rounded-sm border border-white/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
+              <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone Number</label>
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
             </div>
           </div>
           <div>
-            <label for="email" class="block text-sm font-medium text-cream mb-1.5">Email Address</label>
-            <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-sm border border-white/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
+            <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email Address</label>
+            <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
           </div>
           <div>
-            <label for="area" class="block text-sm font-medium text-cream mb-1.5">Area</label>
-            <select id="area" name="area" class="w-full rounded-sm border border-white/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
+            <label for="area" class="block text-sm font-medium text-ink mb-1.5">Area</label>
+            <select id="area" name="area" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
               ${areas.map((a) => `<option value="${a.name}">${a.name}</option>`).join("\n")}
               <option value="Other">Other</option>
             </select>
           </div>
           <div>
-            <label for="message" class="block text-sm font-medium text-cream mb-1.5">What do you need done?</label>
-            <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-white/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+            <label for="message" class="block text-sm font-medium text-ink mb-1.5">What do you need done?</label>
+            <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
           </div>
           <button type="submit" class="btn-green w-full sm:w-auto">${svgIcon("bolt", "w-4 h-4")} Send Enquiry</button>
         </form>
@@ -1230,10 +1230,10 @@ export function contactTemplate({ business, areas }) {
             <li class="flex items-start gap-3">${svgIcon("clock", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")} <span class="text-cream/85">${business.hoursLine}</span></li>
           </ul>
         </div>
-        <div class="rounded-sm border border-white/10 bg-surface p-8">
-          <h3 class="font-semibold text-cream mb-4">Areas We Cover</h3>
+        <div class="rounded-sm border border-ink/10 bg-white p-8">
+          <h3 class="font-semibold text-ink mb-4">Areas We Cover</h3>
           <div class="flex flex-wrap gap-2">
-            ${areas.map((a) => `<a href="/areas/${a.slug}/" class="text-xs font-medium px-3 py-1.5 rounded-full bg-white/5 text-cream/75 border border-white/10 hover:bg-brand-green hover:text-cream hover:border-brand-green transition-colors">${a.name}</a>`).join("\n")}
+            ${areas.map((a) => `<a href="/areas/${a.slug}/" class="text-xs font-medium px-3 py-1.5 rounded-full bg-brand-green/10 text-brand-green hover:bg-brand-green hover:text-cream transition-colors">${a.name}</a>`).join("\n")}
           </div>
         </div>
       </div>
@@ -1245,15 +1245,15 @@ export function contactTemplate({ business, areas }) {
 function postCard(post, services) {
   const service = services.find((s) => s.slug === post.service);
   return `
-  <a href="/blog/${post.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+  <a href="/blog/${post.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
     <div class="aspect-[16/10] overflow-hidden">
       <img src="/${post.heroImage}" alt="${post.title}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
     </div>
     <div class="p-6">
-      ${service ? `<span class="text-xs font-semibold uppercase tracking-wide text-brand-gold">${service.name}</span>` : ""}
-      <h3 class="mt-2 font-display font-semibold text-lg text-cream leading-snug group-hover:text-brand-gold transition-colors">${post.title}</h3>
-      <p class="mt-2 text-sm text-cream/60 leading-relaxed">${post.excerpt}</p>
-      <div class="mt-4 flex items-center gap-3 text-xs text-cream/45">
+      ${service ? `<span class="text-xs font-semibold uppercase tracking-wide text-brand-green">${service.name}</span>` : ""}
+      <h3 class="mt-2 font-display font-semibold text-lg text-ink leading-snug group-hover:text-brand-green transition-colors">${post.title}</h3>
+      <p class="mt-2 text-sm text-ink/60 leading-relaxed">${post.excerpt}</p>
+      <div class="mt-4 flex items-center gap-3 text-xs text-ink/45">
         <span>${post.displayDate}</span>
         <span>&middot;</span>
         <span>${post.readTime}</span>
@@ -1271,7 +1271,7 @@ export function blogHubTemplate({ business, posts, services }) {
       <p class="mt-4 text-cream/60 leading-relaxed">Straight answers to the questions we get asked most &mdash; costs, regulations, and what to plan before work starts.</p>
     </div>
   </section>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
       ${posts.map((p) => postCard(p, services)).join("\n")}
     </div>
@@ -1384,19 +1384,19 @@ export function blogPostTemplate({ business, post, service, featuredArea, relate
       </div>
     </section>
 
-    <section class="py-16 sm:py-20 bg-surface border-y border-white/10">
+    <section class="py-16 sm:py-20 bg-cream border-y border-ink/10">
       <div class="section max-w-3xl">
-        <h2 class="text-2xl font-display font-semibold text-cream mb-8">Frequently Asked Questions</h2>
+        <h2 class="text-2xl font-display font-semibold text-ink mb-8">Frequently Asked Questions</h2>
         <div class="space-y-3">
           ${post.faqs
             .map(
               (f) => `
-          <details class="group rounded-sm border border-white/10 bg-white/5 open:bg-white/10 transition-colors">
-            <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-cream list-none">
+          <details class="group rounded-sm border border-ink/10 bg-white open:bg-cream/70 transition-colors">
+            <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-ink list-none">
               <span>${f.q}</span>
               <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
             </summary>
-            <div class="px-5 pb-4 text-sm text-cream/65 leading-relaxed">${f.a}</div>
+            <div class="px-5 pb-4 text-sm text-ink/65 leading-relaxed">${f.a}</div>
           </details>`
             )
             .join("\n")}
@@ -1437,7 +1437,7 @@ export function reviewsPageTemplate({ business, reviews, services }) {
       </div>
     </div>
   </section>
-  <section class="py-16 sm:py-24">
+  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
       ${reviews.map((r) => reviewCard(r, services)).join("\n")}
     </div>
