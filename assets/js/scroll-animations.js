@@ -106,4 +106,33 @@ document.addEventListener("DOMContentLoaded", () => {
     }
     heroVideo.load();
   }
+
+  // Homepage hero background parallax: the video is oversized (130%
+  // height, offset -15% from the top) so it has room to drift without
+  // exposing an edge as it moves. Scoped to the hero's own height via
+  // scroll/rAF (same pattern as the scrub video above), rather than
+  // GSAP ScrollTrigger, consistent with the rest of this file.
+  const heroSection = document.getElementById("home-hero");
+  const heroBg = document.getElementById("home-hero-bg");
+  if (heroSection && heroBg && !reduceMotion) {
+    let heroTicking = false;
+    const drift = () => {
+      heroTicking = false;
+      const rect = heroSection.getBoundingClientRect();
+      if (rect.bottom <= 0 || rect.top >= window.innerHeight) return;
+      const progress = Math.min(1, Math.max(0, -rect.top / rect.height));
+      heroBg.style.transform = `translateY(${progress * 12}%)`;
+    };
+    window.addEventListener(
+      "scroll",
+      () => {
+        if (!heroTicking) {
+          heroTicking = true;
+          requestAnimationFrame(drift);
+        }
+      },
+      { passive: true }
+    );
+    drift();
+  }
 });

@@ -289,9 +289,9 @@ export function localBusinessSchema({ business, areas, reviews }) {
     areaServed: areas.map((a) => ({ "@type": "City", name: a.name })),
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
-      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-      opens: "08:00",
-      closes: "18:00",
+      dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+      opens: "00:00",
+      closes: "23:59",
     },
     sameAs: ["https://www.instagram.com/quality_electrics_ltd/"],
     aggregateRating: {
@@ -307,7 +307,7 @@ export function serviceFaqSchema(service) {
   const schema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    mainEntity: service.faqs.map((f) => ({
+    mainEntity: [...service.concerns, ...service.faqs].map((f) => ({
       "@type": "Question",
       name: f.q,
       acceptedAnswer: { "@type": "Answer", text: f.a },

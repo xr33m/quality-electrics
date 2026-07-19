@@ -416,10 +416,11 @@ export function homeTemplate({ business, services, areas, reviews }) {
   const featuredReviews = reviews.slice(0, 6);
   const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
   return `
-  <section class="relative bg-ink overflow-hidden">
+  <section id="home-hero" class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
       <video
-        class="w-full h-full object-cover"
+        id="home-hero-bg"
+        class="w-full h-[130%] object-cover absolute -top-[15%] left-0"
         autoplay
         muted
         loop
@@ -674,7 +675,7 @@ export function serviceTemplate({ business, service, services, areas, post, inde
 
   <section class="reveal py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
-      <span class="eyebrow">In Depth</span>
+      <span class="eyebrow">Behind The Job</span>
       <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink">${service.deepDive.heading}</h2>
       <div class="mt-6 space-y-6">
         ${service.deepDive.paragraphs
@@ -771,36 +772,18 @@ export function serviceTemplate({ business, service, services, areas, post, inde
     </div>
   </section>
 
-  <section class="reveal py-16 sm:py-24 bg-ink">
-    <div class="section">
-      <span class="eyebrow">Common Concerns</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream max-w-2xl">What Customers Are Usually Wondering</h2>
-      <div class="mt-10 grid grid-cols-1 sm:grid-cols-2 gap-6 stagger-group">
-        ${service.concerns
-          .map(
-            (c) => `
-        <div class="stagger-item rounded-sm border border-white/10 bg-white/5 p-5">
-          <p class="font-semibold text-cream text-sm">${c.q}</p>
-          <p class="mt-2 text-cream/70 text-sm leading-relaxed">${c.a}</p>
-        </div>`
-          )
-          .join("\n")}
-      </div>
-    </div>
-  </section>
-
   <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section max-w-3xl">
       <span class="eyebrow">FAQs</span>
       <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink mb-8">Common Questions About ${service.name}</h2>
       <div class="space-y-3">
-        ${service.faqs
+        ${[...service.concerns, ...service.faqs]
           .map(
             (f) => `
         <details class="group rounded-sm border border-ink/10 bg-white open:bg-cream/70 transition-colors">
           <summary class="flex items-center justify-between gap-4 px-5 py-4 cursor-pointer font-medium text-ink list-none">
             <span>${f.q}</span>
-            <span class="shrink-0 text-brand-gold transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
+            <span class="shrink-0 text-brand-green transition-transform group-open:rotate-180">${svgIcon("chevronDown", "w-4 h-4")}</span>
           </summary>
           <div class="px-5 pb-4 text-sm text-ink/65 leading-relaxed">${f.a}</div>
         </details>`
@@ -809,8 +792,6 @@ export function serviceTemplate({ business, service, services, areas, post, inde
       </div>
     </div>
   </section>
-
-  ${beforeHiringFaqSection(business)}
 
   <section class="py-16 sm:py-20 bg-cream border-y border-ink/10">
     <div class="section">
@@ -1363,6 +1344,8 @@ export function contactTemplate({ business, areas, services }) {
       </div>
     </div>
   </section>
+
+  ${beforeHiringFaqSection(business)}
   `;
 }
 

@@ -9,23 +9,23 @@
     "readTime": "7 min read",
     "publishDate": "2026-06-02",
     "displayDate": "2 June 2026",
-    "heroImage": "assets/img/outdoor-supply.webp",
+    "heroImage": "assets/img/ev-charger.webp",
     "keyTakeaways": [
-      "A standard 7kW home charger install typically costs somewhere between £800 and £1,200, all in",
-      "The charger unit and the labour are usually similar in cost — it's rarely one expensive part and one cheap part",
+      "A standard 7kW home charger install typically costs somewhere between \u00a3800 and \u00a31,200, all in",
+      "The charger unit and the labour are usually similar in cost \u2014 it's rarely one expensive part and one cheap part",
       "Cable run length, consumer unit condition, and parking setup are the three things that most often push the price up",
       "Smart charging capability has been a legal requirement for new home chargers since 2022"
     ],
     "intro": [
-      "\"How much does an EV charger actually cost?\" is the question we get asked more than almost any other — usually from someone who's just picked up their first electric car and wants a straight answer before they commit to anything.",
+      "\"How much does an EV charger actually cost?\" is the question we get asked more than almost any other \u2014 usually from someone who's just picked up their first electric car and wants a straight answer before they commit to anything.",
       "The honest answer is that it depends on your property, but there's a real, predictable range most Glasgow homes fall into. Here's what actually drives that number."
     ],
     "sections": [
       {
         "heading": "The typical price range",
         "body": [
-          "For a standard 7kW smart home charger — the setup most homeowners end up with — you're usually looking at somewhere between £800 and £1,200 including the unit and installation. That figure covers a straightforward install: a domestic supply that can take the extra load, a reasonably short cable run from your consumer unit to where the charger's going, and no groundworks.",
-          "It's rarely a case of a cheap charger and expensive labour, or vice versa — the two costs tend to land in a similar bracket, which is why the total moves as a block rather than one part staying fixed while the other swings."
+          "For a standard 7kW smart home charger \u2014 the setup most homeowners end up with \u2014 you're usually looking at somewhere between \u00a3800 and \u00a31,200 including the unit and installation. That figure covers a straightforward install: a domestic supply that can take the extra load, a reasonably short cable run from your consumer unit to where the charger's going, and no groundworks.",
+          "It's rarely a case of a cheap charger and expensive labour, or vice versa \u2014 the two costs tend to land in a similar bracket, which is why the total moves as a block rather than one part staying fixed while the other swings."
         ]
       },
       {
@@ -47,57 +47,73 @@
           "Three things account for almost every quote that comes in above the standard range."
         ],
         "list": [
-          "Cable run length — a charger fitted right next to your consumer unit is cheaper than one routed to a detached garage or the far side of a driveway",
-          "Consumer unit condition — if your board is old, undersized, or doesn't have the right protection, it may need upgrading alongside the charger (see our consumer unit upgrade guide below)",
-          "Parking setup — chargers for on-street parking or shared driveways sometimes need extra groundworks or a different mounting approach than a standard private driveway install"
+          "Cable run length \u2014 a charger fitted right next to your consumer unit is cheaper than one routed to a detached garage or the far side of a driveway",
+          "Consumer unit condition \u2014 if your board is old, undersized, or doesn't have the right protection, it may need upgrading alongside the charger (see our consumer unit upgrade guide below)",
+          "Parking setup \u2014 chargers for on-street parking or shared driveways sometimes need extra groundworks or a different mounting approach than a standard private driveway install"
         ]
       },
       {
         "heading": "Smart chargers aren't optional anymore",
         "body": [
-          "Since 2022, all new home and workplace EV chargers installed in Great Britain are legally required to have smart charging capability — meaning they can be scheduled and monitored remotely, and default to off-peak charging times. This isn't an upsell; every charger we fit meets this requirement as standard."
+          "Since 2022, all new home and workplace EV chargers installed in Great Britain are legally required to have smart charging capability \u2014 meaning they can be scheduled and monitored remotely, and default to off-peak charging times. This isn't an upsell; every charger we fit meets this requirement as standard."
         ]
       },
       {
         "heading": "How long does the job actually take?",
         "body": [
-          "For a standard domestic install, most jobs are done within half a day. Longer cable runs, or any consumer unit work identified during the survey, will extend that — which is exactly why we always survey before quoting, rather than pricing blind over the phone."
+          "For a standard domestic install, most jobs are done within half a day. Longer cable runs, or any consumer unit work identified during the survey, will extend that \u2014 which is exactly why we always survey before quoting, rather than pricing blind over the phone."
         ]
       }
     ],
     "faqs": [
-      { "q": "Can I get a grant for a home EV charger?", "a": "Homeowners with a private driveway are generally no longer eligible for a home charger grant. If you rely on on-street parking, a cross-pavement solution grant may still be available — we can point you in the right direction during your survey." },
-      { "q": "Do I need planning permission?", "a": "Almost never for a standard home installation. It's only a consideration for certain listed buildings or conservation area restrictions." },
-      { "q": "Will my consumer unit need upgrading too?", "a": "Sometimes — it depends on the age and capacity of your existing board. We check this as part of every EV charger survey, so there are no surprises once work starts." },
-      { "q": "How long does installation take on the day?", "a": "Most home installs are completed within half a day." }
+      {
+        "q": "Can I get a grant for a home EV charger?",
+        "a": "Homeowners with a private driveway are generally no longer eligible for a home charger grant. If you rely on on-street parking, a cross-pavement solution grant may still be available \u2014 we can point you in the right direction during your survey."
+      },
+      {
+        "q": "Do I need planning permission?",
+        "a": "Almost never for a standard home installation. It's only a consideration for certain listed buildings or conservation area restrictions."
+      },
+      {
+        "q": "Will my consumer unit need upgrading too?",
+        "a": "Sometimes \u2014 it depends on the age and capacity of your existing board. We check this as part of every EV charger survey, so there are no surprises once work starts."
+      },
+      {
+        "q": "How long does installation take on the day?",
+        "a": "Most home installs are completed within half a day."
+      }
     ],
-    "relatedSlugs": ["consumer-unit-upgrade-cost-guide", "eicr-landlord-guide-scotland", "commercial-led-lighting-savings"]
+    "relatedSlugs": [
+      "consumer-unit-upgrade-cost-guide",
+      "eicr-landlord-guide-scotland",
+      "commercial-led-lighting-savings"
+    ]
   },
   {
     "slug": "signs-your-home-needs-rewired",
     "service": "domestic-commercial-rewiring",
     "title": "7 Signs Your Glasgow Home Needs Rewired",
     "metaTitle": "7 Signs Your House Needs Rewired | Quality Electrics Glasgow",
-    "metaDescription": "Flickering lights, warm sockets, an old fuse box — here are the 7 real warning signs that your Glasgow home's wiring needs attention.",
-    "excerpt": "Flickering lights and a trip now and again could be nothing — or they could be your wiring telling you something. Here's what to actually look for.",
+    "metaDescription": "Flickering lights, warm sockets, an old fuse box \u2014 here are the 7 real warning signs that your Glasgow home's wiring needs attention.",
+    "excerpt": "Flickering lights and a trip now and again could be nothing \u2014 or they could be your wiring telling you something. Here's what to actually look for.",
     "readTime": "6 min read",
     "publishDate": "2026-06-09",
     "displayDate": "9 June 2026",
-    "heroImage": "assets/img/tenement.webp",
+    "heroImage": "assets/img/business-wiring-fitout.webp",
     "keyTakeaways": [
-      "Most wiring has a useful life of around 25–30 years — plenty of Glasgow's tenement stock is well past that",
+      "Most wiring has a useful life of around 25\u201330 years \u2014 plenty of Glasgow's tenement stock is well past that",
       "An old fuse box with wire fuses (rather than modern circuit breakers) is one of the clearest signs on its own",
       "Burning smells or scorch marks around sockets are not a 'wait and see' issue",
       "An EICR is the only way to know for certain whether you need a full rewire or just remedial work"
     ],
     "intro": [
-      "Glasgow's housing stock is a mix of Victorian tenements, 1930s semis, post-war schemes, and new-builds — and a good chunk of it is carrying wiring that's older than the people living in it. Rewiring is a significant job, so it's worth knowing the difference between a minor niggle and a genuine warning sign before you call anyone out."
+      "Glasgow's housing stock is a mix of Victorian tenements, 1930s semis, post-war schemes, and new-builds \u2014 and a good chunk of it is carrying wiring that's older than the people living in it. Rewiring is a significant job, so it's worth knowing the difference between a minor niggle and a genuine warning sign before you call anyone out."
     ],
     "sections": [
       {
-        "heading": "1–2. Flickering lights and frequent trips",
+        "heading": "1\u20132. Flickering lights and frequent trips",
         "body": [
-          "An occasional flicker when a big appliance kicks in isn't automatically a problem. But lights that flicker regularly across multiple rooms, or a consumer unit that trips more than very occasionally, usually points to a deeper issue — loose connections, overloaded circuits, or wiring that's simply reached the end of its working life."
+          "An occasional flicker when a big appliance kicks in isn't automatically a problem. But lights that flicker regularly across multiple rooms, or a consumer unit that trips more than very occasionally, usually points to a deeper issue \u2014 loose connections, overloaded circuits, or wiring that's simply reached the end of its working life."
         ]
       },
       {
@@ -109,13 +125,13 @@
       {
         "heading": "4. Scorch marks around sockets or switches",
         "body": [
-          "Brown or black marks around a socket or switch plate are a visible record of overheating that's already happened — not a risk that might happen. If you see this, treat it the same way as a burning smell."
+          "Brown or black marks around a socket or switch plate are a visible record of overheating that's already happened \u2014 not a risk that might happen. If you see this, treat it the same way as a burning smell."
         ]
       },
       {
         "heading": "5. An old fuse box with rewireable wire fuses",
         "body": [
-          "If your consumer unit still uses physical fuse wire rather than modern circuit breakers, that's usually a strong sign the wider installation is overdue an update — this style of fuse box was largely phased out decades ago and lacks the RCD protection built into every modern board."
+          "If your consumer unit still uses physical fuse wire rather than modern circuit breakers, that's usually a strong sign the wider installation is overdue an update \u2014 this style of fuse box was largely phased out decades ago and lacks the RCD protection built into every modern board."
         ]
       },
       {
@@ -125,25 +141,41 @@
         ]
       },
       {
-        "heading": "7. The property simply hasn't been rewired in 25–30 years",
+        "heading": "7. The property simply hasn't been rewired in 25\u201330 years",
         "body": [
-          "Even with no obvious symptoms, wiring has a working life — generally reckoned at around 25 to 30 years. If nobody in living memory of the property can tell you when it was last rewired, age alone is a good enough reason to get it checked."
+          "Even with no obvious symptoms, wiring has a working life \u2014 generally reckoned at around 25 to 30 years. If nobody in living memory of the property can tell you when it was last rewired, age alone is a good enough reason to get it checked."
         ]
       },
       {
         "heading": "How to actually find out",
         "body": [
-          "None of the above tells you for certain whether you need a full rewire, a partial rewire, or nothing more than a repair. The only way to know is an Electrical Installation Condition Report (EICR) — see our full landlord and homeowner guide to EICRs below."
+          "None of the above tells you for certain whether you need a full rewire, a partial rewire, or nothing more than a repair. The only way to know is an Electrical Installation Condition Report (EICR) \u2014 see our full landlord and homeowner guide to EICRs below."
         ]
       }
     ],
     "faqs": [
-      { "q": "Does every old fuse box mean I need a rewire?", "a": "Not necessarily — sometimes just the consumer unit needs upgrading while the cabling itself is still sound. An EICR will tell you which applies to your property." },
-      { "q": "How long does a full rewire take?", "a": "A typical two or three-bedroom tenement flat takes around a week, though we'll confirm an exact timeline once we've surveyed the property." },
-      { "q": "Can a rewire be done in stages?", "a": "Yes, particularly for occupied homes or businesses that can't close entirely — we can scope a phased approach at quote stage." },
-      { "q": "Is rewiring covered by any certification?", "a": "Yes, every rewire we carry out is tested to BS7671 and certified on completion." }
+      {
+        "q": "Does every old fuse box mean I need a rewire?",
+        "a": "Not necessarily \u2014 sometimes just the consumer unit needs upgrading while the cabling itself is still sound. An EICR will tell you which applies to your property."
+      },
+      {
+        "q": "How long does a full rewire take?",
+        "a": "A typical two or three-bedroom tenement flat takes around a week, though we'll confirm an exact timeline once we've surveyed the property."
+      },
+      {
+        "q": "Can a rewire be done in stages?",
+        "a": "Yes, particularly for occupied homes or businesses that can't close entirely \u2014 we can scope a phased approach at quote stage."
+      },
+      {
+        "q": "Is rewiring covered by any certification?",
+        "a": "Yes, every rewire we carry out is tested to BS7671 and certified on completion."
+      }
     ],
-    "relatedSlugs": ["eicr-landlord-guide-scotland", "consumer-unit-upgrade-cost-guide", "electrical-checklist-home-extension-loft-conversion"]
+    "relatedSlugs": [
+      "eicr-landlord-guide-scotland",
+      "consumer-unit-upgrade-cost-guide",
+      "electrical-checklist-home-extension-loft-conversion"
+    ]
   },
   {
     "slug": "eicr-landlord-guide-scotland",
@@ -160,10 +192,10 @@
       "Scottish landlords are legally required to hold a valid EICR for every rented property, at least every 5 years",
       "The EICR must be carried out by an electrician accredited with SELECT or NICEIC",
       "A copy must go to the tenant within 28 days of the inspection",
-      "If a report identifies a serious risk, remedial work isn't optional — it's part of meeting the Repairing Standard"
+      "If a report identifies a serious risk, remedial work isn't optional \u2014 it's part of meeting the Repairing Standard"
     ],
     "intro": [
-      "If you let property in Scotland, your electrical safety obligations are set out clearly in law — this isn't a grey area or a 'best practice' recommendation, it's a legal requirement under the Housing (Scotland) Act 2006 and the Repairing Standard. Here's what that actually means in practice."
+      "If you let property in Scotland, your electrical safety obligations are set out clearly in law \u2014 this isn't a grey area or a 'best practice' recommendation, it's a legal requirement under the Housing (Scotland) Act 2006 and the Repairing Standard. Here's what that actually means in practice."
     ],
     "sections": [
       {
@@ -181,30 +213,49 @@
       {
         "heading": "What the report needs to cover",
         "body": [
-          "A compliant EICR isn't just a look at the consumer unit — it needs to include an appliance check (PAT) covering anything you as the landlord provide, alongside the full inspection and testing of the fixed electrical installation."
+          "A compliant EICR isn't just a look at the consumer unit \u2014 it needs to include an appliance check (PAT) covering anything you as the landlord provide, alongside the full inspection and testing of the fixed electrical installation."
         ]
       },
       {
         "heading": "Getting it to your tenant",
         "body": [
-          "Once the inspection's complete, you're required to provide a copy of the EICR to your tenant within 28 days. This isn't just good practice — it's part of the legal obligation, so it's worth building into your process rather than treating as an afterthought."
+          "Once the inspection's complete, you're required to provide a copy of the EICR to your tenant within 28 days. This isn't just good practice \u2014 it's part of the legal obligation, so it's worth building into your process rather than treating as an afterthought."
         ]
       },
       {
         "heading": "What happens if the property fails",
         "body": [
-          "A failed EICR isn't the end of the road, but it does mean action is required. Issues are coded by severity, and anything coded as a serious risk needs to be remedied to bring the property up to the Repairing Standard. We list every issue found, rated by severity, and can quote for remedial work on the spot — so you're not left waiting on a second contractor to even get a price."
+          "A failed EICR isn't the end of the road, but it does mean action is required. Issues are coded by severity, and anything coded as a serious risk needs to be remedied to bring the property up to the Repairing Standard. We list every issue found, rated by severity, and can quote for remedial work on the spot \u2014 so you're not left waiting on a second contractor to even get a price."
         ]
       }
     ],
     "faqs": [
-      { "q": "Do I need an EICR for every rented property I own?", "a": "Yes, each individual rented property needs its own valid, in-date EICR." },
-      { "q": "What if I've just had a full rewire done?", "a": "A rewire comes with its own Electrical Installation Certificate, which satisfies the requirement until your next scheduled EICR is due." },
-      { "q": "How long does an inspection take?", "a": "A typical flat or house takes 2–4 hours on site; larger properties take longer, which we'll scope in advance." },
-      { "q": "Do I get the report the same day?", "a": "You'll get a verbal summary on the day, with the full written report following shortly after." },
-      { "q": "Is this different from an EPC?", "a": "Yes — an EPC covers energy efficiency, an EICR covers electrical safety. They're separate legal requirements." }
+      {
+        "q": "Do I need an EICR for every rented property I own?",
+        "a": "Yes, each individual rented property needs its own valid, in-date EICR."
+      },
+      {
+        "q": "What if I've just had a full rewire done?",
+        "a": "A rewire comes with its own Electrical Installation Certificate, which satisfies the requirement until your next scheduled EICR is due."
+      },
+      {
+        "q": "How long does an inspection take?",
+        "a": "A typical flat or house takes 2\u20134 hours on site; larger properties take longer, which we'll scope in advance."
+      },
+      {
+        "q": "Do I get the report the same day?",
+        "a": "You'll get a verbal summary on the day, with the full written report following shortly after."
+      },
+      {
+        "q": "Is this different from an EPC?",
+        "a": "Yes \u2014 an EPC covers energy efficiency, an EICR covers electrical safety. They're separate legal requirements."
+      }
     ],
-    "relatedSlugs": ["signs-your-home-needs-rewired", "consumer-unit-upgrade-cost-guide", "ev-charger-installation-cost-guide"]
+    "relatedSlugs": [
+      "signs-your-home-needs-rewired",
+      "consumer-unit-upgrade-cost-guide",
+      "ev-charger-installation-cost-guide"
+    ]
   },
   {
     "slug": "consumer-unit-upgrade-cost-guide",
@@ -216,21 +267,21 @@
     "readTime": "6 min read",
     "publishDate": "2026-06-23",
     "displayDate": "23 June 2026",
-    "heroImage": "assets/img/office-lighting.webp",
+    "heroImage": "assets/img/distribution-board.webp",
     "keyTakeaways": [
-      "A standard dual-RCD consumer unit typically costs £500–£800; a full RCBO board is usually £800–£1,200",
-      "It's not a legal requirement to upgrade an old fuse box — but modern boards include safety protection old ones simply don't have",
-      "You can't legally do this yourself — it requires a qualified electrician and Part P notification",
+      "A standard dual-RCD consumer unit typically costs \u00a3500\u2013\u00a3800; a full RCBO board is usually \u00a3800\u2013\u00a31,200",
+      "It's not a legal requirement to upgrade an old fuse box \u2014 but modern boards include safety protection old ones simply don't have",
+      "You can't legally do this yourself \u2014 it requires a qualified electrician and Part P notification",
       "Most upgrades are completed within half a day to a full day"
     ],
     "intro": [
-      "\"Fuse box\" and \"consumer unit\" get used interchangeably, but if yours is genuinely an old fuse box — with fuse wire or fuse cartridges rather than switches — it's worth understanding exactly what upgrading it involves, and what it actually costs."
+      "\"Fuse box\" and \"consumer unit\" get used interchangeably, but if yours is genuinely an old fuse box \u2014 with fuse wire or fuse cartridges rather than switches \u2014 it's worth understanding exactly what upgrading it involves, and what it actually costs."
     ],
     "sections": [
       {
         "heading": "What you're actually paying for",
         "body": [
-          "A standard dual-RCD consumer unit typically runs £500–£800 all in; stepping up to a full RCBO board — where every circuit gets its own individual protection rather than sharing an RCD between several — is usually £800–£1,200. The higher spec isn't just an upsell: individual RCBO protection means a fault on one circuit doesn't knock out every other circuit sharing that RCD."
+          "A standard dual-RCD consumer unit typically runs \u00a3500\u2013\u00a3800 all in; stepping up to a full RCBO board \u2014 where every circuit gets its own individual protection rather than sharing an RCD between several \u2014 is usually \u00a3800\u2013\u00a31,200. The higher spec isn't just an upsell: individual RCBO protection means a fault on one circuit doesn't knock out every other circuit sharing that RCD."
         ],
         "list": [
           "Removal and safe disposal of the old fuse box or consumer unit",
@@ -243,29 +294,45 @@
       {
         "heading": "What can add to the cost",
         "body": [
-          "A few things commonly sit outside the base price and are worth asking about upfront: earth bonding upgrades (often £150–£300 if your property's earthing needs updating to match the new board), minor plaster repair around the unit if it's being relocated, and remedial work if testing uncovers a fault on an existing circuit."
+          "A few things commonly sit outside the base price and are worth asking about upfront: earth bonding upgrades (often \u00a3150\u2013\u00a3300 if your property's earthing needs updating to match the new board), minor plaster repair around the unit if it's being relocated, and remedial work if testing uncovers a fault on an existing circuit."
         ]
       },
       {
         "heading": "Is it actually a legal requirement?",
         "body": [
-          "No — you're not legally required to replace a working fuse box. But older units generally lack RCD protection, which is what actually cuts power fast enough to prevent a serious electric shock. If yours is flagged during an EICR, or you're adding a new heavy load like an EV charger, that's usually the point it becomes worth doing rather than putting off."
+          "No \u2014 you're not legally required to replace a working fuse box. But older units generally lack RCD protection, which is what actually cuts power fast enough to prevent a serious electric shock. If yours is flagged during an EICR, or you're adding a new heavy load like an EV charger, that's usually the point it becomes worth doing rather than putting off."
         ]
       },
       {
         "heading": "Why you can't do this yourself",
         "body": [
-          "Consumer unit replacement is notifiable work under Part P of the Building Regulations, and it needs to be carried out and certified by a qualified, registered electrician — not something to attempt as a weekend project, regardless of how it looks online."
+          "Consumer unit replacement is notifiable work under Part P of the Building Regulations, and it needs to be carried out and certified by a qualified, registered electrician \u2014 not something to attempt as a weekend project, regardless of how it looks online."
         ]
       }
     ],
     "faqs": [
-      { "q": "How long does an upgrade take?", "a": "Most homes are done in half a day to a full day, depending on how many circuits need re-terminating." },
-      { "q": "Will the power be off the whole time?", "a": "Yes, temporarily — we agree a time that suits you and keep the power-down window as short as possible." },
-      { "q": "Do I need a new consumer unit if mine fails an EICR?", "a": "If it's marked as a serious risk (C1/C2), yes — we can quote for the upgrade at the same visit as the inspection." },
-      { "q": "What size unit do I need?", "a": "It depends on your existing circuits and anything you're planning to add, like an EV charger — we work this out during a free survey." }
+      {
+        "q": "How long does an upgrade take?",
+        "a": "Most homes are done in half a day to a full day, depending on how many circuits need re-terminating."
+      },
+      {
+        "q": "Will the power be off the whole time?",
+        "a": "Yes, temporarily \u2014 we agree a time that suits you and keep the power-down window as short as possible."
+      },
+      {
+        "q": "Do I need a new consumer unit if mine fails an EICR?",
+        "a": "If it's marked as a serious risk (C1/C2), yes \u2014 we can quote for the upgrade at the same visit as the inspection."
+      },
+      {
+        "q": "What size unit do I need?",
+        "a": "It depends on your existing circuits and anything you're planning to add, like an EV charger \u2014 we work this out during a free survey."
+      }
     ],
-    "relatedSlugs": ["signs-your-home-needs-rewired", "eicr-landlord-guide-scotland", "ev-charger-installation-cost-guide"]
+    "relatedSlugs": [
+      "signs-your-home-needs-rewired",
+      "eicr-landlord-guide-scotland",
+      "ev-charger-installation-cost-guide"
+    ]
   },
   {
     "slug": "commercial-led-lighting-savings",
@@ -273,15 +340,15 @@
     "title": "How Much Can Your Business Save by Upgrading to LED Lighting?",
     "metaTitle": "Commercial LED Lighting Savings Guide | Quality Electrics",
     "metaDescription": "Real energy and maintenance savings from switching a commercial unit to LED lighting, and how long it typically takes to pay back.",
-    "excerpt": "LED isn't just a bulb swap — it's usually one of the fastest-paying-back upgrades a commercial property can make. Here's the real numbers.",
+    "excerpt": "LED isn't just a bulb swap \u2014 it's usually one of the fastest-paying-back upgrades a commercial property can make. Here's the real numbers.",
     "readTime": "6 min read",
     "publishDate": "2026-06-30",
     "displayDate": "30 June 2026",
-    "heroImage": "assets/img/outhouse.webp",
+    "heroImage": "assets/img/commercial-lighting-install.webp",
     "keyTakeaways": [
-      "LED can cut the lighting portion of a commercial energy bill by 50–75%",
-      "Typical payback periods run 2–5 years, with some fit-outs paying back in as little as 12 months",
-      "Maintenance costs also drop sharply — LEDs last roughly five times longer than fluorescent tubes",
+      "LED can cut the lighting portion of a commercial energy bill by 50\u201375%",
+      "Typical payback periods run 2\u20135 years, with some fit-outs paying back in as little as 12 months",
+      "Maintenance costs also drop sharply \u2014 LEDs last roughly five times longer than fluorescent tubes",
       "Financing routes like Salix loans and Enhanced Capital Allowances can improve the numbers further"
     ],
     "intro": [
@@ -291,7 +358,7 @@
       {
         "heading": "The energy savings, in real terms",
         "body": [
-          "Switching from fluorescent or older lighting to LED typically cuts the lighting portion of an energy bill by 50–75%. For a warehouse or retail unit running high-bay or tube fixtures for long hours, that difference shows up on the bill immediately — one documented UK warehouse case saw 200 high-bay fixtures switched to LED, cutting annual lighting energy costs from roughly £14,000 to £4,900."
+          "Switching from fluorescent or older lighting to LED typically cuts the lighting portion of an energy bill by 50\u201375%. For a warehouse or retail unit running high-bay or tube fixtures for long hours, that difference shows up on the bill immediately \u2014 one documented UK warehouse case saw 200 high-bay fixtures switched to LED, cutting annual lighting energy costs from roughly \u00a314,000 to \u00a34,900."
         ]
       },
       {
@@ -303,29 +370,45 @@
       {
         "heading": "Maintenance costs drop too",
         "body": [
-          "LED fixtures last around 50,000 hours on average — roughly five times longer than fluorescent tubes — which means far fewer call-outs to replace failed tubes and starters. Maintenance cost reductions of 60–80% after an LED upgrade aren't unusual, particularly for properties with hard-to-access fittings like high ceilings or stairwells."
+          "LED fixtures last around 50,000 hours on average \u2014 roughly five times longer than fluorescent tubes \u2014 which means far fewer call-outs to replace failed tubes and starters. Maintenance cost reductions of 60\u201380% after an LED upgrade aren't unusual, particularly for properties with hard-to-access fittings like high ceilings or stairwells."
         ]
       },
       {
         "heading": "Financing the upgrade",
         "body": [
-          "A full LED fit-out doesn't have to be paid upfront. Salix Finance offers interest-free loans for qualifying energy-efficient equipment including LED lighting, and Enhanced Capital Allowances can allow 100% first-year tax relief on qualifying products — both worth discussing with your accountant alongside a quote."
+          "A full LED fit-out doesn't have to be paid upfront. Salix Finance offers interest-free loans for qualifying energy-efficient equipment including LED lighting, and Enhanced Capital Allowances can allow 100% first-year tax relief on qualifying products \u2014 both worth discussing with your accountant alongside a quote."
         ]
       },
       {
         "heading": "Getting it right the first time",
         "body": [
-          "A good LED fit-out isn't just swapping fittings one-for-one — lux levels, glare, and emergency lighting compliance all need to be part of the design, not an afterthought. We scope this properly before quoting, and can work around your trading hours so the switch doesn't cost you in downtime what it saves you in energy."
+          "A good LED fit-out isn't just swapping fittings one-for-one \u2014 lux levels, glare, and emergency lighting compliance all need to be part of the design, not an afterthought. We scope this properly before quoting, and can work around your trading hours so the switch doesn't cost you in downtime what it saves you in energy."
         ]
       }
     ],
     "faqs": [
-      { "q": "Can the work be done outside our trading hours?", "a": "Yes — evening, overnight, or phased installs around opening hours are common for retail and office fit-outs." },
-      { "q": "Do you handle emergency lighting as part of the upgrade?", "a": "Yes, including testing and certification to keep you compliant." },
-      { "q": "Is LED suitable for every type of commercial space?", "a": "In almost all cases yes, though the fixture spec differs — a retail unit, warehouse, and office each need a different lighting design, not the same fitting everywhere." },
-      { "q": "Do you offer ongoing maintenance after the fit-out?", "a": "Yes, maintenance contracts are available so you've got a fixed point of contact rather than calling around for every issue." }
+      {
+        "q": "Can the work be done outside our trading hours?",
+        "a": "Yes \u2014 evening, overnight, or phased installs around opening hours are common for retail and office fit-outs."
+      },
+      {
+        "q": "Do you handle emergency lighting as part of the upgrade?",
+        "a": "Yes, including testing and certification to keep you compliant."
+      },
+      {
+        "q": "Is LED suitable for every type of commercial space?",
+        "a": "In almost all cases yes, though the fixture spec differs \u2014 a retail unit, warehouse, and office each need a different lighting design, not the same fitting everywhere."
+      },
+      {
+        "q": "Do you offer ongoing maintenance after the fit-out?",
+        "a": "Yes, maintenance contracts are available so you've got a fixed point of contact rather than calling around for every issue."
+      }
     ],
-    "relatedSlugs": ["electrical-checklist-home-extension-loft-conversion", "eicr-landlord-guide-scotland", "kitchen-renovation-electrics-guide"]
+    "relatedSlugs": [
+      "electrical-checklist-home-extension-loft-conversion",
+      "eicr-landlord-guide-scotland",
+      "kitchen-renovation-electrics-guide"
+    ]
   },
   {
     "slug": "electrical-checklist-home-extension-loft-conversion",
@@ -333,19 +416,19 @@
     "title": "Electrical First Fix Checklist: What to Plan Before Your Extension or Loft Conversion",
     "metaTitle": "Electrical Checklist for Extensions & Loft Conversions | QE",
     "metaDescription": "What actually needs planning at first fix stage for a home extension or loft conversion, and why it matters before plastering starts.",
-    "excerpt": "First fix is the point of no return before plastering — get it wrong and you're chasing out fresh walls. Here's what to plan in advance.",
+    "excerpt": "First fix is the point of no return before plastering \u2014 get it wrong and you're chasing out fresh walls. Here's what to plan in advance.",
     "readTime": "7 min read",
     "publishDate": "2026-07-07",
     "displayDate": "7 July 2026",
-    "heroImage": "assets/img/outhouse-1.webp",
+    "heroImage": "assets/img/garden-room-lighting.webp",
     "keyTakeaways": [
-      "First fix happens before plastering — cables, back boxes, and wiring routes are locked in at this stage",
+      "First fix happens before plastering \u2014 cables, back boxes, and wiring routes are locked in at this stage",
       "Loft conversions have specific requirements around mains-wired smoke alarms and extractor fan wiring",
       "Electrical work on an extension must comply with Part P of the Building Regulations",
       "A registered electrician can self-certify the work, avoiding a separate building control inspection"
     ],
     "intro": [
-      "Once plastering starts on your extension or loft conversion, changing your mind about where a socket or light switch goes gets expensive fast. First fix is the stage where all of that gets decided — so it's worth planning properly before the electrician is even on site, not during."
+      "Once plastering starts on your extension or loft conversion, changing your mind about where a socket or light switch goes gets expensive fast. First fix is the stage where all of that gets decided \u2014 so it's worth planning properly before the electrician is even on site, not during."
     ],
     "sections": [
       {
@@ -358,35 +441,51 @@
           "Back boxes for sockets, switches, and dimmers",
           "Wiring for lighting circuits, including any feature or under-unit lighting",
           "Heating control wiring, where relevant",
-          "Data, TV aerial, and smart home cabling — much cheaper to include now than retrofit later"
+          "Data, TV aerial, and smart home cabling \u2014 much cheaper to include now than retrofit later"
         ]
       },
       {
         "heading": "Loft conversions have their own rules",
         "body": [
-          "Building regulations are specific about loft conversions: mains-wired smoke alarms are required, with defined locations, and any extractor fan (for an en-suite, for example) needs to be wired in at first fix — not bolted on afterwards. Power points and lighting also need agreeing before plasterboard goes up, since retrofitting later means cutting into a finished ceiling."
+          "Building regulations are specific about loft conversions: mains-wired smoke alarms are required, with defined locations, and any extractor fan (for an en-suite, for example) needs to be wired in at first fix \u2014 not bolted on afterwards. Power points and lighting also need agreeing before plasterboard goes up, since retrofitting later means cutting into a finished ceiling."
         ]
       },
       {
         "heading": "Why timing with your builder matters",
         "body": [
-          "The single biggest cause of extra cost on extension electrics is being brought in too late — after first fix should have already happened. Ideally we're involved as soon as first fix is being scheduled, working directly from your architect's drawings or discussing the layout with your builder, so nothing gets missed and nothing needs re-cutting."
+          "The single biggest cause of extra cost on extension electrics is being brought in too late \u2014 after first fix should have already happened. Ideally we're involved as soon as first fix is being scheduled, working directly from your architect's drawings or discussing the layout with your builder, so nothing gets missed and nothing needs re-cutting."
         ]
       },
       {
         "heading": "Certification and building control",
         "body": [
-          "Electrical work on an extension has to comply with Part P of the Building Regulations. Using a registered electrician (through NICEIC, for example) means the work can be self-certified, which saves you arranging a separate building control inspection for the electrics specifically. At the end of the job you should receive an Electrical Installation Certificate, a Building Control notification certificate, and full test results — keep all three with your property paperwork."
+          "Electrical work on an extension has to comply with Part P of the Building Regulations. Using a registered electrician (through NICEIC, for example) means the work can be self-certified, which saves you arranging a separate building control inspection for the electrics specifically. At the end of the job you should receive an Electrical Installation Certificate, a Building Control notification certificate, and full test results \u2014 keep all three with your property paperwork."
         ]
       }
     ],
     "faqs": [
-      { "q": "When should I bring an electrician in on the project?", "a": "As early as possible — ideally once first fix is being scheduled with your builder, so sockets, lighting, and circuits are positioned correctly the first time." },
-      { "q": "Do you work directly from architect drawings?", "a": "Yes, and we're comfortable coordinating on-site with the rest of your build team rather than working in isolation." },
-      { "q": "Is Building Standards certification included?", "a": "Yes, we certify the electrical work to the standard your local authority requires." },
-      { "q": "Can you wire outbuildings and garden rooms as part of the same job?", "a": "Yes, including outdoor supplies and garden offices alongside the main extension or conversion." }
+      {
+        "q": "When should I bring an electrician in on the project?",
+        "a": "As early as possible \u2014 ideally once first fix is being scheduled with your builder, so sockets, lighting, and circuits are positioned correctly the first time."
+      },
+      {
+        "q": "Do you work directly from architect drawings?",
+        "a": "Yes, and we're comfortable coordinating on-site with the rest of your build team rather than working in isolation."
+      },
+      {
+        "q": "Is Building Standards certification included?",
+        "a": "Yes, we certify the electrical work to the standard your local authority requires."
+      },
+      {
+        "q": "Can you wire outbuildings and garden rooms as part of the same job?",
+        "a": "Yes, including outdoor supplies and garden offices alongside the main extension or conversion."
+      }
     ],
-    "relatedSlugs": ["kitchen-renovation-electrics-guide", "signs-your-home-needs-rewired", "consumer-unit-upgrade-cost-guide"]
+    "relatedSlugs": [
+      "kitchen-renovation-electrics-guide",
+      "signs-your-home-needs-rewired",
+      "consumer-unit-upgrade-cost-guide"
+    ]
   },
   {
     "slug": "kitchen-renovation-electrics-guide",
@@ -394,7 +493,7 @@
     "title": "Kitchen Renovation Electrics: What to Plan Before Your Fitter Arrives",
     "metaTitle": "Kitchen Renovation Electrics Guide | Quality Electrics Glasgow",
     "metaDescription": "Socket placement rules, dedicated circuits, and what to agree with your electrician before your kitchen fitter starts work.",
-    "excerpt": "Get the electrics agreed before your kitchen fitter starts, not during — here's exactly what needs planning and why.",
+    "excerpt": "Get the electrics agreed before your kitchen fitter starts, not during \u2014 here's exactly what needs planning and why.",
     "readTime": "6 min read",
     "publishDate": "2026-07-07",
     "displayDate": "7 July 2026",
@@ -406,13 +505,13 @@
       "Getting the layout agreed before units go in avoids expensive retrofitting later"
     ],
     "intro": [
-      "A kitchen carries more electrical load, in a smaller space, than any other room in the house — which is exactly why it's the room most likely to go wrong if the electrics aren't planned before the units arrive."
+      "A kitchen carries more electrical load, in a smaller space, than any other room in the house \u2014 which is exactly why it's the room most likely to go wrong if the electrics aren't planned before the units arrive."
     ],
     "sections": [
       {
         "heading": "Socket placement rules",
         "body": [
-          "There are clear regulations behind where kitchen sockets can go, not just design preference: sockets need to sit at least 300mm (horizontal distance) from the edge of a sink to reduce water risk, and at least 450mm above the floor under UK building regulations. A common practical placement is around 150mm above the worktop, or 100mm above an upstand — high enough to be usable, low enough not to look like an afterthought."
+          "There are clear regulations behind where kitchen sockets can go, not just design preference: sockets need to sit at least 300mm (horizontal distance) from the edge of a sink to reduce water risk, and at least 450mm above the floor under UK building regulations. A common practical placement is around 150mm above the worktop, or 100mm above an upstand \u2014 high enough to be usable, low enough not to look like an afterthought."
         ]
       },
       {
@@ -424,13 +523,13 @@
       {
         "heading": "RCD protection is non-negotiable",
         "body": [
-          "Under current building regulations, all new kitchen wiring must be RCD protected — this isn't a nice-to-have given how much water and how many appliances share the space, it's a requirement, and it should be built into your consumer unit setup rather than treated as optional."
+          "Under current building regulations, all new kitchen wiring must be RCD protected \u2014 this isn't a nice-to-have given how much water and how many appliances share the space, it's a requirement, and it should be built into your consumer unit setup rather than treated as optional."
         ]
       },
       {
         "heading": "Timing with your kitchen fitter",
         "body": [
-          "The order of operations matters: electrics need to be agreed and largely first-fixed before your kitchen units go in, not worked around afterwards. That means the socket layout, lighting positions, and any dedicated circuits should be settled with your electrician while you're still finalising the kitchen design — ideally with your fitter or designer in the conversation too, so nobody's plans conflict once work starts."
+          "The order of operations matters: electrics need to be agreed and largely first-fixed before your kitchen units go in, not worked around afterwards. That means the socket layout, lighting positions, and any dedicated circuits should be settled with your electrician while you're still finalising the kitchen design \u2014 ideally with your fitter or designer in the conversation too, so nobody's plans conflict once work starts."
         ]
       },
       {
@@ -441,11 +540,27 @@
       }
     ],
     "faqs": [
-      { "q": "When should I book an electrician relative to my kitchen fitter?", "a": "Before the units go in, ideally at first-fix stage, so sockets and circuits land in the right places once cabinets are fitted." },
-      { "q": "Do induction hobs need a dedicated circuit?", "a": "Yes, almost always — we size the circuit to the specific hob being installed." },
-      { "q": "Can you work directly with my kitchen designer or fitter?", "a": "Yes, we regularly work from kitchen design plans and coordinate directly with the fitter." },
-      { "q": "How long does a kitchen electrical first and second fix take?", "a": "Typically 1–2 days combined, depending on the size of the kitchen and how much lighting is involved." }
+      {
+        "q": "When should I book an electrician relative to my kitchen fitter?",
+        "a": "Before the units go in, ideally at first-fix stage, so sockets and circuits land in the right places once cabinets are fitted."
+      },
+      {
+        "q": "Do induction hobs need a dedicated circuit?",
+        "a": "Yes, almost always \u2014 we size the circuit to the specific hob being installed."
+      },
+      {
+        "q": "Can you work directly with my kitchen designer or fitter?",
+        "a": "Yes, we regularly work from kitchen design plans and coordinate directly with the fitter."
+      },
+      {
+        "q": "How long does a kitchen electrical first and second fix take?",
+        "a": "Typically 1\u20132 days combined, depending on the size of the kitchen and how much lighting is involved."
+      }
     ],
-    "relatedSlugs": ["electrical-checklist-home-extension-loft-conversion", "consumer-unit-upgrade-cost-guide", "eicr-landlord-guide-scotland"]
+    "relatedSlugs": [
+      "electrical-checklist-home-extension-loft-conversion",
+      "consumer-unit-upgrade-cost-guide",
+      "eicr-landlord-guide-scotland"
+    ]
   }
 ]
