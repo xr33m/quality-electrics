@@ -7,12 +7,36 @@
  * guarantees content is never left permanently hidden if something upstream
  * misbehaves. Content is fully visible in the raw HTML with no JS; this is
  * a pure progressive-enhancement layer.
+ *
+ * Every <section> on the page is automatically opted in to a reveal so the
+ * whole site feels animated without per-section markup. Sections already
+ * carrying an explicit reveal/slide class, plus the homepage hero and any
+ * hero with a scroll-scrubbed video, are left alone.
  */
 
 document.addEventListener("DOMContentLoaded", () => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const targets = document.querySelectorAll(".reveal, .stagger-group, .slide-left, .slide-right");
+  const baseTargets = document.querySelectorAll(".reveal, .stagger-group, .slide-left, .slide-right");
+
+  // Auto-reveal: add .reveal to every <section> that doesn't already have an
+  // explicit animation class. Skip #home-hero (it has its own parallax) and
+  // the scroll-scrub video hero (#hero-video-wrapper), which would clip if
+  // faded. Keeps the safety-net and observer logic below unified.
+  const autoSections = [];
+  document.querySelectorAll("main section").forEach((section) => {
+    if (section.id === "home-hero" || section.id === "hero-video-wrapper") return;
+    if (
+      section.classList.contains("reveal") ||
+      section.classList.contains("slide-left") ||
+      section.classList.contains("slide-right")
+    )
+      return;
+    section.classList.add("reveal");
+    autoSections.push(section);
+  });
+
+  const targets = [...baseTargets, ...autoSections];
 
   if (reduceMotion || typeof IntersectionObserver === "undefined") {
     targets.forEach((el) => el.classList.add("is-visible"));
@@ -22,7 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const reveal = (el) => {
     el.classList.add("is-visible");
     if (el.classList.contains("stagger-group")) {
-      const items = el.querySelectorAll(":scope > .stagger-item");
+      const items = el.querySelectorAll(":scope > .stagger-item, :scope > * > .stagger-item");
       items.forEach((item, i) => {
         item.style.transitionDelay = `${Math.min(i, 8) * 90}ms`;
         item.classList.add("is-visible");
@@ -39,19 +63,10 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       });
     },
-    { threshold: 0.1, rootMargin: "0px 0px -10% 0px" }
+    { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
   );
 
   targets.forEach((el) => observer.observe(el));
-
-  // Safety net: if for any reason an element never intersects (e.g. it's
-  // already off-screen in a non-standard scroll container), force it
-  // visible after a few seconds so content can never be stuck hidden.
-  setTimeout(() => {
-    targets.forEach((el) => {
-      if (!el.classList.contains("is-visible")) reveal(el);
-    });
-  }, 4000);
 
   // Scroll-scrubbed hero video (e.g. Commercial Installations & Lighting):
   // the clip is pre-rendered (pan + lighting reveal), and scroll position

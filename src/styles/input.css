@@ -44,25 +44,29 @@
 
   /* Scroll-reveal animation states (see assets/js/scroll-animations.js).
      Elements start slightly offset/transparent and settle into place once
-     the .is-visible class is added by the IntersectionObserver. */
+     the .is-visible class is added by the IntersectionObserver. Auto-reveal
+     applies .reveal to every <section>, so the whole site animates without
+     per-section markup. prefers-reduced-motion users get instant content. */
   .reveal,
   .stagger-item,
   .slide-left,
   .slide-right {
     opacity: 0;
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition: opacity 0.8s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.8s cubic-bezier(0.22, 1, 0.36, 1);
+    will-change: opacity, transform;
   }
   .reveal {
-    transform: translateY(20px);
+    transform: translateY(28px);
   }
   .stagger-item {
-    transform: translateY(24px);
+    transform: translateY(32px) scale(0.98);
   }
   .slide-left {
-    transform: translateX(-36px);
+    transform: translateX(-44px);
   }
   .slide-right {
-    transform: translateX(36px);
+    transform: translateX(44px);
   }
   .reveal.is-visible,
   .stagger-item.is-visible,
@@ -70,5 +74,15 @@
   .slide-right.is-visible {
     opacity: 1;
     transform: none;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .reveal,
+    .stagger-item,
+    .slide-left,
+    .slide-right {
+      opacity: 1 !important;
+      transform: none !important;
+      transition: none !important;
+    }
   }
 }
