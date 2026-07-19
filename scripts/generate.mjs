@@ -16,7 +16,7 @@ import {
   blogArticleSchema,
   reviewsPageTemplate,
 } from "./lib/templates.mjs";
-import { serviceAreaSchema, areaHubSchema, localBusinessSchema } from "./lib/local-seo.mjs";
+import { serviceAreaSchema, areaHubSchema, localBusinessSchema, serviceFaqSchema } from "./lib/local-seo.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const root = join(__dirname, "..");
@@ -77,6 +77,7 @@ for (const [serviceIndex, service] of services.entries()) {
     path: `services/${service.slug}/`,
     business, services, areas, reviews,
     active: "services",
+    extraHead: serviceFaqSchema(service),
     bodyContent: serviceTemplate({ business, service, services, areas, post: relatedPost, index: serviceIndex }),
   }), { changefreq: "monthly", priority: 0.8 });
   pageCount++;
@@ -117,7 +118,7 @@ write("about", page({
   path: "about/",
   business, services, areas, reviews,
   active: "about",
-  bodyContent: aboutTemplate({ business }),
+  bodyContent: aboutTemplate({ business, services, reviews }),
 }), { changefreq: "monthly", priority: 0.5 });
 pageCount++;
 
@@ -139,7 +140,7 @@ write("contact", page({
   path: "contact/",
   business, services, areas, reviews,
   active: "contact",
-  bodyContent: contactTemplate({ business, areas }),
+  bodyContent: contactTemplate({ business, areas, services }),
 }), { changefreq: "yearly", priority: 0.7 });
 pageCount++;
 

@@ -604,7 +604,7 @@ export function serviceTemplate({ business, service, services, areas, post, inde
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">${service.name} in Glasgow <span class="text-brand-gold">&mdash; ${service.benefit}</span></h1>
       <p class="mt-5 text-cream/70 leading-relaxed">${service.intro}</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
-        <a href="/contact/" class="btn-gold">Get a Free Quote</a>
+        <a href="/contact/" class="btn-gold">${service.ctaLabel || "Get a Free Quote"}</a>
         <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
       </div>`;
 
@@ -676,8 +676,14 @@ export function serviceTemplate({ business, service, services, areas, post, inde
     <div class="section max-w-3xl">
       <span class="eyebrow">In Depth</span>
       <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink">${service.deepDive.heading}</h2>
-      <div class="mt-6 space-y-4">
-        ${service.deepDive.paragraphs.map((p) => `<p class="text-ink/70 leading-relaxed">${p}</p>`).join("\n")}
+      <div class="mt-6 space-y-6">
+        ${service.deepDive.paragraphs
+          .map((p, i) =>
+            i === 0
+              ? `<p class="text-lg text-ink/80 leading-relaxed font-medium">${p}</p>`
+              : `<p class="text-ink/70 leading-relaxed border-l-2 border-brand-green/25 pl-5">${p}</p>`
+          )
+          .join("\n")}
       </div>
     </div>
   </section>
@@ -867,7 +873,7 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
         Local ${service.name.toLowerCase()} for homes and businesses in ${area.name}, ${area.region} &mdash; from ${area.character}. NICEIC registered, fully insured, and quoted clearly before we start.
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
-        <a href="/contact/" class="btn-gold">Get a Free Quote</a>
+        <a href="/contact/" class="btn-gold">${service.ctaLabel || "Get a Free Quote"}</a>
         <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
       </div>
     </div>
@@ -1084,7 +1090,15 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
   `;
 }
 
-export function aboutTemplate({ business }) {
+export function aboutTemplate({ business, services, reviews }) {
+  const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
+  const featuredReviews = reviews.slice(0, 3);
+  const aboutStats = [
+    { label: "Jobs Completed", value: "400+" },
+    { label: "Years' Experience", value: "10" },
+    { label: "Google Rating", value: `${avgRating}★` },
+    { label: "NICEIC Registered", value: "100%" },
+  ];
   return `
   <section class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
@@ -1094,30 +1108,120 @@ export function aboutTemplate({ business }) {
     <div class="relative section py-16 sm:py-24 max-w-2xl">
       <span class="eyebrow">About Us</span>
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">Straightforward Electrical Work, Done Right</h1>
-      <p class="mt-5 text-cream/70 leading-relaxed">Quality Electrics is a Glasgow-based, NICEIC registered electrical contractor working across homes, lets, and commercial properties in the city and surrounding areas.</p>
+      <p class="mt-5 text-cream/70 leading-relaxed">Quality Electrics is based in the ${business.basedIn}, a NICEIC registered electrical contractor working across homes, lets, and commercial properties in the city and surrounding areas.</p>
     </div>
   </section>
 
-  <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
+  <section class="py-14 sm:py-16 bg-cream border-b border-ink/10">
+    <div class="section max-w-3xl mx-auto text-center">
+      <p class="text-lg sm:text-xl text-ink/70 leading-relaxed">At Quality Electrics, every job is <strong class="text-ink font-semibold">priced honestly, wired to code, and signed off with proper certification</strong> &mdash; no exceptions, no shortcuts, and no surprises on the invoice.</p>
+    </div>
+  </section>
+
+  <section class="py-12 sm:py-16 bg-cream border-b border-ink/10">
+    <div class="section grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+      ${aboutStats
+        .map(
+          (s) => `
+      <div>
+        <div class="text-3xl sm:text-4xl font-display font-semibold text-brand-green">${s.value}</div>
+        <div class="mt-1 text-xs sm:text-sm uppercase tracking-wide text-ink/50">${s.label}</div>
+      </div>`
+        )
+        .join("\n")}
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-cream border-b border-ink/10">
+    <div class="section grid grid-cols-1 lg:grid-cols-2 gap-10">
+      <div class="rounded-sm border border-ink/10 bg-white p-8">
+        <span class="eyebrow">Our Mission</span>
+        <h2 class="mt-3 text-2xl font-display font-semibold text-ink">Electrical Work You Don't Have to Think Twice About</h2>
+        <p class="mt-4 text-ink/70 leading-relaxed">To give every home and business in Glasgow electrical work that's quoted honestly, done to a proper standard, and certified so there's a paper trail when it matters &mdash; for a sale, a let, or your own peace of mind.</p>
+        <ul class="mt-6 space-y-3">
+          ${[
+            "Honest, itemised quotes before any work starts",
+            "NICEIC-certified work on every job, every time",
+            "Straight answers, even when it's not the bigger job",
+            "Built on repeat work and referrals, not one-off sales",
+          ]
+            .map((m) => `<li class="flex items-start gap-3 text-ink/80 text-sm"><span class="text-brand-green mt-0.5">${svgIcon("check", "w-4 h-4")}</span>${m}</li>`)
+            .join("\n")}
+        </ul>
+      </div>
+      <div class="rounded-sm border border-ink/10 bg-white p-8">
+        <span class="eyebrow">Our Vision</span>
+        <h2 class="mt-3 text-2xl font-display font-semibold text-ink">The Electrician People Actually Recommend</h2>
+        <p class="mt-4 text-ink/70 leading-relaxed">To be the name people in the Southside and beyond recommend to their neighbours &mdash; not because of how big the business has grown, but because the work's still done right every time.</p>
+        <ul class="mt-6 space-y-3">
+          ${[
+            "Staying hands-on with every job, not scaling past the point of quality",
+            "Keeping response times fast as the business grows",
+            "Being the trusted name for rewiring and EICR testing across Glasgow",
+            "Doing right by tenement and period properties other electricians avoid",
+          ]
+            .map((v) => `<li class="flex items-start gap-3 text-ink/80 text-sm"><span class="text-brand-green mt-0.5">${svgIcon("check", "w-4 h-4")}</span>${v}</li>`)
+            .join("\n")}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-ink">
+    <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
+      <div class="rounded-sm overflow-hidden">
+        <img src="/assets/img/van.webp" alt="Quality Electrics van, driven by Danny" class="w-full h-full object-cover" />
+      </div>
+      <div>
+        <span class="eyebrow">Meet Danny</span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">The Person Who Quotes the Job Is the Person Who Does It</h2>
+        <p class="mt-5 text-cream/70 leading-relaxed">Quality Electrics is run by Danny &mdash; a NICEIC-registered electrician with 10 years in the trade and over 400 completed jobs across Glasgow and the surrounding areas. There's no call centre and no subcontracting: the electrician who surveys the job and gives the quote is the one who turns up and does the work.</p>
+        <ul class="mt-6 flex flex-wrap gap-3">
+          ${["NICEIC Registered", "10 Years' Experience", "400+ Jobs Completed", `${business.basedIn}`]
+            .map((c) => `<li class="text-xs font-medium text-cream/90 border border-white/15 rounded-full px-3.5 py-1.5">${c}</li>`)
+            .join("\n")}
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-cream border-b border-ink/10">
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-14 items-center">
       <div>
-        <span class="eyebrow">Our Approach</span>
-        <h2 class="mt-3 text-3xl font-display font-semibold text-ink">Clear Quotes. Certified Work. No Surprises.</h2>
-        <p class="mt-5 text-ink/70 leading-relaxed">We work with homeowners, landlords, property developers, and commercial clients who need electrical work they don't have to think twice about &mdash; from a same-day call-out to a multi-week commercial fit-out.</p>
-        <p class="mt-4 text-ink/70 leading-relaxed">Every job is scoped properly before we start, priced clearly excl. VAT, and certified on completion so you've got the paperwork when you need it &mdash; for a sale, a let, or your own records.</p>
+        <span class="eyebrow">Our Story</span>
+        <h2 class="mt-3 text-3xl font-display font-semibold text-ink">Built Job by Job, Not Overnight</h2>
+        <p class="mt-5 text-ink/70 leading-relaxed">Quality Electrics started the way most trusted local trades do &mdash; one job done properly, then another, then a recommendation to a neighbour. Ten years and 400-plus jobs later, the approach hasn't changed: turn up when we say we will, quote honestly, and leave every job properly certified.</p>
         <ul class="mt-8 space-y-3">
-          ${business.certifications
-            .map(
-              (c) => `<li class="flex items-center gap-3 text-ink/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/10 text-brand-green">${svgIcon("shield", "w-4 h-4")}</span>${c}</li>`
-            )
+          ${[
+            "Built entirely on repeat work and word of mouth",
+            "NICEIC registered from early in the business",
+            "Still hands-on with every single job",
+            "Same electrician from quote to sign-off",
+          ]
+            .map((h) => `<li class="flex items-center gap-3 text-ink/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/10 text-brand-green">${svgIcon("shield", "w-4 h-4")}</span>${h}</li>`)
             .join("\n")}
         </ul>
       </div>
       <div class="grid grid-cols-2 gap-4">
         <img src="/assets/img/tenement.webp" alt="Glasgow tenement" class="rounded-sm object-cover w-full h-64" />
-        <img src="/assets/img/outhouse-1.webp" alt="Outbuilding electrical first fix" class="rounded-sm object-cover w-full h-64 mt-8" />
+        <img src="/assets/img/distribution-board.webp" alt="Distribution board upgrade" class="rounded-sm object-cover w-full h-64 mt-8" />
         <img src="/assets/img/office-lighting.webp" alt="Office lighting installation" class="rounded-sm object-cover w-full h-64" />
-        <img src="/assets/img/outdoor-supply.webp" alt="Outdoor electrical supply" class="rounded-sm object-cover w-full h-64 mt-8" />
+        <img src="/assets/img/ev-charger.webp" alt="EV charger installation" class="rounded-sm object-cover w-full h-64 mt-8" />
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24 bg-cream border-b border-ink/10">
+    <div class="section">
+      <div class="max-w-2xl mx-auto text-center">
+        <span class="eyebrow">Reviews</span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink">What Customers Say</h2>
+      </div>
+      <div class="mt-10 grid grid-cols-1 sm:grid-cols-3 gap-6">
+        ${featuredReviews.map((r) => reviewCard(r, services)).join("\n")}
+      </div>
+      <div class="mt-8 text-center">
+        <a href="/reviews/" class="text-sm font-semibold text-brand-green hover:underline">Read all ${reviews.length} reviews &rarr;</a>
       </div>
     </div>
   </section>
@@ -1173,7 +1277,7 @@ export function projectsTemplate({ business, services }) {
   `;
 }
 
-export function contactTemplate({ business, areas }) {
+export function contactTemplate({ business, areas, services }) {
   return `
   <section class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
@@ -1206,6 +1310,25 @@ export function contactTemplate({ business, areas }) {
             <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email Address</label>
             <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
           </div>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+            <div>
+              <label for="service" class="block text-sm font-medium text-ink mb-1.5">Service Needed</label>
+              <select id="service" name="service" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
+                <option value="">Select a service&hellip;</option>
+                ${services.map((s) => `<option value="${s.name}">${s.name}</option>`).join("\n")}
+                <option value="Not sure / other">Not sure / other</option>
+              </select>
+            </div>
+            <div>
+              <label for="urgency" class="block text-sm font-medium text-ink mb-1.5">How Soon?</label>
+              <select id="urgency" name="urgency" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
+                <option value="">Select timing&hellip;</option>
+                <option value="Emergency / ASAP">Emergency / ASAP</option>
+                <option value="Within the next month">Within the next month</option>
+                <option value="Just getting a quote">Just getting a quote</option>
+              </select>
+            </div>
+          </div>
           <div>
             <label for="area" class="block text-sm font-medium text-ink mb-1.5">Area</label>
             <select id="area" name="area" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
@@ -1217,6 +1340,7 @@ export function contactTemplate({ business, areas }) {
             <label for="message" class="block text-sm font-medium text-ink mb-1.5">What do you need done?</label>
             <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
           </div>
+          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <button type="submit" class="btn-green w-full sm:w-auto">${svgIcon("bolt", "w-4 h-4")} Send Enquiry</button>
         </form>
       </div>

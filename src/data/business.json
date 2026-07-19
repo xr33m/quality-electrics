@@ -111,6 +111,34 @@
     {
       "q": "Do you work with emergency lighting?",
       "a": "Yes, including installation, testing, and certification to keep you compliant."
+    },
+    {
+      "q": "How much does an electrician charge per hour in Scotland?",
+      "a": "Rates vary a lot electrician to electrician, which is why we don't work to a fixed hourly rate \u2014 every job gets a free, no-obligation quote up front, so you know the full cost before we start."
+    },
+    {
+      "q": "How much is an electrician call-out fee in Glasgow?",
+      "a": "Nothing \u2014 the visit and the quote are both free. You only pay for the work itself, agreed with you in advance."
+    },
+    {
+      "q": "What's the best way to find an electrician?",
+      "a": "Check they're registered with a body like NICEIC or SELECT, read genuine local reviews, and look for verified trade profiles such as Checkatrade or TrustATrader rather than relying on search ranking alone. We're listed on all three."
+    },
+    {
+      "q": "Is there a list of registered electricians?",
+      "a": "Yes \u2014 NICEIC and SELECT both publish a searchable register of approved contractors, so you can verify a company's registration before booking. We're on the NICEIC register."
+    },
+    {
+      "q": "What's the difference between an electrician and an approved electrician?",
+      "a": "Anyone can call themselves an electrician, but an approved contractor has been independently assessed by a body like NICEIC and is regularly re-inspected, meaning their work can be self-certified as meeting Building Regulations."
+    },
+    {
+      "q": "How can I check if an electrician is qualified?",
+      "a": "Ask to see their registration certificate and cross-check it on the NICEIC or SELECT website \u2014 both let you search by company name. We're happy to show ours before any work starts."
+    },
+    {
+      "q": "What certification should an electrician have in the UK?",
+      "a": "Look for NICEIC or SELECT (Scotland's own body) registration as a minimum, along with up-to-date 18th Edition Wiring Regulations qualifications. We hold both."
     }
   ]
 }

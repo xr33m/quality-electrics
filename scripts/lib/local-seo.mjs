@@ -303,6 +303,19 @@ export function localBusinessSchema({ business, areas, reviews }) {
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
 }
 
+export function serviceFaqSchema(service) {
+  const schema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: service.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  };
+  return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;
+}
+
 // Simple, no-API-key Google Maps embed URL centered on an area.
 export function mapEmbedUrl(area) {
   const q = encodeURIComponent(`${area.name}, ${area.region}, Scotland`);

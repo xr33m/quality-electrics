@@ -69,7 +69,8 @@
         "q": "How long does the whole job take?",
         "a": "Most home installs are done within half a day, start to finish."
       }
-    ]
+    ],
+    "ctaLabel": "Check If My Home Qualifies"
   },
   {
     "slug": "domestic-commercial-rewiring",
@@ -151,7 +152,8 @@
       "Damaged, cracked, or discoloured sockets and switches",
       "Lights tripping when other appliances switch on",
       "Sockets tripping repeatedly, especially in older properties"
-    ]
+    ],
+    "ctaLabel": "Get My Free Rewire Assessment"
   },
   {
     "slug": "electrical-inspection-testing",
@@ -227,7 +229,8 @@
     "commonProblems": [
       "Out of date or missing electrical certificates",
       "No record of when the property was last tested"
-    ]
+    ],
+    "ctaLabel": "Book My EICR Test"
   },
   {
     "slug": "consumer-unit-upgrades",
@@ -308,7 +311,8 @@
       "Lights tripping when other appliances switch on",
       "Sockets or circuits tripping repeatedly",
       "Power outages traced back to an old or overloaded board"
-    ]
+    ],
+    "ctaLabel": "Get My Same-Day Consumer Unit Quote"
   },
   {
     "slug": "commercial-installations-lighting",
@@ -387,7 +391,8 @@
       "desktopWebm": "assets/video/hero-commercial-lighting.webm",
       "mobileMp4": "assets/video/hero-commercial-lighting-mobile.mp4",
       "mobileWebm": "assets/video/hero-commercial-lighting-mobile.webm"
-    }
+    },
+    "ctaLabel": "Get a Fit-Out Quote for My Opening Date"
   },
   {
     "slug": "domestic-extensions-conversions",
@@ -455,7 +460,8 @@
         "q": "How long does first fix take?",
         "a": "It depends on size and circuit count \u2014 we'll confirm a timeline once we've seen the plans, in step with your builder's schedule."
       }
-    ]
+    ],
+    "ctaLabel": "Coordinate My Electrics With the Build"
   },
   {
     "slug": "kitchen-electrical-installations",
@@ -527,6 +533,7 @@
         "q": "How long will it take?",
         "a": "First and second fix combined is typically 1\u20132 days, depending on the size of the kitchen and how much lighting is involved."
       }
-    ]
+    ],
+    "ctaLabel": "Get My Kitchen Electrics Sorted"
   }
 ]
