@@ -35,6 +35,7 @@ export function head({ title, description, path, business, extraHead = "" }) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
+  <meta name="google-site-verification" content="QlWm7CjHBiPn_ohGRVbyErRRtSsrLjOX2Yjat1lg21k" />
   <link rel="canonical" href="${canonical}" />
   <link rel="icon" type="image/svg+xml" href="/assets/img/favicon.svg" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
