@@ -1318,6 +1318,14 @@ export function contactTemplate({ business, areas, services }) {
             </select>
           </div>
           <div>
+            <label for="address" class="block text-sm font-medium text-ink mb-1.5">Address</label>
+            <input id="address" name="address" type="text" autocomplete="street-address" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green" />
+          </div>
+          <div class="sm:max-w-xs">
+            <label for="postcode" class="block text-sm font-medium text-ink mb-1.5">Postcode</label>
+            <input id="postcode" name="postcode" type="text" autocomplete="postal-code" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink uppercase focus:outline-none focus:ring-2 focus:ring-brand-green" />
+          </div>
+          <div>
             <label for="message" class="block text-sm font-medium text-ink mb-1.5">What do you need done?</label>
             <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
           </div>
