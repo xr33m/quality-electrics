@@ -1280,21 +1280,21 @@ export function contactTemplate({ business, areas, services }) {
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label for="name" class="block text-sm font-medium text-ink mb-1.5">Full Name</label>
-              <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
+              <input id="name" name="name" type="text" required autocomplete="name" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green" />
             </div>
             <div>
               <label for="phone" class="block text-sm font-medium text-ink mb-1.5">Phone Number</label>
-              <input id="phone" name="phone" type="tel" required autocomplete="tel" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
+              <input id="phone" name="phone" type="tel" required autocomplete="tel" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green" />
             </div>
           </div>
           <div>
             <label for="email" class="block text-sm font-medium text-ink mb-1.5">Email Address</label>
-            <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green" />
+            <input id="email" name="email" type="email" required autocomplete="email" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green" />
           </div>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
             <div>
               <label for="service" class="block text-sm font-medium text-ink mb-1.5">Service Needed</label>
-              <select id="service" name="service" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
+              <select id="service" name="service" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green">
                 <option value="">Select a service&hellip;</option>
                 ${services.map((s) => `<option value="${s.name}">${s.name}</option>`).join("\n")}
                 <option value="Not sure / other">Not sure / other</option>
@@ -1302,7 +1302,7 @@ export function contactTemplate({ business, areas, services }) {
             </div>
             <div>
               <label for="urgency" class="block text-sm font-medium text-ink mb-1.5">How Soon?</label>
-              <select id="urgency" name="urgency" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
+              <select id="urgency" name="urgency" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green">
                 <option value="">Select timing&hellip;</option>
                 <option value="Emergency / ASAP">Emergency / ASAP</option>
                 <option value="Within the next month">Within the next month</option>
@@ -1312,14 +1312,14 @@ export function contactTemplate({ business, areas, services }) {
           </div>
           <div>
             <label for="area" class="block text-sm font-medium text-ink mb-1.5">Area</label>
-            <select id="area" name="area" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green">
+            <select id="area" name="area" class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green">
               ${areas.map((a) => `<option value="${a.name}">${a.name}</option>`).join("\n")}
               <option value="Other">Other</option>
             </select>
           </div>
           <div>
             <label for="message" class="block text-sm font-medium text-ink mb-1.5">What do you need done?</label>
-            <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
+            <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
           <button type="submit" class="btn-green w-full sm:w-auto">${svgIcon("bolt", "w-4 h-4")} Send Enquiry</button>
