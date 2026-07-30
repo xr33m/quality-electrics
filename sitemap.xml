@@ -865,4 +865,54 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/what-is-an-eicr/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/what-is-an-rcd/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/how-long-does-an-eicr-last/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/what-is-surge-protection/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/what-is-an-rcbo/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/how-much-does-an-eicr-cost/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/how-much-does-rewiring-a-house-cost/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/how-often-should-a-house-be-rewired/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/do-i-need-an-eicr-to-sell-my-house/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/blog/what-is-part-p-electrical/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
 </urlset>
