@@ -329,6 +329,62 @@ const areaFaqBuilders = {
       a: `Yes, it's a fixed call-out charge regardless of exactly where in ${a.name} or ${a.region} you're based, agreed with you before we head out.`,
     }),
   ],
+  "three-phase-power-installations": [
+    (s, a) => ({
+      q: `Do you install three-phase supplies for businesses in ${a.name}?`,
+      a: `Yes, three-phase installations and upgrades are a regular job for us across commercial and industrial premises in ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can you coordinate a DNO application for a site in ${a.name}?`,
+      a: `Yes, where a new or upgraded supply is needed for a premises in ${a.name}, we handle the coordination with the distribution network operator as part of the job.`,
+    }),
+    (s, a) => ({
+      q: `Do you work with existing commercial units in ${a.region}, not just new builds?`,
+      a: `Yes, most of our three-phase work in ${a.region} is upgrading or extending an existing supply for a business that's grown into needing it, not just new-build installations.`,
+    }),
+  ],
+  "warehouse-industrial-electrical": [
+    (s, a) => ({
+      q: `Do you cover warehouse and industrial units in ${a.name}?`,
+      a: `Yes, we carry out warehouse and industrial electrical installations across ${a.name} and the wider ${a.region} area.`,
+    }),
+    (s, a) => ({
+      q: `Can you work alongside other trades on a fit-out in ${a.name}?`,
+      a: `Yes, coordinating with other trades on live fit-outs in ${a.name} is a standard part of this work for us.`,
+    }),
+    (s, a) => ({
+      q: `Do you handle machinery power supplies for sites in ${a.region}?`,
+      a: `Yes, including assessing specific machinery requirements and running dedicated, correctly rated supplies for industrial units across ${a.region}.`,
+    }),
+  ],
+  "high-bay-warehouse-lighting": [
+    (s, a) => ({
+      q: `Do you install high-bay lighting for warehouses in ${a.name}?`,
+      a: `Yes, high-bay LED lighting installations and upgrades are a regular job for us across warehouses and industrial units in ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can lighting upgrades be phased for a site in ${a.name}?`,
+      a: `Yes, a phased approach across sections of a warehouse in ${a.name} is common and lets you spread the cost while operations continue.`,
+    }),
+    (s, a) => ({
+      q: `Do you work at height safely on live sites in ${a.region}?`,
+      a: `Yes, we follow proper working-at-height procedures for high-bay lighting work across ${a.region}, coordinating access equipment and scheduling with your site.`,
+    }),
+  ],
+  "ev-fleet-forklift-charging": [
+    (s, a) => ({
+      q: `Do you install fleet charging infrastructure for businesses in ${a.name}?`,
+      a: `Yes, fleet EV and forklift charging installations are a service we provide for businesses across ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can you assess our supply capacity before recommending charge points in ${a.name}?`,
+      a: `Yes, we always assess existing supply capacity for a site in ${a.name} before recommending a specific number of charge points or whether load management is the better option.`,
+    }),
+    (s, a) => ({
+      q: `Do you handle both EV fleet and forklift charging for depots in ${a.region}?`,
+      a: `Yes, we cover both fleet vehicle charging and warehouse equipment charging like forklifts for depots and warehouses across ${a.region}.`,
+    }),
+  ],
 };
 
 export function serviceAreaFaqs(service, area) {
@@ -381,6 +437,10 @@ const regulationsByService = {
   "data-network-cabling": `Data cabling itself isn't electrical work in the regulatory sense, but where it's combined with new power points or circuits, that element is handled and certified to BS 7671 as standard.`,
   "extractor-fan-installation": `Building Regulations Part F sets ventilation requirements for bathrooms and kitchens, and a new dedicated circuit for a fan is generally notifiable electrical work, which we self-certify as a registered electrician.`,
   "emergency-electrical-callouts": `Any remedial work carried out during an emergency callout is tested and, where the scope requires it, certified to BS 7671 in the same way as scheduled work — an emergency visit doesn't mean cutting corners on paperwork.`,
+  "three-phase-power-installations": `Three-phase installations must meet current BS 7671 wiring regulations, and new or upgraded supplies typically require formal application to and approval from the local distribution network operator (DNO).`,
+  "warehouse-industrial-electrical": `Industrial and warehouse electrical installations are certified to BS 7671, and larger installations are generally notifiable electrical work under Scottish building regulations, which we self-certify as a registered electrician.`,
+  "high-bay-warehouse-lighting": `New lighting circuits for warehouse and industrial premises are generally notifiable electrical work under Scottish building regulations, self-certified as standard, and all installations meet current BS 7671 wiring regulations.`,
+  "ev-fleet-forklift-charging": `Fleet and multi-point charging installations are notifiable electrical work under Scottish building regulations and must meet BS 7671 requirements for EV charging equipment, including appropriate earthing and load management provisions.`,
 };
 
 export function regulationsNote(service) {

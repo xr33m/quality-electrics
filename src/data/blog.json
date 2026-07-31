@@ -2167,7 +2167,7 @@
   },
   {
     "slug": "three-phase-distribution-boards",
-    "service": "commercial-installations-lighting",
+    "service": "three-phase-power-installations",
     "title": "Three-Phase Distribution Boards: What Glasgow Businesses Need to Know",
     "metaTitle": "Three-Phase Distribution Boards Explained | Quality Electrics",
     "metaDescription": "Does your Glasgow business need a three-phase distribution board? Here's what three-phase power actually means, and when it's genuinely required.",
@@ -2311,7 +2311,7 @@
   },
   {
     "slug": "warehouse-electrical-installation",
-    "service": "commercial-installations-lighting",
+    "service": "warehouse-industrial-electrical",
     "title": "Warehouse Electrical Installation: The Complete Planning Guide for Glasgow Businesses",
     "metaTitle": "Warehouse Electrical Installation Guide | Quality Electrics",
     "metaDescription": "Planning a warehouse electrical installation in Glasgow? Our guide covers lighting design, power distribution, and what to plan for before work starts.",
@@ -2383,7 +2383,7 @@
   },
   {
     "slug": "high-bay-led-lighting-warehouses",
-    "service": "commercial-installations-lighting",
+    "service": "high-bay-warehouse-lighting",
     "title": "High-Bay LED Lighting for Warehouses: Energy Savings, Design and Installation Guide",
     "metaTitle": "High-Bay LED Lighting for Warehouses | Quality Electrics",
     "metaDescription": "High-bay LED lighting is one of the most effective energy upgrades for a warehouse. Here's how it's designed properly, and what it actually saves.",
@@ -2455,7 +2455,7 @@
   },
   {
     "slug": "forklift-charging-station-installation",
-    "service": "commercial-installations-lighting",
+    "service": "ev-fleet-forklift-charging",
     "title": "Forklift Charging Station Installation: Planning, Safety and Compliance for Glasgow Warehouses",
     "metaTitle": "Forklift Charging Station Installation Guide | Quality Electrics",
     "metaDescription": "Forklift charging stations need dedicated circuits, proper ventilation, and correct cable sizing. Here's what a compliant installation actually involves.",
