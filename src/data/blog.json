@@ -996,77 +996,6 @@
     ]
   },
   {
-    "slug": "how-much-does-rewiring-a-house-cost",
-    "service": "domestic-commercial-rewiring",
-    "title": "How Much Does Rewiring a House Cost in Glasgow?",
-    "metaTitle": "House Rewiring Cost Guide (Glasgow) | Quality Electrics",
-    "metaDescription": "A realistic breakdown of full and partial rewire costs for Glasgow homes, and the property factors that actually move the price.",
-    "excerpt": "A full rewire quote can vary a lot between properties, and it's rarely about the electrician — it's the property itself driving the number. Here's what actually matters.",
-    "readTime": "6 min read",
-    "publishDate": "2026-09-15",
-    "displayDate": "15 September 2026",
-    "heroImage": "assets/img/business-wiring-fitout.webp",
-    "keyTakeaways": [
-      "A full rewire cost is driven mainly by property size, number of circuits, and how accessible the walls and floors are",
-      "Tenement flats and period properties often cost more per room than modern new-builds",
-      "A partial rewire, targeting only affected circuits, is sometimes genuinely enough and considerably cheaper",
-      "Making good after chasing walls is a real cost to factor in, separate from the electrical work itself"
-    ],
-    "intro": [
-      "\"How much will it cost to rewire my house?\" doesn't have a single answer, and anyone quoting one figure over the phone without seeing the property is guessing. What actually drives the price is a combination of size, access, and property type.",
-      "Here's a realistic breakdown of what moves the number up or down."
-    ],
-    "sections": [
-      {
-        "heading": "The main cost drivers",
-        "body": [
-          "Property size and the number of circuits involved is the single biggest factor — more rooms means more sockets, switches, and light positions to rewire, which is straightforwardly more materials and labour. Beyond that, access matters just as much: a property with easy underfloor and loft access is faster to chase cable through than one with solid floors and lath-and-plaster walls throughout."
-        ]
-      },
-      {
-        "heading": "Why tenement and period properties often cost more",
-        "body": [
-          "Glasgow's tenement flats and period homes bring genuine complications a modern new-build simply doesn't have — solid stone or lath-and-plaster walls that are harder to chase cleanly, shared stairwells and common areas that sometimes need factor involvement, and older layouts that don't always follow a predictable cable route. None of this makes a rewire impossible, but it does typically push the cost and timeline up compared to an equivalent-sized modern property."
-        ]
-      },
-      {
-        "heading": "Full rewire vs partial rewire",
-        "body": [
-          "A full rewire replaces every circuit in the property. A partial rewire targets only the circuits that are actually faulty, undersized, or unsafe, leaving sound existing wiring untouched. It's considerably cheaper where it's genuinely appropriate — the honest answer depends on what an inspection actually finds, not a blanket assumption either way."
-        ]
-      },
-      {
-        "heading": "Making good — a cost that's easy to forget",
-        "body": [
-          "Chasing cable into walls means those channels need filling and making good afterwards. We include basic making good as standard, but a full plaster skim across affected walls is typically a separate cost, usually handled by a plasterer — factor this into your overall budget, not just the electrical quote."
-        ]
-      }
-    ],
-    "faqs": [
-      {
-        "q": "Can you give me an accurate quote without visiting the property?",
-        "a": "Not accurately for a full or partial rewire — there are too many variables specific to your property. We'll always survey before quoting properly."
-      },
-      {
-        "q": "Is it cheaper to rewire an empty property?",
-        "a": "Often yes, since access is easier without furniture and belongings in the way, though it's not always practical to empty a property just for this reason."
-      },
-      {
-        "q": "Does a rewire include new sockets and switches, or just cabling?",
-        "a": "A proper rewire quote includes the sockets, switches, and light fittings themselves, not just the cable behind the walls — worth confirming this is included in any quote you're comparing."
-      },
-      {
-        "q": "How do I know if I need a full rewire or just a partial one?",
-        "a": "An inspection is the honest way to find out — we'll tell you plainly which your property actually needs rather than defaulting to the bigger job."
-      }
-    ],
-    "relatedSlugs": [
-      "how-often-should-a-house-be-rewired",
-      "signs-your-home-needs-rewired",
-      "what-is-part-p-electrical"
-    ]
-  },
-  {
     "slug": "how-often-should-a-house-be-rewired",
     "service": "domestic-commercial-rewiring",
     "title": "How Often Should a House Be Rewired?",
@@ -1133,7 +1062,7 @@
     ],
     "relatedSlugs": [
       "signs-your-home-needs-rewired",
-      "how-much-does-rewiring-a-house-cost",
+      "full-house-rewire-cost-guide",
       "what-is-part-p-electrical"
     ]
   },
@@ -1274,9 +1203,1326 @@
       }
     ],
     "relatedSlugs": [
-      "how-much-does-rewiring-a-house-cost",
+      "full-house-rewire-cost-guide",
       "signs-your-home-needs-rewired",
       "consumer-unit-upgrade-cost-guide"
+    ]
+  },
+  {
+    "slug": "how-to-choose-a-reliable-electrician-glasgow",
+    "title": "How to Choose a Reliable Electrician in Glasgow: A Homeowner's Guide",
+    "metaTitle": "How to Choose a Reliable Electrician in Glasgow | Quality Electrics",
+    "metaDescription": "What to actually check before hiring an electrician in Glasgow — registration, insurance, quotes, and the red flags worth walking away from.",
+    "excerpt": "Anyone can call themselves an electrician. Here's what actually separates a properly registered one from a risk, and what to check before you book.",
+    "readTime": "7 min read",
+    "publishDate": "2026-07-14",
+    "displayDate": "14 July 2026",
+    "heroImage": "assets/img/van.webp",
+    "keyTakeaways": [
+      "Registration with NICEIC or SELECT is the single most important thing to check — it means the electrician is independently assessed and re-inspected",
+      "A registered contractor can self-certify work as meeting Building Regulations, saving you a separate council inspection",
+      "Genuine reviews and a real trade profile (Checkatrade, TrustATrader, MyBuilder) tell you more than a polished website",
+      "A free, no-obligation quote before any work starts should be standard, not a bonus"
+    ],
+    "intro": [
+      "\"Electrician\" isn't a protected title in the UK the way \"solicitor\" or \"doctor\" is — legally, anyone can put it on a van. That's exactly why registration and verification matter more in this trade than almost any other, and why it's worth knowing what to actually check before you let someone into your consumer unit."
+    ],
+    "sections": [
+      {
+        "heading": "Check registration first, not last",
+        "body": [
+          "The single most useful check is whether the electrician is registered with NICEIC or SELECT (Scotland's own electrotechnical trade association). Registration means their work has been independently assessed against national wiring standards and is re-inspected on an ongoing basis — it's not a one-off badge, it's active oversight.",
+          "Both bodies publish a searchable register on their websites, so you can verify a company's registration yourself before booking, rather than just taking a claim on trust."
+        ]
+      },
+      {
+        "heading": "Why \"approved\" actually matters",
+        "body": [
+          "An approved or registered contractor can self-certify their own work as meeting Building Regulations. That's a genuine practical benefit, not just a certificate on the wall — it means a job like a rewire or a new circuit doesn't need a separate council building control inspection, which saves you time and arranging hassle you'd otherwise have to organise yourself."
+        ]
+      },
+      {
+        "heading": "Reviews and trade profiles over a polished website",
+        "body": [
+          "A well-designed website tells you someone can build a website, not that they can wire a consumer unit safely. Genuine, verifiable reviews and a real profile on Checkatrade, TrustATrader, or MyBuilder are a better signal, because they're tied to actual completed jobs and can't be easily faked the way on-site copy can."
+        ]
+      },
+      {
+        "heading": "What a proper quote should look like",
+        "body": [
+          "A free, no-obligation quote before any work starts should be the baseline expectation, not something to feel grateful for. It should be itemised clearly enough that you know what you're paying for materials versus labour, and it shouldn't require a deposit before anyone's even surveyed the job."
+        ]
+      },
+      {
+        "heading": "Red flags worth walking away from",
+        "body": [
+          "A few things are worth treating as genuine warning signs rather than minor quirks."
+        ],
+        "list": [
+          "Reluctance to confirm NICEIC or SELECT registration, or vague answers when asked directly",
+          "No fixed business address or landline — mobile-only contact with no other trace of the business",
+          "Pressure to pay a large deposit before any survey or written quote",
+          "No mention of testing or certification once work is finished",
+          "Cash-only insistence with no paperwork offered"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is NICEIC or SELECT registration a legal requirement?",
+        "a": "No, but it's the clearest way to verify competence and it allows the electrician to self-certify work as meeting Building Regulations, which an unregistered contractor can't do."
+      },
+      {
+        "q": "What's the difference between NICEIC and SELECT?",
+        "a": "NICEIC operates UK-wide, while SELECT is Scotland's own electrotechnical trade association. Either is a genuine mark of registration — what matters is that the electrician holds one of them."
+      },
+      {
+        "q": "Should I get more than one quote?",
+        "a": "It's sensible for larger jobs like a full rewire, but for smaller work a single quote from a registered, well-reviewed electrician is usually enough to move ahead confidently."
+      },
+      {
+        "q": "How can I check reviews are genuine?",
+        "a": "Look for reviews spread across multiple platforms (Google, Checkatrade, TrustATrader) rather than only on the company's own website, and check they reference specific, plausible details rather than generic praise."
+      }
+    ],
+    "relatedSlugs": [
+      "signs-your-home-needs-rewired",
+      "eicr-landlord-guide-scotland",
+      "consumer-unit-upgrade-cost-guide"
+    ]
+  },
+  {
+    "slug": "electrical-safety-scottish-weather",
+    "service": "commercial-installations-lighting",
+    "title": "Electrical Safety in Scottish Weather: Protecting Your Outdoor Electrics Year-Round",
+    "metaTitle": "Protecting Outdoor Electrics in Scottish Weather | Quality Electrics",
+    "metaDescription": "Rain, frost, and wind take a real toll on outdoor sockets, EV chargers, and garden lighting in Scotland. Here's what actually protects them.",
+    "excerpt": "Scotland's weather is genuinely harder on outdoor electrics than most of the UK. Here's what protects them properly, and what's just a quick fix.",
+    "readTime": "6 min read",
+    "publishDate": "2026-07-21",
+    "displayDate": "21 July 2026",
+    "heroImage": "assets/img/ev-charger.webp",
+    "keyTakeaways": [
+      "Outdoor sockets and fittings need an IP rating of at least IP44, and higher again if they're exposed to direct rain",
+      "All outdoor circuits must be RCD protected, no exceptions",
+      "Freeze-thaw cycles are what actually damages outdoor cable runs, not just cold on its own",
+      "An EV charger's IP rating protects the unit itself, but the cable run into your property still needs to be installed correctly to stay safe"
+    ],
+    "intro": [
+      "Glasgow doesn't get extreme weather in the dramatic sense, but it gets a lot of weather — persistent rain, regular frost, and enough wind to work moisture into places it shouldn't be. That combination is genuinely harder on outdoor electrics than a drier, more stable climate, which is why outdoor installations here need to be specified properly rather than just fitted and hoped for."
+    ],
+    "sections": [
+      {
+        "heading": "IP ratings aren't optional extras",
+        "body": [
+          "Every outdoor socket, light fitting, or junction box needs an IP (Ingress Protection) rating suited to where it's actually mounted — IP44 as a minimum for anything outdoors, and higher for fittings exposed to direct, driving rain rather than just damp air. The rating isn't a marketing detail, it's what determines whether water can actually get to the live parts inside."
+        ]
+      },
+      {
+        "heading": "RCD protection on every outdoor circuit",
+        "body": [
+          "Outdoor circuits must be RCD protected without exception. Combine damp ground, metal fittings, and anyone standing outside barefoot or in wet shoes, and the margin for error on an unprotected circuit is much smaller than it is indoors."
+        ]
+      },
+      {
+        "heading": "What freeze-thaw actually does to cables",
+        "body": [
+          "It's rarely the cold itself that causes damage — it's the repeated cycle of ground moisture freezing, expanding, and thawing around a cable run that gradually works at joints and glands. A cable installed with the right depth, ducting, and gland sealing shrugs this off for years; one installed as a quick surface-mounted job usually doesn't."
+        ]
+      },
+      {
+        "heading": "EV chargers and outdoor sockets specifically",
+        "body": [
+          "A home EV charger unit itself is built to a high IP rating as standard and copes with Scottish weather without issue. Where problems actually show up is in how the cable run into the property was installed — the isolator, the gland at the wall entry point, and the route the cable takes matter as much as the charger's own rating."
+        ]
+      },
+      {
+        "heading": "What to check on existing outdoor electrics",
+        "body": [
+          "If you've got outdoor sockets, lighting, or a charger that predate a recent renovation or that you didn't have installed yourselves, it's worth having them checked rather than assuming they're fine."
+        ],
+        "list": [
+          "Visible cracking, discolouration, or a loose cover on any outdoor socket or fitting",
+          "A socket or light that's tripped the RCD more than once",
+          "Cable runs that are surface-mounted rather than buried or ducted",
+          "Any outdoor fitting with no visible IP rating marking at all"
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need a qualified electrician for outdoor lighting, or can I DIY it?",
+        "a": "Outdoor circuits should be installed by a registered electrician — the combination of water, earthing, and RCD protection needed makes this one of the higher-risk areas to get wrong."
+      },
+      {
+        "q": "How often should outdoor electrics be checked?",
+        "a": "As part of a routine EICR, or sooner if you notice tripping, visible damage, or a fitting that feels warm or loose."
+      },
+      {
+        "q": "Does an EV charger need any extra weatherproofing in Scotland?",
+        "a": "The charger unit itself is weather-rated as standard. What matters is a correctly installed cable run and isolator, which we check as part of every install."
+      }
+    ],
+    "relatedSlugs": [
+      "ev-charger-installation-cost-guide",
+      "commercial-led-lighting-savings",
+      "eicr-landlord-guide-scotland"
+    ]
+  },
+  {
+    "slug": "hidden-dangers-diy-electrical-work",
+    "service": "electrical-inspection-testing",
+    "title": "The Hidden Dangers of DIY Electrical Work: What Every Homeowner Should Know",
+    "metaTitle": "The Hidden Dangers of DIY Electrical Work | Quality Electrics",
+    "metaDescription": "DIY electrical work can look fine and still be genuinely dangerous. Here's what actually goes wrong, and where the legal line sits in Scotland.",
+    "excerpt": "A DIY electrical job can look perfectly finished and still be a real fire or shock risk. Here's what actually goes wrong, and why.",
+    "readTime": "6 min read",
+    "publishDate": "2026-07-21",
+    "displayDate": "21 July 2026",
+    "heroImage": "assets/img/distribution-board.webp",
+    "keyTakeaways": [
+      "A DIY job can look neat and finished on the surface while being genuinely dangerous underneath",
+      "Notifiable electrical work in Scotland must be certified through Building Standards, DIY or not",
+      "Loose connections, not obviously bad wiring, are the most common cause of electrical fires",
+      "An uncertified DIY job can cause real problems when you come to sell or insure the property"
+    ],
+    "intro": [
+      "Most DIY electrical mistakes don't look like mistakes. They look like a socket that works, a light that switches on, a job that's done — which is exactly what makes DIY electrical work more dangerous than most other DIY, because the failure isn't visible until it's a fire, a shock, or a failed inspection."
+    ],
+    "sections": [
+      {
+        "heading": "It's what you can't see that's the problem",
+        "body": [
+          "A socket can be wired, screwed to the wall, and working perfectly the day it's fitted, while a connection inside is under-tightened, over-stripped, or on the wrong terminal. None of that shows up in daily use — it shows up months or years later as a loose connection heating up, arcing, or failing outright."
+        ]
+      },
+      {
+        "heading": "Loose connections are the real fire risk",
+        "body": [
+          "It's rarely dramatically \"wrong\" wiring that starts electrical fires — it's ordinary loose connections that heat up under load over time. A professional install is tested under load and re-checked at second fix specifically to catch this; a DIY job usually isn't tested at all beyond \"does it turn on.\""
+        ]
+      },
+      {
+        "heading": "The legal side: notifiable work in Scotland",
+        "body": [
+          "Under Scottish Building Standards, certain electrical work is notifiable regardless of who does it — new circuits, consumer unit replacement, and rewiring among them. Notifiable work needs to be certified, either by a registered electrician self-certifying it, or by a separate Building Standards application if you do it yourself. Skipping this isn't just a technicality; it means the work has no official record of being safe."
+        ]
+      },
+      {
+        "heading": "What it actually costs you later",
+        "body": [
+          "Uncertified DIY electrical work is one of the most common things that surfaces during a house sale survey or a landlord EICR, and it's a genuinely awkward position to be in — either the work gets redone and certified properly at that point, at your cost and on someone else's timeline, or it becomes a sticking point in the sale itself."
+        ]
+      },
+      {
+        "heading": "Where the line actually sits",
+        "body": [
+          "Not everything electrical is off-limits — changing a light bulb or a plug fuse isn't notifiable work. But anything involving new circuits, a consumer unit, or wiring buried in walls sits on the wrong side of that line, and is exactly the kind of work an EICR is designed to catch if it's been done unsafely."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is all electrical DIY work illegal in Scotland?",
+        "a": "No — minor work like changing a fitting or a fuse is fine. It's notifiable work, like new circuits or consumer unit changes, that needs to be certified."
+      },
+      {
+        "q": "How would I know if previous DIY work in my home is unsafe?",
+        "a": "An EICR is the reliable way to find out — it tests and inspects the fixed installation rather than relying on how it looks."
+      },
+      {
+        "q": "Can uncertified DIY work affect my home insurance?",
+        "a": "Potentially, yes — some insurers ask directly whether electrical work has been certified, and a claim linked to uncertified work can be contested."
+      }
+    ],
+    "relatedSlugs": [
+      "eicr-landlord-guide-scotland",
+      "signs-your-home-needs-rewired",
+      "consumer-unit-upgrade-cost-guide"
+    ]
+  },
+  {
+    "slug": "full-house-rewire-cost-guide",
+    "service": "domestic-commercial-rewiring",
+    "title": "Full House Rewire Cost Guide: What Glasgow Homeowners Actually Pay",
+    "metaTitle": "Full House Rewire Cost Guide (Glasgow) | Quality Electrics",
+    "metaDescription": "What does a full house rewire actually cost in Glasgow? A clear breakdown by property size, what's included, and what pushes the price up.",
+    "excerpt": "A clear breakdown of what a full rewire actually costs in Glasgow, what's included, and the property factors that move the price most.",
+    "readTime": "7 min read",
+    "publishDate": "2026-07-21",
+    "displayDate": "21 July 2026",
+    "heroImage": "assets/img/business-wiring-fitout.webp",
+    "keyTakeaways": [
+      "A full rewire on a typical two or three-bedroom property is usually priced by the room and circuit count, not a flat fee",
+      "Tenement and period properties often cost more to rewire than modern builds, due to lath-and-plaster walls and shared stairwell access",
+      "Making good after chasing walls is usually included, but a full plaster skim afterwards is normally a separate job",
+      "A proper quote follows a survey — anyone pricing a full rewire over the phone without seeing the property is guessing"
+    ],
+    "intro": [
+      "\"How much does a rewire actually cost\" is a harder question to answer honestly than most people expect, because a rewire is priced by the property, not by a flat national rate. Here's what genuinely drives the number for a Glasgow home."
+    ],
+    "sections": [
+      {
+        "heading": "What actually gets priced",
+        "body": [
+          "A rewire quote is built from the number of rooms, the number of circuits needed, and the number of sockets, switches, and light fittings being replaced or added — not a single flat figure for \"a house.\" A one-bedroom flat and a five-bedroom period house are different jobs with different costs, which is why a proper quote follows a survey rather than a phone estimate."
+        ]
+      },
+      {
+        "heading": "Tenement and period properties cost more",
+        "body": [
+          "Glasgow's tenement and period housing stock genuinely costs more to rewire than an equivalent modern build. Lath-and-plaster walls behave differently to modern stud walls when it comes to chasing cable routes, and shared stairwells or factor-managed common areas sometimes need a quick word with the factor before any communal fabric is touched — both add real time to the job."
+        ]
+      },
+      {
+        "heading": "What's included, and what's usually separate",
+        "body": [
+          "A full rewire quote should include all new cabling, sockets, switches, and light fittings, a new or upgraded consumer unit if needed, and making good — filling and patching the channels cut into walls. A full plaster skim across a room after that, if you want a completely smooth finish rather than just patched channels, is typically a separate job with a plasterer."
+        ]
+      },
+      {
+        "heading": "How long it actually takes",
+        "body": [
+          "A typical two or three-bedroom tenement flat takes around a week for a full rewire, covering first fix, second fix, and testing. Larger properties or ones needing extensive making good take longer — again, something a proper survey will tell you rather than a generic estimate."
+        ]
+      },
+      {
+        "heading": "Partial rewires: when they're genuinely enough",
+        "body": [
+          "Not every property needing electrical work needs a full rewire. Sometimes a targeted partial rewire of the specific circuits showing problems is genuinely sufficient, and an honest quote will say so rather than upselling the bigger job by default."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need to move out during a full rewire?",
+        "a": "Not always for a partial rewire, but for a full rewire it's usually easier to have the property empty. We'll talk through the realistic options for your specific job."
+      },
+      {
+        "q": "Is the price different for a flat versus a house?",
+        "a": "Yes, mainly due to room count and circuit count rather than flat-versus-house as such — a large flat can cost more to rewire than a small house."
+      },
+      {
+        "q": "Will I get a fixed price or an estimate?",
+        "a": "A fixed, itemised quote following a survey — not a rough estimate given without seeing the property."
+      },
+      {
+        "q": "Is the work certified once finished?",
+        "a": "Yes, every rewire is tested to BS7671 and certified on completion."
+      }
+    ],
+    "relatedSlugs": [
+      "signs-your-home-needs-rewired",
+      "eicr-landlord-guide-scotland",
+      "consumer-unit-upgrade-cost-guide"
+    ]
+  },
+  {
+    "slug": "smart-lighting-explained",
+    "service": "commercial-installations-lighting",
+    "title": "Smart Lighting Explained: From Simple Dimmers to Full Home Automation",
+    "metaTitle": "Smart Lighting Explained: Dimmers to Home Automation | Quality Electrics",
+    "metaDescription": "Smart dimmers, app-controlled lighting, and full home automation explained simply - what each option actually needs wiring-wise, and what it costs.",
+    "excerpt": "Smart lighting ranges from a simple app-controlled dimmer to a fully automated home. Here's what each level actually involves and needs, wiring-wise.",
+    "readTime": "6 min read",
+    "publishDate": "2026-07-28",
+    "displayDate": "28 July 2026",
+    "heroImage": "assets/img/home-office-lighting.webp",
+    "keyTakeaways": [
+      "Smart lighting isn't one thing - it ranges from a single app-controlled dimmer to a fully automated whole-home system",
+      "Most smart switches and dimmers need a neutral wire at the switch, which older properties sometimes don't have",
+      "Retrofitting smart lighting is usually more disruptive than planning for it during a rewire or renovation",
+      "Full home automation ties lighting into heating, security, and other systems, and is worth planning centrally rather than room by room"
+    ],
+    "intro": [
+      "\"Smart lighting\" covers a much wider range than most people expect, from a single dimmer you can control from your phone through to a fully automated home where lighting, heating, and security all talk to each other. Which level makes sense depends less on budget and more on what your property can actually support without a lot of extra work."
+    ],
+    "sections": [
+      {
+        "heading": "Level one: smart bulbs and plugs",
+        "body": [
+          "The simplest entry point needs no rewiring at all - smart bulbs and smart plugs work with your existing wiring and switches, controlled via an app or voice assistant. The trade-off is that a standard wall switch can cut power to a smart bulb entirely, so it works best where people are consistent about leaving switches on."
+        ]
+      },
+      {
+        "heading": "Level two: smart switches and dimmers",
+        "body": [
+          "A proper smart switch or dimmer replaces the physical switch itself, which is more reliable day to day but has a real wiring requirement: most smart switches need a neutral wire present at the switch position, which older properties - particularly pre-2000s wiring - sometimes don't have. This is exactly the kind of thing worth checking before you commit to a specific product."
+        ]
+      },
+      {
+        "heading": "Level three: whole-room or whole-home lighting control",
+        "body": [
+          "Beyond individual switches, a proper lighting control system lets you set scenes across a whole room or property - all lights to a warm, dim setting for an evening, for instance, rather than adjusting six switches individually. This is where planning ahead genuinely pays off, since running the right cabling during a rewire or renovation is far simpler than retrofitting it into finished walls afterwards."
+        ]
+      },
+      {
+        "heading": "Level four: full home automation",
+        "body": [
+          "At the top end, lighting integrates with heating, security, and other systems into a single automated setup - lights that respond to occupancy sensors, heating that adjusts alongside lighting scenes, security lighting that ties into an alarm system. This is worth designing centrally from the start rather than bolting systems together room by room, since the value comes from how well the systems talk to each other."
+        ]
+      },
+      {
+        "heading": "The best time to plan for it",
+        "body": [
+          "If you're already having a rewire, a kitchen renovation, or an extension done, that's the point to decide how far up this scale you want to go - running extra cabling and neutral wires while walls are already open costs a fraction of what it costs to add later."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need a neutral wire for all smart lighting?",
+        "a": "Only for smart switches and dimmers that replace the physical switch. Smart bulbs and plugs work with existing wiring."
+      },
+      {
+        "q": "Can smart lighting be added to an older property without a rewire?",
+        "a": "Often yes at the bulb/plug level, but proper smart switches may need some additional wiring depending on what's currently at the switch position - we check this during a survey."
+      },
+      {
+        "q": "Is smart lighting worth doing during a renovation rather than after?",
+        "a": "Generally yes - running the cabling while walls are open is far cheaper than retrofitting it into a finished room."
+      }
+    ],
+    "relatedSlugs": [
+      "kitchen-renovation-electrics-guide",
+      "electrical-checklist-home-extension-loft-conversion",
+      "commercial-led-lighting-savings"
+    ]
+  },
+  {
+    "slug": "electrical-fault-finding-when-to-call",
+    "service": "electrical-inspection-testing",
+    "title": "Electrical Fault Finding: When to Call an Electrician for Diagnosis",
+    "metaTitle": "Electrical Fault Finding: When to Call an Electrician | Quality Electrics",
+    "metaDescription": "Tripping fuses, flickering lights, burning smells - here's what these signs actually mean, and when it's time to call an electrician rather than wait.",
+    "excerpt": "A tripping fuse or a flickering light can mean very little, or something serious. Here's how to tell the difference, and when to call it in.",
+    "readTime": "6 min read",
+    "publishDate": "2026-07-28",
+    "displayDate": "28 July 2026",
+    "heroImage": "assets/img/distribution-board.webp",
+    "keyTakeaways": [
+      "A single trip after plugging in a specific appliance usually points to that appliance, not the wiring",
+      "Repeated, unexplained trips across different circuits are a genuine warning sign worth investigating",
+      "A burning smell from any socket or the consumer unit is a stop-and-call-immediately situation, not a wait-and-see one",
+      "Fault finding is diagnostic work, separate from a full EICR, and is usually faster and cheaper when the problem is active"
+    ],
+    "intro": [
+      "Not every electrical hiccup means something is seriously wrong, and not every one is safe to ignore either. The difference usually comes down to whether the sign is isolated and explainable, or repeated and unexplained - here's how to tell which is which."
+    ],
+    "sections": [
+      {
+        "heading": "A single trip: usually the appliance, not the wiring",
+        "body": [
+          "If a circuit trips right when you plug in or switch on a specific appliance - an old kettle, a faulty heater, a lamp with a worn cable - that's usually the appliance itself, not a wiring problem. Unplugging it and testing the circuit normally confirms this quickly."
+        ]
+      },
+      {
+        "heading": "Repeated, unexplained trips",
+        "body": [
+          "A consumer unit that trips repeatedly with no obvious appliance cause, or trips affecting circuits that shouldn't be connected, points to something in the fixed wiring rather than what's plugged into it - a loose connection, damaged cable, or a circuit carrying more load than it's designed for. This is exactly the kind of pattern that needs proper fault finding rather than repeatedly resetting the trip and hoping."
+        ]
+      },
+      {
+        "heading": "Flickering or dimming lights",
+        "body": [
+          "An occasional flicker when a large appliance switches on elsewhere in the property isn't automatically concerning. Regular flickering across multiple rooms, or lights that dim noticeably when something else switches on, usually points to a loose connection or an overloaded circuit somewhere in the system."
+        ]
+      },
+      {
+        "heading": "Burning smells and warm sockets: stop and call",
+        "body": [
+          "A burning smell from a socket, switch, or the consumer unit itself is not a wait-and-see situation - switch off the affected circuit at the consumer unit if you can do so safely, and call an electrician straight away rather than continuing to use it. The same goes for a socket or switch that's warm or hot to the touch under normal use."
+        ]
+      },
+      {
+        "heading": "What fault finding actually involves",
+        "body": [
+          "Fault finding is targeted diagnostic work - tracing a specific problem to its source, rather than the full inspection of every circuit that an EICR covers. It's usually faster and more straightforward when the fault is currently active, since an intermittent problem that isn't happening on the day can take longer to pin down."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "My fuse trips occasionally but resets fine - is that a problem?",
+        "a": "If you can identify what caused it and it doesn't recur, usually not. If it keeps happening without an obvious cause, it's worth having it checked."
+      },
+      {
+        "q": "Is fault finding the same as an EICR?",
+        "a": "No - fault finding targets a specific known problem, while an EICR is a full inspection of the whole fixed installation."
+      },
+      {
+        "q": "What should I do if I smell burning from a socket?",
+        "a": "Switch off the circuit at the consumer unit if safe to do so, stop using it, and call an electrician immediately rather than waiting."
+      }
+    ],
+    "relatedSlugs": [
+      "eicr-landlord-guide-scotland",
+      "signs-your-home-needs-rewired",
+      "consumer-unit-upgrade-cost-guide"
+    ]
+  },
+  {
+    "slug": "smoke-alarms-heat-detectors-home-safety",
+    "service": "electrical-inspection-testing",
+    "title": "Smoke Alarms, Heat Detectors and Home Safety: What Every Glasgow Homeowner Needs to Know",
+    "metaTitle": "Smoke Alarms & Heat Detectors: Scottish Law Explained | Quality Electrics",
+    "metaDescription": "Scottish fire safety law changed in 2022. Here's what alarms your home actually needs, where they go, and what interconnected really means.",
+    "excerpt": "Scotland's fire alarm law changed in 2022, and a lot of homes still aren't compliant. Here's what's actually required, and where alarms need to go.",
+    "readTime": "6 min read",
+    "publishDate": "2026-07-28",
+    "displayDate": "28 July 2026",
+    "heroImage": "assets/img/tenement.webp",
+    "keyTakeaways": [
+      "Since February 2022, all homes in Scotland must have interconnected smoke alarms, a heat alarm in the kitchen, and a carbon monoxide alarm where there's a fuel-burning appliance",
+      "Interconnected means all alarms sound together when one is triggered, not just the alarm nearest the fire",
+      "This applies to owner-occupied homes as well as rentals - it isn't only a landlord requirement",
+      "Battery-only smoke alarms that aren't interconnected no longer meet the standard on their own"
+    ],
+    "intro": [
+      "Scotland's fire alarm standard changed in February 2022, and it applies to every home, not just rental properties - which means a lot of owner-occupied Glasgow homes are still running on the older standard without realising the law has moved on."
+    ],
+    "sections": [
+      {
+        "heading": "What the law actually requires",
+        "body": [
+          "Every home in Scotland needs one smoke alarm in the room most used for general daytime living, one smoke alarm in every hallway or landing used as an escape route, and one heat alarm in the kitchen. All of these need to be interconnected, so that when one triggers, they all sound. If the property has a fuel-burning appliance - a gas boiler, an open fire, a wood burner - a carbon monoxide alarm is required in that room too."
+        ]
+      },
+      {
+        "heading": "Why \"interconnected\" is the part people miss",
+        "body": [
+          "A lot of homes have working smoke alarms that simply aren't linked together - which meets a much older standard, not the current one. If a fire starts in a kitchen and the hallway alarm two rooms away doesn't sound because it's a separate, unlinked unit, that's exactly the gap interconnection is designed to close, particularly for anyone asleep or in another part of the house."
+        ]
+      },
+      {
+        "heading": "This isn't just a landlord rule",
+        "body": [
+          "It's a common assumption that this standard only applies to rental properties, but it applies to every home in Scotland regardless of tenure. Owner-occupiers aren't legally required to retrofit it on the same enforcement timeline landlords face, but the safety case for doing so is identical either way."
+        ]
+      },
+      {
+        "heading": "Hardwired versus interlinked battery alarms",
+        "body": [
+          "Interconnection can be done with mains-wired alarms linked by cable, or with modern radio-interlinked battery alarms that communicate wirelessly - both meet the standard. Mains-wired is the more permanent option and usually makes sense during a rewire or renovation when cabling is already being run; radio-interlinked alarms are a practical retrofit option for a property that isn't otherwise having electrical work done."
+        ]
+      },
+      {
+        "heading": "Getting it checked and installed properly",
+        "body": [
+          "Alarm positioning matters as much as the alarms themselves - too close to a kitchen extractor and a smoke alarm nuisance-trips constantly, too far from an escape route and it doesn't do its job. A proper installation accounts for this rather than just fitting alarms to the letter of the room count."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need to upgrade my alarms if I already have smoke alarms fitted?",
+        "a": "If they aren't interconnected, or you're missing a kitchen heat alarm or a carbon monoxide alarm where needed, yes - the standard is specific, not just \"some alarms fitted.\""
+      },
+      {
+        "q": "Is this only a legal requirement for landlords?",
+        "a": "No, it applies to all homes in Scotland, though enforcement mechanisms differ between owner-occupied and rented properties."
+      },
+      {
+        "q": "Can I fit interconnected alarms myself?",
+        "a": "Battery interlinked alarms can be self-fitted, but mains-wired interconnection is notifiable electrical work and should be installed and certified by a registered electrician."
+      }
+    ],
+    "relatedSlugs": [
+      "eicr-landlord-guide-scotland",
+      "signs-your-home-needs-rewired",
+      "hidden-dangers-diy-electrical-work"
+    ]
+  },
+  {
+    "slug": "garden-lighting-trends",
+    "service": "domestic-extensions-conversions",
+    "title": "Garden Lighting Trends: What Glasgow Homeowners Are Installing This Year",
+    "metaTitle": "Garden Lighting Trends for Glasgow Homes | Quality Electrics",
+    "metaDescription": "From warm uplighting to app-controlled colour-changing systems, here's what's actually being installed in Glasgow gardens right now, and what it needs wiring-wise.",
+    "excerpt": "Warm uplighting, app-controlled colour, and low-voltage runs - here's what's actually popular in Glasgow gardens, and what each option needs electrically.",
+    "readTime": "5 min read",
+    "publishDate": "2026-08-04",
+    "displayDate": "4 August 2026",
+    "heroImage": "assets/img/garden-room-lighting.webp",
+    "keyTakeaways": [
+      "Warm white uplighting on trees, walls, and steps remains the most requested style, over cooler or coloured light",
+      "Low-voltage garden lighting systems are safer and easier to extend than running mains voltage outdoors",
+      "App and smart-home controlled garden lighting is increasingly standard, not a premium extra",
+      "All outdoor lighting circuits need RCD protection and the right IP rating regardless of style"
+    ],
+    "intro": [
+      "Garden lighting has moved a long way past a single floodlight on a sensor. Here's what's actually being requested and installed in Glasgow gardens at the moment, and what each option genuinely needs from an electrical standpoint."
+    ],
+    "sections": [
+      {
+        "heading": "Warm uplighting over cool or coloured light",
+        "body": [
+          "By far the most requested style is warm white uplighting directed onto trees, walls, and steps rather than broad, cool floodlighting. It reads as considered rather than purely functional, and tends to age better visually than a single harsh security light."
+        ]
+      },
+      {
+        "heading": "Low-voltage systems for flexibility",
+        "body": [
+          "A lot of garden lighting is now run on a low-voltage system fed from a single transformer, rather than multiple mains-voltage circuits run separately. This makes it considerably easier to add or reposition fittings later, since you're working with a lighter-gauge cable network rather than extending a full mains circuit each time."
+        ]
+      },
+      {
+        "heading": "App and smart-home control",
+        "body": [
+          "Garden lighting controlled by an app or tied into a smart-home system is now a standard request rather than an unusual upgrade - scheduling lights to come on at dusk automatically, or adjusting brightness from a phone, is a small addition at install time and awkward to retrofit afterwards."
+        ]
+      },
+      {
+        "heading": "Security lighting done properly",
+        "body": [
+          "Security lighting hasn't gone away, but the trend is toward lighting that's motion-triggered and positioned to actually cover approach routes and entry points, rather than one bright fixture lighting the whole garden regardless of need."
+        ]
+      },
+      {
+        "heading": "The electrical basics that don't change",
+        "body": [
+          "Whatever style is chosen, the same requirements apply every time: outdoor circuits need RCD protection, fittings need an IP rating suited to their exposure, and cable runs need to be installed at the right depth or in ducting rather than surface-run and left exposed to the weather."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is low-voltage garden lighting less bright than mains-voltage?",
+        "a": "Not necessarily - modern LED low-voltage fittings produce comparable light output while being safer and easier to extend."
+      },
+      {
+        "q": "Can garden lighting be added to an existing garden without major digging?",
+        "a": "Often yes, particularly with a low-voltage system, though cable routes still need planning properly rather than just laid on the surface."
+      },
+      {
+        "q": "Does garden lighting need to be tested and certified?",
+        "a": "Yes, like any electrical installation it's tested and certified on completion."
+      }
+    ],
+    "relatedSlugs": [
+      "electrical-safety-scottish-weather",
+      "electrical-checklist-home-extension-loft-conversion",
+      "commercial-led-lighting-savings"
+    ]
+  },
+  {
+    "slug": "led-lighting-for-the-home",
+    "service": "commercial-installations-lighting",
+    "title": "The Benefits of Upgrading to LED Lighting in Your Home",
+    "metaTitle": "Benefits of LED Lighting for Your Home | Quality Electrics",
+    "metaDescription": "LED lighting cuts running costs and lasts far longer than old fittings. Here's what an upgrade actually involves and what it saves in a typical home.",
+    "excerpt": "LED lighting isn't just an energy-saving gesture - it changes running costs and bulb-replacement hassle in a way most homeowners underestimate.",
+    "readTime": "5 min read",
+    "publishDate": "2026-08-04",
+    "displayDate": "4 August 2026",
+    "heroImage": "assets/img/under-unit-lighting.webp",
+    "keyTakeaways": [
+      "LED fixtures use significantly less energy than halogen or incandescent fittings for equivalent brightness",
+      "LEDs last around 15,000-50,000 hours depending on the fitting, far longer than the bulbs they replace",
+      "A whole-home LED upgrade is straightforward with existing fittings in most cases, without needing a rewire",
+      "Dimmable LED fittings need compatible dimmer switches - not every existing dimmer works correctly with LEDs"
+    ],
+    "intro": [
+      "Most homes still have at least a few rooms running on older halogen or incandescent fittings, usually because nobody's got round to swapping them rather than any real preference for the light quality. The case for LED is straightforward once you look at what it actually changes."
+    ],
+    "sections": [
+      {
+        "heading": "The running cost difference",
+        "body": [
+          "An LED fitting typically uses a fraction of the energy a halogen equivalent needs for the same brightness. Across a whole home with dozens of fittings running for hours a day, that difference adds up to a genuine, ongoing saving on the electricity bill rather than a marginal one."
+        ]
+      },
+      {
+        "heading": "How long they actually last",
+        "body": [
+          "LED fittings commonly last somewhere between 15,000 and 50,000 hours depending on the specific fitting and quality, compared to roughly 1,000-2,000 hours for a halogen bulb. In practical terms, that's the difference between changing bulbs every year or two and barely thinking about it for a decade."
+        ]
+      },
+      {
+        "heading": "Swapping existing fittings versus a full upgrade",
+        "body": [
+          "In most homes, upgrading to LED doesn't require a rewire - existing downlight fittings and pendant fixtures can usually take an LED equivalent directly. Where it gets more involved is with older, non-dimmable fittings if you want dimming control, or integrated fittings that need the whole unit replaced rather than just the bulb."
+        ]
+      },
+      {
+        "heading": "The dimmer compatibility issue",
+        "body": [
+          "This is the part that catches people out: not every existing dimmer switch works correctly with LED bulbs. Older dimmers are designed for the electrical characteristics of halogen or incandescent bulbs, and can cause LED fittings to flicker, buzz, or fail to dim smoothly. A proper LED upgrade checks and, where needed, replaces the dimmer itself, not just the bulbs."
+        ]
+      },
+      {
+        "heading": "Where it makes the most difference",
+        "body": [
+          "Rooms with lights on for long stretches - kitchens, living rooms, hallways with frequent use - see the biggest practical benefit. Rooms used briefly, like a box room, see less of a difference in absolute terms, though the longevity benefit still applies everywhere."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Will LED bulbs work in my existing light fittings?",
+        "a": "In most cases yes, but dimmable fittings sometimes need a dimmer switch upgrade to work properly with LEDs."
+      },
+      {
+        "q": "Is an LED upgrade a big job?",
+        "a": "Usually straightforward for standard fittings - a full rewire isn't needed for a like-for-like LED swap in most homes."
+      },
+      {
+        "q": "Do LED fittings run cooler than halogen?",
+        "a": "Yes, significantly - which is also part of why they last longer and are safer around insulation in loft spaces."
+      }
+    ],
+    "relatedSlugs": [
+      "commercial-led-lighting-savings",
+      "smart-lighting-explained",
+      "kitchen-renovation-electrics-guide"
+    ]
+  },
+  {
+    "slug": "partial-vs-full-rewire",
+    "service": "domestic-commercial-rewiring",
+    "title": "Partial vs Full Rewire: Which One Does Your Glasgow Home Actually Need?",
+    "metaTitle": "Partial vs Full Rewire: Which Does Your Home Need? | Quality Electrics",
+    "metaDescription": "Not every wiring problem needs a full rewire. Here's how to tell whether a partial rewire is genuinely enough for your Glasgow property.",
+    "excerpt": "A full rewire isn't always the right answer. Here's how to tell whether your property genuinely needs one, or whether a partial rewire is enough.",
+    "readTime": "6 min read",
+    "publishDate": "2026-08-04",
+    "displayDate": "4 August 2026",
+    "heroImage": "assets/img/business-wiring-fitout.webp",
+    "keyTakeaways": [
+      "A partial rewire targets specific problem circuits, while a full rewire replaces the entire fixed installation",
+      "Age alone isn't the deciding factor - condition, established through an EICR, is what actually matters",
+      "A partial rewire is only genuinely sufficient if the untouched circuits are confirmed sound, not just assumed to be",
+      "An honest quote will recommend a partial rewire where it's enough, rather than defaulting to the bigger job"
+    ],
+    "intro": [
+      "\"Do I need a full rewire?\" is usually asked with some dread, and the honest answer is often no - a targeted partial rewire of the circuits actually causing problems is genuinely sufficient in plenty of cases. The trick is knowing which situation you're actually in."
+    ],
+    "sections": [
+      {
+        "heading": "What each option actually means",
+        "body": [
+          "A full rewire replaces every circuit in the property - every socket, switch, and light circuit, run in new cable back to a new or upgraded consumer unit. A partial rewire replaces specific circuits or areas showing problems, while leaving sound circuits elsewhere untouched."
+        ]
+      },
+      {
+        "heading": "Age isn't the deciding factor on its own",
+        "body": [
+          "It's tempting to use age as the rule of thumb - anything over 25-30 years needs replacing - but condition matters more than age alone. Wiring can be older and still be in genuinely sound condition, or newer and poorly installed. An EICR establishes actual condition circuit by circuit, which is a far more reliable basis for the decision than age as a proxy."
+        ]
+      },
+      {
+        "heading": "When a partial rewire is genuinely enough",
+        "body": [
+          "A partial rewire makes sense when the problems are isolated to specific circuits or areas - an extension added years ago with wiring that doesn't match the rest of the property, a kitchen circuit that's been overloaded as appliances were added over time, or a section of the property with different, older cabling than the rest."
+        ]
+      },
+      {
+        "heading": "The condition on what stays untouched",
+        "body": [
+          "A partial rewire is only the right call if the circuits being left alone are actually confirmed sound, not just assumed to be because they haven't caused an obvious problem yet. This is exactly why a proper survey and EICR-informed assessment matters before committing to \"partial\" - it needs to be a genuine finding, not a way to avoid the bigger conversation."
+        ]
+      },
+      {
+        "heading": "Why an honest answer matters here",
+        "body": [
+          "A full rewire is a bigger job and a bigger bill, so there's an obvious temptation for it to be the default recommendation regardless of what's actually needed. A straight answer - including \"you don't need the full job\" when that's genuinely true - is worth more than an inflated scope, and it's the basis we work from every time."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Can I ask for just a partial rewire even if some wiring is older?",
+        "a": "The recommendation should be based on actual condition, established through a survey or EICR - if some older wiring is confirmed sound, there's no need to replace it just because of its age."
+      },
+      {
+        "q": "Does a partial rewire cost proportionally less than a full one?",
+        "a": "Generally yes, since it's priced on the circuits and rooms actually being rewired rather than the whole property."
+      },
+      {
+        "q": "How do I know which circuits need attention?",
+        "a": "An EICR or a proper survey identifies this directly, rather than guessing based on symptoms alone."
+      }
+    ],
+    "relatedSlugs": [
+      "full-house-rewire-cost-guide",
+      "signs-your-home-needs-rewired",
+      "eicr-landlord-guide-scotland"
+    ]
+  },
+  {
+    "slug": "how-to-prepare-for-a-house-rewire",
+    "service": "domestic-commercial-rewiring",
+    "title": "How to Prepare for a House Rewire in Scotland: A Room-by-Room Guide",
+    "metaTitle": "How to Prepare for a House Rewire | Quality Electrics",
+    "metaDescription": "Getting your home ready before a rewire starts makes the whole job faster and less stressful. A practical, room-by-room preparation guide.",
+    "excerpt": "A bit of preparation before a rewire starts genuinely makes the job faster, cheaper, and less disruptive. Here's what actually helps, room by room.",
+    "readTime": "6 min read",
+    "publishDate": "2026-08-04",
+    "displayDate": "4 August 2026",
+    "heroImage": "assets/img/tenement.webp",
+    "keyTakeaways": [
+      "Clearing access to walls, floors, and loft spaces before work starts saves real time on site",
+      "Agreeing final socket and switch positions in advance avoids costly changes mid-job",
+      "Rooms don't all need clearing at once - agreeing a room-by-room schedule with your electrician helps if you're staying in the property",
+      "Sorting out where you'll be during power-off periods in advance reduces disruption on the day"
+    ],
+    "intro": [
+      "A rewire runs smoother, faster, and with fewer surprises when a bit of groundwork happens before the electrician arrives. None of this is complicated, but it's easy to overlook if it's your first time going through it."
+    ],
+    "sections": [
+      {
+        "heading": "Clear access before work starts",
+        "body": [
+          "Furniture pulled away from walls, floor coverings that can be lifted already lifted where practical, and loft spaces cleared of stored items all save real time once work begins - time spent moving your belongings on the day is time not spent on the actual job."
+        ]
+      },
+      {
+        "heading": "Agree socket and switch positions in advance",
+        "body": [
+          "Walking through each room and agreeing exactly where sockets, switches, and light fittings should go - and how many - before first fix starts avoids costly, disruptive changes partway through. This is the point to think about where furniture will actually sit, not just match what was there before."
+        ]
+      },
+      {
+        "heading": "Plan the schedule room by room if you're staying in",
+        "body": [
+          "If you're staying in the property during a rewire, a room-by-room schedule agreed in advance - which rooms are done first, which stay usable longest - makes a real difference to how liveable the process feels, rather than the whole house being disrupted simultaneously."
+        ]
+      },
+      {
+        "heading": "Sort out power-off periods ahead of time",
+        "body": [
+          "There will be periods without power during the job. Knowing this in advance and planning around it - charging devices beforehand, having an alternative plan for cooking or heating on the days that matter most - takes the sting out of what would otherwise feel like an unexpected inconvenience."
+        ]
+      },
+      {
+        "heading": "Protect what can't be moved",
+        "body": [
+          "For fitted items that can't be relocated - built-in wardrobes, fitted carpets in awkward areas - covering them properly before chasing or drilling work starts nearby protects them from dust, which is unavoidable during a rewire regardless of how tidy the work is."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do I need to move out during a rewire?",
+        "a": "Not always for a partial rewire, but it's usually easier for a full rewire. We'll talk through what's realistic for your specific situation."
+      },
+      {
+        "q": "How much notice do you need on final socket positions?",
+        "a": "Ideally agreed before first fix starts, since changes afterwards mean redoing work already completed."
+      },
+      {
+        "q": "Will there be dust throughout the process?",
+        "a": "Yes, particularly during first fix when walls are chased - covering fitted items nearby in advance helps protect them."
+      }
+    ],
+    "relatedSlugs": [
+      "full-house-rewire-cost-guide",
+      "partial-vs-full-rewire",
+      "signs-your-home-needs-rewired"
+    ]
+  },
+  {
+    "slug": "home-electrical-safety-for-families",
+    "service": "electrical-inspection-testing",
+    "title": "Home Electrical Safety for Families: Protecting Children in Your Glasgow Home",
+    "metaTitle": "Home Electrical Safety for Families | Quality Electrics",
+    "metaDescription": "Simple, real steps to make a family home safer around electrics - socket covers, cord management, and what's actually worth doing versus overkill.",
+    "excerpt": "Not every child-safety electrical measure is necessary, but a few genuinely matter. Here's what actually helps, and what's more marketing than substance.",
+    "readTime": "5 min read",
+    "publishDate": "2026-08-11",
+    "displayDate": "11 August 2026",
+    "heroImage": "assets/img/office-lighting.webp",
+    "keyTakeaways": [
+      "UK sockets already have shuttered outlets as standard, so aftermarket socket covers add little real protection",
+      "RCD protection on all circuits is the single most effective safety measure for a family home",
+      "Trailing cords and extension leads are a bigger practical risk than sockets themselves in most homes",
+      "An EICR before or shortly after moving into a family home is a genuinely worthwhile check"
+    ],
+    "intro": [
+      "A lot of advice aimed at parents about electrical safety focuses on the wrong things - plastic socket covers get recommended constantly, while genuinely more effective measures get mentioned less. Here's a more grounded look at what actually helps."
+    ],
+    "sections": [
+      {
+        "heading": "UK sockets are already shuttered",
+        "body": [
+          "Standard UK sockets have been required to have shuttered outlets since long before current safety standards - the shutters only open when both live and neutral pins are inserted simultaneously, which a single object like a finger or a key can't do. Aftermarket plastic socket covers add very little on top of this, and in some cases are harder to remove safely than the socket's own shutter mechanism."
+        ]
+      },
+      {
+        "heading": "RCD protection matters far more",
+        "body": [
+          "The single most effective thing for family electrical safety is confirming every circuit in the home has RCD protection. An RCD cuts power within milliseconds if it detects current leaking to earth - the kind of event that happens with damaged cables, wet conditions, or genuine faults - which matters more for actual injury prevention than socket shutters ever will."
+        ]
+      },
+      {
+        "heading": "Trailing cords and extension leads",
+        "body": [
+          "In practice, loose extension leads and trailing appliance cords across floors are a bigger everyday risk in a family home than the sockets themselves - both as a trip hazard and, if damaged or overloaded, a genuine fire risk. Reducing reliance on extension leads by having enough properly positioned sockets is a more useful long-term fix than managing cords around a shortage of outlets."
+        ]
+      },
+      {
+        "heading": "Getting an EICR when moving into a family home",
+        "body": [
+          "If you're moving into a property with children, or already have a young family and haven't had the wiring checked, an EICR establishes the actual condition of the fixed installation rather than relying on assumptions based on how old the property looks or feels."
+        ]
+      },
+      {
+        "heading": "What's genuinely worth doing",
+        "body": [
+          "Confirm RCD protection across all circuits, make sure there are enough sockets in rooms where devices and appliances actually get used so extension leads aren't a permanent fixture, and get an EICR if the property's history or wiring age is unclear. These three things do more for real safety than any amount of plastic socket covers."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Are plastic socket covers worth using?",
+        "a": "They add very little given UK sockets are already shuttered by design, and some are fiddlier to remove than the socket's own shutter."
+      },
+      {
+        "q": "How do I know if my home has RCD protection on all circuits?",
+        "a": "An EICR or a straightforward check of your consumer unit by an electrician will confirm this."
+      },
+      {
+        "q": "Is it worth getting an EICR specifically because of young children in the house?",
+        "a": "It's a sensible reason to prioritise one if you haven't had the wiring checked recently, though the same standard applies to any household."
+      }
+    ],
+    "relatedSlugs": [
+      "eicr-landlord-guide-scotland",
+      "smoke-alarms-heat-detectors-home-safety",
+      "hidden-dangers-diy-electrical-work"
+    ]
+  },
+  {
+    "slug": "distribution-board-upgrades-for-businesses",
+    "service": "commercial-installations-lighting",
+    "title": "Distribution Board Upgrades: The Complete Guide for Glasgow Businesses",
+    "metaTitle": "Distribution Board Upgrades for Glasgow Businesses | Quality Electrics",
+    "metaDescription": "Outdated, plastic, or under-protected distribution boards are a real liability for a business. Here's when and why an upgrade is worth prioritising.",
+    "excerpt": "An outdated or under-protected distribution board is a genuine liability for a business, not just an aging fixture. Here's when to prioritise an upgrade.",
+    "readTime": "7 min read",
+    "publishDate": "2026-08-18",
+    "displayDate": "18 August 2026",
+    "heroImage": "assets/img/distribution-board.webp",
+    "keyTakeaways": [
+      "Older metal-clad or rewireable-fuse distribution boards no longer meet current wiring regulations for most commercial premises",
+      "RCD and RCBO protection significantly reduce the risk of both electric shock and electrical fire in a commercial setting",
+      "An outdated board is one of the most common findings on a commercial EICR",
+      "Upgrades can usually be phased to minimise disruption to a trading business"
+    ],
+    "intro": [
+      "A distribution board that's been fine for years can quietly become a genuine liability as a business grows, adds equipment, or simply ages past what current regulations expect. Here's what actually determines whether an upgrade is overdue."
+    ],
+    "sections": [
+      {
+        "heading": "Signs a distribution board is overdue for upgrade",
+        "body": [
+          "Older rewireable fuse boards, boards without RCD protection on final circuits, or plastic-enclosed boards installed before current fire safety standards are all common findings that flag a board as due for replacement. Frequent nuisance tripping, visible scorching or discolouration, or simply not knowing what protection is actually fitted are all reasons to have it properly assessed."
+        ]
+      },
+      {
+        "heading": "What modern protection actually adds",
+        "body": [
+          "Current distribution boards use RCBOs (combined circuit breaker and RCD protection) on individual circuits rather than a single RCD covering multiple circuits. This means a fault on one circuit trips only that circuit, not everything sharing the same RCD - a real practical difference for a business where an unrelated area losing power because of one faulty piece of equipment is a genuine disruption."
+        ]
+      },
+      {
+        "heading": "Metal enclosures and current fire safety standards",
+        "body": [
+          "Current wiring regulations require distribution boards in most commercial and domestic settings to be housed in a non-combustible enclosure, typically metal, rather than the plastic enclosures common in older installations. This is one of the most frequent findings on commercial EICRs specifically because it was a genuine standards change, not because older plastic boards were installed incorrectly for their time."
+        ]
+      },
+      {
+        "heading": "Phasing an upgrade around a trading business",
+        "body": [
+          "A distribution board upgrade doesn't have to mean the whole business goes without power for a day. Work can usually be phased - isolating and working on sections at a time, or scheduling the change for evenings or a quieter trading period - so the business keeps functioning while the upgrade happens."
+        ]
+      },
+      {
+        "heading": "Why this shows up on EICRs so often",
+        "body": [
+          "Outdated distribution boards are consistently one of the most common findings on commercial EICRs, precisely because a board can keep working perfectly well for the equipment plugged into it while genuinely falling short of current protection and enclosure standards. An EICR is what actually catches this, rather than relying on the board simply appearing to function."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Does my distribution board need replacing just because it's old?",
+        "a": "Age alone isn't the deciding factor, but older boards often lack RCBO protection and non-combustible enclosures that current standards expect, which usually does justify an upgrade."
+      },
+      {
+        "q": "Can an upgrade be done without closing the business?",
+        "a": "Often yes, by phasing the work or scheduling it around quieter trading periods - we scope this properly at quote stage."
+      },
+      {
+        "q": "Will a distribution board upgrade come up on my next EICR anyway?",
+        "a": "If the board doesn't meet current standards, yes - it's one of the most common findings, so addressing it proactively avoids it becoming an urgent remedial item later."
+      }
+    ],
+    "relatedSlugs": [
+      "three-phase-distribution-boards",
+      "rcbo-vs-dual-rcd-distribution-boards",
+      "eicr-landlord-guide-scotland"
+    ]
+  },
+  {
+    "slug": "three-phase-distribution-boards",
+    "service": "commercial-installations-lighting",
+    "title": "Three-Phase Distribution Boards: What Glasgow Businesses Need to Know",
+    "metaTitle": "Three-Phase Distribution Boards Explained | Quality Electrics",
+    "metaDescription": "Does your Glasgow business need a three-phase distribution board? Here's what three-phase power actually means, and when it's genuinely required.",
+    "excerpt": "Three-phase power isn't needed for most small businesses, but it's essential for certain equipment. Here's how to know which category you're in.",
+    "readTime": "6 min read",
+    "publishDate": "2026-08-18",
+    "displayDate": "18 August 2026",
+    "heroImage": "assets/img/business-wiring-fitout.webp",
+    "keyTakeaways": [
+      "Three-phase power supplies more consistent, higher capacity power than the single-phase supply most homes and small shops use",
+      "It's genuinely required for certain equipment - larger motors, some catering equipment, industrial machinery - rather than a general upgrade for its own sake",
+      "Getting a three-phase supply installed usually involves your network operator, not just an internal electrical upgrade",
+      "Load balancing across the three phases matters for getting full value from the supply"
+    ],
+    "intro": [
+      "Three-phase power gets asked about a lot more than it's actually needed. Here's a straightforward explanation of what it is, and how to tell whether your business genuinely needs it or is fine on a standard single-phase supply."
+    ],
+    "sections": [
+      {
+        "heading": "What three-phase power actually is",
+        "body": [
+          "Standard single-phase power, which supplies most homes and small commercial units, delivers power on one alternating waveform. Three-phase power delivers three separate waveforms offset from each other, which provides more consistent, higher-capacity power delivery - genuinely useful for equipment that needs a stable, heavy load rather than the smaller draws typical of a home or small shop."
+        ]
+      },
+      {
+        "heading": "What genuinely needs it",
+        "body": [
+          "Larger electric motors, some commercial catering equipment, industrial machinery, EV rapid chargers, and larger air conditioning or refrigeration plant are common cases where three-phase is genuinely required, not optional. If your business runs equipment specified by its manufacturer as requiring three-phase, that's usually the clearest signal."
+        ]
+      },
+      {
+        "heading": "What doesn't need it",
+        "body": [
+          "Most retail units, offices, and small hospitality premises run perfectly well on a single-phase supply, even with a reasonable amount of lighting, computers, and standard equipment. Three-phase isn't a general-purpose upgrade for a business that's simply grown - it's specifically for equipment with that requirement."
+        ]
+      },
+      {
+        "heading": "Getting a three-phase supply installed",
+        "body": [
+          "Unlike an internal distribution board upgrade, getting three-phase power to a property usually involves the local electricity network operator, since it often means a new or upgraded supply connection, not just internal wiring changes. This makes the process, and the timeline, different from most other electrical upgrades - it's worth planning for well ahead of when you actually need the equipment running."
+        ]
+      },
+      {
+        "heading": "Load balancing across phases",
+        "body": [
+          "Once a three-phase supply is in place, getting proper value from it depends on balancing the load reasonably evenly across all three phases rather than concentrating everything onto one. This is something to plan into the distribution board design from the start, not an afterthought once equipment is already connected."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How do I know if my equipment needs three-phase power?",
+        "a": "Check the manufacturer's specification - it will state clearly if three-phase is required rather than single-phase being sufficient."
+      },
+      {
+        "q": "Is getting three-phase power installed a quick process?",
+        "a": "It usually takes longer than an internal electrical upgrade since it often involves the network operator, so it's worth planning well in advance."
+      },
+      {
+        "q": "Does three-phase cost more to run than single-phase?",
+        "a": "Not inherently - the cost difference relates more to the equipment and supply connection than to the phase type itself."
+      }
+    ],
+    "relatedSlugs": [
+      "distribution-board-upgrades-for-businesses",
+      "warehouse-electrical-installation",
+      "rcbo-vs-dual-rcd-distribution-boards"
+    ]
+  },
+  {
+    "slug": "rcbo-vs-dual-rcd-distribution-boards",
+    "service": "commercial-installations-lighting",
+    "title": "RCBO vs Dual RCD Distribution Boards: Which Protection Does Your Business Need?",
+    "metaTitle": "RCBO vs Dual RCD Boards: Which Do You Need? | Quality Electrics",
+    "metaDescription": "Choosing between a dual RCD board and a full RCBO board is one of the most important decisions for your business electrics. Here's the real difference.",
+    "excerpt": "Choosing between a dual RCD board and a full RCBO board affects how much of your business loses power when one circuit faults. Here's the real difference.",
+    "readTime": "6 min read",
+    "publishDate": "2026-08-18",
+    "displayDate": "18 August 2026",
+    "heroImage": "assets/img/distribution-board.webp",
+    "keyTakeaways": [
+      "A dual RCD board splits circuits across two RCDs, so a fault only affects half the circuits rather than all of them",
+      "An RCBO board gives every individual circuit its own dedicated protection, so a fault only trips that one circuit",
+      "RCBO boards cost more upfront but minimise disruption significantly, which matters more for some businesses than others",
+      "The right choice depends on how disruptive losing multiple circuits at once would actually be for your business"
+    ],
+    "intro": [
+      "This is a genuinely practical decision, not just a technical spec choice - it determines how much of your business goes dark when one circuit develops a fault. Here's what actually separates the two options."
+    ],
+    "sections": [
+      {
+        "heading": "How a dual RCD board works",
+        "body": [
+          "A dual RCD board splits the circuits in the building across two separate RCDs, typically alternating so related circuits aren't all on the same one. If a fault occurs on any circuit protected by one RCD, that whole RCD trips, taking out every circuit connected to it - not just the faulty one."
+        ]
+      },
+      {
+        "heading": "How an RCBO board works",
+        "body": [
+          "An RCBO board gives every individual circuit its own combined circuit breaker and RCD. A fault on one circuit trips only that circuit, leaving every other circuit in the building completely unaffected. This is the more targeted, less disruptive option, but comes at a higher cost per circuit than a shared dual RCD arrangement."
+        ]
+      },
+      {
+        "heading": "Why this matters more for some businesses than others",
+        "body": [
+          "For a business where losing half the building's power - lighting, tills, refrigeration, whatever happens to share that RCD - is a genuine operational problem, the extra cost of RCBO protection on every circuit is usually worth it. For a smaller unit with fewer critical systems, a well-designed dual RCD board is often a perfectly reasonable, more economical choice."
+        ]
+      },
+      {
+        "heading": "Cost versus disruption trade-off",
+        "body": [
+          "RCBO boards cost more upfront per circuit than dual RCD boards, since each circuit needs its own RCBO device rather than sharing one RCD across several circuits. The right way to think about this isn't which is objectively \"better,\" but which cost the disruption of losing multiple circuits at once genuinely represents for your specific business."
+        ]
+      },
+      {
+        "heading": "What we actually recommend",
+        "body": [
+          "We look at what's actually connected to each circuit - refrigeration, tills, critical lighting, general sockets - and recommend based on what genuinely can't afford to go down together, rather than defaulting to the most expensive option regardless of need."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Is RCBO protection always the better choice?",
+        "a": "It's more disruption-resistant, but not always necessary - it depends on how costly losing multiple circuits together would actually be for your business."
+      },
+      {
+        "q": "Can an existing dual RCD board be upgraded to RCBO later?",
+        "a": "Yes, though it usually means replacing the board rather than a partial swap, since the two systems work differently."
+      },
+      {
+        "q": "Does RCBO protection cost significantly more overall?",
+        "a": "It costs more per circuit, but the difference is often smaller than expected relative to the whole board, and can be worth it depending on what's connected."
+      }
+    ],
+    "relatedSlugs": [
+      "distribution-board-upgrades-for-businesses",
+      "three-phase-distribution-boards",
+      "consumer-unit-upgrade-cost-guide"
+    ]
+  },
+  {
+    "slug": "warehouse-electrical-installation",
+    "service": "commercial-installations-lighting",
+    "title": "Warehouse Electrical Installation: The Complete Planning Guide for Glasgow Businesses",
+    "metaTitle": "Warehouse Electrical Installation Guide | Quality Electrics",
+    "metaDescription": "Planning a warehouse electrical installation in Glasgow? Our guide covers lighting design, power distribution, and what to plan for before work starts.",
+    "excerpt": "Warehouse electrics involve a different scale of planning than a standard commercial fit-out. Here's what actually needs deciding before work starts.",
+    "readTime": "7 min read",
+    "publishDate": "2026-08-25",
+    "displayDate": "25 August 2026",
+    "heroImage": "assets/img/commercial-lighting-install.webp",
+    "keyTakeaways": [
+      "High-bay lighting design needs to account for ceiling height and rack layout, not just overall floor coverage",
+      "Power distribution should be planned around where machinery and charging points will actually sit, not retrofitted around them later",
+      "Warehouses often need three-phase power for machinery even when the office areas run on single-phase",
+      "Planning cable routes around racking layout early avoids expensive rework once shelving is installed"
+    ],
+    "intro": [
+      "A warehouse electrical installation involves a different order of decisions than a shop or office fit-out - the scale, the ceiling height, and the mix of lighting, power, and machinery needs mean planning has to happen properly before racking and equipment go in, not around them afterwards."
+    ],
+    "sections": [
+      {
+        "heading": "Lighting design for warehouse ceiling heights",
+        "body": [
+          "High-bay lighting - fittings designed for ceilings typically above 6 metres - needs to be planned around actual rack layout and aisle width, not just calculated as a blanket lux level across the floor area. Lighting that looks adequate on a simple floor-coverage calculation can still leave aisles between tall racking genuinely under-lit if the fitting positions don't account for where the racks will actually stand."
+        ]
+      },
+      {
+        "heading": "Power distribution planning",
+        "body": [
+          "Where machinery, packing stations, and charging points will actually sit needs to be decided before power distribution is designed, not worked around afterwards. Retrofitting power runs around already-installed racking and equipment is significantly more disruptive and costly than planning distribution points into the original design."
+        ]
+      },
+      {
+        "heading": "Three-phase power for machinery",
+        "body": [
+          "It's common for a warehouse to need three-phase power for machinery - conveyors, larger material handling equipment, certain packing machinery - even when office or welfare areas within the same building run perfectly well on single-phase. Planning this split properly at the distribution board stage avoids under-specifying capacity where it's actually needed."
+        ]
+      },
+      {
+        "heading": "Planning cable routes around racking",
+        "body": [
+          "Cable containment routes need to be planned with the final racking layout in mind, since running cable after shelving is installed is far more restrictive and often means compromises on the ideal route. Getting racking layout finalised, or at least genuinely settled, before first fix begins saves real rework later."
+        ]
+      },
+      {
+        "heading": "Working around an operational business",
+        "body": [
+          "For a warehouse already in operation, installation work usually needs to be phased around what's currently in use, rather than requiring the whole space to be cleared. Planning this properly at the start - which areas can be worked on first, what needs to stay accessible - keeps the business running through the installation."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do all warehouses need three-phase power?",
+        "a": "Not necessarily - it depends on the machinery involved. Some warehouses run entirely on single-phase if the equipment doesn't require otherwise."
+      },
+      {
+        "q": "Can electrical work be done around an operational warehouse?",
+        "a": "Usually yes, by phasing work around what's currently in use, though this needs proper planning at quote stage."
+      },
+      {
+        "q": "Should lighting design happen before or after racking is finalised?",
+        "a": "Ideally after racking layout is settled, or at least closely coordinated with it, since aisle position affects where light is actually needed."
+      }
+    ],
+    "relatedSlugs": [
+      "high-bay-led-lighting-warehouses",
+      "three-phase-distribution-boards",
+      "forklift-charging-station-installation"
+    ]
+  },
+  {
+    "slug": "high-bay-led-lighting-warehouses",
+    "service": "commercial-installations-lighting",
+    "title": "High-Bay LED Lighting for Warehouses: Energy Savings, Design and Installation Guide",
+    "metaTitle": "High-Bay LED Lighting for Warehouses | Quality Electrics",
+    "metaDescription": "High-bay LED lighting is one of the most effective energy upgrades for a warehouse. Here's how it's designed properly, and what it actually saves.",
+    "excerpt": "High-bay LED lighting is one of the single most effective energy-saving upgrades a warehouse can make. Here's how it's actually designed and installed.",
+    "readTime": "6 min read",
+    "publishDate": "2026-08-25",
+    "displayDate": "25 August 2026",
+    "heroImage": "assets/img/commercial-lighting-install.webp",
+    "keyTakeaways": [
+      "High-bay LED fittings use significantly less energy than the older sodium or metal halide fittings they typically replace",
+      "Design needs to account for beam angle and aisle width, not just fitting count",
+      "Motion sensors in low-traffic aisles add further savings on top of the LED upgrade itself",
+      "LED high-bay fittings run cooler and last far longer, reducing maintenance costs in hard-to-access ceiling positions"
+    ],
+    "intro": [
+      "High-bay lighting is one of the largest ongoing energy costs in a typical warehouse, which is exactly why upgrading it to LED is consistently one of the highest-return electrical improvements a warehouse business can make."
+    ],
+    "sections": [
+      {
+        "heading": "The energy saving is genuinely significant",
+        "body": [
+          "LED high-bay fittings use considerably less energy than the older sodium or metal halide high-bay fittings common in older warehouses, for equivalent or better light output. Given how many hours warehouse lighting typically runs, that difference compounds into a substantial reduction in running cost over a year."
+        ]
+      },
+      {
+        "heading": "Beam angle and aisle width matter more than fitting count",
+        "body": [
+          "A common mistake is specifying high-bay lighting purely by fitting count or wattage without accounting for beam angle relative to aisle width - a wide-beam fitting over a narrow aisle wastes light on rack tops and side aisles rather than the working floor level where it's actually needed. Proper design accounts for the actual geometry of the space, not just an average lux target."
+        ]
+      },
+      {
+        "heading": "Motion sensors add further savings",
+        "body": [
+          "In aisles or areas with intermittent foot traffic, motion-sensor controlled high-bay lighting adds meaningful savings on top of the LED upgrade itself - full brightness when someone's actually in the aisle, dimmed or off when it's empty, rather than every light running at full output continuously regardless of use."
+        ]
+      },
+      {
+        "heading": "Maintenance costs in hard-to-reach positions",
+        "body": [
+          "High-bay fittings are often in genuinely awkward, high-access positions to reach for maintenance. LED fittings running cooler and lasting substantially longer than the fittings they replace means far fewer access jobs to replace failed lamps, which is a real, ongoing cost saving beyond just the electricity bill."
+        ]
+      },
+      {
+        "heading": "Planning the upgrade around an operational warehouse",
+        "body": [
+          "A high-bay LED retrofit can usually be phased section by section, or scheduled outside operating hours, so the warehouse keeps running through the upgrade rather than needing to shut down."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "How much can high-bay LED lighting actually save on energy costs?",
+        "a": "It varies by warehouse and current fittings, but the reduction versus older sodium or metal halide fittings is typically substantial given the hours these lights run."
+      },
+      {
+        "q": "Do motion sensors work well in a warehouse setting?",
+        "a": "Yes, particularly in lower-traffic aisles - they add savings on top of the LED upgrade itself without affecting light availability where it's needed."
+      },
+      {
+        "q": "Can the upgrade be done without shutting the warehouse down?",
+        "a": "Usually yes, by phasing the work section by section or scheduling around operating hours."
+      }
+    ],
+    "relatedSlugs": [
+      "warehouse-electrical-installation",
+      "commercial-led-lighting-savings",
+      "distribution-board-upgrades-for-businesses"
+    ]
+  },
+  {
+    "slug": "forklift-charging-station-installation",
+    "service": "commercial-installations-lighting",
+    "title": "Forklift Charging Station Installation: Planning, Safety and Compliance for Glasgow Warehouses",
+    "metaTitle": "Forklift Charging Station Installation Guide | Quality Electrics",
+    "metaDescription": "Forklift charging stations need dedicated circuits, proper ventilation, and correct cable sizing. Here's what a compliant installation actually involves.",
+    "excerpt": "Forklift charging stations have real electrical and ventilation requirements that get overlooked. Here's what a properly planned installation covers.",
+    "readTime": "6 min read",
+    "publishDate": "2026-08-25",
+    "displayDate": "25 August 2026",
+    "heroImage": "assets/img/distribution-board.webp",
+    "keyTakeaways": [
+      "Forklift charging circuits need to be dedicated and correctly sized for the charger's actual load, not shared with general power",
+      "Battery charging areas need proper ventilation due to hydrogen gas released during charging",
+      "Charging station layout should account for realistic forklift movement and turning space, not just where power happens to be available",
+      "Multiple charging stations need load calculated across all units charging simultaneously, not just one at a time"
+    ],
+    "intro": [
+      "A forklift charging station is a genuinely distinct piece of electrical planning from general warehouse power - it has real load, ventilation, and layout requirements that get overlooked when it's treated as just another socket to connect."
+    ],
+    "sections": [
+      {
+        "heading": "Dedicated, correctly sized circuits",
+        "body": [
+          "Forklift chargers draw a significant, sustained load while charging, and need a dedicated circuit sized correctly for that specific charger's rating - not shared with general warehouse power circuits, and not sized generically without checking the actual equipment being installed."
+        ]
+      },
+      {
+        "heading": "Ventilation is a genuine safety requirement, not an extra",
+        "body": [
+          "Lead-acid forklift batteries release hydrogen gas while charging, which needs proper ventilation in the charging area to avoid it accumulating. This isn't a nice-to-have addition - it's a real safety requirement that needs to be planned into the charging station location and design from the start, not addressed after the area's already in use."
+        ]
+      },
+      {
+        "heading": "Planning realistic layout and access",
+        "body": [
+          "A charging station needs enough clear space for forklifts to manoeuvre in and out safely, positioned somewhere that doesn't create a bottleneck in normal warehouse traffic flow. Electrical planning needs to work alongside the practical layout of the space, not dictate a position purely based on where power happens to already be available."
+        ]
+      },
+      {
+        "heading": "Multiple charging stations and total load",
+        "body": [
+          "Where more than one forklift charges at once, the total load across all units charging simultaneously needs to be calculated properly, not assumed to be manageable because each individual charger's rating looks modest on its own. This is exactly the kind of load calculation that needs doing at the distribution board design stage, not discovered as a problem once everything's installed."
+        ]
+      },
+      {
+        "heading": "Certification and ongoing compliance",
+        "body": [
+          "Like any commercial electrical installation, a forklift charging station needs to be tested, certified, and included in the property's ongoing testing schedule - it's a high-use, high-load piece of infrastructure, and treating it as a one-off installation without follow-up testing is a genuine oversight."
+        ]
+      }
+    ],
+    "faqs": [
+      {
+        "q": "Do forklift chargers need their own dedicated circuit?",
+        "a": "Yes - shared circuits risk both overload and incorrect sizing for the actual charging load."
+      },
+      {
+        "q": "Is ventilation really necessary for a charging area?",
+        "a": "Yes, for lead-acid batteries specifically, due to hydrogen gas released during charging - this is a genuine safety requirement, not an optional extra."
+      },
+      {
+        "q": "How is load calculated for multiple charging stations?",
+        "a": "Based on the total load of all chargers running simultaneously, not each charger considered individually, to ensure the distribution board and supply can handle it."
+      }
+    ],
+    "relatedSlugs": [
+      "warehouse-electrical-installation",
+      "three-phase-distribution-boards",
+      "high-bay-led-lighting-warehouses"
     ]
   }
 ]
