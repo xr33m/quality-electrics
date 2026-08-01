@@ -585,7 +585,9 @@ export function localBusinessSchema({ business, areas, reviews }) {
     email: business.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Glasgow",
+      streetAddress: business.streetAddress,
+      addressLocality: business.addressLocality || "Glasgow",
+      postalCode: business.postcode,
       addressRegion: "Scotland",
       addressCountry: "GB",
     },

@@ -97,6 +97,9 @@
     }
   ],
   "basedIn": "Southside of Glasgow",
+  "streetAddress": "Inverlair Drive",
+  "postcode": "G43 2AY",
+  "addressLocality": "Glasgow",
   "vatRegistered": true,
   "beforeHiringFaqs": [
     {

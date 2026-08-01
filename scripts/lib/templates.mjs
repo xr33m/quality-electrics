@@ -591,7 +591,7 @@ export function homeTemplate({ business, services, areas, reviews, categories = 
       </div>
       <div class="rounded-sm overflow-hidden h-80 sm:h-full min-h-[320px]">
         <iframe
-          src="${mapEmbedUrl({ name: business.basedIn, region: "Glasgow" })}"
+          src="${mapEmbedUrl({ name: `${business.name}, ${business.streetAddress}, ${business.postcode}`, region: "Glasgow" })}"
           class="w-full h-full grayscale contrast-125"
           style="border:0;"
           loading="lazy"
@@ -993,12 +993,16 @@ export function serviceTemplate({ business, service, services, areas, post, inde
   `;
 }
 
-export function serviceAreaTemplate({ business, service, area, services, reviews = [] }) {
+export function serviceAreaTemplate({ business, service, area, services, reviews = [], categories = [] }) {
   const otherServices = services.filter((s) => s.slug !== service.slug);
   const faqs = serviceAreaFaqs(service, area);
   const regNote = regulationsNote(service);
   const relevantReviews = reviews.filter((r) => r.service === service.slug).slice(0, 3);
   const featuredReviews = relevantReviews.length >= 2 ? relevantReviews : reviews.filter((r) => r.rating === 5).slice(0, 3);
+  const category = categories.find((c) => c.serviceSlugs.includes(service.slug));
+  const siblingServices = category
+    ? category.serviceSlugs.map((slug) => services.find((s) => s.slug === slug)).filter((s) => s && s.slug !== service.slug).slice(0, 3)
+    : [];
 
   return `
   <section class="relative bg-ink overflow-hidden">
@@ -1055,6 +1059,20 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
         </div>`
             : ""
         }
+        ${
+          area.directionsFrom
+            ? `
+        <div class="mt-6 rounded-sm border border-white/10 bg-surface p-5">
+          <div class="flex items-start gap-3">
+            ${svgIcon("pin", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
+            <div>
+              <h3 class="text-sm font-semibold text-cream mb-1">Getting to ${area.name} From Our Southside Base</h3>
+              <p class="text-sm text-cream/65 leading-relaxed">It's ${area.directionsFrom} &mdash; well within our usual call-out range, so a visit to ${area.name} is a normal part of the working week for us, not a special trip.</p>
+            </div>
+          </div>
+        </div>`
+            : ""
+        }
       </div>
       <div class="rounded-sm overflow-hidden">
         <img src="/${service.image}" alt="${service.name} in ${area.name}" class="w-full h-full object-cover" />
@@ -1074,6 +1092,24 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${featuredReviews.map((r) => reviewCard(r, services)).join("\n")}
       </div>
+    </div>
+  </section>`
+      : ""
+  }
+
+  ${
+    category
+      ? `
+  <section class="py-16 sm:py-20 bg-ink">
+    <div class="section max-w-3xl">
+      <span class="eyebrow">${category.gbpCategoryName}</span>
+      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Other ${category.shortName} Work in ${area.name}</h2>
+      <p class="mt-4 text-cream/65 leading-relaxed">
+        ${service.name} sits alongside our wider <a href="/categories/${category.slug}/" class="text-brand-gold hover:underline font-medium">${category.name.toLowerCase()}</a> work in ${area.name}
+        ${siblingServices.length ? ` &mdash; most commonly ${siblingServices.map((s) => `<a href="/services/${s.slug}/${area.slug}/" class="text-brand-gold hover:underline">${s.name.toLowerCase()}</a>`).join(", ")}` : ""},
+        all covered by the same NICEIC registered team.
+      </p>
+      <a href="/categories/${category.slug}/" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold hover:underline">Explore ${category.shortName} Services ${svgIcon("arrow", "w-4 h-4")}</a>
     </div>
   </section>`
       : ""

@@ -4,48 +4,55 @@
     "name": "Bearsden",
     "region": "East Dunbartonshire",
     "character": "Victorian sandstone villas along Milngavie Road through to newer executive homes near Bearsden Cross",
-    "propertyNote": "larger detached and semi-detached homes"
+    "propertyNote": "larger detached and semi-detached homes",
+    "directionsFrom": "around 20-25 minutes from Bearsden, heading south via the A81 and onto the M8 towards our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "giffnock",
     "name": "Giffnock",
     "region": "East Renfrewshire",
     "character": "period semis around Fenwick Road through to family homes near Rouken Glen Park",
-    "propertyNote": "period semis and family homes"
+    "propertyNote": "period semis and family homes",
+    "directionsFrom": "one of our closest areas to cover \u2014 around 10 minutes from Giffnock via Ayr Road and Eastwood Toll to our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "east-kilbride",
     "name": "East Kilbride",
     "region": "South Lanarkshire",
     "character": "new-town housing estates through to the commercial and industrial units around the town's business parks",
-    "propertyNote": "new-town housing and commercial units"
+    "propertyNote": "new-town housing and commercial units",
+    "directionsFrom": "around 20-25 minutes from East Kilbride via the A749 and M74, joining the M77 towards our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "newton-mearns",
     "name": "Newton Mearns",
     "region": "East Renfrewshire",
     "character": "large detached homes off Ayr Road through to newer developments around Malletsheugh",
-    "propertyNote": "large detached and new-build homes"
+    "propertyNote": "large detached and new-build homes",
+    "directionsFrom": "around 15-20 minutes from Newton Mearns via the A77 and M77 towards our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "glasgow-east-end",
     "name": "Glasgow East End",
     "region": "Glasgow",
     "character": "traditional tenements around Dennistoun and Parkhead through to regenerated developments near Celtic Park",
-    "propertyNote": "tenement flats and regenerated developments"
+    "propertyNote": "tenement flats and regenerated developments",
+    "directionsFrom": "around 20 minutes from the East End via London Road and the M74, then onto the M77 towards our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "milngavie",
     "name": "Milngavie",
     "region": "East Dunbartonshire",
     "character": "traditional homes around Milngavie town centre through to properties along the West Highland Way",
-    "propertyNote": "traditional homes and cottages"
+    "propertyNote": "traditional homes and cottages",
+    "directionsFrom": "around 25-30 minutes from Milngavie via the A81 and onto the M8, then south towards our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "glasgow",
     "name": "Glasgow City Centre",
     "region": "Glasgow",
     "character": "city centre flats and tenement conversions through to commercial and retail units across the city",
-    "propertyNote": "city flats and commercial units"
+    "propertyNote": "city flats and commercial units",
+    "directionsFrom": "around 10-15 minutes from the City Centre via the M8 and Kingston Bridge, then south on Eglinton Street towards our Southside base on Inverlair Drive (G43)"
   }
 ]

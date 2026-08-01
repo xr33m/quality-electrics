@@ -122,7 +122,7 @@ for (const [serviceIndex, service] of services.entries()) {
       path: `services/${service.slug}/${area.slug}/`,
       business, services, areas, reviews, categories,
       active: "services",
-      bodyContent: serviceAreaTemplate({ business, service, area, services, reviews }),
+      bodyContent: serviceAreaTemplate({ business, service, area, services, reviews, categories }),
       extraHead: serviceAreaSchema({ business, service, area }),
     }), { changefreq: "monthly", priority: 0.6 });
     pageCount++;
