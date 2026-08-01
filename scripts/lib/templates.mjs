@@ -412,7 +412,9 @@ function recentWorkSection(service, index) {
 }
 
 export function homeTemplate({ business, services, areas, reviews, categories = [] }) {
-  const featured = services.slice(0, 6);
+  const featured = (business.topServiceSlugs || [])
+    .map((slug) => services.find((s) => s.slug === slug))
+    .filter(Boolean);
   const featuredReviews = reviews.slice(0, 6);
   const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
   return `

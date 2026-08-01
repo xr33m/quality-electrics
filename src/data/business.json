@@ -5,9 +5,12 @@
   "homeBenefit": "Powering Homes & Businesses, Done Right First Time",
   "areaBenefit": "Certified Electrical Work, Done Right First Time",
   "topServiceSlugs": [
-    "domestic-commercial-rewiring",
     "ev-charger-installation",
-    "electrical-inspection-testing"
+    "pat-testing",
+    "electrical-inspection-testing",
+    "domestic-commercial-rewiring",
+    "smoke-heat-alarm-installation",
+    "extractor-fan-installation"
   ],
   "domain": "qualityelectrics.co.uk",
   "phoneDisplay": "07411 180954",
