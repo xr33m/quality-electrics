@@ -1,0 +1,112 @@
+[
+  {
+    "slug": "electrical-installation-service",
+    "gbpCategoryName": "Electrical Installation Service",
+    "name": "Electrical Installation Services",
+    "shortName": "Electrical Installation",
+    "tagline": "Rewiring, consumer units, testing, and general electrical work for homes and businesses across Glasgow.",
+    "intro": [
+      "Electrical Installation Services covers the core of what we do — the wiring, distribution, testing, and general electrical work that keeps a home or business safe, compliant, and running properly. It's the broadest of our three categories, and for good reason: whether it's a full rewire, a consumer unit upgrade, or an emergency callout at 2am, it's the same underlying skillset applied to a different job.",
+      "Everything under this category is certified to BS 7671 and, where the work is notifiable, self-certified by us as a registered NICEIC contractor — so you get the paperwork alongside the work, not as an afterthought."
+    ],
+    "image": "assets/img/distribution-board.webp",
+    "serviceSlugs": [
+      "domestic-commercial-rewiring",
+      "consumer-unit-upgrades",
+      "kitchen-electrical-installations",
+      "domestic-extensions-conversions",
+      "electrical-inspection-testing",
+      "pat-testing",
+      "landlord-electrical-certificates",
+      "smoke-heat-alarm-installation",
+      "electrical-fault-finding-repairs",
+      "new-socket-switch-installations",
+      "electric-heating-thermostats",
+      "data-network-cabling",
+      "extractor-fan-installation",
+      "emergency-electrical-callouts",
+      "commercial-installations-lighting",
+      "three-phase-power-installations",
+      "warehouse-industrial-electrical",
+      "cctv-installation",
+      "battery-storage-installation",
+      "alarm-system-installation"
+    ],
+    "faqs": [
+      {
+        "q": "What counts as an electrical installation service?",
+        "a": "Broadly, anything involving the fixed wiring and distribution of a property — rewiring, consumer units, new circuits, testing, and general electrical repairs. It's distinct from lighting design or EV charging, which we treat as their own specialisms."
+      },
+      {
+        "q": "Do you cover both domestic and commercial installation work?",
+        "a": "Yes, from a single homeowner's consumer unit upgrade through to a full commercial or industrial installation."
+      },
+      {
+        "q": "Is all of this work certified?",
+        "a": "Yes, every job is tested and, where the scope requires it, certified to BS 7671 — including self-certification of notifiable work as a registered NICEIC contractor."
+      }
+    ]
+  },
+  {
+    "slug": "lighting-contractor",
+    "gbpCategoryName": "Lighting Contractor",
+    "name": "Lighting Installation & Design",
+    "shortName": "Lighting Contractor",
+    "tagline": "Downlights, security, garden, and high-bay lighting — planned properly, not just fitted.",
+    "intro": [
+      "Lighting is its own discipline, not just an extension of general wiring — layout, coverage, sensor calibration, and fitting choice all genuinely change the result. We treat it that way, planning every lighting job around the specific space before anything gets fitted.",
+      "This covers everything from a single room's downlights to full warehouse high-bay lighting upgrades — indoors, outdoors, domestic, and commercial."
+    ],
+    "image": "assets/img/garden-room-lighting.webp",
+    "serviceSlugs": [
+      "domestic-lighting-installation",
+      "security-lighting-installation",
+      "garden-outdoor-lighting",
+      "high-bay-warehouse-lighting"
+    ],
+    "faqs": [
+      {
+        "q": "What's the difference between lighting and general electrical installation work?",
+        "a": "Lighting involves layout, coverage, and fitting-specific planning — spacing, beam angles, sensor calibration — that a general wiring job doesn't need. We plan lighting jobs with that in mind rather than treating them as a standard circuit addition."
+      },
+      {
+        "q": "Do you cover both indoor and outdoor lighting?",
+        "a": "Yes, from indoor downlights and feature lighting through to garden, security, and warehouse high-bay lighting outdoors."
+      },
+      {
+        "q": "Can lighting work be combined with other electrical jobs?",
+        "a": "Yes, lighting is often planned alongside a rewire, extension, or consumer unit upgrade — worth mentioning when you get a quote for other work."
+      }
+    ]
+  },
+  {
+    "slug": "ev-charging-station-contractor",
+    "gbpCategoryName": "EV Charging Station Contractor",
+    "name": "EV & Fleet Charging Installation",
+    "shortName": "EV Charging",
+    "tagline": "Home EV chargers through to fleet and forklift charging infrastructure for commercial sites.",
+    "intro": [
+      "EV charging covers a wider range than most people expect — a single home charger is a genuinely different job to load-managed charging infrastructure for a multi-vehicle fleet or a warehouse forklift fleet. We handle both ends of that range, sized properly to what's actually needed.",
+      "Supply capacity is the thing that actually determines what's possible, so every EV charging job starts with an honest look at what your existing supply can handle before we recommend a specific setup."
+    ],
+    "image": "assets/img/ev-charger.webp",
+    "serviceSlugs": [
+      "ev-charger-installation",
+      "ev-fleet-forklift-charging"
+    ],
+    "faqs": [
+      {
+        "q": "Do you install home EV chargers as well as commercial fleet charging?",
+        "a": "Yes, from a single home charger through to load-managed multi-point fleet and forklift charging for commercial and industrial sites."
+      },
+      {
+        "q": "What determines whether a supply upgrade is needed?",
+        "a": "Your existing supply capacity versus the number and type of charge points wanted — we assess this honestly before recommending a specific installation, including load management as an alternative to a full upgrade."
+      },
+      {
+        "q": "Can EV charging be added to an existing consumer unit or distribution board?",
+        "a": "Often yes for a single home charger, provided there's capacity — larger installations may need a dedicated circuit or supply assessment, which we'll confirm before quoting."
+      }
+    ]
+  }
+]

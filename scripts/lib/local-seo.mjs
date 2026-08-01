@@ -385,6 +385,48 @@ const areaFaqBuilders = {
       a: `Yes, we cover both fleet vehicle charging and warehouse equipment charging like forklifts for depots and warehouses across ${a.region}.`,
     }),
   ],
+  "cctv-installation": [
+    (s, a) => ({
+      q: `Do you install CCTV for ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a: `Yes, CCTV installation is a regular job for us on ${propertyLabel[propertyType(a)]} across ${a.name} and ${a.region}, planned around the property's actual entry points.`,
+    }),
+    (s, a) => ({
+      q: `Can you set up remote CCTV viewing for a property in ${a.name}?`,
+      a: `Yes, remote viewing from your phone is set up and tested as standard for CCTV installations in ${a.name}.`,
+    }),
+    (s, a) => ({
+      q: `Do you cover commercial CCTV installations in ${a.region}?`,
+      a: `Yes, from single-camera home setups through to multi-camera commercial coverage across ${a.region}.`,
+    }),
+  ],
+  "battery-storage-installation": [
+    (s, a) => ({
+      q: `Do you install battery storage for homes in ${a.name}?`,
+      a: `Yes, battery storage installation and consumer unit integration is a service we provide for homes and businesses across ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can battery storage work with an existing solar setup in ${a.name}?`,
+      a: `Yes, we regularly integrate battery storage with existing solar panel systems for properties in ${a.name}.`,
+    }),
+    (s, a) => ({
+      q: `Is battery storage worth it for properties in ${a.region} without solar?`,
+      a: `It can be, particularly on an off-peak tariff — we'll give you an honest assessment for your specific property in ${a.region} rather than a generic answer.`,
+    }),
+  ],
+  "alarm-system-installation": [
+    (s, a) => ({
+      q: `Do you install alarm systems for ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a: `Yes, alarm system installation is a service we provide for ${propertyLabel[propertyType(a)]} across ${a.name} and ${a.region}, with zones planned around the property.`,
+    }),
+    (s, a) => ({
+      q: `Can you fix an existing alarm system that keeps false-triggering in ${a.name}?`,
+      a: `Yes, we can assess and correct an existing system's sensitivity and positioning for a property in ${a.name}, rather than automatically recommending full replacement.`,
+    }),
+    (s, a) => ({
+      q: `Do you install alarm systems for commercial premises in ${a.region}?`,
+      a: `Yes, including zoned systems for larger commercial premises with multiple access points across ${a.region}.`,
+    }),
+  ],
 };
 
 export function serviceAreaFaqs(service, area) {
@@ -441,6 +483,9 @@ const regulationsByService = {
   "warehouse-industrial-electrical": `Industrial and warehouse electrical installations are certified to BS 7671, and larger installations are generally notifiable electrical work under Scottish building regulations, which we self-certify as a registered electrician.`,
   "high-bay-warehouse-lighting": `New lighting circuits for warehouse and industrial premises are generally notifiable electrical work under Scottish building regulations, self-certified as standard, and all installations meet current BS 7671 wiring regulations.`,
   "ev-fleet-forklift-charging": `Fleet and multi-point charging installations are notifiable electrical work under Scottish building regulations and must meet BS 7671 requirements for EV charging equipment, including appropriate earthing and load management provisions.`,
+  "cctv-installation": `CCTV wiring and power supply work is carried out to BS 7671 as standard; CCTV installation itself is not typically notifiable electrical work, though any new dedicated circuit added to support it may be.`,
+  "battery-storage-installation": `Battery storage systems connected to a property's electrical installation are notifiable electrical work under Scottish building regulations, self-certified as a registered electrician, and installed to BS 7671 and relevant battery storage installation standards.`,
+  "alarm-system-installation": `Alarm system wiring and power supply work is carried out to BS 7671 as standard; installation itself is not typically notifiable electrical work, though any new dedicated circuit added to support it may be.`,
 };
 
 export function regulationsNote(service) {

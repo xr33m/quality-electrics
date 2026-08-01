@@ -15,6 +15,8 @@ import {
   blogPostTemplate,
   blogArticleSchema,
   reviewsPageTemplate,
+  categoryTemplate,
+  categoryFaqSchema,
 } from "./lib/templates.mjs";
 import { serviceAreaSchema, areaHubSchema, localBusinessSchema, serviceFaqSchema } from "./lib/local-seo.mjs";
 
@@ -26,6 +28,21 @@ const services = JSON.parse(readFileSync(join(root, "src/data/services.json")));
 const areas = JSON.parse(readFileSync(join(root, "src/data/areas.json")));
 const posts = JSON.parse(readFileSync(join(root, "src/data/blog.json")));
 const reviews = JSON.parse(readFileSync(join(root, "src/data/reviews.json")));
+const categories = JSON.parse(readFileSync(join(root, "src/data/categories.json")));
+
+// Validate every service belongs to exactly one category before generating anything
+{
+  const covered = categories.flatMap((c) => c.serviceSlugs);
+  const coveredSet = new Set(covered);
+  const missing = services.map((s) => s.slug).filter((slug) => !coveredSet.has(slug));
+  const dupes = covered.filter((slug, i) => covered.indexOf(slug) !== i);
+  if (missing.length) throw new Error(`Services missing a category: ${missing.join(", ")}`);
+  if (dupes.length) throw new Error(`Services assigned to more than one category: ${dupes.join(", ")}`);
+}
+
+function categoryFor(serviceSlug) {
+  return categories.find((c) => c.serviceSlugs.includes(serviceSlug));
+}
 
 const sitemapEntries = [];
 
@@ -52,10 +69,24 @@ write("", page({
   path: "",
   business, services, areas, reviews,
   active: "home",
-  bodyContent: homeTemplate({ business, services, areas, reviews }),
+  bodyContent: homeTemplate({ business, services, areas, reviews, categories }),
   extraHead: localBusinessSchema({ business, areas, reviews }),
 }), { changefreq: "weekly", priority: 1.0 });
 pageCount++;
+
+// Category pages (Core 30 structure — mirrors GBP secondary categories)
+for (const category of categories) {
+  write(`categories/${category.slug}`, page({
+    title: `${category.name} in Glasgow | Quality Electrics`,
+    description: `${category.tagline} NICEIC registered, fully insured, serving Glasgow & the surrounding areas.`,
+    path: `categories/${category.slug}/`,
+    business, services, areas, reviews,
+    active: "services",
+    extraHead: categoryFaqSchema(category),
+    bodyContent: categoryTemplate({ business, category, services, categories }),
+  }), { changefreq: "monthly", priority: 0.85 });
+  pageCount++;
+}
 
 // Services hub
 write("services", page({
@@ -64,13 +95,14 @@ write("services", page({
   path: "services/",
   business, services, areas, reviews,
   active: "services",
-  bodyContent: servicesHubTemplate({ business, services }),
+  bodyContent: servicesHubTemplate({ business, services, categories }),
 }), { changefreq: "monthly", priority: 0.9 });
 pageCount++;
 
 // Individual service pages
 for (const [serviceIndex, service] of services.entries()) {
   const relatedPost = posts.find((p) => p.service === service.slug);
+  const category = categoryFor(service.slug);
   write(`services/${service.slug}`, page({
     title: `${service.name} in Glasgow | Quality Electrics`,
     description: `${service.shortDesc} NICEIC registered, fully insured, serving Glasgow & the surrounding areas.`,
@@ -78,7 +110,7 @@ for (const [serviceIndex, service] of services.entries()) {
     business, services, areas, reviews,
     active: "services",
     extraHead: serviceFaqSchema(service),
-    bodyContent: serviceTemplate({ business, service, services, areas, post: relatedPost, index: serviceIndex }),
+    bodyContent: serviceTemplate({ business, service, services, areas, post: relatedPost, index: serviceIndex, category }),
   }), { changefreq: "monthly", priority: 0.8 });
   pageCount++;
 

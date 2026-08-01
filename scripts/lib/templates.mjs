@@ -411,7 +411,7 @@ function recentWorkSection(service, index) {
   </section>`;
 }
 
-export function homeTemplate({ business, services, areas, reviews }) {
+export function homeTemplate({ business, services, areas, reviews, categories = [] }) {
   const featured = services.slice(0, 6);
   const featuredReviews = reviews.slice(0, 6);
   const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
@@ -490,6 +490,34 @@ export function homeTemplate({ business, services, areas, reviews }) {
     </div>
   </section>
 
+  <section class="reveal relative py-16 sm:py-20 bg-ink">
+    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
+    <div class="section">
+      <div class="max-w-2xl mb-10">
+        <span class="eyebrow">Browse By Category</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Electrical Installation, Lighting &amp; EV Charging</h2>
+        <p class="mt-4 text-cream/60 leading-relaxed">Our work falls into three areas &mdash; general electrical installation, lighting design, and EV &amp; fleet charging &mdash; each handled as its own specialism.</p>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+        ${categories
+          .map(
+            (c) => `
+        <a href="/categories/${c.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/${c.image}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${c.name}</h3>
+            <p class="mt-2 text-sm text-cream/60 leading-relaxed">${c.tagline}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Explore ${svgIcon("arrow", "w-4 h-4")}</span>
+          </div>
+        </a>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
   ${whyChooseUsSection()}
 
   <section class="reveal relative py-20 sm:py-28 bg-ink">
@@ -542,22 +570,32 @@ export function homeTemplate({ business, services, areas, reviews }) {
 
     <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
-    <div class="section">
-      <div class="max-w-2xl">
+    <div class="section grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+      <div>
         <span class="eyebrow">Where We Work</span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Covering Glasgow &amp; the Surrounding Areas</h2>
-        <p class="mt-4 text-ink/60 leading-relaxed">Based in Glasgow and on the road across the following areas &mdash; click yours for local call-out details.</p>
+        <p class="mt-4 text-ink/60 leading-relaxed">Based in the ${business.basedIn}, and on the road across the following areas &mdash; click yours for local call-out details.</p>
+        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
+          ${areas
+            .map(
+              (a) => `
+          <a href="/areas/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
+            <span class="font-medium text-ink group-hover:text-brand-green transition-colors">${a.name}</span>
+            ${svgIcon("arrow", "w-4 h-4 text-ink/30 group-hover:text-brand-green transition-colors")}
+          </a>`
+            )
+            .join("\n")}
+        </div>
       </div>
-      <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-        ${areas
-          .map(
-            (a) => `
-        <a href="/areas/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
-          <span class="font-medium text-ink group-hover:text-brand-green transition-colors">${a.name}</span>
-          ${svgIcon("arrow", "w-4 h-4 text-ink/30 group-hover:text-brand-green transition-colors")}
-        </a>`
-          )
-          .join("\n")}
+      <div class="rounded-sm overflow-hidden h-80 sm:h-full min-h-[320px]">
+        <iframe
+          src="${mapEmbedUrl({ name: business.basedIn, region: "Glasgow" })}"
+          class="w-full h-full grayscale contrast-125"
+          style="border:0;"
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Map of ${business.name}, ${business.basedIn}"
+        ></iframe>
       </div>
     </div>
     </section>
@@ -566,7 +604,113 @@ export function homeTemplate({ business, services, areas, reviews }) {
   `;
 }
 
-export function servicesHubTemplate({ business, services }) {
+export function categoryTemplate({ business, category, services, categories }) {
+  const categoryServices = category.serviceSlugs
+    .map((slug) => services.find((s) => s.slug === slug))
+    .filter(Boolean);
+  const otherCategories = categories.filter((c) => c.slug !== category.slug);
+  return `
+  <section class="bg-ink py-16 sm:py-20">
+    <div class="section text-center max-w-2xl mx-auto">
+      <span class="eyebrow">${category.gbpCategoryName} &middot; Glasgow</span>
+      <h1 class="mt-3 text-4xl sm:text-5xl font-display font-semibold text-cream">${category.name} in Glasgow</h1>
+      <p class="mt-4 text-cream/60 leading-relaxed">${category.tagline}</p>
+    </div>
+  </section>
+
+  <section class="reveal relative py-16 sm:py-24 bg-cream border-y border-ink/10">
+    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
+    <div class="section max-w-3xl">
+      ${category.intro.map((p) => `<p class="text-ink/70 leading-relaxed mb-5">${p}</p>`).join("\n")}
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-24">
+    <div class="section">
+      <div class="max-w-2xl mb-10">
+        <span class="eyebrow">Services in This Category</span>
+        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">${category.name}</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+        ${categoryServices
+          .map(
+            (s) => `
+        <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-lg text-ink group-hover:text-brand-green transition-colors">${s.name}</h3>
+            <p class="mt-2 text-sm text-ink/60 leading-relaxed">${s.shortDesc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-green">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
+          </div>
+        </a>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal relative py-20 sm:py-28 bg-ink">
+    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
+    <div class="section max-w-3xl">
+      <span class="eyebrow">Common Questions</span>
+      <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream mb-10">${category.name} FAQs</h2>
+      <div class="space-y-6">
+        ${category.faqs
+          .map(
+            (f) => `
+        <div class="border-b border-white/10 pb-6">
+          <h3 class="font-display font-semibold text-lg text-cream">${f.q}</h3>
+          <p class="mt-2 text-cream/60 leading-relaxed">${f.a}</p>
+        </div>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-16 sm:py-20 bg-cream border-t border-ink/10">
+    <div class="section">
+      <div class="max-w-2xl mb-8">
+        <span class="eyebrow">Explore Other Categories</span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink">More Ways We Can Help</h2>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+        ${otherCategories
+          .map(
+            (c) => `
+        <a href="/categories/${c.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-6 py-5 hover:border-brand-green transition-colors">
+          <div>
+            <span class="font-display font-semibold text-ink group-hover:text-brand-green transition-colors">${c.name}</span>
+            <p class="mt-1 text-sm text-ink/50">${c.tagline}</p>
+          </div>
+          ${svgIcon("arrow", "w-5 h-5 text-ink/30 group-hover:text-brand-green transition-colors shrink-0 ml-4")}
+        </a>`
+          )
+          .join("\n")}
+      </div>
+    </div>
+  </section>
+
+  ${ctaBand({ business })}
+  `;
+}
+
+export function categoryFaqSchema(category) {
+  return `
+  <script type="application/ld+json">${JSON.stringify({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: category.faqs.map((f) => ({
+      "@type": "Question",
+      name: f.q,
+      acceptedAnswer: { "@type": "Answer", text: f.a },
+    })),
+  })}</script>`;
+}
+
+export function servicesHubTemplate({ business, services, categories }) {
   return `
   <section class="bg-ink py-16 sm:py-20">
     <div class="section text-center max-w-2xl mx-auto">
@@ -575,33 +719,51 @@ export function servicesHubTemplate({ business, services }) {
       <p class="mt-4 text-cream/60 leading-relaxed">NICEIC registered work for homes, landlords, and commercial properties &mdash; fully insured, certified on completion.</p>
     </div>
   </section>
-  <section class="py-16 sm:py-24">
-    <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
-      ${services
-        .map(
-          (s) => `
-      <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
-        <div class="aspect-[4/3] overflow-hidden">
-          <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+  ${(categories || [])
+    .map(
+      (cat) => `
+  <section class="py-16 sm:py-20 border-t border-white/5 first:border-t-0">
+    <div class="section">
+      <div class="flex items-end justify-between flex-wrap gap-4 mb-8">
+        <div class="max-w-xl">
+          <span class="eyebrow">${cat.gbpCategoryName}</span>
+          <h2 class="mt-2 text-2xl sm:text-3xl font-display font-semibold text-cream">${cat.name}</h2>
         </div>
-        <div class="p-6">
-          <h2 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${s.name}</h2>
-          <p class="mt-2 text-sm text-cream/60 leading-relaxed">${s.shortDesc}</p>
-          <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
-        </div>
-      </a>`
-        )
-        .join("\n")}
+        <a href="/categories/${cat.slug}/" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-gold hover:underline shrink-0">View Category ${svgIcon("arrow", "w-4 h-4")}</a>
+      </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+        ${cat.serviceSlugs
+          .map((slug) => services.find((s) => s.slug === slug))
+          .filter(Boolean)
+          .map(
+            (s) => `
+        <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+          <div class="aspect-[4/3] overflow-hidden">
+            <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
+          </div>
+          <div class="p-6">
+            <h3 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${s.name}</h3>
+            <p class="mt-2 text-sm text-cream/60 leading-relaxed">${s.shortDesc}</p>
+            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
+          </div>
+        </a>`
+          )
+          .join("\n")}
+      </div>
     </div>
-  </section>
+  </section>`
+    )
+    .join("\n")}
   ${ctaBand({ business })}
   `;
 }
 
-export function serviceTemplate({ business, service, services, areas, post, index = 0 }) {
+export function serviceTemplate({ business, service, services, areas, post, index = 0, category }) {
   const pairService = services.find((s) => s.slug === service.pairSlug);
   const heroContent = `
-      <a href="/services/" class="text-xs uppercase tracking-wide text-cream/50 hover:text-brand-gold transition-colors">&larr; All Services</a>
+      <div class="text-xs uppercase tracking-wide text-cream/50">
+        <a href="/services/" class="hover:text-brand-gold transition-colors">All Services</a>${category ? ` <span class="text-cream/30">/</span> <a href="/categories/${category.slug}/" class="hover:text-brand-gold transition-colors">${category.shortName}</a>` : ""}
+      </div>
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">${service.name} in Glasgow <span class="text-brand-gold">&mdash; ${service.benefit}</span></h1>
       <p class="mt-5 text-cream/70 leading-relaxed">${service.intro}</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
