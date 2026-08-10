@@ -66,6 +66,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://qualityelectrics.co.uk/services/ev-charger-installation/shawlands/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -102,6 +107,36 @@
   </url>
   <url>
     <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/glasgow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/shawlands/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/pollokshaws/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/cathcart/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/thornliebank/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/rutherglen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/domestic-commercial-rewiring/cambuslang/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -146,6 +181,11 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://qualityelectrics.co.uk/services/electrical-inspection-testing/shawlands/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://qualityelectrics.co.uk/services/consumer-unit-upgrades/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
@@ -182,6 +222,11 @@
   </url>
   <url>
     <loc>https://qualityelectrics.co.uk/services/consumer-unit-upgrades/glasgow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/services/consumer-unit-upgrades/shawlands/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
@@ -1097,6 +1142,36 @@
   </url>
   <url>
     <loc>https://qualityelectrics.co.uk/areas/glasgow/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/areas/shawlands/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/areas/pollokshaws/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/areas/cathcart/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/areas/thornliebank/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/areas/rutherglen/</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://qualityelectrics.co.uk/areas/cambuslang/</loc>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

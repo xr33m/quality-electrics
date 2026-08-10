@@ -116,6 +116,7 @@ for (const [serviceIndex, service] of services.entries()) {
 
   // Service x Area pages
   for (const area of areas) {
+    if (area.restrictToServices && !area.restrictToServices.includes(service.slug)) continue;
     write(`services/${service.slug}/${area.slug}`, page({
       title: `${service.shortName} in ${area.name} | Quality Electrics`,
       description: `${service.name} for ${area.propertyNote} in ${area.name}, ${area.region}. NICEIC registered, fully insured, free quotes.`,
@@ -201,7 +202,10 @@ pageCount++;
 // Individual blog posts
 posts.forEach((post, i) => {
   const service = services.find((s) => s.slug === post.service);
-  const featuredArea = areas[i % areas.length];
+  const validAreas = service
+    ? areas.filter((a) => !a.restrictToServices || a.restrictToServices.includes(service.slug))
+    : areas;
+  const featuredArea = validAreas.length ? validAreas[i % validAreas.length] : null;
   const relatedPosts = (post.relatedSlugs || [])
     .map((slug) => posts.find((p) => p.slug === slug))
     .filter(Boolean);

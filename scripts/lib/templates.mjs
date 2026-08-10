@@ -963,6 +963,7 @@ export function serviceTemplate({ business, service, services, areas, post, inde
       <p class="text-ink/60 mb-8">We carry out ${service.name.toLowerCase()} across Glasgow and the surrounding areas.</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         ${areas
+          .filter((a) => !a.restrictToServices || a.restrictToServices.includes(service.slug))
           .map(
             (a) => `
         <a href="/services/${service.slug}/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
@@ -994,7 +995,9 @@ export function serviceTemplate({ business, service, services, areas, post, inde
 }
 
 export function serviceAreaTemplate({ business, service, area, services, reviews = [], categories = [] }) {
-  const otherServices = services.filter((s) => s.slug !== service.slug);
+  const otherServices = services.filter(
+    (s) => s.slug !== service.slug && (!area.restrictToServices || area.restrictToServices.includes(s.slug))
+  );
   const faqs = serviceAreaFaqs(service, area);
   const regNote = regulationsNote(service);
   const relevantReviews = reviews.filter((r) => r.service === service.slug).slice(0, 3);
@@ -1106,7 +1109,7 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Other ${category.shortName} Work in ${area.name}</h2>
       <p class="mt-4 text-cream/65 leading-relaxed">
         ${service.name} sits alongside our wider <a href="/categories/${category.slug}/" class="text-brand-gold hover:underline font-medium">${category.name.toLowerCase()}</a> work in ${area.name}
-        ${siblingServices.length ? ` &mdash; most commonly ${siblingServices.map((s) => `<a href="/services/${s.slug}/${area.slug}/" class="text-brand-gold hover:underline">${s.name.toLowerCase()}</a>`).join(", ")}` : ""},
+        ${siblingServices.length ? ` &mdash; most commonly ${siblingServices.map((s) => `<a href="${!area.restrictToServices || area.restrictToServices.includes(s.slug) ? `/services/${s.slug}/${area.slug}/` : `/services/${s.slug}/`}" class="text-brand-gold hover:underline">${s.name.toLowerCase()}</a>`).join(", ")}` : ""},
         all covered by the same NICEIC registered team.
       </p>
       <a href="/categories/${category.slug}/" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold hover:underline">Explore ${category.shortName} Services ${svgIcon("arrow", "w-4 h-4")}</a>
@@ -1141,7 +1144,11 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       <div>
         <h3 class="font-semibold text-ink mb-3">Also Serving ${area.name}</h3>
         <ul class="space-y-2">
-          ${otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")}
+          ${
+            otherServices.length
+              ? otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")
+              : `<li><a href="/services/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">Explore all our services</a></li>`
+          }
         </ul>
       </div>
       <div>
@@ -1188,9 +1195,11 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
       <h2 class="text-2xl font-display font-semibold text-ink mb-8">Services Available in ${area.name}</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${services
-          .map(
-            (s) => `
-        <a href="/services/${s.slug}/${area.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+          .map((s) => {
+            const hasAreaPage = !area.restrictToServices || area.restrictToServices.includes(s.slug);
+            const href = hasAreaPage ? `/services/${s.slug}/${area.slug}/` : `/services/${s.slug}/`;
+            return `
+        <a href="${href}" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/${s.image}" alt="${s.name} in ${area.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           </div>
@@ -1198,8 +1207,8 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
             <h3 class="font-display font-semibold text-lg text-ink group-hover:text-brand-green transition-colors">${s.name}</h3>
             <p class="mt-2 text-sm text-ink/60 leading-relaxed">${s.shortDesc}</p>
           </div>
-        </a>`
-          )
+        </a>`;
+          })
           .join("\n")}
       </div>
     </div>

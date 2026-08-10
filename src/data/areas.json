@@ -54,5 +54,74 @@
     "character": "city centre flats and tenement conversions through to commercial and retail units across the city",
     "propertyNote": "city flats and commercial units",
     "directionsFrom": "around 10-15 minutes from the City Centre via the M8 and Kingston Bridge, then south on Eglinton Street towards our Southside base on Inverlair Drive (G43)"
+  },
+  {
+    "slug": "shawlands",
+    "name": "Shawlands",
+    "region": "Glasgow",
+    "character": "sandstone tenements along Kilmarnock Road and Pollokshaws Road, the Southside's main commercial hub",
+    "propertyNote": "tenement flats and traditional Southside properties",
+    "directionsFrom": "one of the closest areas to our base \u2014 just a few minutes from Shawlands via Pollokshaws Road to our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring",
+      "electrical-inspection-testing",
+      "ev-charger-installation",
+      "consumer-unit-upgrades"
+    ]
+  },
+  {
+    "slug": "pollokshaws",
+    "name": "Pollokshaws",
+    "region": "Glasgow",
+    "character": "a mix of sandstone and modern brick tenements, low-rise housing, and high-rise blocks around the regenerated town centre",
+    "propertyNote": "tenement flats and social housing",
+    "directionsFrom": "right in our home postcode \u2014 Pollokshaws shares the G43 postcode district with our Southside base on Inverlair Drive, so it's a couple of minutes away at most",
+    "restrictToServices": [
+      "domestic-commercial-rewiring"
+    ]
+  },
+  {
+    "slug": "cathcart",
+    "name": "Cathcart",
+    "region": "Glasgow",
+    "character": "blonde sandstone villas and terraces along Clarkston Road, a settled family suburb near Linn Park",
+    "propertyNote": "period villas and family homes",
+    "directionsFrom": "around 10 minutes from Cathcart via Clarkston Road and Aikenhead Road to our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring"
+    ]
+  },
+  {
+    "slug": "thornliebank",
+    "name": "Thornliebank",
+    "region": "Glasgow",
+    "character": "suburban semis and bungalows around Rouken Glen Road, bordering Giffnock",
+    "propertyNote": "suburban semis and bungalows",
+    "directionsFrom": "around 10 minutes from Thornliebank via Rouken Glen Road and Kennishead Road to our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring"
+    ]
+  },
+  {
+    "slug": "rutherglen",
+    "name": "Rutherglen",
+    "region": "South Lanarkshire",
+    "character": "a former royal burgh with its own Main Street, tenements and terraced homes across the Clyde",
+    "propertyNote": "tenements and terraced homes",
+    "directionsFrom": "around 10-15 minutes from Rutherglen via Aikenhead Road and the M74 to our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring"
+    ]
+  },
+  {
+    "slug": "cambuslang",
+    "name": "Cambuslang",
+    "region": "South Lanarkshire",
+    "character": "a former industrial town with its own Main Street, mixed terraced and semi-detached housing",
+    "propertyNote": "terraced and semi-detached homes",
+    "directionsFrom": "around 15-20 minutes from Cambuslang via the M74 to our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring"
+    ]
   }
 ]
