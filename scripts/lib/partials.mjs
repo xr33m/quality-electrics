@@ -1,5 +1,12 @@
 // Shared HTML partials: nav, footer, head, icons. Plain template strings, no framework.
 
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const locations = JSON.parse(readFileSync(join(__dirname, "../../src/data/locations.json"), "utf-8"));
+
 export function svgIcon(name, cls = "w-5 h-5") {
   const icons = {
     phone: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.223-1.474l-4.117-.823a1.5 1.5 0 00-1.478.44l-.97 1.028a11.25 11.25 0 01-5.976-5.976l1.028-.97a1.5 1.5 0 00.44-1.478l-.823-4.117A1.5 1.5 0 007.622 3H6.25A2.25 2.25 0 004 5.25v1.5z"/></svg>`,
@@ -192,10 +199,24 @@ export function footer({ business, services, areas, reviews = [] }) {
       </div>
       <div>
         <h4 class="text-cream font-semibold text-sm uppercase tracking-wide mb-4">Get In Touch</h4>
+        ${locations
+          .map(
+            (loc) => `
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand-gold/80 mb-2">${loc.addressLocality}</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center gap-2">${svgIcon("phone", "w-4 h-4 text-brand-gold")} <a href="${loc.phoneHref}" class="hover:text-brand-gold transition-colors">${loc.phoneDisplay}</a></li>
+            <li class="flex items-center gap-2">${svgIcon("pin", "w-4 h-4 text-brand-gold")} ${
+              loc.addressComplete
+                ? `${loc.streetAddress}, ${loc.addressLocality} ${loc.postcode}`
+                : `${loc.addressLocality}, Scotland`
+            }</li>
+          </ul>
+        </div>`
+          )
+          .join("\n")}
         <ul class="space-y-3 text-sm">
-          <li class="flex items-center gap-2">${svgIcon("phone", "w-4 h-4 text-brand-gold")} <a href="${business.phoneHref}" class="hover:text-brand-gold transition-colors">${business.phoneDisplay}</a></li>
           <li class="flex items-center gap-2">${svgIcon("mail", "w-4 h-4 text-brand-gold")} <a href="mailto:${business.email}" class="hover:text-brand-gold transition-colors break-all">${business.email}</a></li>
-          <li class="flex items-center gap-2">${svgIcon("pin", "w-4 h-4 text-brand-gold")} Glasgow, Scotland</li>
           <li class="flex items-start gap-2">${svgIcon("clock", "w-4 h-4 text-brand-gold shrink-0 mt-0.5")} <span>${business.hoursLine}</span></li>
         </ul>
       </div>
