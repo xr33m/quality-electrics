@@ -1539,6 +1539,10 @@ export function contactTemplate({ business, areas, services }) {
             <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
+          <div class="flex items-start gap-3">
+            <input id="marketing_optin" name="marketing_optin" type="checkbox" value="true" class="mt-1 w-4 h-4 rounded-sm border-ink/30 text-brand-green focus:ring-brand-green" />
+            <label for="marketing_optin" class="text-sm text-ink/70">Keep me updated with occasional electrical safety tips, seasonal offers, and reminders. You can unsubscribe any time.</label>
+          </div>
           <button type="submit" class="btn-green w-full sm:w-auto">${svgIcon("bolt", "w-4 h-4")} Send Enquiry</button>
         </form>
       </div>
