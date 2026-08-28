@@ -573,16 +573,19 @@ export function areaHubFaqs(area) {
   ];
 }
 
-export function localBusinessSchema({ business, areas, reviews }) {
+export function localBusinessSchema({ business, areas, reviews, services = [] }) {
   const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
   const schema = {
     "@context": "https://schema.org",
     "@type": "Electrician",
     name: business.name,
+    description: `NICEIC registered electrician covering ${business.basedIn || "Glasgow"} and the surrounding areas. Rewiring, EV chargers, EICR testing, and consumer unit upgrades for homeowners, landlords, and commercial properties.`,
     image: `https://${business.domain}/assets/img/van.webp`,
+    logo: `https://${business.domain}/assets/img/logo-mark.webp`,
     url: `https://${business.domain}/`,
     telephone: business.phoneHref.replace("tel:", ""),
     email: business.email,
+    priceRange: "££",
     address: {
       "@type": "PostalAddress",
       streetAddress: business.streetAddress,
@@ -592,6 +595,12 @@ export function localBusinessSchema({ business, areas, reviews }) {
       addressCountry: "GB",
     },
     areaServed: areas.map((a) => ({ "@type": "City", name: a.name })),
+    knowsAbout: services.map((s) => s.name),
+    founder: {
+      "@type": "Person",
+      name: "Danny",
+      jobTitle: "NICEIC Registered Electrician",
+    },
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],

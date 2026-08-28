@@ -70,7 +70,7 @@ write("", page({
   business, services, areas, reviews, categories,
   active: "home",
   bodyContent: homeTemplate({ business, services, areas, reviews, categories }),
-  extraHead: localBusinessSchema({ business, areas, reviews }),
+  extraHead: localBusinessSchema({ business, areas, reviews, services }),
 }), { changefreq: "weekly", priority: 1.0 });
 pageCount++;
 
@@ -259,6 +259,34 @@ console.log(`Generated sitemap.xml with ${sitemapEntries.length} URLs.`);
 
 // robots.txt
 const robotsTxt = `User-agent: *
+Allow: /
+
+# AI search / answer engines -- explicitly allowed so this site is eligible
+# for citation in ChatGPT, Claude, Perplexity, and Google AI Overviews.
+# Covers both real-time retrieval bots (power live cited answers) and
+# training crawlers (build general model knowledge of the business) --
+# there's no sensitive content here, so both are welcome.
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: Claude-User
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+User-agent: CCBot
 Allow: /
 
 Sitemap: https://${business.domain}/sitemap.xml

@@ -457,6 +457,14 @@ export function homeTemplate({ business, services, areas, reviews, categories = 
     ${statBar(business.heroStats)}
   </section>
 
+  <section class="py-6 bg-surface border-b border-white/10">
+    <div class="section">
+      <p class="text-sm text-cream/60 leading-relaxed max-w-3xl mx-auto text-center">
+        Quality Electrics is a NICEIC registered electrician based in the Southside of Glasgow, run by Danny with 10 years' experience. The company provides rewiring, EV charger installation, EICR testing, and consumer unit upgrades for homeowners, landlords, and businesses across Glasgow, Bearsden, Giffnock, East Kilbride, Newton Mearns, Milngavie, and the Southside.
+      </p>
+    </div>
+  </section>
+
   ${trustBandSection(business, avgRating, reviews.length)}
 
   ${guaranteesStrip(business)}
@@ -806,6 +814,14 @@ export function serviceTemplate({ business, service, services, areas, post, inde
 
   return `
   ${hero}
+
+  <section class="py-6 bg-surface border-b border-white/10">
+    <div class="section">
+      <p class="text-sm text-cream/60 leading-relaxed max-w-3xl mx-auto text-center">
+        ${service.name} is provided by ${business.name}, a NICEIC registered electrician based in ${business.basedIn}. ${service.shortDesc} Available for homeowners, landlords, and businesses across Glasgow and the surrounding areas.
+      </p>
+    </div>
+  </section>
 
   ${guaranteesStrip(business)}
 
