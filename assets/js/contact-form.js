@@ -3,15 +3,7 @@
  * the page instead of being redirected to Formspree's own confirmation
  * page. Falls back to a normal form POST (full page load) if fetch fails
  * for any reason, since the form's action/method still work on their own.
- *
- * Also fires a parallel, fire-and-forget POST to the Quality Electrics CRM
- * webhook (Make.com) carrying the same fields plus any UTM params present
- * on the URL, so new leads land in Airtable automatically. This never
- * blocks or affects the user-facing Formspree confirmation — if the CRM
- * webhook is slow or fails, the visitor's experience is unaffected.
  */
-
-const CRM_WEBHOOK_URL = "https://hook.eu2.make.com/h2jkrxqknc2kph4ps2xfjg0nc5kph1po";
 
 document.addEventListener("DOMContentLoaded", () => {
   const form = document.getElementById("contact-form");
@@ -25,32 +17,10 @@ document.addEventListener("DOMContentLoaded", () => {
     button.disabled = true;
     button.classList.add("opacity-60", "cursor-not-allowed");
 
-    const formData = new FormData(form);
-
-    // Fire the CRM webhook in parallel — never awaited, never blocks the UI.
-    try {
-      const params = new URLSearchParams(window.location.search);
-      const payload = Object.fromEntries(formData.entries());
-      payload.utm_source = params.get("utm_source") || "";
-      payload.utm_medium = params.get("utm_medium") || "";
-      payload.utm_campaign = params.get("utm_campaign") || "";
-      payload.page_url = window.location.href;
-
-      fetch(CRM_WEBHOOK_URL, {
-        method: "POST",
-        body: JSON.stringify(payload),
-        headers: { "Content-Type": "application/json" },
-      }).catch(() => {
-        /* CRM delivery is best-effort; a failure here must never surface to the visitor */
-      });
-    } catch (err) {
-      /* never let CRM payload construction break the actual form submission */
-    }
-
     try {
       const response = await fetch(form.action, {
         method: "POST",
-        body: formData,
+        body: new FormData(form),
         headers: { Accept: "application/json" },
       });
 

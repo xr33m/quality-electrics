@@ -411,10 +411,8 @@ function recentWorkSection(service, index) {
   </section>`;
 }
 
-export function homeTemplate({ business, services, areas, reviews, categories = [] }) {
-  const featured = (business.topServiceSlugs || [])
-    .map((slug) => services.find((s) => s.slug === slug))
-    .filter(Boolean);
+export function homeTemplate({ business, services, areas, reviews }) {
+  const featured = services.slice(0, 6);
   const featuredReviews = reviews.slice(0, 6);
   const avgRating = (reviews.reduce((sum, r) => sum + r.rating, 0) / reviews.length).toFixed(1);
   return `
@@ -492,34 +490,6 @@ export function homeTemplate({ business, services, areas, reviews, categories = 
     </div>
   </section>
 
-  <section class="reveal relative py-16 sm:py-20 bg-ink">
-    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
-    <div class="section">
-      <div class="max-w-2xl mb-10">
-        <span class="eyebrow">Browse By Category</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream">Electrical Installation, Lighting &amp; EV Charging</h2>
-        <p class="mt-4 text-cream/60 leading-relaxed">Our work falls into three areas &mdash; general electrical installation, lighting design, and EV &amp; fleet charging &mdash; each handled as its own specialism.</p>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-3 gap-6">
-        ${categories
-          .map(
-            (c) => `
-        <a href="/categories/${c.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="/${c.image}" alt="${c.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-6">
-            <h3 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${c.name}</h3>
-            <p class="mt-2 text-sm text-cream/60 leading-relaxed">${c.tagline}</p>
-            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Explore ${svgIcon("arrow", "w-4 h-4")}</span>
-          </div>
-        </a>`
-          )
-          .join("\n")}
-      </div>
-    </div>
-  </section>
-
   ${whyChooseUsSection()}
 
   <section class="reveal relative py-20 sm:py-28 bg-ink">
@@ -572,32 +542,22 @@ export function homeTemplate({ business, services, areas, reviews, categories = 
 
     <section class="reveal relative py-20 sm:py-28 bg-cream border-y border-ink/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
-    <div class="section grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
-      <div>
+    <div class="section">
+      <div class="max-w-2xl">
         <span class="eyebrow">Where We Work</span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">Covering Glasgow &amp; the Surrounding Areas</h2>
-        <p class="mt-4 text-ink/60 leading-relaxed">Based in the ${business.basedIn}, and on the road across the following areas &mdash; click yours for local call-out details.</p>
-        <div class="mt-8 grid grid-cols-2 sm:grid-cols-3 gap-4">
-          ${areas
-            .map(
-              (a) => `
-          <a href="/areas/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
-            <span class="font-medium text-ink group-hover:text-brand-green transition-colors">${a.name}</span>
-            ${svgIcon("arrow", "w-4 h-4 text-ink/30 group-hover:text-brand-green transition-colors")}
-          </a>`
-            )
-            .join("\n")}
-        </div>
+        <p class="mt-4 text-ink/60 leading-relaxed">Based in Glasgow and on the road across the following areas &mdash; click yours for local call-out details.</p>
       </div>
-      <div class="rounded-sm overflow-hidden h-80 sm:h-full min-h-[320px]">
-        <iframe
-          src="${mapEmbedUrl({ name: `${business.name}, ${business.streetAddress}, ${business.postcode}`, region: "Glasgow" })}"
-          class="w-full h-full grayscale contrast-125"
-          style="border:0;"
-          loading="lazy"
-          referrerpolicy="no-referrer-when-downgrade"
-          title="Map of ${business.name}, ${business.basedIn}"
-        ></iframe>
+      <div class="mt-10 grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+        ${areas
+          .map(
+            (a) => `
+        <a href="/areas/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
+          <span class="font-medium text-ink group-hover:text-brand-green transition-colors">${a.name}</span>
+          ${svgIcon("arrow", "w-4 h-4 text-ink/30 group-hover:text-brand-green transition-colors")}
+        </a>`
+          )
+          .join("\n")}
       </div>
     </div>
     </section>
@@ -606,113 +566,7 @@ export function homeTemplate({ business, services, areas, reviews, categories = 
   `;
 }
 
-export function categoryTemplate({ business, category, services, categories }) {
-  const categoryServices = category.serviceSlugs
-    .map((slug) => services.find((s) => s.slug === slug))
-    .filter(Boolean);
-  const otherCategories = categories.filter((c) => c.slug !== category.slug);
-  return `
-  <section class="bg-ink py-16 sm:py-20">
-    <div class="section text-center max-w-2xl mx-auto">
-      <span class="eyebrow">${category.gbpCategoryName} &middot; Glasgow</span>
-      <h1 class="mt-3 text-4xl sm:text-5xl font-display font-semibold text-cream">${category.name} in Glasgow</h1>
-      <p class="mt-4 text-cream/60 leading-relaxed">${category.tagline}</p>
-    </div>
-  </section>
-
-  <section class="reveal relative py-16 sm:py-24 bg-cream border-y border-ink/10">
-    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
-    <div class="section max-w-3xl">
-      ${category.intro.map((p) => `<p class="text-ink/70 leading-relaxed mb-5">${p}</p>`).join("\n")}
-    </div>
-  </section>
-
-  <section class="py-16 sm:py-24">
-    <div class="section">
-      <div class="max-w-2xl mb-10">
-        <span class="eyebrow">Services in This Category</span>
-        <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-ink">${category.name}</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
-        ${categoryServices
-          .map(
-            (s) => `
-        <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-6">
-            <h3 class="font-display font-semibold text-lg text-ink group-hover:text-brand-green transition-colors">${s.name}</h3>
-            <p class="mt-2 text-sm text-ink/60 leading-relaxed">${s.shortDesc}</p>
-            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-green">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
-          </div>
-        </a>`
-          )
-          .join("\n")}
-      </div>
-    </div>
-  </section>
-
-  <section class="reveal relative py-20 sm:py-28 bg-ink">
-    <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
-    <div class="section max-w-3xl">
-      <span class="eyebrow">Common Questions</span>
-      <h2 class="mt-3 text-3xl sm:text-4xl font-display font-semibold text-cream mb-10">${category.name} FAQs</h2>
-      <div class="space-y-6">
-        ${category.faqs
-          .map(
-            (f) => `
-        <div class="border-b border-white/10 pb-6">
-          <h3 class="font-display font-semibold text-lg text-cream">${f.q}</h3>
-          <p class="mt-2 text-cream/60 leading-relaxed">${f.a}</p>
-        </div>`
-          )
-          .join("\n")}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-16 sm:py-20 bg-cream border-t border-ink/10">
-    <div class="section">
-      <div class="max-w-2xl mb-8">
-        <span class="eyebrow">Explore Other Categories</span>
-        <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-ink">More Ways We Can Help</h2>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-        ${otherCategories
-          .map(
-            (c) => `
-        <a href="/categories/${c.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-6 py-5 hover:border-brand-green transition-colors">
-          <div>
-            <span class="font-display font-semibold text-ink group-hover:text-brand-green transition-colors">${c.name}</span>
-            <p class="mt-1 text-sm text-ink/50">${c.tagline}</p>
-          </div>
-          ${svgIcon("arrow", "w-5 h-5 text-ink/30 group-hover:text-brand-green transition-colors shrink-0 ml-4")}
-        </a>`
-          )
-          .join("\n")}
-      </div>
-    </div>
-  </section>
-
-  ${ctaBand({ business })}
-  `;
-}
-
-export function categoryFaqSchema(category) {
-  return `
-  <script type="application/ld+json">${JSON.stringify({
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: category.faqs.map((f) => ({
-      "@type": "Question",
-      name: f.q,
-      acceptedAnswer: { "@type": "Answer", text: f.a },
-    })),
-  })}</script>`;
-}
-
-export function servicesHubTemplate({ business, services, categories }) {
+export function servicesHubTemplate({ business, services }) {
   return `
   <section class="bg-ink py-16 sm:py-20">
     <div class="section text-center max-w-2xl mx-auto">
@@ -721,51 +575,33 @@ export function servicesHubTemplate({ business, services, categories }) {
       <p class="mt-4 text-cream/60 leading-relaxed">NICEIC registered work for homes, landlords, and commercial properties &mdash; fully insured, certified on completion.</p>
     </div>
   </section>
-  ${(categories || [])
-    .map(
-      (cat) => `
-  <section class="py-16 sm:py-20 border-t border-white/5 first:border-t-0">
-    <div class="section">
-      <div class="flex items-end justify-between flex-wrap gap-4 mb-8">
-        <div class="max-w-xl">
-          <span class="eyebrow">${cat.gbpCategoryName}</span>
-          <h2 class="mt-2 text-2xl sm:text-3xl font-display font-semibold text-cream">${cat.name}</h2>
+  <section class="py-16 sm:py-24">
+    <div class="section grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
+      ${services
+        .map(
+          (s) => `
+      <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+        <div class="aspect-[4/3] overflow-hidden">
+          <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
         </div>
-        <a href="/categories/${cat.slug}/" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-gold hover:underline shrink-0">View Category ${svgIcon("arrow", "w-4 h-4")}</a>
-      </div>
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
-        ${cat.serviceSlugs
-          .map((slug) => services.find((s) => s.slug === slug))
-          .filter(Boolean)
-          .map(
-            (s) => `
-        <a href="/services/${s.slug}/" class="group block rounded-sm overflow-hidden border border-white/10 bg-surface hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
-          <div class="aspect-[4/3] overflow-hidden">
-            <img src="/${s.image}" alt="${s.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
-          </div>
-          <div class="p-6">
-            <h3 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${s.name}</h3>
-            <p class="mt-2 text-sm text-cream/60 leading-relaxed">${s.shortDesc}</p>
-            <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
-          </div>
-        </a>`
-          )
-          .join("\n")}
-      </div>
+        <div class="p-6">
+          <h2 class="font-display font-semibold text-lg text-cream group-hover:text-brand-gold transition-colors">${s.name}</h2>
+          <p class="mt-2 text-sm text-cream/60 leading-relaxed">${s.shortDesc}</p>
+          <span class="mt-4 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold">Learn more ${svgIcon("arrow", "w-4 h-4")}</span>
+        </div>
+      </a>`
+        )
+        .join("\n")}
     </div>
-  </section>`
-    )
-    .join("\n")}
+  </section>
   ${ctaBand({ business })}
   `;
 }
 
-export function serviceTemplate({ business, service, services, areas, post, index = 0, category }) {
+export function serviceTemplate({ business, service, services, areas, post, index = 0 }) {
   const pairService = services.find((s) => s.slug === service.pairSlug);
   const heroContent = `
-      <div class="text-xs uppercase tracking-wide text-cream/50">
-        <a href="/services/" class="hover:text-brand-gold transition-colors">All Services</a>${category ? ` <span class="text-cream/30">/</span> <a href="/categories/${category.slug}/" class="hover:text-brand-gold transition-colors">${category.shortName}</a>` : ""}
-      </div>
+      <a href="/services/" class="text-xs uppercase tracking-wide text-cream/50 hover:text-brand-gold transition-colors">&larr; All Services</a>
       <h1 class="mt-4 text-4xl sm:text-5xl font-display font-semibold text-cream">${service.name} in Glasgow <span class="text-brand-gold">&mdash; ${service.benefit}</span></h1>
       <p class="mt-5 text-cream/70 leading-relaxed">${service.intro}</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
@@ -963,7 +799,6 @@ export function serviceTemplate({ business, service, services, areas, post, inde
       <p class="text-ink/60 mb-8">We carry out ${service.name.toLowerCase()} across Glasgow and the surrounding areas.</p>
       <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
         ${areas
-          .filter((a) => !a.restrictToServices || a.restrictToServices.includes(service.slug))
           .map(
             (a) => `
         <a href="/services/${service.slug}/${a.slug}/" class="group flex items-center justify-between rounded-sm border border-ink/10 bg-white px-5 py-4 hover:border-brand-green transition-colors">
@@ -994,18 +829,12 @@ export function serviceTemplate({ business, service, services, areas, post, inde
   `;
 }
 
-export function serviceAreaTemplate({ business, service, area, services, reviews = [], categories = [] }) {
-  const otherServices = services.filter(
-    (s) => s.slug !== service.slug && (!area.restrictToServices || area.restrictToServices.includes(s.slug))
-  );
+export function serviceAreaTemplate({ business, service, area, services, reviews = [] }) {
+  const otherServices = services.filter((s) => s.slug !== service.slug);
   const faqs = serviceAreaFaqs(service, area);
   const regNote = regulationsNote(service);
   const relevantReviews = reviews.filter((r) => r.service === service.slug).slice(0, 3);
   const featuredReviews = relevantReviews.length >= 2 ? relevantReviews : reviews.filter((r) => r.rating === 5).slice(0, 3);
-  const category = categories.find((c) => c.serviceSlugs.includes(service.slug));
-  const siblingServices = category
-    ? category.serviceSlugs.map((slug) => services.find((s) => s.slug === slug)).filter((s) => s && s.slug !== service.slug).slice(0, 3)
-    : [];
 
   return `
   <section class="relative bg-ink overflow-hidden">
@@ -1062,20 +891,6 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
         </div>`
             : ""
         }
-        ${
-          area.directionsFrom
-            ? `
-        <div class="mt-6 rounded-sm border border-white/10 bg-surface p-5">
-          <div class="flex items-start gap-3">
-            ${svgIcon("pin", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
-            <div>
-              <h3 class="text-sm font-semibold text-cream mb-1">Getting to ${area.name} From Our Southside Base</h3>
-              <p class="text-sm text-cream/65 leading-relaxed">It's ${area.directionsFrom} &mdash; well within our usual call-out range, so a visit to ${area.name} is a normal part of the working week for us, not a special trip.</p>
-            </div>
-          </div>
-        </div>`
-            : ""
-        }
       </div>
       <div class="rounded-sm overflow-hidden">
         <img src="/${service.image}" alt="${service.name} in ${area.name}" class="w-full h-full object-cover" />
@@ -1095,24 +910,6 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${featuredReviews.map((r) => reviewCard(r, services)).join("\n")}
       </div>
-    </div>
-  </section>`
-      : ""
-  }
-
-  ${
-    category
-      ? `
-  <section class="py-16 sm:py-20 bg-ink">
-    <div class="section max-w-3xl">
-      <span class="eyebrow">${category.gbpCategoryName}</span>
-      <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Other ${category.shortName} Work in ${area.name}</h2>
-      <p class="mt-4 text-cream/65 leading-relaxed">
-        ${service.name} sits alongside our wider <a href="/categories/${category.slug}/" class="text-brand-gold hover:underline font-medium">${category.name.toLowerCase()}</a> work in ${area.name}
-        ${siblingServices.length ? ` &mdash; most commonly ${siblingServices.map((s) => `<a href="${!area.restrictToServices || area.restrictToServices.includes(s.slug) ? `/services/${s.slug}/${area.slug}/` : `/services/${s.slug}/`}" class="text-brand-gold hover:underline">${s.name.toLowerCase()}</a>`).join(", ")}` : ""},
-        all covered by the same NICEIC registered team.
-      </p>
-      <a href="/categories/${category.slug}/" class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-brand-gold hover:underline">Explore ${category.shortName} Services ${svgIcon("arrow", "w-4 h-4")}</a>
     </div>
   </section>`
       : ""
@@ -1144,11 +941,7 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       <div>
         <h3 class="font-semibold text-ink mb-3">Also Serving ${area.name}</h3>
         <ul class="space-y-2">
-          ${
-            otherServices.length
-              ? otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")
-              : `<li><a href="/services/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">Explore all our services</a></li>`
-          }
+          ${otherServices.map((s) => `<li><a href="/services/${s.slug}/${area.slug}/" class="text-sm text-ink/70 hover:text-brand-green transition-colors">${s.name} in ${area.name}</a></li>`).join("\n")}
         </ul>
       </div>
       <div>
@@ -1195,11 +988,9 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
       <h2 class="text-2xl font-display font-semibold text-ink mb-8">Services Available in ${area.name}</h2>
       <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 stagger-group">
         ${services
-          .map((s) => {
-            const hasAreaPage = !area.restrictToServices || area.restrictToServices.includes(s.slug);
-            const href = hasAreaPage ? `/services/${s.slug}/${area.slug}/` : `/services/${s.slug}/`;
-            return `
-        <a href="${href}" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
+          .map(
+            (s) => `
+        <a href="/services/${s.slug}/${area.slug}/" class="group block rounded-sm overflow-hidden border border-ink/10 bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-200 stagger-item">
           <div class="aspect-[4/3] overflow-hidden">
             <img src="/${s.image}" alt="${s.name} in ${area.name}" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300" />
           </div>
@@ -1207,8 +998,8 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
             <h3 class="font-display font-semibold text-lg text-ink group-hover:text-brand-green transition-colors">${s.name}</h3>
             <p class="mt-2 text-sm text-ink/60 leading-relaxed">${s.shortDesc}</p>
           </div>
-        </a>`;
-          })
+        </a>`
+          )
           .join("\n")}
       </div>
     </div>
@@ -1539,10 +1330,6 @@ export function contactTemplate({ business, areas, services }) {
             <textarea id="message" name="message" rows="5" required class="w-full rounded-sm border border-ink/20 px-4 py-3 text-sm text-ink focus:outline-none focus:ring-2 focus:ring-brand-green"></textarea>
           </div>
           <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" />
-          <div class="flex items-start gap-3">
-            <input id="marketing_optin" name="marketing_optin" type="checkbox" value="true" class="mt-1 w-4 h-4 rounded-sm border-ink/30 text-brand-green focus:ring-brand-green" />
-            <label for="marketing_optin" class="text-sm text-ink/70">Keep me updated with occasional electrical safety tips, seasonal offers, and reminders. You can unsubscribe any time.</label>
-          </div>
           <button type="submit" class="btn-green w-full sm:w-auto">${svgIcon("bolt", "w-4 h-4")} Send Enquiry</button>
         </form>
       </div>
