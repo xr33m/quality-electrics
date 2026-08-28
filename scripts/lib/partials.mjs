@@ -238,6 +238,7 @@ export function footer({ business, services, areas, reviews = [] }) {
   )};</script>
   <script src="/assets/js/review-popup.js" defer></script>
   <script src="/assets/js/contact-form.js" defer></script>
+  <script src="/assets/js/n8n-relay.js" defer></script>
   <script src="/assets/js/scroll-animations.js"></script>`;
 }
 
