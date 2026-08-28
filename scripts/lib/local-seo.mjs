@@ -143,6 +143,290 @@ const areaFaqBuilders = {
       a: `We're used to working to a fitter's schedule — first-fix wiring before units go in, then final connections once appliances are in place. Just let us know your fitter's timeline and we'll fit around it.`,
     }),
   ],
+  "pat-testing": [
+    (s, a) => ({
+      q: `Do you cover PAT testing for businesses and rentals in ${a.name}?`,
+      a: `Yes — we regularly carry out PAT testing for offices, retail units, and rented ${propertyLabel[propertyType(a)]} across ${a.name} and the wider ${a.region} area.`,
+    }),
+    (s, a) => ({
+      q: `Can you schedule PAT testing around our opening hours in ${a.name}?`,
+      a: `Yes, most ${a.name} businesses have their equipment tested early morning, evening, or on a quiet trading day — we'll work around whatever suits you.`,
+    }),
+    (s, a) => ({
+      q: `How many items are typically tested for a property in ${a.name}?`,
+      a: `It varies hugely by property type — a single rented flat in ${a.name} might have a handful of items, while a commercial unit can run into hundreds. We'll give you an accurate estimate once we know your setup.`,
+    }),
+  ],
+  "landlord-electrical-certificates": [
+    (s, a) => ({
+      q: `Do you provide landlord EICRs for ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a: `Yes, landlord EICRs are one of the most common jobs we carry out on ${propertyLabel[propertyType(a)]} across ${a.name} and ${a.region}, timed around tenancy changeovers wherever possible.`,
+    }),
+    (s, a) => ({
+      q: `Can you work directly with my letting agent in ${a.name}?`,
+      a: `Yes, we're happy to liaise directly with letting agents managing properties in ${a.name} to arrange access and share the finished report.`,
+    }),
+    (s, a) => ({
+      q: `Do you manage certificate renewals for landlords with multiple properties in ${a.region}?`,
+      a: `Yes, for landlords with more than one property across ${a.region} we can set up a rolling renewal schedule so nothing lapses unnoticed.`,
+    }),
+  ],
+  "smoke-heat-alarm-installation": [
+    (s, a) => ({
+      q: `Do ${propertyLabel[propertyType(a)]} in ${a.name} usually meet the interlinked alarm standard already?`,
+      a:
+        propertyType(a) === "tenement"
+          ? `Often not fully — older tenement flats in ${a.name} frequently have standalone battery alarms that were never interlinked. We'll assess what's already there against the standard before recommending anything.`
+          : `It varies — some newer ${propertyLabel[propertyType(a)]} in ${a.name} were built to a more recent standard already, while older properties often need alarms upgraded or interlinked. We'll check yours honestly.`,
+    }),
+    (s, a) => ({
+      q: `Can you fit interlinked alarms without major disruption in ${a.name}?`,
+      a: `Yes — where full mains wiring isn't practical for a property in ${a.name}, wireless-interlinked alarms are a compliant option with minimal disruption.`,
+    }),
+    (s, a) => ({
+      q: `Do you cover this across all of ${a.region}?`,
+      a: `Yes, we install and certify interlinked smoke, heat, and CO alarm systems across ${a.name} and the rest of ${a.region}.`,
+    }),
+  ],
+  "electrical-fault-finding-repairs": [
+    (s, a) => ({
+      q: `How quickly can you respond to a fault in ${a.name}?`,
+      a: `We aim for same-day response to genuine electrical faults in ${a.name} and the surrounding ${a.region} area — call rather than email if it's urgent.`,
+    }),
+    (s, a) => ({
+      q: `Are faults in ${propertyLabel[propertyType(a)]} usually different to other property types?`,
+      a:
+        propertyType(a) === "tenement"
+          ? `Tenement flats in ${a.name} can have shared supplies or older wiring quirks that affect fault-finding, so it helps to have an electrician who's worked that property type before.`
+          : `${propertyLabel[propertyType(a)]} in ${a.name} tend to have more circuits and greater load, which we account for when tracing a fault rather than assuming a simple single-circuit issue.`,
+    }),
+    (s, a) => ({
+      q: `Do you fix the fault on the same visit in ${a.name}?`,
+      a: `In most cases yes, once it's diagnosed — we carry common parts on the van specifically to avoid a second trip out to ${a.name} wherever possible.`,
+    }),
+  ],
+  "domestic-lighting-installation": [
+    (s, a) => ({
+      q: `Do you plan lighting layouts for ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a: `Yes — we plan spacing and positioning specifically around ${propertyLabel[propertyType(a)]} in ${a.name} before any fitting goes in, rather than using a generic layout.`,
+    }),
+    (s, a) => ({
+      q: `Can you fit downlights without disturbing period ceilings in ${a.name}?`,
+      a:
+        propertyType(a) === "cottage"
+          ? `We take particular care with older ceiling constructions common in ${a.name}, checking what's above before cutting anything.`
+          : `Yes, most ceiling types in ${a.name} are straightforward for downlight installation, and we'll flag it clearly if yours needs a different approach.`,
+    }),
+    (s, a) => ({
+      q: `Do you cover full-home lighting projects in ${a.region}?`,
+      a: `Yes, from a single room upgrade to a full-home lighting plan across ${a.name} and ${a.region}.`,
+    }),
+  ],
+  "security-lighting-installation": [
+    (s, a) => ({
+      q: `Where do you recommend security lighting for homes in ${a.name}?`,
+      a: `It depends on the property, but entry points and approach routes matter most — we'll walk the property with you in ${a.name} and recommend positions based on how it's actually accessed.`,
+    }),
+    (s, a) => ({
+      q: `Do you install security lighting for businesses in ${a.name} as well as homes?`,
+      a: `Yes, from single domestic floodlights through to full perimeter lighting for commercial premises across ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can this be added to an existing outdoor circuit in ${a.name}?`,
+      a: `Often yes, provided the circuit has capacity — we'll check this on-site for your property in ${a.name} before quoting.`,
+    }),
+  ],
+  "garden-outdoor-lighting": [
+    (s, a) => ({
+      q: `Do you design garden lighting schemes for properties in ${a.name}?`,
+      a: `Yes — we plan feature, path, and patio lighting around how a garden in ${a.name} is actually used, not just fit generic spotlights.`,
+    }),
+    (s, a) => ({
+      q: `Is low-voltage garden lighting suitable for gardens in ${a.name}?`,
+      a: `For most garden and feature lighting in ${a.name}, yes — it's safer to install and cheaper to run than a full mains circuit for the same effect.`,
+    }),
+    (s, a) => ({
+      q: `Can you coordinate lighting with landscaping work in ${a.region}?`,
+      a: `Yes, we regularly coordinate with landscapers and builders working on gardens across ${a.region}, so cable goes in at the right stage.`,
+    }),
+  ],
+  "new-socket-switch-installations": [
+    (s, a) => ({
+      q: `Can you add sockets to older wiring in ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a:
+        propertyType(a) === "tenement" || propertyType(a) === "cottage"
+          ? `Usually yes, though we check the existing circuit's condition and capacity first on older ${propertyLabel[propertyType(a)]} in ${a.name} before adding to it.`
+          : `Yes — for ${propertyLabel[propertyType(a)]} in ${a.name}, adding sockets to an existing circuit is usually straightforward once we've checked its capacity.`,
+    }),
+    (s, a) => ({
+      q: `Do you chase cable into walls in ${a.name} for a clean finish?`,
+      a: `Yes, chasing and making good is our standard approach for properties in ${a.name}, unless you specifically prefer surface-mounted trunking.`,
+    }),
+    (s, a) => ({
+      q: `How quickly can you fit a couple of extra sockets in ${a.name}?`,
+      a: `Small socket and switch jobs in ${a.name} are usually straightforward to book in quickly — get in touch and we'll confirm availability.`,
+    }),
+  ],
+  "electric-heating-thermostats": [
+    (s, a) => ({
+      q: `Do you fit electric heating for ${propertyLabel[propertyType(a)]} in ${a.name} without mains gas?`,
+      a: `Yes, this is a common job for ${propertyLabel[propertyType(a)]} in ${a.name} and across ${a.region} that aren't connected to mains gas.`,
+    }),
+    (s, a) => ({
+      q: `Can you wire heating out to a garden room or outbuilding in ${a.name}?`,
+      a: `Yes, including running the supply from the main property where needed — a common request from homeowners in ${a.name} with garden offices or outbuildings.`,
+    }),
+    (s, a) => ({
+      q: `Do you fit and configure smart thermostats for homes in ${a.region}?`,
+      a: `Yes, including Hive and similar systems, wired and set up properly for homes across ${a.name} and ${a.region}.`,
+    }),
+  ],
+  "data-network-cabling": [
+    (s, a) => ({
+      q: `Do you install home office data cabling in ${a.name}?`,
+      a: `Yes, structured data cabling for home offices is a regular job for us across ${a.name} and the wider ${a.region} area.`,
+    }),
+    (s, a) => ({
+      q: `Can you set up a small business network in ${a.name} from scratch?`,
+      a: `Yes, including planning point positions, running cabling, and terminating everything properly for businesses in ${a.name}.`,
+    }),
+    (s, a) => ({
+      q: `Is this easy to add to ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a:
+        propertyType(a) === "tenement"
+          ? `It depends on access — tenement flats in ${a.name} can be more limited for cable routes, so we'll assess this properly before quoting.`
+          : `Generally yes for ${propertyLabel[propertyType(a)]} in ${a.name}, particularly where there's loft or underfloor access to route cable through.`,
+    }),
+  ],
+  "extractor-fan-installation": [
+    (s, a) => ({
+      q: `Do older ${propertyLabel[propertyType(a)]} in ${a.name} typically need extractor fan upgrades?`,
+      a:
+        propertyType(a) === "tenement" || propertyType(a) === "cottage"
+          ? `Often yes — older bathrooms in ${propertyLabel[propertyType(a)]} in ${a.name} were frequently built without proper extraction, which we're regularly asked to fix.`
+          : `Sometimes — it depends on the age of the bathroom or kitchen fit-out in your ${propertyLabel[propertyType(a)]} in ${a.name}, which we'll assess honestly before recommending anything.`,
+    }),
+    (s, a) => ({
+      q: `Can extractor fans be ducted properly in ${a.name} properties?`,
+      a: `In the vast majority of cases yes — we'll find the shortest practical route to the outside for properties in ${a.name}, rather than venting into a loft space.`,
+    }),
+    (s, a) => ({
+      q: `Do you fit fans for both bathrooms and kitchens in ${a.region}?`,
+      a: `Yes, bathroom, kitchen, and utility room extraction across ${a.name} and ${a.region}.`,
+    }),
+  ],
+  "emergency-electrical-callouts": [
+    (s, a) => ({
+      q: `How fast can you get to an emergency in ${a.name}?`,
+      a: `We aim for same-day response to genuine electrical emergencies in ${a.name} and across ${a.region} — call rather than email if it's urgent.`,
+    }),
+    (s, a) => ({
+      q: `Do you cover emergency callouts for businesses in ${a.name}?`,
+      a: `Yes, including commercial premises in ${a.name} losing power during trading hours, where getting back up and running quickly matters.`,
+    }),
+    (s, a) => ({
+      q: `Is the call-out charge the same across ${a.region}?`,
+      a: `Yes, it's a fixed call-out charge regardless of exactly where in ${a.name} or ${a.region} you're based, agreed with you before we head out.`,
+    }),
+  ],
+  "three-phase-power-installations": [
+    (s, a) => ({
+      q: `Do you install three-phase supplies for businesses in ${a.name}?`,
+      a: `Yes, three-phase installations and upgrades are a regular job for us across commercial and industrial premises in ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can you coordinate a DNO application for a site in ${a.name}?`,
+      a: `Yes, where a new or upgraded supply is needed for a premises in ${a.name}, we handle the coordination with the distribution network operator as part of the job.`,
+    }),
+    (s, a) => ({
+      q: `Do you work with existing commercial units in ${a.region}, not just new builds?`,
+      a: `Yes, most of our three-phase work in ${a.region} is upgrading or extending an existing supply for a business that's grown into needing it, not just new-build installations.`,
+    }),
+  ],
+  "warehouse-industrial-electrical": [
+    (s, a) => ({
+      q: `Do you cover warehouse and industrial units in ${a.name}?`,
+      a: `Yes, we carry out warehouse and industrial electrical installations across ${a.name} and the wider ${a.region} area.`,
+    }),
+    (s, a) => ({
+      q: `Can you work alongside other trades on a fit-out in ${a.name}?`,
+      a: `Yes, coordinating with other trades on live fit-outs in ${a.name} is a standard part of this work for us.`,
+    }),
+    (s, a) => ({
+      q: `Do you handle machinery power supplies for sites in ${a.region}?`,
+      a: `Yes, including assessing specific machinery requirements and running dedicated, correctly rated supplies for industrial units across ${a.region}.`,
+    }),
+  ],
+  "high-bay-warehouse-lighting": [
+    (s, a) => ({
+      q: `Do you install high-bay lighting for warehouses in ${a.name}?`,
+      a: `Yes, high-bay LED lighting installations and upgrades are a regular job for us across warehouses and industrial units in ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can lighting upgrades be phased for a site in ${a.name}?`,
+      a: `Yes, a phased approach across sections of a warehouse in ${a.name} is common and lets you spread the cost while operations continue.`,
+    }),
+    (s, a) => ({
+      q: `Do you work at height safely on live sites in ${a.region}?`,
+      a: `Yes, we follow proper working-at-height procedures for high-bay lighting work across ${a.region}, coordinating access equipment and scheduling with your site.`,
+    }),
+  ],
+  "ev-fleet-forklift-charging": [
+    (s, a) => ({
+      q: `Do you install fleet charging infrastructure for businesses in ${a.name}?`,
+      a: `Yes, fleet EV and forklift charging installations are a service we provide for businesses across ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can you assess our supply capacity before recommending charge points in ${a.name}?`,
+      a: `Yes, we always assess existing supply capacity for a site in ${a.name} before recommending a specific number of charge points or whether load management is the better option.`,
+    }),
+    (s, a) => ({
+      q: `Do you handle both EV fleet and forklift charging for depots in ${a.region}?`,
+      a: `Yes, we cover both fleet vehicle charging and warehouse equipment charging like forklifts for depots and warehouses across ${a.region}.`,
+    }),
+  ],
+  "cctv-installation": [
+    (s, a) => ({
+      q: `Do you install CCTV for ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a: `Yes, CCTV installation is a regular job for us on ${propertyLabel[propertyType(a)]} across ${a.name} and ${a.region}, planned around the property's actual entry points.`,
+    }),
+    (s, a) => ({
+      q: `Can you set up remote CCTV viewing for a property in ${a.name}?`,
+      a: `Yes, remote viewing from your phone is set up and tested as standard for CCTV installations in ${a.name}.`,
+    }),
+    (s, a) => ({
+      q: `Do you cover commercial CCTV installations in ${a.region}?`,
+      a: `Yes, from single-camera home setups through to multi-camera commercial coverage across ${a.region}.`,
+    }),
+  ],
+  "battery-storage-installation": [
+    (s, a) => ({
+      q: `Do you install battery storage for homes in ${a.name}?`,
+      a: `Yes, battery storage installation and consumer unit integration is a service we provide for homes and businesses across ${a.name} and ${a.region}.`,
+    }),
+    (s, a) => ({
+      q: `Can battery storage work with an existing solar setup in ${a.name}?`,
+      a: `Yes, we regularly integrate battery storage with existing solar panel systems for properties in ${a.name}.`,
+    }),
+    (s, a) => ({
+      q: `Is battery storage worth it for properties in ${a.region} without solar?`,
+      a: `It can be, particularly on an off-peak tariff — we'll give you an honest assessment for your specific property in ${a.region} rather than a generic answer.`,
+    }),
+  ],
+  "alarm-system-installation": [
+    (s, a) => ({
+      q: `Do you install alarm systems for ${propertyLabel[propertyType(a)]} in ${a.name}?`,
+      a: `Yes, alarm system installation is a service we provide for ${propertyLabel[propertyType(a)]} across ${a.name} and ${a.region}, with zones planned around the property.`,
+    }),
+    (s, a) => ({
+      q: `Can you fix an existing alarm system that keeps false-triggering in ${a.name}?`,
+      a: `Yes, we can assess and correct an existing system's sensitivity and positioning for a property in ${a.name}, rather than automatically recommending full replacement.`,
+    }),
+    (s, a) => ({
+      q: `Do you install alarm systems for commercial premises in ${a.region}?`,
+      a: `Yes, including zoned systems for larger commercial premises with multiple access points across ${a.region}.`,
+    }),
+  ],
 };
 
 export function serviceAreaFaqs(service, area) {
@@ -183,6 +467,25 @@ const regulationsByService = {
   "commercial-installations-lighting": `Commercial electrical installations need to meet current wiring regulations (BS 7671) and, depending on scope, may be notifiable work — we handle certification as part of the job so your business has the right paperwork on file.`,
   "domestic-extensions-conversions": `New circuits added as part of an extension or conversion are notifiable electrical work. We self-certify this as a registered electrician, which is generally simpler than a separate building warrant route for the electrical element of the project.`,
   "kitchen-electrical-installations": `New circuits for kitchen appliances are notifiable electrical work under Scottish building regulations, which we self-certify as a registered electrician as standard as part of the job.`,
+  "pat-testing": `The Electricity at Work Regulations 1989 require electrical equipment to be maintained in a safe condition — PAT testing is the recognised way to demonstrate this, and many insurers and letting agreements treat it as a practical requirement.`,
+  "landlord-electrical-certificates": `Private landlords in Scotland have a legal duty under the Repairing Standard to hold a satisfactory Electrical Installation Condition Report, generally renewed at least every five years. We'll confirm exactly where your property stands.`,
+  "smoke-heat-alarm-installation": `Since February 2022, all homes in Scotland — owned, rented, or social housing — are legally required to have interlinked smoke, heat, and where relevant carbon monoxide alarms fitted to the current standard.`,
+  "electrical-fault-finding-repairs": `Repairs to existing circuits are generally not notifiable work in themselves, but any new circuit added as part of a repair is — we'll flag this and handle certification as part of the job where it applies.`,
+  "domestic-lighting-installation": `Additions to an existing lighting circuit are generally not notifiable, though a new dedicated circuit for extensive lighting work may be — we'll confirm this and provide a minor works certificate where appropriate.`,
+  "security-lighting-installation": `Outdoor electrical installations need to meet current wiring regulations (BS 7671) for weatherproofing and protection, and we test and certify every installation on completion.`,
+  "garden-outdoor-lighting": `Outdoor lighting circuits, particularly mains-wired schemes, need to meet current wiring regulations for outdoor and buried cable installations — we test and certify all garden lighting work on completion.`,
+  "new-socket-switch-installations": `Adding sockets to an existing circuit is generally not notifiable work in the way a new circuit is, though we'll confirm this for your specific job and provide appropriate certification.`,
+  "electric-heating-thermostats": `A new dedicated circuit for electric heating is generally notifiable electrical work under Scottish building regulations, which we self-certify as a registered electrician as standard.`,
+  "data-network-cabling": `Data cabling itself isn't electrical work in the regulatory sense, but where it's combined with new power points or circuits, that element is handled and certified to BS 7671 as standard.`,
+  "extractor-fan-installation": `Building Regulations Part F sets ventilation requirements for bathrooms and kitchens, and a new dedicated circuit for a fan is generally notifiable electrical work, which we self-certify as a registered electrician.`,
+  "emergency-electrical-callouts": `Any remedial work carried out during an emergency callout is tested and, where the scope requires it, certified to BS 7671 in the same way as scheduled work — an emergency visit doesn't mean cutting corners on paperwork.`,
+  "three-phase-power-installations": `Three-phase installations must meet current BS 7671 wiring regulations, and new or upgraded supplies typically require formal application to and approval from the local distribution network operator (DNO).`,
+  "warehouse-industrial-electrical": `Industrial and warehouse electrical installations are certified to BS 7671, and larger installations are generally notifiable electrical work under Scottish building regulations, which we self-certify as a registered electrician.`,
+  "high-bay-warehouse-lighting": `New lighting circuits for warehouse and industrial premises are generally notifiable electrical work under Scottish building regulations, self-certified as standard, and all installations meet current BS 7671 wiring regulations.`,
+  "ev-fleet-forklift-charging": `Fleet and multi-point charging installations are notifiable electrical work under Scottish building regulations and must meet BS 7671 requirements for EV charging equipment, including appropriate earthing and load management provisions.`,
+  "cctv-installation": `CCTV wiring and power supply work is carried out to BS 7671 as standard; CCTV installation itself is not typically notifiable electrical work, though any new dedicated circuit added to support it may be.`,
+  "battery-storage-installation": `Battery storage systems connected to a property's electrical installation are notifiable electrical work under Scottish building regulations, self-certified as a registered electrician, and installed to BS 7671 and relevant battery storage installation standards.`,
+  "alarm-system-installation": `Alarm system wiring and power supply work is carried out to BS 7671 as standard; installation itself is not typically notifiable electrical work, though any new dedicated circuit added to support it may be.`,
 };
 
 export function regulationsNote(service) {
@@ -282,7 +585,9 @@ export function localBusinessSchema({ business, areas, reviews }) {
     email: business.email,
     address: {
       "@type": "PostalAddress",
-      addressLocality: "Glasgow",
+      streetAddress: business.streetAddress,
+      addressLocality: business.addressLocality || "Glasgow",
+      postalCode: business.postcode,
       addressRegion: "Scotland",
       addressCountry: "GB",
     },

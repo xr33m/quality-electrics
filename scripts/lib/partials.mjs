@@ -1,5 +1,12 @@
 // Shared HTML partials: nav, footer, head, icons. Plain template strings, no framework.
 
+import { readFileSync } from "node:fs";
+import { fileURLToPath } from "node:url";
+import { dirname, join } from "node:path";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const locations = JSON.parse(readFileSync(join(__dirname, "../../src/data/locations.json"), "utf-8"));
+
 export function svgIcon(name, cls = "w-5 h-5") {
   const icons = {
     phone: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h1.5a2.25 2.25 0 002.25-2.25v-1.372a1.5 1.5 0 00-1.223-1.474l-4.117-.823a1.5 1.5 0 00-1.478.44l-.97 1.028a11.25 11.25 0 01-5.976-5.976l1.028-.97a1.5 1.5 0 00.44-1.478l-.823-4.117A1.5 1.5 0 007.622 3H6.25A2.25 2.25 0 004 5.25v1.5z"/></svg>`,
@@ -16,6 +23,8 @@ export function svgIcon(name, cls = "w-5 h-5") {
     chevronLeft: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5"/></svg>`,
     chevronRight: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5"/></svg>`,
     instagram: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.9" fill="currentColor" stroke="none"/></svg>`,
+    bulb: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M9 18h6M10 21h4M12 3a6 6 0 00-3.6 10.8c.5.4.6 1 .6 1.6v.1h6v-.1c0-.6.1-1.2.6-1.6A6 6 0 0012 3z"/></svg>`,
+    car: `<svg xmlns="http://www.w3.org/2000/svg" class="${cls}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path stroke-linecap="round" stroke-linejoin="round" d="M3.5 16.5v-4l2-4.5a2 2 0 011.83-1.2h9.34a2 2 0 011.83 1.2l2 4.5v4"/><path stroke-linecap="round" stroke-linejoin="round" d="M3.5 16.5h17M3.5 16.5v2.25a.75.75 0 00.75.75h1.5a.75.75 0 00.75-.75V16.5m11 0v2.25a.75.75 0 00.75.75h1.5a.75.75 0 00.75-.75V16.5"/><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 20.25v-1.5h3v1.5"/></svg>`,
   };
   return icons[name] || "";
 }
@@ -31,7 +40,15 @@ export function googleLogo(size = 24) {
 
 export function head({ title, description, path, business, extraHead = "" }) {
   const canonical = `https://${business.domain}/${path}`;
-  return `<meta charset="UTF-8" />
+  return `<!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-0S7RE5Y873"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-0S7RE5Y873');
+  </script>
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>${title}</title>
   <meta name="description" content="${description}" />
@@ -51,13 +68,37 @@ export function head({ title, description, path, business, extraHead = "" }) {
   ${extraHead}`;
 }
 
-export function nav({ business, services, active = "" }) {
-  const serviceLinks = services
-    .map(
-      (s) =>
-        `<a href="/services/${s.slug}/" class="block px-4 py-2.5 text-sm text-cream/80 hover:bg-white/5 hover:text-brand-gold transition-colors">${s.name}</a>`
-    )
-    .join("\n");
+export function nav({ business, services, categories = [], active = "" }) {
+  const categoryIcon = { "electrical-installation-service": "bolt", "lighting-contractor": "bulb", "ev-charging-station-contractor": "car" };
+
+  const megaMenuColumn = (cat) => {
+    const catServices = cat.serviceSlugs.map((slug) => services.find((s) => s.slug === slug)).filter(Boolean);
+    return `
+      <div class="min-w-0">
+        <div class="flex items-center gap-2.5 mb-3">
+          <span class="flex items-center justify-center w-8 h-8 rounded-sm bg-brand-gold/15 text-brand-gold shrink-0">${svgIcon(categoryIcon[cat.slug] || "bolt", "w-4 h-4")}</span>
+          <a href="/categories/${cat.slug}/" class="font-display font-semibold text-cream hover:text-brand-gold transition-colors leading-tight">${cat.shortName}</a>
+        </div>
+        <ul class="space-y-0.5 max-h-72 overflow-y-auto pr-1">
+          ${catServices.map((s) => `<li><a href="/services/${s.slug}/" class="block py-1.5 text-sm text-cream/70 hover:text-brand-gold transition-colors">${s.name}</a></li>`).join("\n")}
+        </ul>
+      </div>`;
+  };
+
+  const mobileCategorySection = (cat) => {
+    const catServices = cat.serviceSlugs.map((slug) => services.find((s) => s.slug === slug)).filter(Boolean);
+    return `
+      <details class="group border-t border-white/10 first:border-t-0">
+        <summary class="flex items-center justify-between py-3 cursor-pointer list-none text-cream/90 font-medium">
+          <span class="flex items-center gap-2.5">${svgIcon(categoryIcon[cat.slug] || "bolt", "w-4 h-4 text-brand-gold")} ${cat.shortName}</span>
+          ${svgIcon("chevronDown", "w-4 h-4 text-cream/40 transition-transform group-open:rotate-180")}
+        </summary>
+        <div class="pb-3 pl-7 flex flex-col gap-0.5">
+          ${catServices.map((s) => `<a href="/services/${s.slug}/" class="py-1.5 text-sm text-cream/60 hover:text-brand-gold transition-colors">${s.name}</a>`).join("\n")}
+          <a href="/categories/${cat.slug}/" class="py-1.5 text-sm font-semibold text-brand-gold">View ${cat.shortName} &rarr;</a>
+        </div>
+      </details>`;
+  };
 
   const navLink = (href, label, key) =>
     `<a href="${href}" class="text-sm font-medium tracking-wide transition-colors ${active === key ? "text-brand-gold" : "text-cream/85 hover:text-brand-gold"}">${label}</a>`;
@@ -87,12 +128,12 @@ export function nav({ business, services, active = "" }) {
           <button class="flex items-center gap-1 text-sm font-medium tracking-wide cursor-pointer ${active === "services" ? "text-brand-gold" : "text-cream/85 group-hover:text-brand-gold"} transition-colors">
             Services ${svgIcon("chevronDown", "w-3.5 h-3.5")}
           </button>
-          <div class="absolute left-0 top-full pt-3 w-72 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-150">
-            <div class="rounded-sm border border-white/10 bg-ink shadow-2xl py-2">
-              ${serviceLinks}
-              <div class="border-t border-white/10 mt-1 pt-1">
-                <a href="/services/" class="block px-4 py-2.5 text-sm font-semibold text-brand-gold hover:bg-white/5 transition-colors">View all services</a>
-              </div>
+          <div class="absolute left-1/2 -translate-x-1/2 top-full pt-3 opacity-0 invisible translate-y-1 group-hover:opacity-100 group-hover:visible group-hover:translate-y-0 transition-all duration-150">
+            <div class="rounded-sm border border-white/10 bg-ink shadow-2xl p-6 grid grid-cols-3 gap-8 w-[46rem] max-w-[90vw]">
+              ${categories.map(megaMenuColumn).join("\n")}
+            </div>
+            <div class="rounded-sm border-t border-white/10 bg-ink -mt-px py-2">
+              <a href="/services/" class="block px-6 py-2.5 text-sm font-semibold text-brand-gold hover:bg-white/5 transition-colors">View all services</a>
             </div>
           </div>
         </div>
@@ -109,12 +150,14 @@ export function nav({ business, services, active = "" }) {
         ${svgIcon("menu", "w-7 h-7")}
       </button>
     </div>
-    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-ink">
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-white/10 bg-ink max-h-[calc(100dvh-4.5rem)] overflow-y-auto overscroll-contain">
       <div class="section py-4 flex flex-col gap-1">
         <a href="/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Home</a>
-        <a href="/services/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Services</a>
-        ${services.map((s) => `<a href="/services/${s.slug}/" class="py-2 pl-4 text-sm text-cream/60 hover:text-brand-gold transition-colors">${s.name}</a>`).join("\n")}
-        <a href="/projects/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Projects</a>
+        <div class="border-t border-white/10 pt-1">
+          <a href="/services/" class="block py-2.5 text-cream/85 font-medium hover:text-brand-gold transition-colors">All Services</a>
+          ${categories.map(mobileCategorySection).join("\n")}
+        </div>
+        <a href="/projects/" class="py-2.5 border-t border-white/10 text-cream/85 hover:text-brand-gold transition-colors">Projects</a>
         <a href="/blog/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Blog</a>
         <a href="/about/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">About</a>
         <a href="/contact/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Contact</a>
@@ -156,10 +199,24 @@ export function footer({ business, services, areas, reviews = [] }) {
       </div>
       <div>
         <h4 class="text-cream font-semibold text-sm uppercase tracking-wide mb-4">Get In Touch</h4>
+        ${locations
+          .map(
+            (loc) => `
+        <div class="mb-4">
+          <p class="text-xs font-semibold uppercase tracking-wide text-brand-gold/80 mb-2">${loc.addressLocality}</p>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center gap-2">${svgIcon("phone", "w-4 h-4 text-brand-gold")} <a href="${loc.phoneHref}" class="hover:text-brand-gold transition-colors">${loc.phoneDisplay}</a></li>
+            <li class="flex items-center gap-2">${svgIcon("pin", "w-4 h-4 text-brand-gold")} ${
+              loc.addressComplete
+                ? `${loc.streetAddress}, ${loc.addressLocality} ${loc.postcode}`
+                : `${loc.addressLocality}, Scotland`
+            }</li>
+          </ul>
+        </div>`
+          )
+          .join("\n")}
         <ul class="space-y-3 text-sm">
-          <li class="flex items-center gap-2">${svgIcon("phone", "w-4 h-4 text-brand-gold")} <a href="${business.phoneHref}" class="hover:text-brand-gold transition-colors">${business.phoneDisplay}</a></li>
           <li class="flex items-center gap-2">${svgIcon("mail", "w-4 h-4 text-brand-gold")} <a href="mailto:${business.email}" class="hover:text-brand-gold transition-colors break-all">${business.email}</a></li>
-          <li class="flex items-center gap-2">${svgIcon("pin", "w-4 h-4 text-brand-gold")} Glasgow, Scotland</li>
           <li class="flex items-start gap-2">${svgIcon("clock", "w-4 h-4 text-brand-gold shrink-0 mt-0.5")} <span>${business.hoursLine}</span></li>
         </ul>
       </div>
@@ -200,14 +257,14 @@ export function ctaBand({ business, heading = "Need an Electrician You Can Trust
   </section>`;
 }
 
-export function page({ title, description, path, business, services, areas, active, bodyContent, extraHead = "", reviews = [] }) {
+export function page({ title, description, path, business, services, areas, active, bodyContent, extraHead = "", reviews = [], categories = [] }) {
   return `<!doctype html>
 <html lang="en">
 <head>
 ${head({ title, description, path, business, extraHead })}
 </head>
 <body class="bg-ink pb-16 lg:pb-0">
-${nav({ business, services, active })}
+${nav({ business, services, categories, active })}
 <main>
 ${bodyContent}
 </main>
