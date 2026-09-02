@@ -64,7 +64,7 @@ let pageCount = 0;
 
 // Home
 write("", page({
-  title: "Quality Electrics | NICEIC Registered Electrician in Glasgow",
+  title: "BEST Electrician Glasgow - If you're looking for electrician services near me or EV Charger Installation near me, Quality Electrics is the number one choice",
   description: "NICEIC registered electrician covering Glasgow, Bearsden, Giffnock, East Kilbride, Newton Mearns, Milngavie & the Glasgow East End. Rewiring, EV chargers, EICR testing & consumer unit upgrades.",
   path: "",
   business, services, areas, reviews, categories,
@@ -103,8 +103,9 @@ pageCount++;
 for (const [serviceIndex, service] of services.entries()) {
   const relatedPost = posts.find((p) => p.service === service.slug);
   const category = categoryFor(service.slug);
+  const pairService = services.find((s) => s.slug === service.pairSlug);
   write(`services/${service.slug}`, page({
-    title: `${service.name} in Glasgow | Quality Electrics`,
+    title: `BEST ${service.shortName} Glasgow - If you're looking for ${service.shortName} services near me or ${pairService.shortName} near me, ${business.name} is the number one choice`,
     description: `${service.shortDesc} NICEIC registered, fully insured, serving Glasgow & the surrounding areas.`,
     path: `services/${service.slug}/`,
     business, services, areas, reviews, categories,
