@@ -29,6 +29,12 @@ const areas = JSON.parse(readFileSync(join(root, "src/data/areas.json")));
 const posts = JSON.parse(readFileSync(join(root, "src/data/blog.json")));
 const reviews = JSON.parse(readFileSync(join(root, "src/data/reviews.json")));
 const categories = JSON.parse(readFileSync(join(root, "src/data/categories.json")));
+const locations = JSON.parse(readFileSync(join(root, "src/data/locations.json")));
+const locationsById = Object.fromEntries(locations.map((l) => [l.id, l]));
+const primaryLocation = locationsById["glasgow"] || locations[0];
+function locationFor(area) {
+  return locationsById[area.locationId] || primaryLocation;
+}
 
 // Validate every service belongs to exactly one category before generating anything
 {
@@ -118,14 +124,15 @@ for (const [serviceIndex, service] of services.entries()) {
   // Service x Area pages
   for (const area of areas) {
     if (area.restrictToServices && !area.restrictToServices.includes(service.slug)) continue;
+    const location = locationFor(area);
     write(`services/${service.slug}/${area.slug}`, page({
       title: `${service.shortName} in ${area.name} | Quality Electrics`,
       description: `${service.name} for ${area.propertyNote} in ${area.name}, ${area.region}. NICEIC registered, fully insured, free quotes.`,
       path: `services/${service.slug}/${area.slug}/`,
-      business, services, areas, reviews, categories,
+      business, services, areas, reviews, categories, location,
       active: "services",
-      bodyContent: serviceAreaTemplate({ business, service, area, services, reviews, categories }),
-      extraHead: serviceAreaSchema({ business, service, area }),
+      bodyContent: serviceAreaTemplate({ business, service, area, services, reviews, categories, location }),
+      extraHead: serviceAreaSchema({ business, service, area, location }),
     }), { changefreq: "monthly", priority: 0.6 });
     pageCount++;
   }
@@ -133,14 +140,15 @@ for (const [serviceIndex, service] of services.entries()) {
 
 // Area hub pages
 for (const area of areas) {
+  const location = locationFor(area);
   write(`areas/${area.slug}`, page({
     title: `Electrician in ${area.name} | Quality Electrics`,
     description: `NICEIC registered electrician covering ${area.name}, ${area.region}. Rewiring, EV chargers, EICR testing, consumer unit upgrades & more.`,
     path: `areas/${area.slug}/`,
-    business, services, areas, reviews, categories,
+    business, services, areas, reviews, categories, location,
     active: "areas",
-    bodyContent: areaHubTemplate({ business, area, services, reviews }),
-    extraHead: areaHubSchema({ business, area }),
+    bodyContent: areaHubTemplate({ business, area, services, reviews, location }),
+    extraHead: areaHubSchema({ business, area, location }),
   }), { changefreq: "monthly", priority: 0.7 });
   pageCount++;
 }

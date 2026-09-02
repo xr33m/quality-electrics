@@ -68,7 +68,8 @@ export function head({ title, description, path, business, extraHead = "" }) {
   ${extraHead}`;
 }
 
-export function nav({ business, services, categories = [], active = "" }) {
+export function nav({ business, services, categories = [], active = "", location = null }) {
+  const contact = location || business;
   const categoryIcon = { "electrical-installation-service": "bolt", "lighting-contractor": "bulb", "ev-charging-station-contractor": "car" };
 
   const megaMenuColumn = (cat) => {
@@ -108,11 +109,11 @@ export function nav({ business, services, categories = [], active = "" }) {
     <div class="section flex items-center justify-between py-2">
       <div class="flex items-center gap-2">
         ${svgIcon("shield", "w-3.5 h-3.5 text-brand-gold")}
-        <span>NICEIC Registered &amp; Fully Insured &mdash; Glasgow &amp; Surrounding Areas</span>
+        <span>NICEIC Registered &amp; Fully Insured &mdash; ${contact.areaServedNote || "Glasgow & Surrounding Areas"}</span>
       </div>
       <div class="hidden sm:flex items-center gap-5">
         <a href="mailto:${business.email}" class="hover:text-brand-gold transition-colors">${business.email}</a>
-        <a href="${business.phoneHref}" class="hover:text-brand-gold transition-colors font-semibold">${business.phoneDisplay}</a>
+        <a href="${contact.phoneHref}" class="hover:text-brand-gold transition-colors font-semibold">${contact.phoneDisplay}</a>
       </div>
     </div>
   </div>
@@ -143,7 +144,7 @@ export function nav({ business, services, categories = [], active = "" }) {
         ${navLink("/contact/", "Contact", "contact")}
       </nav>
       <div class="hidden lg:flex items-center gap-3">
-        <a href="${business.phoneHref}" class="btn-outline !py-2.5 !px-4 text-xs">${svgIcon("phone", "w-4 h-4")} Call Now</a>
+        <a href="${contact.phoneHref}" class="btn-outline !py-2.5 !px-4 text-xs">${svgIcon("phone", "w-4 h-4")} Call Now</a>
         <a href="/contact/" class="btn-gold !py-2.5 !px-5 text-xs">Get a Free Quote</a>
       </div>
       <button id="menu-toggle" class="lg:hidden text-cream cursor-pointer" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobile-menu">
@@ -161,13 +162,14 @@ export function nav({ business, services, categories = [], active = "" }) {
         <a href="/blog/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Blog</a>
         <a href="/about/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">About</a>
         <a href="/contact/" class="py-2.5 text-cream/85 hover:text-brand-gold transition-colors">Contact</a>
-        <a href="${business.phoneHref}" class="btn-gold mt-3 justify-center">${svgIcon("phone", "w-4 h-4")} Call ${business.phoneDisplay}</a>
+        <a href="${contact.phoneHref}" class="btn-gold mt-3 justify-center">${svgIcon("phone", "w-4 h-4")} Call ${contact.phoneDisplay}</a>
       </div>
     </div>
   </header>`;
 }
 
-export function footer({ business, services, areas, reviews = [] }) {
+export function footer({ business, services, areas, reviews = [], location = null }) {
+  const contact = location || business;
   const year = new Date().getFullYear();
   return `
   <footer class="bg-ink text-cream/70 border-t border-white/10">
@@ -229,7 +231,7 @@ export function footer({ business, services, areas, reviews = [] }) {
     </div>
   </footer>
   <div class="lg:hidden fixed bottom-0 inset-x-0 z-40 bg-ink border-t border-white/10 grid grid-cols-2 shadow-[0_-4px_16px_rgba(0,0,0,0.25)]">
-    <a href="${business.phoneHref}" class="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-cream border-r border-white/10">${svgIcon("phone", "w-4 h-4 text-brand-gold")} Call Now</a>
+    <a href="${contact.phoneHref}" class="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-cream border-r border-white/10">${svgIcon("phone", "w-4 h-4 text-brand-gold")} Call Now</a>
     <a href="/contact/" class="flex items-center justify-center gap-2 py-3.5 text-sm font-semibold text-ink bg-brand-gold">${svgIcon("bolt", "w-4 h-4")} Get a Free Quote</a>
   </div>
   <script src="/assets/js/main.js"></script>
@@ -242,7 +244,8 @@ export function footer({ business, services, areas, reviews = [] }) {
   <script src="/assets/js/scroll-animations.js"></script>`;
 }
 
-export function ctaBand({ business, heading = "Need an Electrician You Can Trust?", sub = "Get a free, no-obligation quote today." }) {
+export function ctaBand({ business, heading = "Need an Electrician You Can Trust?", sub = "Get a free, no-obligation quote today.", location = null }) {
+  const contact = location || business;
   return `
   <section class="bg-brand-green">
     <div class="section py-14 flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
@@ -251,25 +254,25 @@ export function ctaBand({ business, heading = "Need an Electrician You Can Trust
         <p class="text-cream/70 mt-2">${sub}</p>
       </div>
       <div class="flex flex-col sm:flex-row gap-3 shrink-0">
-        <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
+        <a href="${contact.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${contact.phoneDisplay}</a>
         <a href="/contact/" class="btn-gold">Get a Free Quote</a>
       </div>
     </div>
   </section>`;
 }
 
-export function page({ title, description, path, business, services, areas, active, bodyContent, extraHead = "", reviews = [], categories = [] }) {
+export function page({ title, description, path, business, services, areas, active, bodyContent, extraHead = "", reviews = [], categories = [], location = null }) {
   return `<!doctype html>
 <html lang="en">
 <head>
 ${head({ title, description, path, business, extraHead })}
 </head>
 <body class="bg-ink pb-16 lg:pb-0">
-${nav({ business, services, categories, active })}
+${nav({ business, services, categories, active, location })}
 <main>
 ${bodyContent}
 </main>
-${footer({ business, services, areas, reviews })}
+${footer({ business, services, areas, reviews, location })}
 </body>
 </html>
 `;

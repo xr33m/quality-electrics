@@ -495,7 +495,8 @@ export function regulationsNote(service) {
 /*
  * Service+areaServed JSON-LD for a service×area combination page.
  */
-export function serviceAreaSchema({ business, service, area }) {
+export function serviceAreaSchema({ business, service, area, location = null }) {
+  const contact = location || business;
   const url = `https://${business.domain}/services/${service.slug}/${area.slug}/`;
   const schema = {
     "@context": "https://schema.org",
@@ -511,7 +512,7 @@ export function serviceAreaSchema({ business, service, area }) {
     provider: {
       "@type": "Electrician",
       name: business.name,
-      telephone: business.phoneDisplay,
+      telephone: contact.phoneDisplay,
       email: business.email,
     },
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
@@ -533,7 +534,8 @@ export function serviceAreaSchema({ business, service, area }) {
 /*
  * LocalBusiness/Place JSON-LD for an area hub page.
  */
-export function areaHubSchema({ business, area }) {
+export function areaHubSchema({ business, area, location = null }) {
+  const contact = location || business;
   const url = `https://${business.domain}/areas/${area.slug}/`;
   const schema = {
     "@context": "https://schema.org",
@@ -544,8 +546,19 @@ export function areaHubSchema({ business, area }) {
       name: area.name,
       containedInPlace: { "@type": "AdministrativeArea", name: area.region },
     },
-    telephone: business.phoneDisplay,
+    telephone: contact.phoneDisplay,
     email: business.email,
+    ...(contact.streetAddress
+      ? {
+          address: {
+            "@type": "PostalAddress",
+            streetAddress: contact.streetAddress,
+            addressLocality: contact.addressLocality,
+            postalCode: contact.postcode,
+            addressCountry: "GB",
+          },
+        }
+      : {}),
     mainEntityOfPage: { "@type": "WebPage", "@id": url },
   };
   return `<script type="application/ld+json">${JSON.stringify(schema)}</script>`;

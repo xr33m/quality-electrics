@@ -8,7 +8,8 @@
     "phoneDisplay": "07411 180954",
     "phoneHref": "tel:+447411180954",
     "areaServedNote": "Glasgow & the surrounding areas",
-    "addressComplete": true
+    "addressComplete": true,
+    "baseLabel": "Southside Base"
   },
   {
     "id": "aberdeen",
@@ -16,9 +17,10 @@
     "streetAddress": "30 Coutens Park",
     "addressLocality": "Oldmeldrum, Inverurie",
     "postcode": "AB51 0PG",
-    "phoneDisplay": "01224 608954",
-    "phoneHref": "tel:+441224608954",
+    "phoneDisplay": "07846 721499",
+    "phoneHref": "tel:+447846721499",
     "areaServedNote": "Aberdeen, Oldmeldrum & the surrounding areas",
-    "addressComplete": true
+    "addressComplete": true,
+    "baseLabel": "Oldmeldrum Base"
   }
 ]

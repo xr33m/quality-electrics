@@ -123,5 +123,25 @@
     "restrictToServices": [
       "domestic-commercial-rewiring"
     ]
+  },
+  {
+    "slug": "oldmeldrum",
+    "name": "Oldmeldrum",
+    "region": "Aberdeenshire",
+    "character": "a historic market town in Formartine, home to the Glen Garioch whisky distillery, with newer housing developments like Coutens on its outskirts alongside the traditional town centre",
+    "propertyNote": "new-build homes and traditional town properties",
+    "directionsFrom": "right in the heart of Oldmeldrum on the A947 \u2014 this is where we're actually based, not a call-out from somewhere else",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "aberdeen",
+    "name": "Aberdeen",
+    "region": "Aberdeen City",
+    "character": "Scotland's third-largest city, known as the Silver City for its granite architecture along Union Street, with a mix of traditional tenements and newer suburban developments",
+    "propertyNote": "granite tenements, Victorian terraces, and modern new-build estates",
+    "directionsFrom": "around 30 minutes from Oldmeldrum via the A947, which runs directly between the two \u2014 a normal part of our working week, not a special trip",
+    "locationId": "aberdeen",
+    "restrictToServices": []
   }
 ]

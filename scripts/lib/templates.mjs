@@ -1010,7 +1010,8 @@ export function serviceTemplate({ business, service, services, areas, post, inde
   `;
 }
 
-export function serviceAreaTemplate({ business, service, area, services, reviews = [], categories = [] }) {
+export function serviceAreaTemplate({ business, service, area, services, reviews = [], categories = [], location = null }) {
+  const contact = location || business;
   const otherServices = services.filter(
     (s) => s.slug !== service.slug && (!area.restrictToServices || area.restrictToServices.includes(s.slug))
   );
@@ -1042,7 +1043,7 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
       </p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a href="/contact/" class="btn-gold">${service.ctaLabel || "Get a Free Quote"}</a>
-        <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
+        <a href="${contact.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${contact.phoneDisplay}</a>
       </div>
     </div>
   </section>
@@ -1085,7 +1086,7 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
           <div class="flex items-start gap-3">
             ${svgIcon("pin", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
             <div>
-              <h3 class="text-sm font-semibold text-cream mb-1">Getting to ${area.name} From Our Southside Base</h3>
+              <h3 class="text-sm font-semibold text-cream mb-1">Getting to ${area.name} From Our ${(location || {}).baseLabel || "Southside Base"}</h3>
               <p class="text-sm text-cream/65 leading-relaxed">It's ${area.directionsFrom} &mdash; well within our usual call-out range, so a visit to ${area.name} is a normal part of the working week for us, not a special trip.</p>
             </div>
           </div>
@@ -1182,11 +1183,12 @@ export function serviceAreaTemplate({ business, service, area, services, reviews
     </div>
   </section>
 
-  ${ctaBand({ business, heading: `Book ${service.name} in ${area.name}` })}
+  ${ctaBand({ business, heading: `Book ${service.name} in ${area.name}`, location })}
   `;
 }
 
-export function areaHubTemplate({ business, area, services, reviews = [] }) {
+export function areaHubTemplate({ business, area, services, reviews = [], location = null }) {
+  const contact = location || business;
   const faqs = areaHubFaqs(area);
   const featuredReviews = reviews.filter((r) => r.rating === 5).slice(0, 3);
   return `
@@ -1201,7 +1203,7 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
       <p class="mt-5 text-cream/70 leading-relaxed">NICEIC registered electrical work across ${area.name}, ${area.region} &mdash; from ${area.character}.</p>
       <div class="mt-8 flex flex-col sm:flex-row gap-4">
         <a href="/contact/" class="btn-gold">Get a Free Quote</a>
-        <a href="${business.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${business.phoneDisplay}</a>
+        <a href="${contact.phoneHref}" class="btn-outline">${svgIcon("phone", "w-4 h-4")} ${contact.phoneDisplay}</a>
       </div>
     </div>
   </section>
@@ -1292,7 +1294,7 @@ export function areaHubTemplate({ business, area, services, reviews = [] }) {
     </div>
   </section>
 
-  ${ctaBand({ business, heading: `Need an Electrician in ${area.name}?` })}
+  ${ctaBand({ business, heading: `Need an Electrician in ${area.name}?`, location })}
   `;
 }
 
