@@ -1,7 +1,7 @@
 [
   {
     "id": "glasgow",
-    "name": "Quality Electrics — Glasgow",
+    "name": "Quality Electrics \u2014 Glasgow",
     "streetAddress": "Inverlair Drive",
     "addressLocality": "Glasgow",
     "postcode": "G43 2AY",
@@ -12,13 +12,13 @@
   },
   {
     "id": "aberdeen",
-    "name": "Quality Electrics — Aberdeen & Oldmeldrum",
-    "streetAddress": "",
-    "addressLocality": "Aberdeen / Oldmeldrum",
-    "postcode": "",
+    "name": "Quality Electrics \u2014 Aberdeen & Oldmeldrum",
+    "streetAddress": "30 Coutens Park",
+    "addressLocality": "Oldmeldrum, Inverurie",
+    "postcode": "AB51 0PG",
     "phoneDisplay": "01224 608954",
     "phoneHref": "tel:+441224608954",
     "areaServedNote": "Aberdeen, Oldmeldrum & the surrounding areas",
-    "addressComplete": false
+    "addressComplete": true
   }
 ]
