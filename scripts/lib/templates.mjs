@@ -1271,6 +1271,8 @@ export function areaHubTemplate({ business, area, services, reviews = [], locati
     </div>
   </section>
 
+  ${processTimelineSection(business)}
+
   <section class="reveal relative py-16 sm:py-24 bg-surface border-y border-white/10">
     <div class="reveal-glow absolute inset-0 -z-10 pointer-events-none"></div>
     <div class="section grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
