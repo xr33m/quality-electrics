@@ -1208,6 +1208,45 @@ export function areaHubTemplate({ business, area, services, reviews = [], locati
     </div>
   </section>
 
+  <section class="py-6 bg-surface border-b border-white/10">
+    <div class="section">
+      <p class="text-sm text-cream/60 leading-relaxed max-w-3xl mx-auto text-center">
+        ${business.name} provides NICEIC registered electrical work in ${area.name}, ${area.region} &mdash; from ${area.character}. Rewiring, EV charger installation, EICR testing, and consumer unit upgrades for homeowners, landlords, and businesses, quoted clearly before any work starts.
+      </p>
+    </div>
+  </section>
+
+  ${guaranteesStrip(business)}
+
+  <section class="reveal relative py-16 sm:py-20 bg-ink border-y border-white/10">
+    <div class="section grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <span class="eyebrow">Emergency Electrical Services</span>
+        <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Got an Urgent Electrical Problem in ${area.name}?</h2>
+        <p class="mt-4 text-cream/70 leading-relaxed">We're open 24 hours, 7 days a week, and aim to get back to you the same day for urgent call-outs in ${area.name}. If something feels unsafe, switch off the affected circuit at your consumer unit if you can do so safely, and call us straight away.</p>
+        <div class="mt-7 flex flex-col sm:flex-row gap-4">
+          <a href="${contact.phoneHref}" class="btn-gold">${svgIcon("phone", "w-4 h-4")} Call ${contact.phoneDisplay} Now</a>
+          <a href="/contact/" class="btn-outline">Request a Call-Out</a>
+        </div>
+      </div>
+      <div class="rounded-sm border border-white/10 bg-white/5 p-6 sm:p-7">
+        <h3 class="text-sm font-semibold uppercase tracking-wide text-cream/50 mb-4">When to Call Us Urgently</h3>
+        <ul class="space-y-3">
+          ${[
+            "Power outages or electrical failures",
+            "Burning smells from sockets or the fuse board",
+            "Circuits tripping repeatedly or an overloaded system",
+            "Exposed or damaged wiring",
+            "Emergency lighting not working",
+            "Damaged or sparking switches and sockets",
+          ]
+            .map((s) => `<li class="flex items-start gap-3 text-cream/80 text-sm"><span class="text-brand-gold mt-0.5">${svgIcon("bolt", "w-4 h-4")}</span>${s}</li>`)
+            .join("\n")}
+        </ul>
+      </div>
+    </div>
+  </section>
+
   <section class="py-16 sm:py-24 bg-cream border-y border-ink/10">
     <div class="section">
       <h2 class="text-2xl font-display font-semibold text-ink mb-8">Services Available in ${area.name}</h2>
@@ -1249,6 +1288,7 @@ export function areaHubTemplate({ business, area, services, reviews = [], locati
         <span class="eyebrow">Why ${area.name} Trusts Us</span>
         <h2 class="mt-3 text-2xl sm:text-3xl font-display font-semibold text-cream">Local, Registered, and Accountable</h2>
         <p class="mt-4 text-cream/65 leading-relaxed">Whether it's a quick repair or a full rewire, ${area.name} customers get the same NICEIC registered, fully insured service &mdash; quoted clearly before any work starts, and certified properly once it's done.</p>
+        <p class="mt-4 text-cream/65 leading-relaxed">Most of our work in ${area.name} is on ${area.propertyNote}, so we're familiar with the specific wiring and access considerations that come with them.</p>
         <ul class="mt-6 space-y-3">
           <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("shield", "w-4 h-4")}</span>NICEIC registered for all work in ${area.region}</li>
           <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("check", "w-4 h-4")}</span>Fully insured, every job, every time</li>
