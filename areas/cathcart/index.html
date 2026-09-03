@@ -200,9 +200,21 @@
   </header>
 <main>
 
-  <section class="relative bg-ink overflow-hidden">
+  <section id="home-hero" class="relative bg-ink overflow-hidden">
     <div class="absolute inset-0">
-      <img src="/assets/img/van.webp" alt="Quality Electrics van in Glasgow" class="w-full h-full object-cover opacity-25" />
+      <video
+        id="home-hero-bg"
+        class="w-full h-[130%] object-cover absolute -top-[15%] left-0"
+        autoplay
+        muted
+        loop
+        playsinline
+        poster="/assets/img/van.webp"
+        aria-hidden="true"
+      >
+        <source src="/assets/video/hero-quality-electrics.webm" type="video/webm" />
+        <source src="/assets/video/hero-quality-electrics.mp4" type="video/mp4" />
+      </video>
       <div class="absolute inset-0 bg-gradient-to-t from-ink via-ink/90 to-ink/70"></div>
     </div>
     <div class="relative section py-16 sm:py-24 max-w-2xl">
