@@ -1308,6 +1308,20 @@ export function areaHubTemplate({ business, area, services, reviews = [], locati
           <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("check", "w-4 h-4")}</span>Fully insured, every job, every time</li>
           <li class="flex items-center gap-3 text-cream/80"><span class="flex items-center justify-center w-8 h-8 rounded-full bg-brand-green/20 text-brand-gold">${svgIcon("bolt", "w-4 h-4")}</span>Same-day response for most ${area.name} enquiries</li>
         </ul>
+        ${
+          area.directionsFrom
+            ? `
+        <div class="mt-6 rounded-sm border border-white/10 bg-surface p-5">
+          <div class="flex items-start gap-3">
+            ${svgIcon("pin", "w-5 h-5 text-brand-gold shrink-0 mt-0.5")}
+            <div>
+              <h3 class="text-sm font-semibold text-cream mb-1">Getting to ${area.name} From Our ${(location || {}).baseLabel || "Southside Base"}</h3>
+              <p class="text-sm text-cream/65 leading-relaxed">It's ${area.directionsFrom} &mdash; well within our usual call-out range, so a visit to ${area.name} is a normal part of the working week for us, not a special trip.</p>
+            </div>
+          </div>
+        </div>`
+            : ""
+        }
       </div>
     </div>
   </section>

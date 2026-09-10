@@ -130,7 +130,7 @@
     "region": "Aberdeenshire",
     "character": "a historic market town in Formartine, home to the Glen Garioch whisky distillery, with newer housing developments like Coutens on its outskirts alongside the traditional town centre",
     "propertyNote": "new-build homes and traditional town properties",
-    "directionsFrom": "right in the heart of Oldmeldrum on the A947 \u2014 this is where we're actually based, not a call-out from somewhere else",
+    "directionsFrom": null,
     "locationId": "aberdeen",
     "restrictToServices": []
   },
@@ -141,6 +141,146 @@
     "character": "Scotland's third-largest city, known as the Silver City for its granite architecture along Union Street, with a mix of traditional tenements and newer suburban developments",
     "propertyNote": "granite tenements, Victorian terraces, and modern new-build estates",
     "directionsFrom": "around 30 minutes from Oldmeldrum via the A947, which runs directly between the two \u2014 a normal part of our working week, not a special trip",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "bucksburn",
+    "name": "Bucksburn",
+    "region": "Aberdeen City",
+    "character": "a former market village turned Aberdeen suburb, bordered by Kirkhill Forest and Brimmond Hill on the A96 corridor",
+    "propertyNote": "established suburban homes and newer developments",
+    "directionsFrom": "around 25-30 minutes from Oldmeldrum via the A947 and A96",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "dyce",
+    "name": "Dyce",
+    "region": "Aberdeen City",
+    "character": "home to Aberdeen International Airport, with a mix of established housing and the city's northern industrial estates",
+    "propertyNote": "suburban family homes and new-build estates",
+    "directionsFrom": "around 25 minutes from Oldmeldrum via the A947",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "bridge-of-don",
+    "name": "Bridge of Don",
+    "region": "Aberdeen City",
+    "character": "Aberdeen's largest northern suburb, with its own retail park, several schools, and a mix of established and newer residential areas",
+    "propertyNote": "modern estates and established suburban homes",
+    "directionsFrom": "around 30 minutes from Oldmeldrum via the A947",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "balmedie",
+    "name": "Balmedie",
+    "region": "Aberdeenshire",
+    "character": "a coastal village north of Aberdeen known for its sand dunes and beach, within the Belhelvie parish",
+    "propertyNote": "modern family homes close to the coast",
+    "directionsFrom": "around 20-25 minutes from Oldmeldrum via the A920",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "newburgh-aberdeenshire",
+    "name": "Newburgh",
+    "region": "Aberdeenshire",
+    "character": "a historic coastal village on the Ythan Estuary, once a working port, near the Sands of Forvie nature reserve",
+    "propertyNote": "period sea captains' houses and coastal village homes",
+    "directionsFrom": "around 20 minutes from Oldmeldrum via the A920",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "westhill",
+    "name": "Westhill",
+    "region": "Aberdeenshire",
+    "character": "a purpose-built town developed from the 1960s oil boom, with a strong engineering and energy industry base",
+    "propertyNote": "modern family homes and executive housing",
+    "directionsFrom": "around 30-35 minutes from Oldmeldrum via the A96 and A944",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "ellon",
+    "name": "Ellon",
+    "region": "Aberdeenshire",
+    "character": "the main town of Formartine on the River Ythan, with easy access to the AWPR and a growing commuter population",
+    "propertyNote": "a mix of established town properties and new housing developments",
+    "directionsFrom": "around 20 minutes from Oldmeldrum via the A920",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "pitmedden",
+    "name": "Pitmedden",
+    "region": "Aberdeenshire",
+    "character": "a small rural village midway between Ellon and Oldmeldrum, close to our Oldmeldrum base",
+    "propertyNote": "rural village and farm properties",
+    "directionsFrom": "around 10 minutes from Oldmeldrum via the B999",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "inverurie",
+    "name": "Inverurie",
+    "region": "Aberdeenshire",
+    "character": "the market town known as the Heart of the Garioch, at the meeting of the rivers Don and Ury",
+    "propertyNote": "a mix of traditional town properties and newer estates",
+    "directionsFrom": "around 10-15 minutes from Oldmeldrum via the A947",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "huntly",
+    "name": "Huntly",
+    "region": "Aberdeenshire",
+    "character": "a historic market town on the A96 near Huntly Castle, around 40 miles from Aberdeen",
+    "propertyNote": "traditional market town properties",
+    "directionsFrom": "around 35-40 minutes from Oldmeldrum via the A96",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "rothienorman",
+    "name": "Rothienorman",
+    "region": "Aberdeenshire",
+    "character": "a small farming village between Oldmeldrum and Huntly",
+    "propertyNote": "rural and farm properties",
+    "directionsFrom": "around 15 minutes from Oldmeldrum via the B9001",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "methlick",
+    "name": "Methlick",
+    "region": "Aberdeenshire",
+    "character": "a small Formartine village on the River Ythan, close to Haddo House",
+    "propertyNote": "village and rural properties",
+    "directionsFrom": "around 15-20 minutes from Oldmeldrum via the B9005",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "tarves",
+    "name": "Tarves",
+    "region": "Aberdeenshire",
+    "character": "a Formartine village just a few miles from our Oldmeldrum base, near the Cromlech stone circle",
+    "propertyNote": "village and rural properties",
+    "directionsFrom": "just under 6 miles from Oldmeldrum via the B999 \u2014 one of the closest villages to our base",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "cults",
+    "name": "Cults",
+    "region": "Aberdeen City",
+    "character": "a granite-built Aberdeen suburb on the River Dee, at the eastern edge of Royal Deeside",
+    "propertyNote": "historic granite houses and established suburban homes",
+    "directionsFrom": "around 30-35 minutes from Oldmeldrum via the A96 and A944",
     "locationId": "aberdeen",
     "restrictToServices": []
   }
