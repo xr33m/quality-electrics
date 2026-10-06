@@ -13,7 +13,7 @@
     "region": "East Renfrewshire",
     "character": "period semis around Fenwick Road through to family homes near Rouken Glen Park",
     "propertyNote": "period semis and family homes",
-    "directionsFrom": "one of our closest areas to cover \u2014 around 10 minutes from Giffnock via Ayr Road and Eastwood Toll to our Southside base on Inverlair Drive (G43)"
+    "directionsFrom": "one of our closest areas to cover — around 10 minutes from Giffnock via Ayr Road and Eastwood Toll to our Southside base on Inverlair Drive (G43)"
   },
   {
     "slug": "east-kilbride",
@@ -61,7 +61,7 @@
     "region": "Glasgow",
     "character": "sandstone tenements along Kilmarnock Road and Pollokshaws Road, the Southside's main commercial hub",
     "propertyNote": "tenement flats and traditional Southside properties",
-    "directionsFrom": "one of the closest areas to our base \u2014 just a few minutes from Shawlands via Pollokshaws Road to our Southside base on Inverlair Drive (G43)",
+    "directionsFrom": "one of the closest areas to our base — just a few minutes from Shawlands via Pollokshaws Road to our Southside base on Inverlair Drive (G43)",
     "restrictToServices": [
       "domestic-commercial-rewiring",
       "electrical-inspection-testing",
@@ -75,7 +75,7 @@
     "region": "Glasgow",
     "character": "a mix of sandstone and modern brick tenements, low-rise housing, and high-rise blocks around the regenerated town centre",
     "propertyNote": "tenement flats and social housing",
-    "directionsFrom": "right in our home postcode \u2014 Pollokshaws shares the G43 postcode district with our Southside base on Inverlair Drive, so it's a couple of minutes away at most",
+    "directionsFrom": "right in our home postcode — Pollokshaws shares the G43 postcode district with our Southside base on Inverlair Drive, so it's a couple of minutes away at most",
     "restrictToServices": [
       "domestic-commercial-rewiring"
     ]
@@ -140,7 +140,7 @@
     "region": "Aberdeen City",
     "character": "Scotland's third-largest city, known as the Silver City for its granite architecture along Union Street, with a mix of traditional tenements and newer suburban developments",
     "propertyNote": "granite tenements, Victorian terraces, and modern new-build estates",
-    "directionsFrom": "around 30 minutes from Oldmeldrum via the A947, which runs directly between the two \u2014 a normal part of our working week, not a special trip",
+    "directionsFrom": "around 30 minutes from Oldmeldrum via the A947, which runs directly between the two — a normal part of our working week, not a special trip",
     "locationId": "aberdeen",
     "restrictToServices": []
   },
@@ -270,7 +270,7 @@
     "region": "Aberdeenshire",
     "character": "a Formartine village just a few miles from our Oldmeldrum base, near the Cromlech stone circle",
     "propertyNote": "village and rural properties",
-    "directionsFrom": "just under 6 miles from Oldmeldrum via the B999 \u2014 one of the closest villages to our base",
+    "directionsFrom": "just under 6 miles from Oldmeldrum via the B999 — one of the closest villages to our base",
     "locationId": "aberdeen",
     "restrictToServices": []
   },
@@ -283,5 +283,121 @@
     "directionsFrom": "around 30-35 minutes from Oldmeldrum via the A96 and A944",
     "locationId": "aberdeen",
     "restrictToServices": []
+  },
+  {
+    "slug": "kintore",
+    "name": "Kintore",
+    "region": "Aberdeenshire",
+    "character": "a growing Aberdeenshire town on the River Don with a mix of established and new housing, close to Inverurie",
+    "propertyNote": "established homes and newer family housing",
+    "directionsFrom": "around 20 minutes from Oldmeldrum by road",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "turriff",
+    "name": "Turriff",
+    "region": "Aberdeenshire",
+    "character": "a historic market town on the River Deveron serving farms and villages across north Aberdeenshire",
+    "propertyNote": "traditional town properties, farms and rural homes",
+    "directionsFrom": "around 25-30 minutes from Oldmeldrum by road",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "kingswells",
+    "name": "Kingswells",
+    "region": "Aberdeen City",
+    "character": "a suburb on the western edge of Aberdeen, next to the A944 and the Aberdeen Western Peripheral Route",
+    "propertyNote": "modern family homes and executive housing",
+    "directionsFrom": "around 35 minutes from Oldmeldrum via the A96",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "peterculter",
+    "name": "Peterculter",
+    "region": "Aberdeen City",
+    "character": "a village on the River Dee, on the western side of Aberdeen",
+    "propertyNote": "established family homes and older village properties",
+    "directionsFrom": "around 40-45 minutes from Oldmeldrum by road",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "banchory",
+    "name": "Banchory",
+    "region": "Aberdeenshire",
+    "character": "a Deeside town on the River Dee with a mix of traditional granite homes and newer housing",
+    "propertyNote": "granite houses and Deeside family homes",
+    "directionsFrom": "roughly an hour from Oldmeldrum by road",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "portlethen",
+    "name": "Portlethen",
+    "region": "Aberdeenshire",
+    "character": "a coastal town just south of Aberdeen with a large amount of modern family housing",
+    "propertyNote": "modern family homes and newer developments",
+    "directionsFrom": "around 50 minutes from Oldmeldrum by road",
+    "locationId": "aberdeen",
+    "restrictToServices": []
+  },
+  {
+    "slug": "clarkston",
+    "name": "Clarkston",
+    "region": "East Renfrewshire",
+    "character": "a south Glasgow suburb with period villas, sandstone homes and well-kept family streets",
+    "propertyNote": "period villas, semis and family homes",
+    "directionsFrom": "around 15 minutes from our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring",
+      "electrical-inspection-testing",
+      "ev-charger-installation",
+      "consumer-unit-upgrades"
+    ]
+  },
+  {
+    "slug": "barrhead",
+    "name": "Barrhead",
+    "region": "East Renfrewshire",
+    "character": "a town south-west of Glasgow with older terraces, post-war houses and modern developments",
+    "propertyNote": "older terraces, post-war homes and newer housing",
+    "directionsFrom": "around 15-20 minutes from our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring",
+      "electrical-inspection-testing",
+      "ev-charger-installation",
+      "consumer-unit-upgrades"
+    ]
+  },
+  {
+    "slug": "paisley",
+    "name": "Paisley",
+    "region": "Renfrewshire",
+    "character": "a large historic town west of Glasgow, known for its abbey and a lot of traditional Victorian housing",
+    "propertyNote": "Victorian tenements, villas and older flats",
+    "directionsFrom": "around 20-25 minutes from our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring",
+      "electrical-inspection-testing",
+      "ev-charger-installation",
+      "consumer-unit-upgrades"
+    ]
+  },
+  {
+    "slug": "bishopbriggs",
+    "name": "Bishopbriggs",
+    "region": "East Dunbartonshire",
+    "character": "a suburban town north of Glasgow with a large amount of post-war and modern housing",
+    "propertyNote": "post-war semis and modern family homes",
+    "directionsFrom": "around 25 minutes from our Southside base on Inverlair Drive (G43)",
+    "restrictToServices": [
+      "domestic-commercial-rewiring",
+      "electrical-inspection-testing",
+      "ev-charger-installation",
+      "consumer-unit-upgrades"
+    ]
   }
 ]

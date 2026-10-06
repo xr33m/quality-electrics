@@ -1791,7 +1791,9 @@ export function blogPostTemplate({ business, post, service, featuredArea, relate
             <span class="eyebrow">Related Service</span>
             <h3 class="mt-2 text-xl font-display font-semibold text-cream">${service.name}</h3>
             <p class="mt-2 text-sm text-cream/60 leading-relaxed max-w-md">${service.shortDesc}</p>
-            ${featuredArea ? `<a href="/services/${service.slug}/${featuredArea.slug}/" class="mt-3 inline-block text-sm font-semibold text-brand-gold hover:underline">${service.name} in ${featuredArea.name} &rarr;</a>` : ""}
+            ${featuredArea ? (!featuredArea.restrictToServices || featuredArea.restrictToServices.includes(service.slug)
+              ? `<a href="/services/${service.slug}/${featuredArea.slug}/" class="mt-3 inline-block text-sm font-semibold text-brand-gold hover:underline">${service.name} in ${featuredArea.name} &rarr;</a>`
+              : `<a href="/areas/${featuredArea.slug}/" class="mt-3 inline-block text-sm font-semibold text-brand-gold hover:underline">Electrician in ${featuredArea.name} &rarr;</a>`) : ""}
           </div>
           <a href="/services/${service.slug}/" class="btn-gold shrink-0">View Service ${svgIcon("arrow", "w-4 h-4")}</a>
         </div>` : ""}

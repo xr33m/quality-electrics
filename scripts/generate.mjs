@@ -214,7 +214,8 @@ posts.forEach((post, i) => {
   const validAreas = service
     ? areas.filter((a) => !a.restrictToServices || a.restrictToServices.includes(service.slug))
     : areas;
-  const featuredArea = validAreas.length ? validAreas[i % validAreas.length] : null;
+  const forcedArea = post.featuredAreaSlug ? areas.find((a) => a.slug === post.featuredAreaSlug) : null;
+  const featuredArea = forcedArea || (validAreas.length ? validAreas[i % validAreas.length] : null);
   const relatedPosts = (post.relatedSlugs || [])
     .map((slug) => posts.find((p) => p.slug === slug))
     .filter(Boolean);
